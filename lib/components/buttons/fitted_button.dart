@@ -26,7 +26,7 @@ class FittedButton extends StatelessWidget {
         text!.toUpperCase(),
         style: TextStyle(
           fontSize: 12,
-          color: isActive! ? Colors.white : titleColor.withOpacity(0.54),
+          color: isActive! ? Colors.white : titleColor.withValues(alpha: 0.54),
           fontWeight: FontWeight.w500,
         ),
       ),

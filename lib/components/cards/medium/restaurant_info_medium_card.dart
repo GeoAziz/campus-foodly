@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../core/constants.dart';
+import '../../app_image.dart';
 import '../../rating.dart';
 import '../../small_dot.dart';
 
@@ -11,14 +12,16 @@ class RestaurantInfoMediumCard extends StatelessWidget {
     required this.name,
     required this.location,
     required this.rating,
-    required this.delivertTime,
+    required this.deliveryTime,
     required this.press,
+    this.heroTag,
   });
 
   final String image, name, location;
   final double rating;
-  final int delivertTime;
+  final int deliveryTime;
   final VoidCallback press;
+  final String? heroTag;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,12 @@ class RestaurantInfoMediumCard extends StatelessWidget {
               aspectRatio: 1.25,
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                child: Image.asset(image, fit: BoxFit.cover),
+                child: (heroTag != null && heroTag!.trim().isNotEmpty)
+                    ? Hero(
+                        tag: heroTag!,
+                        child: AppImage(source: image, fit: BoxFit.cover),
+                      )
+                    : AppImage(source: image, fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: defaultPadding / 2),
@@ -56,11 +64,11 @@ class RestaurantInfoMediumCard extends StatelessWidget {
               children: [
                 Rating(rating: rating),
                 Text(
-                  "$delivertTime min",
+                  "$deliveryTime min",
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!
-                      .copyWith(color: titleColor.withOpacity(0.74)),
+                      .copyWith(color: titleColor.withValues(alpha: 0.74)),
                 ),
                 const SmallDot(),
                 Text(
@@ -68,7 +76,7 @@ class RestaurantInfoMediumCard extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelMedium!
-                      .copyWith(color: titleColor.withOpacity(0.74)),
+                      .copyWith(color: titleColor.withValues(alpha: 0.74)),
                 )
               ],
             )

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "menu_items--13562ad21c4fc2df",
+    "entity": "menu_items",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoData_List.generate",
+      "index": 1
+    },
+    "raw": {
+      "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+      "foodType": "Chinese",
+      "image": "assets/images/featured_items_2.png",
+      "price": 7.4,
+      "title": "Cookie Sandwich"
+    }
+  },
+  {
+    "id": "menu_items-3cff023fa6d40fcf",
+    "entity": "menu_items",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoData_List.generate",
+      "index": 0
+    },
+    "raw": {
+      "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+      "foodType": "Chinese",
+      "image": "assets/images/featured_items_1.png",
+      "price": 7.4,
+      "title": "Cookie Sandwich"
+    }
+  },
+  {
+    "id": "menu_items-77b679ead01b63d7",
+    "entity": "menu_items",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoData_List.generate",
+      "index": 2
+    },
+    "raw": {
+      "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+      "foodType": "Chinese",
+      "image": "assets/images/featured_items_3.png",
+      "price": 7.4,
+      "title": "Cookie Sandwich"
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "dietaries--1fbc97d12cf2bdd9",
+    "isActive": false,
+    "title": "Gluten-Free"
+  },
+  {
+    "id": "dietaries-047f2fa38fb5d14c",
+    "isActive": false,
+    "title": "Any"
+  },
+  {
+    "id": "dietaries-1d735ab0c19d4797",
+    "isActive": false,
+    "title": "Vegetarian"
+  },
+  {
+    "id": "dietaries-780ca8f555005c55",
+    "isActive": false,
+    "title": "Vegan"
+  }
+]

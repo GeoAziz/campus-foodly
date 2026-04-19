@@ -1,0 +1,170 @@
+[
+  {
+    "id": "restaurants-mayfield-bakery-cafe",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/big_1.png",
+    "categories": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "San Francisco",
+    "name": "Mayfield Bakery & Cafe",
+    "isFeatured": true,
+    "priceTier": 2,
+    "rating": 4.3,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants--431de72e186a38e8",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/big_1.png",
+    "categories": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "San Francisco",
+    "name": "McDonald's",
+    "priceTier": 2,
+    "rating": 4.3,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants--6fc8a14f74feebe6",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/medium_4.png",
+    "categories": [
+      "Salads",
+      "Dinner"
+    ],
+    "dietaries": [
+      "Gluten-Free"
+    ],
+    "location": "Colarodo, San Francisco",
+    "name": "The Halal Guys",
+    "priceTier": 4,
+    "rating": 4.6,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants--77d8004c6b8f2b6c",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/big_2.png",
+    "categories": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "San Francisco",
+    "name": "McDonald's",
+    "priceTier": 2,
+    "rating": 4.3,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants--8229d96f6d242cf",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/medium_3.png",
+    "categories": [
+      "Burgers",
+      "Breakfast"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "Colarodo, San Francisco",
+    "name": "McDonald’s",
+    "priceTier": 2,
+    "rating": 4.8,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants-2050f78932f0d681",
+    "deliveryTime": 30,
+    "deliveryFee": "Free",
+    "image": "assets/images/medium_2.png",
+    "categories": [
+      "Dinner",
+      "Pizza"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "Colarodo, San Francisco",
+    "name": "Mario Italiano",
+    "priceTier": 3,
+    "rating": 4.3,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants-358d00e36cd928ea",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/big_3.png",
+    "categories": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "San Francisco",
+    "name": "McDonald's",
+    "priceTier": 2,
+    "rating": 4.3,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants-5cfbe998872adca9",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/medium_1.png",
+    "categories": [
+      "Brunch",
+      "Breakfast"
+    ],
+    "dietaries": [
+      "Vegetarian"
+    ],
+    "location": "Colarodo, San Francisco",
+    "name": "Daylight Coffee",
+    "priceTier": 2,
+    "rating": 4.6,
+    "ratingCount": 200
+  },
+  {
+    "id": "restaurants-7987a9ca8bbd7d36",
+    "deliveryTime": 25,
+    "deliveryFee": "Free",
+    "image": "assets/images/big_4.png",
+    "categories": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "location": "San Francisco",
+    "name": "McDonald's",
+    "priceTier": 2,
+    "rating": 4.3,
+    "ratingCount": 200
+  }
+]

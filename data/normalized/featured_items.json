@@ -1,0 +1,56 @@
+[
+  {
+    "id": "featured_items_-1ea26ec0f91",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_3.png",
+    "position": 2,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  },
+  {
+    "id": "featured_items_-212fc1db77d",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_1.png",
+    "position": 0,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  },
+  {
+    "id": "featured_items_51aabb162e2a",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_2.png",
+    "position": 1,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  },
+  {
+    "id": "featured_items_global_2",
+    "restaurantId": "",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_3.png",
+    "position": 2,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  },
+  {
+    "id": "featured_items_global_0",
+    "restaurantId": "",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_1.png",
+    "position": 0,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  },
+  {
+    "id": "featured_items_global_1",
+    "restaurantId": "",
+    "foodType": "Chinese",
+    "image": "assets/images/featured_items_2.png",
+    "position": 1,
+    "priceRange": "$$",
+    "title": "Cookie Sandwich"
+  }
+]

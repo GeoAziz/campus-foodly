@@ -1,0 +1,62 @@
+[
+  {
+    "id": "menu_tabs_-5471a740a16",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "position": 2,
+    "title": "Seafood"
+  },
+  {
+    "id": "menu_tabs_-8d31a4ae5d5",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "position": 3,
+    "title": "Appetizers"
+  },
+  {
+    "id": "menu_tabs_0-14f87ea8ba",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "position": 4,
+    "title": "Dim Sum"
+  },
+  {
+    "id": "menu_tabs_2b7e4fa8c9b5",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "position": 0,
+    "title": "Most Populars"
+  },
+  {
+    "id": "menu_tabs_304949450e52",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "position": 1,
+    "title": "Beef & Lamb"
+  },
+  {
+    "id": "menu_tabs_global_2",
+    "restaurantId": "",
+    "position": 2,
+    "title": "Seafood"
+  },
+  {
+    "id": "menu_tabs_global_3",
+    "restaurantId": "",
+    "position": 3,
+    "title": "Appetizers"
+  },
+  {
+    "id": "menu_tabs_global_4",
+    "restaurantId": "",
+    "position": 4,
+    "title": "Dim Sum"
+  },
+  {
+    "id": "menu_tabs_global_0",
+    "restaurantId": "",
+    "position": 0,
+    "title": "Most Populars"
+  },
+  {
+    "id": "menu_tabs_global_1",
+    "restaurantId": "",
+    "position": 1,
+    "title": "Beef & Lamb"
+  }
+]

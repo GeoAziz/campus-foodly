@@ -1,0 +1,297 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isRestaurantOwner(restaurantId) {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid;
+    }
+
+    function isDeliveryStaff() {
+      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'delivery';
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      // Users can read their own data
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      
+      // Users can create their own account on signup
+      allow create: if isAuthenticated() && request.auth.uid == userId && 
+        request.resource.data.uid == userId &&
+        request.resource.data.role in ['user', 'restaurant', 'delivery'];
+      
+      // Users can update their own data
+      allow update: if isAuthenticated() && request.auth.uid == userId &&
+        (resource.data.role == request.resource.data.role || request.resource.data.role in ['user', 'restaurant', 'delivery']);
+      
+      // Admins can read all user data
+      allow read: if isAdmin();
+      
+      // Prevent deletion
+      allow delete: if false;
+
+      // User sub-collections
+      match /addresses/{addressId} {
+        allow read: if isAuthenticated() && request.auth.uid == userId;
+        allow create: if isAuthenticated() && request.auth.uid == userId;
+        allow update: if isAuthenticated() && request.auth.uid == userId;
+        allow delete: if isAuthenticated() && request.auth.uid == userId;
+      }
+
+      match /paymentMethods/{paymentId} {
+        allow read: if isAuthenticated() && request.auth.uid == userId;
+        allow create: if isAuthenticated() && request.auth.uid == userId;
+        allow update: if isAuthenticated() && request.auth.uid == userId;
+        allow delete: if isAuthenticated() && request.auth.uid == userId;
+      }
+
+      match /fcmTokens/{tokenId} {
+        allow read: if isAuthenticated() && request.auth.uid == userId;
+        allow create, update, delete: if isAuthenticated() &&
+          request.auth.uid == userId;
+      }
+    }
+
+    // Restaurants Collection
+    match /restaurants/{restaurantId} {
+      // Anyone can read restaurant info
+      allow read: if request.query.limit <= 100 || isAuthenticated();
+      
+      // Admins can create restaurants
+      allow create: if isAdmin() && request.resource.data.ownerId != null;
+      
+      // Restaurant owners and admins can update
+      allow update: if isAdmin() || isRestaurantOwner(restaurantId);
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+
+      // Menu sub-collection
+      match /menu/{menuItemId} {
+        // Anyone can read menu items
+        allow read: if true;
+        
+        // Only restaurant owner and admins can create/update/delete
+        allow create: if isAdmin() || isRestaurantOwner(restaurantId);
+        allow update: if isAdmin() || isRestaurantOwner(restaurantId);
+        allow delete: if isAdmin() || isRestaurantOwner(restaurantId);
+      }
+
+      // Reviews sub-collection
+      match /reviews/{reviewId} {
+        // Anyone can read reviews
+        allow read: if true;
+        
+        // Only users who placed the order can write reviews
+        allow create: if isAuthenticated() && 
+          exists(/databases/$(database)/documents/orders/$(request.resource.data.orderId)) &&
+          get(/databases/$(database)/documents/orders/$(request.resource.data.orderId)).data.userId == request.auth.uid;
+        
+        allow update: if isAuthenticated() && 
+          resource.data.userId == request.auth.uid;
+        
+        allow delete: if isAuthenticated() && 
+          resource.data.userId == request.auth.uid;
+      }
+    }
+
+    // Seeded catalog collections
+    match /menu_items/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /nav_items/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /onboarding_slides/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /categories/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /dietaries/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /featured_items/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /menu_tabs/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /order_items/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /restaurant_details/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /screen_literals/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /tabs/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /ui_config/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Orders Collection
+    match /orders/{orderId} {
+      // Users can read their own orders
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Delivery staff can read assigned orders
+      allow read: if isDeliveryStaff() && resource.data.deliveryPersonId == request.auth.uid;
+      
+      // Restaurant owners can read orders for their restaurant
+      allow read: if isAuthenticated() && 
+        exists(/databases/$(database)/documents/restaurants/$(resource.data.restaurantId)) &&
+        isRestaurantOwner(resource.data.restaurantId);
+      
+      // Admins can read all orders
+      allow read: if isAdmin();
+      
+      // Users can create orders
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.totalAmount > 0 &&
+        request.resource.data.restaurantId != null &&
+        request.resource.data.items.size() > 0;
+      
+      // Users can update their pending orders
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid &&
+        resource.data.status == 'pending';
+      
+      // Restaurant owners can update order status
+      allow update: if isRestaurantOwner(resource.data.restaurantId) &&
+        (request.resource.data.status in ['accepted', 'preparing', 'ready', 'cancelled']);
+      
+      // Delivery staff can mark as picked up and delivered
+      allow update: if isDeliveryStaff() && resource.data.deliveryPersonId == request.auth.uid &&
+        (request.resource.data.status in ['picked_up', 'delivered']);
+      
+      // Admins can update anything
+      allow update: if isAdmin();
+      
+      // Only admins can delete orders that are completed
+      allow delete: if isAdmin() && resource.data.status in ['delivered', 'cancelled'];
+
+      // Order sub-collection for items
+      match /items/{itemId} {
+        allow read: if isAuthenticated() && (
+          resource.parent().parent().data().userId == request.auth.uid ||
+          isRestaurantOwner(resource.parent().parent().data().restaurantId) ||
+          isDeliveryStaff()
+        );
+        allow write: if isAuthenticated() && resource.parent().parent().data().userId == request.auth.uid &&
+          resource.parent().parent().data().status == 'pending';
+      }
+    }
+
+    // Payments Collection
+    match /payments/{paymentId} {
+      // Users can read their own payments
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Admins can read all payments
+      allow read: if isAdmin();
+      
+      // Cloud functions create payments
+      allow create: if request.auth.uid != null;
+      
+      // Only allow status updates and never allow amount modification
+      allow update: if (isAuthenticated() && resource.data.userId == request.auth.uid && 
+        request.resource.data.status != resource.data.status) || isAdmin();
+      
+      allow delete: if false;
+    }
+
+    // Delivery Requests Collection
+    match /deliveryRequests/{requestId} {
+      // Delivery staff can read requests
+      allow read: if isDeliveryStaff();
+      
+      // Admins can manage delivery requests
+      allow read, write: if isAdmin();
+      
+      // System creates requests
+      allow create: if isAuthenticated();
+      
+      // Delivery staff can accept requests
+      allow update: if isDeliveryStaff() && 
+        request.resource.data.deliveryPersonId == request.auth.uid &&
+        request.resource.data.status == 'accepted';
+    }
+
+    // Coupons/Promos Collection
+    match /coupons/{couponId} {
+      // Anyone can read valid coupons
+      allow read: if resource.data.active == true;
+      
+      // Only admins can manage coupons
+      allow write: if isAdmin();
+    }
+
+    // Support Tickets Collection
+    match /supportTickets/{ticketId} {
+      // Users can read their own tickets
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Admins can read all tickets
+      allow read: if isAdmin();
+      
+      // Users can create tickets
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      
+      // Users can update their open tickets
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid &&
+        resource.data.status == 'open';
+      
+      // Admins can update/close tickets
+      allow update: if isAdmin();
+      
+      allow delete: if false;
+    }
+
+    // Analytics Collection (for stats, read-only for users)
+    match /analytics/{analyticsId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Default deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -40,7 +40,7 @@ class SectionTitle extends StatelessWidget {
                   : TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: titleColor.withOpacity(0.64),
+                      color: titleColor.withValues(alpha: 0.64),
                     ),
             ),
           ),

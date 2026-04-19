@@ -1,0 +1,41 @@
+[
+  {
+    "id": "featured_items_-1ea26ec0f91",
+    "source_file": "lib/screens/details/components/featured_items.dart",
+    "source_symbol": "FeaturedItemCard",
+    "source_line": 30,
+    "data": {
+      "foodType": "Chines",
+      "image": "assets/images/featured _items_${index + 1}.png",
+      "position": 2,
+      "priceRange": "\"\\$\" * 2",
+      "title": "Cookie Sandwich"
+    }
+  },
+  {
+    "id": "featured_items_-212fc1db77d",
+    "source_file": "lib/screens/details/components/featured_items.dart",
+    "source_symbol": "FeaturedItemCard",
+    "source_line": 30,
+    "data": {
+      "foodType": "Chines",
+      "image": "assets/images/featured _items_${index + 1}.png",
+      "position": 0,
+      "priceRange": "\"\\$\" * 2",
+      "title": "Cookie Sandwich"
+    }
+  },
+  {
+    "id": "featured_items_51aabb162e2a",
+    "source_file": "lib/screens/details/components/featured_items.dart",
+    "source_symbol": "FeaturedItemCard",
+    "source_line": 30,
+    "data": {
+      "foodType": "Chines",
+      "image": "assets/images/featured _items_${index + 1}.png",
+      "position": 1,
+      "priceRange": "\"\\$\" * 2",
+      "title": "Cookie Sandwich"
+    }
+  }
+]

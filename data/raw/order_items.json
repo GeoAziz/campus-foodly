@@ -1,0 +1,44 @@
+[
+  {
+    "id": "order_items--fc5069865f1b01c",
+    "entity": "order_items",
+    "source": {
+      "file": "lib/screens/orderDetails/order_details_screen.dart",
+      "block": "demoItems",
+      "index": 1
+    },
+    "raw": {
+      "numOfItem": 1,
+      "price": 12,
+      "title": "Combo Burger"
+    }
+  },
+  {
+    "id": "order_items-0457c5b56f785102",
+    "entity": "order_items",
+    "source": {
+      "file": "lib/screens/orderDetails/order_details_screen.dart",
+      "block": "demoItems",
+      "index": 2
+    },
+    "raw": {
+      "numOfItem": 2,
+      "price": 8.6,
+      "title": "Oyster Dish"
+    }
+  },
+  {
+    "id": "order_items-27b2183dc772d6a1",
+    "entity": "order_items",
+    "source": {
+      "file": "lib/screens/orderDetails/order_details_screen.dart",
+      "block": "demoItems",
+      "index": 0
+    },
+    "raw": {
+      "numOfItem": 1,
+      "price": 7.4,
+      "title": "Cookie Sandwich"
+    }
+  }
+]

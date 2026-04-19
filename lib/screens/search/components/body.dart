@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../constants.dart';
+import '../../../core/constants.dart';
 
 import '../../../components/cards/big/restaurant_info_big_card.dart';
-import '../../../components/scalton/big_card_scalton.dart';
-import '../../../demo_data.dart';
+import '../../../components/skeleton/big_card_skeleton.dart';
+import '../../../data/services/mock_data_service.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -63,16 +63,31 @@ class _BodyState extends State<Body> {
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.only(bottom: defaultPadding),
                   child: _isLoading
-                      ? const BigCardScalton()
-                      : RestaurantInfoBigCard(
-                          // Images are List<String>
-                          images: demoBigImages..shuffle(),
-                          name: "McDonald's",
-                          rating: 4.3,
-                          numOfRating: 200,
-                          deliveryTime: 25,
-                          foodType: const ["Chinese", "American", "Deshi food"],
-                          press: () {},
+                      ? const BigCardSkeleton()
+                      : Builder(
+                          builder: (context) {
+                            final restaurant = demoMediumCardData[
+                                index % demoMediumCardData.length];
+                            final categories = (restaurant['categories']
+                                    as List<dynamic>? ??
+                                const ["Chinese", "American", "Deshi food"])
+                                .map((item) => item.toString())
+                                .toList(growable: false);
+
+                            return RestaurantInfoBigCard(
+                              images: [restaurant['image'] as String],
+                              name: restaurant['name'] as String,
+                              rating: (restaurant['rating'] as num).toDouble(),
+                              numOfRating:
+                                  (restaurant['ratingCount'] as num? ?? 200)
+                                      .toInt(),
+                              deliveryTime:
+                                  (restaurant['deliveryTime'] as num? ?? 25)
+                                      .toInt(),
+                              foodType: categories,
+                              press: () {},
+                            );
+                          },
                         ),
                 ),
               ),
@@ -104,7 +119,7 @@ class _BodyState extends State<Body> {
         style: Theme.of(context).textTheme.labelLarge,
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
-          hintText: "Search on foodly",
+          hintText: 'Search OrderEats restaurants',
           contentPadding: kTextFieldPadding,
           prefixIcon: Padding(
             padding: const EdgeInsets.all(8.0),

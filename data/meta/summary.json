@@ -1,0 +1,21 @@
+{
+  "generatedAtUtc": "2026-04-17T05:44:48.831492Z",
+  "rawRecordCount": 157,
+  "normalizedEntityCounts": {
+    "image_sets": 4,
+    "restaurants": 8,
+    "nav_items": 4,
+    "choice_options": 8,
+    "screen_literals": 40,
+    "tabs": 5,
+    "menu_items": 3,
+    "categories": 9,
+    "dietaries": 4,
+    "onboarding_slides": 3,
+    "order_items": 3,
+    "profile_menu_items": 6,
+    "ui_config": 7,
+    "assets_catalog": 53
+  },
+  "missingAssetCount": 2
+}

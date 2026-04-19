@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "foodly_ui" "\0"
+            VALUE "CompanyName", "OrderEats" "\0"
+            VALUE "FileDescription", "OrderEats" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "foodly_ui" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "foodly_ui.exe" "\0"
-            VALUE "ProductName", "foodly_ui" "\0"
+            VALUE "InternalName", "OrderEats" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 OrderEats. All rights reserved." "\0"
+            VALUE "OriginalFilename", "OrderEats.exe" "\0"
+            VALUE "ProductName", "OrderEats" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

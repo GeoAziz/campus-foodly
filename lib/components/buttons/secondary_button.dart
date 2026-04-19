@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+import '../../core/constants.dart';
+
+class SecondaryButton extends StatelessWidget {
+  const SecondaryButton({
+    super.key,
+    required this.child,
+    required this.press,
+  });
+
+  final Widget child;
+  final VoidCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton(
+        onPressed: press,
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+              horizontal: defaultPadding, vertical: 12),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+            side: BorderSide(color: primaryColor, width: 0.8),
+          ),
+        ),
+        child: child,
+      ),
+    );
+  }
+}

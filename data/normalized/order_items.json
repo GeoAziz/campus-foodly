@@ -1,0 +1,20 @@
+[
+  {
+    "id": "order_items--fc5069865f1b01c",
+    "price": 12.0,
+    "quantity": 1,
+    "title": "Combo Burger"
+  },
+  {
+    "id": "order_items-0457c5b56f785102",
+    "price": 8.6,
+    "quantity": 2,
+    "title": "Oyster Dish"
+  },
+  {
+    "id": "order_items-27b2183dc772d6a1",
+    "price": 7.4,
+    "quantity": 1,
+    "title": "Cookie Sandwich"
+  }
+]

@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../components/cards/big/big_card_image_slide.dart';
 import '../../components/cards/big/restaurant_info_big_card.dart';
 import '../../components/section_title.dart';
-import '../../constants.dart';
-import '../../demo_data.dart';
-import '../../screens/filter/filter_screen.dart';
-import '../details/details_screen.dart';
-import '../featured/featurred_screen.dart';
+import '../../core/constants.dart';
+import '../../core/routes.dart';
+import '../../data/providers/restaurant_provider.dart';
+import '../../features/recommendations/presentation/for_you_section.dart';
 import 'components/medium_card_list.dart';
 import 'components/promotion_banner.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final restaurantsAsync = ref.watch(restaurantsProvider);
+
     return Scaffold(
       appBar: AppBar(
         leading: const SizedBox(),
@@ -37,12 +40,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const FilterScreen(),
-                ),
-              );
+              context.pushNamed(AppRoutes.filter);
             },
             child: Text(
               "Filter",
@@ -52,72 +50,88 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: defaultPadding),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-                child: BigCardImageSlide(images: demoBigImages),
-              ),
-              const SizedBox(height: defaultPadding * 2),
-              SectionTitle(
-                title: "Featured Partners",
-                press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FeaturedScreen(),
-                  ),
-                ),
-              ),
-              const SizedBox(height: defaultPadding),
-              const MediumCardList(),
-              const SizedBox(height: 20),
-              // Banner
-              const PromotionBanner(),
-              const SizedBox(height: 20),
-              SectionTitle(
-                title: "Best Pick",
-                press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FeaturedScreen(),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              const MediumCardList(),
-              const SizedBox(height: 20),
-              SectionTitle(title: "All Restaurants", press: () {}),
-              const SizedBox(height: 16),
+        child: restaurantsAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, stackTrace) => Center(
+            child: Text('Unable to load home data: ${error.toString()}'),
+          ),
+          data: (restaurants) {
+            final heroImages = restaurants.isEmpty
+                ? const <String>[]
+                : restaurants.map((restaurant) => restaurant.image).toList();
 
-              // Demo list of Big Cards
-              ...List.generate(
-                // For demo we use 4 items
-                3,
-                (index) => Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                      defaultPadding, 0, defaultPadding, defaultPadding),
-                  child: RestaurantInfoBigCard(
-                    // Images are List<String>
-                    images: demoBigImages..shuffle(),
-                    name: "McDonald's",
-                    rating: 4.3,
-                    numOfRating: 200,
-                    deliveryTime: 25,
-                    foodType: const ["Chinese", "American", "Deshi food"],
-                    press: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DetailsScreen(),
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: defaultPadding),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: defaultPadding),
+                    child: BigCardImageSlide(
+                      heroTag: heroImages.isNotEmpty ? 'home-hero-main' : null,
+                      images: heroImages.isNotEmpty
+                          ? heroImages
+                          : const [
+                              'assets/images/big_1.png',
+                              'assets/images/big_2.png',
+                            ],
+                    ),
+                  ),
+                  const SizedBox(height: defaultPadding * 2),
+                  SectionTitle(
+                    title: "Featured Partners",
+                    press: () => context.pushNamed(AppRoutes.featured),
+                  ),
+                  const SizedBox(height: defaultPadding),
+                  const MediumCardList(
+                    heroTagPrefix: 'home-featured',
+                    showOnlyFeatured: true,
+                  ),
+                  const SizedBox(height: 20),
+                  const PromotionBanner(),
+                  const SizedBox(height: 20),
+                  SectionTitle(
+                    title: "Best Pick",
+                    press: () => context.pushNamed(AppRoutes.featured),
+                  ),
+                  const SizedBox(height: 16),
+                  const MediumCardList(
+                    heroTagPrefix: 'home-best-pick',
+                    showOnlyFeatured: true,
+                  ),
+                  const SizedBox(height: 20),
+                  const ForYouSection(),
+                  const SizedBox(height: 20),
+                  SectionTitle(title: "All Restaurants", press: () {}),
+                  const SizedBox(height: 16),
+                  ...restaurants.map(
+                    (restaurant) => Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        defaultPadding,
+                        0,
+                        defaultPadding,
+                        defaultPadding,
+                      ),
+                      child: RestaurantInfoBigCard(
+                        heroTag: 'home-all-${restaurant.id}',
+                        images: [restaurant.image],
+                        name: restaurant.name,
+                        rating: restaurant.rating,
+                        numOfRating: 200,
+                        deliveryTime: restaurant.deliveryTime,
+                        foodType: const ["Popular"],
+                        press: () => context.pushNamed(
+                          AppRoutes.details,
+                          extra: restaurant,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );

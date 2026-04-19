@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'reset_email_sent_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../components/welcome_text.dart';
+import '../../core/routes.dart';
 import '../../constants.dart';
+import '../../data/providers/auth_provider.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -31,15 +34,22 @@ class ForgotPasswordScreen extends StatelessWidget {
   }
 }
 
-class ForgotPassForm extends StatefulWidget {
+class ForgotPassForm extends ConsumerStatefulWidget {
   const ForgotPassForm({super.key});
 
   @override
-  State<ForgotPassForm> createState() => _ForgotPassFormState();
+  ConsumerState<ForgotPassForm> createState() => _ForgotPassFormState();
 }
 
-class _ForgotPassFormState extends State<ForgotPassForm> {
+class _ForgotPassFormState extends ConsumerState<ForgotPassForm> {
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +59,8 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
         children: [
           // Email Field
           TextFormField(
+            controller: _emailController,
             validator: emailValidator.call,
-            onSaved: (value) {},
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(hintText: "Email Address"),
           ),
@@ -58,15 +68,18 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
 
           // Reset password Button
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                // If all data are correct then save data to out variables
-                _formKey.currentState!.save();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ResetEmailSentScreen(),
-                  ),
+                final email = _emailController.text.trim();
+                final sent = await ref
+                    .read(authControllerProvider.notifier)
+                    .sendPasswordResetEmail(email: email);
+                if (!context.mounted || !sent) {
+                  return;
+                }
+                context.pushNamed(
+                  AppRoutes.resetEmailSent,
+                  queryParameters: {'email': email},
                 );
               }
             },

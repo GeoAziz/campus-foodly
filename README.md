@@ -1,9 +1,32 @@
-# Restaurant/Food Delivery App UI kit in Flutter
+# OrderEats Flutter App
 
-We build Flutter Restaurant/Food delivery app UI Kit to help you build a nice clean app for restaurent using flutter which runs both Android and iOS. This kit comes packed with 25 beautifully designed screens and a hearty portion of deliciously responsive components. Also, we have skeleton loading and have separate components for both Android and iOS so that you feel the native experience.
+OrderEats is a Flutter food delivery application for Android and iOS with Riverpod state management, GoRouter navigation, Firebase-backed auth/data flows, and reusable UI components.
 
 ## Screenshots
 
 ![All pages](/preview.png)
 
 ![Preview](/foodly_thun.png)
+
+## Build Android release APK
+
+Use the project script:
+
+```bash
+bash scripts/build_release_android.sh
+```
+
+Generated APK path:
+
+- `build/app/outputs/flutter-apk/app-release.apk`
+- fallback: `build/app/outputs/apk/release/app-release.apk`
+
+## Troubleshooting
+
+If `flutter build apk --release -v` fails with `Gradle task assembleRelease failed with exit code 143`, use:
+
+```bash
+bash scripts/build_release_android.sh
+```
+
+This uses direct Gradle `assembleRelease`, which avoids the wrapper path that can terminate early on some environments.

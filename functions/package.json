@@ -1,0 +1,21 @@
+{
+  "name": "foodly-payments",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.2",
+    "firebase-functions": "^6.1.1",
+    "express": "^4.21.2"
+  },
+  "scripts": {
+    "seed": "node seeds/seed_firestore.js",
+    "seed:dry-run": "node seeds/seed_firestore.js --dry-run",
+    "seed:preview": "node seeds/seed_firestore.js --dry-run --verbose",
+    "seed:reset": "node seeds/seed_firestore.js --reset",
+    "seed:reset:dry-run": "node seeds/seed_firestore.js --reset --dry-run",
+    "validate:hero": "node seeds/validate_home_hero_images.js"
+  }
+}

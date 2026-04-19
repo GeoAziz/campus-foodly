@@ -1,56 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../../components/cards/big/restaurant_info_big_card.dart';
-import '../../../components/scalton/big_card_scalton.dart';
-import '../../../constants.dart';
+import '../../../components/skeleton/big_card_skeleton.dart';
+import '../../../core/constants.dart';
+import '../../../core/routes.dart';
 
-import '../../../demo_data.dart';
+import '../../../data/providers/restaurant_provider.dart';
 
-/// Just for show the scalton we use [StatefulWidget]
-class Body extends StatefulWidget {
+class Body extends ConsumerWidget {
   const Body({super.key});
 
   @override
-  State<Body> createState() => _BodyState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final restaurantsAsync = ref.watch(featuredRestaurantsProvider);
 
-class _BodyState extends State<Body> {
-  
-  bool isLoading = true;
-  int demoDataLength = 4;
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 1), () {
-      setState(() {
-        isLoading = false;
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-        child: ListView.builder(
-          // while we dont have our data bydefault we show 3 scalton
-          itemCount: isLoading ? 3 : demoDataLength,
-          itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.only(bottom: defaultPadding),
-            child: isLoading
-                ? const BigCardScalton()
-                : RestaurantInfoBigCard(
-                    // Images are List<String>
-                    images: demoBigImages..shuffle(),
-                    name: "McDonald's",
-                    rating: 4.3,
-                    numOfRating: 200,
-                    deliveryTime: 25,
-                    foodType: const ["Chinese", "American", "Deshi food"],
-                    press: () {},
-                  ),
+        child: restaurantsAsync.when(
+          loading: () => ListView.builder(
+            itemCount: 3,
+            itemBuilder: (context, index) => const Padding(
+              padding: EdgeInsets.only(bottom: defaultPadding),
+              child: BigCardSkeleton(),
+            ),
           ),
+          error: (error, stackTrace) => Center(
+            child: Text(
+                'Unable to load featured restaurants: ${error.toString()}'),
+          ),
+          data: (restaurants) {
+            if (restaurants.isEmpty) {
+              return const Center(
+                child: Text('No featured partners are configured yet.'),
+              );
+            }
+
+            return ListView.builder(
+              itemCount: restaurants.length,
+              itemBuilder: (context, index) {
+                final restaurant = restaurants[index];
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: defaultPadding),
+                  child: RestaurantInfoBigCard(
+                    heroTag: 'featured-${restaurant.id}',
+                    images: [restaurant.image],
+                    name: restaurant.name,
+                    rating: restaurant.rating,
+                    numOfRating: restaurant.ratingCount,
+                    deliveryTime: restaurant.deliveryTime,
+                    foodType: restaurant.categories.isEmpty
+                        ? const ['Popular']
+                        : restaurant.categories,
+                    press: () => context.pushNamed(
+                      AppRoutes.details,
+                      extra: restaurant,
+                    ),
+                  ),
+                );
+              },
+            );
+          },
         ),
       ),
     );

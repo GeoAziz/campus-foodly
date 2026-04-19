@@ -1,0 +1,100 @@
+[
+  {
+    "id": "ui_config--2d484c914abff85a",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "color_constants",
+      "index": 1
+    },
+    "raw": {
+      "name": "primaryColor",
+      "type": "color",
+      "value": "0xFF22A45D"
+    }
+  },
+  {
+    "id": "ui_config--a9ab42ef1241eb3",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "color_constants",
+      "index": 0
+    },
+    "raw": {
+      "name": "titleColor",
+      "type": "color",
+      "value": "0xFF010F07"
+    }
+  },
+  {
+    "id": "ui_config-0755da03add3e162",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "color_constants",
+      "index": 2
+    },
+    "raw": {
+      "name": "accentColor",
+      "type": "color",
+      "value": "0xFFEF9920"
+    }
+  },
+  {
+    "id": "ui_config-16d4e4845943db62",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "scalar_constants",
+      "index": 6
+    },
+    "raw": {
+      "name": "kDefaultDuration",
+      "type": "Duration",
+      "value": "Duration(milliseconds: 250)"
+    }
+  },
+  {
+    "id": "ui_config-1c720b2d02421769",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "color_constants",
+      "index": 3
+    },
+    "raw": {
+      "name": "bodyTextColor",
+      "type": "color",
+      "value": "0xFF868686"
+    }
+  },
+  {
+    "id": "ui_config-382a073572e3d5e3",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "color_constants",
+      "index": 4
+    },
+    "raw": {
+      "name": "inputColor",
+      "type": "color",
+      "value": "0xFFFBFBFB"
+    }
+  },
+  {
+    "id": "ui_config-7585ca530834350d",
+    "entity": "ui_config",
+    "source": {
+      "file": "lib/constants.dart",
+      "block": "scalar_constants",
+      "index": 5
+    },
+    "raw": {
+      "name": "defaultPadding",
+      "type": "double",
+      "value": "16"
+    }
+  }
+]

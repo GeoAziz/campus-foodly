@@ -1,0 +1,13 @@
+[
+  {
+    "id": "dish_details_664f9a4f707c",
+    "source_file": "lib/screens/addToOrder/components/info.dart",
+    "source_symbol": "Info",
+    "source_line": 1,
+    "data": {
+      "description": "Cookie Sandwich",
+      "image": "assets/images/Header-image.png",
+      "title": "Cookie Sandwich"
+    }
+  }
+]

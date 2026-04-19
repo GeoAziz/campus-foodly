@@ -1,0 +1,29 @@
+{
+	"firestore": {
+		"rules": "firestore.rules"
+	},
+	"functions": {
+		"source": "functions"
+	},
+	"flutter": {
+		"platforms": {
+			"android": {
+				"default": {
+					"projectId": "foodly-99135",
+					"appId": "1:1076012274723:android:0c1c278bb8d5a152ff0d96",
+					"fileOutput": "android/app/google-services.json"
+				}
+			},
+			"dart": {
+				"lib/firebase_options.dart": {
+					"projectId": "foodly-99135",
+					"configurations": {
+						"android": "1:1076012274723:android:0c1c278bb8d5a152ff0d96",
+						"ios": "1:1076012274723:ios:48a404258909d55fff0d96",
+						"windows": "1:1076012274723:web:03889313d519065aff0d96"
+					}
+				}
+			}
+		}
+	}
+}

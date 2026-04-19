@@ -1,0 +1,2278 @@
+Initialized native services in: /home/devmahnx/.gradle/native
+Initialized jansi services in: /home/devmahnx/.gradle/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle build daemon'. Working directory: /home/devmahnx/.gradle/daemon/8.14 Command: /usr/lib/jvm/java-17-openjdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:+HeapDumpOnOutOfMemoryError -XX:MaxMetaspaceSize=768m -XX:+UseG1GC -XX:G1ReservePercent=20 -XX:+DisableExplicitGC -Xms512m -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/devmahnx/.gradle/wrapper/dists/gradle-8.14-all/c2qonpi39x1mddn7hk5gh9iqj/gradle-8.14/lib/gradle-daemon-main-8.14.jar -javaagent:/home/devmahnx/.gradle/wrapper/dists/gradle-8.14-all/c2qonpi39x1mddn7hk5gh9iqj/gradle-8.14/lib/agents/gradle-instrumentation-agent-8.14.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 2.981 secs.
+The client will now receive all logging from the daemon (pid: 893767). The daemon log file: /home/devmahnx/.gradle/daemon/8.14/daemon-893767.out.log
+Daemon will be stopped at the end of the build 
+Using 1 worker leases.
+Received JVM installation metadata from '/usr/lib/jvm/java-17-openjdk-amd64': {JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64, JAVA_VERSION=17.0.18, JAVA_VENDOR=Debian, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.18+8-Debian-1deb12u1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.18+8-Debian-1deb12u1, VM_VENDOR=Debian, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Now considering [/home/devmahnx/Dev/foodly_ui-main/android] as hierarchies to watch
+File system watching is active
+Starting Build
+Now considering [/home/devmahnx/flutter/packages/flutter_tools/gradle, /home/devmahnx/Dev/foodly_ui-main/android] as hierarchies to watch
+
+> Configure project :gradle
+Evaluating project ':gradle' using build file '/home/devmahnx/flutter/packages/flutter_tools/gradle/build.gradle.kts'.
+Resolved plugin [id: 'org.gradle.java-gradle-plugin']
+Resolved plugin [id: 'org.gradle.groovy']
+Resolved plugin [id: 'org.gradle.kotlin.kotlin-dsl', version: '5.2.0']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm', version: '1.9.20']
+Using Kotlin Gradle Plugin gradle85 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+file or directory '/home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/java', not found
+Resolved plugin [id: 'dev.flutter.flutter-plugin-loader', version: '1.0.0']
+Resolved plugin [id: 'com.android.application', version: '8.11.1', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.2.20', apply: false]
+Resolved plugin [id: 'com.google.gms.google-services', version: '4.4.2', apply: false]
+Resolve mutations for :gradle:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+:gradle:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':gradle:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :gradle:compileKotlin (Thread[included builds,5,main]) started.
+:gradle:compileKotlin (Thread[included builds,5,main]) started.
+
+> Task :gradle:compileKotlin UP-TO-DATE
+Caching disabled for task ':gradle:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':gradle:compileKotlin' as it is up-to-date.
+Resolve mutations for :gradle:compileJava (Thread[included builds,5,main]) started.
+:gradle:compileJava (Thread[included builds,5,main]) started.
+
+> Task :gradle:compileJava NO-SOURCE
+Skipping task ':gradle:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :gradle:compileGroovy (Thread[included builds,5,main]) started.
+:gradle:compileGroovy (Thread[included builds,5,main]) started.
+
+> Task :gradle:compileGroovy NO-SOURCE
+Skipping task ':gradle:compileGroovy' as it has no source files and no previous output files.
+Resolve mutations for :gradle:pluginDescriptors (Thread[included builds,5,main]) started.
+:gradle:pluginDescriptors (Thread[included builds,5,main]) started.
+
+> Task :gradle:pluginDescriptors UP-TO-DATE
+Caching disabled for task ':gradle:pluginDescriptors' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:pluginDescriptors' as it is up-to-date.
+Resolve mutations for :gradle:processResources (Thread[included builds,5,main]) started.
+:gradle:processResources (Thread[included builds,5,main]) started.
+
+> Task :gradle:processResources UP-TO-DATE
+Caching disabled for task ':gradle:processResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:processResources' as it is up-to-date.
+Resolve mutations for :gradle:classes (Thread[included builds,5,main]) started.
+:gradle:classes (Thread[included builds,5,main]) started.
+
+> Task :gradle:classes UP-TO-DATE
+Skipping task ':gradle:classes' as it has no actions.
+Resolve mutations for :gradle:jar (Thread[included builds,5,main]) started.
+:gradle:jar (Thread[included builds,5,main]) started.
+
+> Task :gradle:jar UP-TO-DATE
+Caching disabled for task ':gradle:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:jar' as it is up-to-date.
+Settings evaluated using settings file '/home/devmahnx/Dev/foodly_ui-main/android/settings.gradle'.
+Projects loaded. Root project using build file '/home/devmahnx/Dev/foodly_ui-main/android/build.gradle'.
+Included projects: [root project 'android', project ':app', project ':cloud_firestore', project ':firebase_auth', project ':firebase_core', project ':shared_preferences_android']
+
+> Configure project :
+Evaluating root project 'android' using build file '/home/devmahnx/Dev/foodly_ui-main/android/build.gradle'.
+
+> Configure project :app
+Evaluating project ':app' using build file '/home/devmahnx/Dev/foodly_ui-main/android/app/build.gradle'.
+Resolved plugin [id: 'com.android.application']
+Resolved plugin [id: 'kotlin-android']
+Resolved plugin [id: 'dev.flutter.flutter-gradle-plugin']
+Resolved plugin [id: 'com.google.gms.google-services']
+Using default execution profile
+Build 707cb118-5415-4967-8f80-3e93299d8b04 is started
+Using Kotlin Gradle Plugin gradle813 variant
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+C/C++: android.ndkVersion from module build.gradle is [28.2.13676358]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is /home/devmahnx/Android/Sdk
+
+> Configure project :cloud_firestore
+Evaluating project ':cloud_firestore' using build file '/home/devmahnx/.pub-cache/hosted/pub.dev/cloud_firestore-5.6.12/android/build.gradle'.
+Using default execution profile
+
+> Configure project :firebase_auth
+Evaluating project ':firebase_auth' using build file '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_auth-5.7.0/android/build.gradle'.
+Using default execution profile
+
+> Configure project :firebase_core
+Evaluating project ':firebase_core' using build file '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_core-3.15.2/android/build.gradle'.
+Using default execution profile
+
+> Configure project :shared_preferences_android
+Evaluating project ':shared_preferences_android' using build file '/home/devmahnx/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.23/android/build.gradle.kts'.
+Resolved plugin [id: 'com.android.library']
+Resolved plugin [id: 'kotlin-android']
+Using default execution profile
+Using Kotlin Gradle Plugin gradle813 variant
+All projects evaluated.
+Task name matched 'assembleRelease'
+Selected primary task 'assembleRelease' from project :
+Tasks to be executed: [task ':app:ReleaseMinSdkCheck', task ':app:compileFlutterBuildRelease', task ':app:packJniLibsflutterBuildRelease', task ':app:preBuild', task ':app:preReleaseBuild', task ':app:configureCMakeRelease[arm64-v8a]', task ':app:buildCMakeRelease[arm64-v8a]', task ':app:configureCMakeRelease[armeabi-v7a]', task ':app:buildCMakeRelease[armeabi-v7a]', task ':app:configureCMakeRelease[x86_64]', task ':app:buildCMakeRelease[x86_64]', task ':app:mergeReleaseJniLibFolders', task ':cloud_firestore:preBuild', task ':cloud_firestore:preReleaseBuild', task ':cloud_firestore:mergeReleaseJniLibFolders', task ':cloud_firestore:mergeReleaseNativeLibs', task ':cloud_firestore:copyReleaseJniLibsProjectOnly', task ':firebase_auth:preBuild', task ':firebase_auth:preReleaseBuild', task ':firebase_auth:mergeReleaseJniLibFolders', task ':firebase_auth:mergeReleaseNativeLibs', task ':firebase_auth:copyReleaseJniLibsProjectOnly', task ':firebase_core:preBuild', task ':firebase_core:preReleaseBuild', task ':firebase_core:mergeReleaseJniLibFolders', task ':firebase_core:mergeReleaseNativeLibs', task ':firebase_core:copyReleaseJniLibsProjectOnly', task ':shared_preferences_android:preBuild', task ':shared_preferences_android:preReleaseBuild', task ':shared_preferences_android:mergeReleaseJniLibFolders', task ':shared_preferences_android:mergeReleaseNativeLibs', task ':shared_preferences_android:copyReleaseJniLibsProjectOnly', task ':app:mergeReleaseNativeLibs', task ':app:stripReleaseDebugSymbols', task ':app:extractReleaseNativeSymbolTables', task ':app:mergeReleaseNativeDebugMetadata', task ':cloud_firestore:generateReleaseBuildConfig', task ':cloud_firestore:generateReleaseResValues', task ':cloud_firestore:generateReleaseResources', task ':cloud_firestore:packageReleaseResources', task ':cloud_firestore:parseReleaseLocalResources', task ':cloud_firestore:generateReleaseRFile', task ':cloud_firestore:javaPreCompileRelease', task ':firebase_core:generateReleaseBuildConfig', task ':firebase_core:generateReleaseResValues', task ':firebase_core:generateReleaseResources', task ':firebase_core:packageReleaseResources', task ':firebase_core:parseReleaseLocalResources', task ':firebase_core:generateReleaseRFile', task ':firebase_core:javaPreCompileRelease', task ':firebase_core:compileReleaseJavaWithJavac', task ':firebase_core:bundleLibCompileToJarRelease', task ':cloud_firestore:compileReleaseJavaWithJavac', task ':cloud_firestore:mergeReleaseGeneratedProguardFiles', task ':cloud_firestore:exportReleaseConsumerProguardFiles', task ':firebase_auth:generateReleaseBuildConfig', task ':firebase_auth:generateReleaseResValues', task ':firebase_auth:generateReleaseResources', task ':firebase_auth:packageReleaseResources', task ':firebase_auth:parseReleaseLocalResources', task ':firebase_auth:generateReleaseRFile', task ':firebase_auth:javaPreCompileRelease', task ':firebase_auth:compileReleaseJavaWithJavac', task ':firebase_auth:mergeReleaseGeneratedProguardFiles', task ':firebase_auth:exportReleaseConsumerProguardFiles', task ':firebase_core:mergeReleaseGeneratedProguardFiles', task ':firebase_core:exportReleaseConsumerProguardFiles', task ':shared_preferences_android:checkKotlinGradlePluginConfigurationErrors', task ':shared_preferences_android:generateReleaseResValues', task ':shared_preferences_android:generateReleaseResources', task ':shared_preferences_android:packageReleaseResources', task ':shared_preferences_android:parseReleaseLocalResources', task ':shared_preferences_android:generateReleaseRFile', task ':shared_preferences_android:compileReleaseKotlin', task ':shared_preferences_android:javaPreCompileRelease', task ':shared_preferences_android:compileReleaseJavaWithJavac', task ':shared_preferences_android:mergeReleaseGeneratedProguardFiles', task ':shared_preferences_android:exportReleaseConsumerProguardFiles', task ':app:buildKotlinToolingMetadata', task ':app:checkReleaseDuplicateClasses', task ':app:checkKotlinGradlePluginConfigurationErrors', task ':cloud_firestore:writeReleaseAarMetadata', task ':firebase_auth:writeReleaseAarMetadata', task ':firebase_core:writeReleaseAarMetadata', task ':shared_preferences_android:writeReleaseAarMetadata', task ':app:checkReleaseAarMetadata', task ':app:cleanMergeReleaseAssets', task ':app:mergeReleaseShaders', task ':app:compileReleaseShaders', task ':app:generateReleaseAssets', task ':cloud_firestore:mergeReleaseShaders', task ':cloud_firestore:compileReleaseShaders', task ':cloud_firestore:generateReleaseAssets', task ':cloud_firestore:mergeReleaseAssets', task ':firebase_auth:mergeReleaseShaders', task ':firebase_auth:compileReleaseShaders', task ':firebase_auth:generateReleaseAssets', task ':firebase_auth:mergeReleaseAssets', task ':firebase_core:mergeReleaseShaders', task ':firebase_core:compileReleaseShaders', task ':firebase_core:generateReleaseAssets', task ':firebase_core:mergeReleaseAssets', task ':shared_preferences_android:mergeReleaseShaders', task ':shared_preferences_android:compileReleaseShaders', task ':shared_preferences_android:generateReleaseAssets', task ':shared_preferences_android:mergeReleaseAssets', task ':app:mergeReleaseAssets', task ':app:copyFlutterAssetsRelease', task ':app:generateReleaseResValues', task ':app:processReleaseGoogleServices', task ':app:mapReleaseSourceSetPaths', task ':app:generateReleaseResources', task ':app:mergeReleaseResources', task ':app:packageReleaseResources', task ':app:parseReleaseLocalResources', task ':app:createReleaseCompatibleScreenManifests', task ':app:extractDeepLinksRelease', task ':cloud_firestore:extractDeepLinksRelease', task ':cloud_firestore:processReleaseManifest', task ':firebase_auth:extractDeepLinksRelease', task ':firebase_auth:processReleaseManifest', task ':firebase_core:extractDeepLinksRelease', task ':firebase_core:processReleaseManifest', task ':shared_preferences_android:extractDeepLinksRelease', task ':shared_preferences_android:processReleaseManifest', task ':app:processReleaseMainManifest', task ':app:outputReleaseAppLinkSettings', task ':app:processReleaseManifest', task ':app:processReleaseManifestForPackage', task ':app:processReleaseResources', task ':cloud_firestore:bundleLibCompileToJarRelease', task ':firebase_auth:bundleLibCompileToJarRelease', task ':shared_preferences_android:bundleLibCompileToJarRelease', task ':app:compileReleaseKotlin', task ':app:javaPreCompileRelease', task ':app:compileReleaseJavaWithJavac', task ':cloud_firestore:prepareReleaseArtProfile', task ':firebase_auth:prepareReleaseArtProfile', task ':firebase_core:prepareReleaseArtProfile', task ':shared_preferences_android:prepareReleaseArtProfile', task ':app:mergeReleaseArtProfile', task ':cloud_firestore:bundleLibRuntimeToJarRelease', task ':firebase_auth:bundleLibRuntimeToJarRelease', task ':firebase_core:bundleLibRuntimeToJarRelease', task ':shared_preferences_android:bundleLibRuntimeToJarRelease', task ':app:expandReleaseArtProfileWildcards', task ':app:extractProguardFiles', task ':app:mergeReleaseGeneratedProguardFiles', task ':app:processReleaseJavaRes', task ':cloud_firestore:processReleaseJavaRes', task ':firebase_auth:processReleaseJavaRes', task ':firebase_core:processReleaseJavaRes', task ':shared_preferences_android:processReleaseJavaRes', task ':app:mergeReleaseJavaResource', task ':app:mergeReleaseStartupProfile', task ':app:minifyReleaseWithR8', task ':app:compileReleaseArtProfile', task ':app:compressReleaseAssets', task ':app:extractReleaseVersionControlInfo', task ':cloud_firestore:createFullJarRelease', task ':cloud_firestore:extractProguardFiles', task ':firebase_core:createFullJarRelease', task ':firebase_core:extractProguardFiles', task ':firebase_core:generateReleaseLintModel', task ':firebase_core:prepareLintJarForPublish', task ':cloud_firestore:generateReleaseLintModel', task ':cloud_firestore:prepareLintJarForPublish', task ':firebase_auth:createFullJarRelease', task ':firebase_auth:extractProguardFiles', task ':firebase_auth:generateReleaseLintModel', task ':firebase_auth:prepareLintJarForPublish', task ':shared_preferences_android:createFullJarRelease', task ':shared_preferences_android:extractProguardFiles', task ':shared_preferences_android:generateReleaseLintModel', task ':shared_preferences_android:prepareLintJarForPublish', task ':app:generateReleaseLintVitalReportModel', task ':cloud_firestore:stripReleaseDebugSymbols', task ':cloud_firestore:copyReleaseJniLibsProjectAndLocalJars', task ':cloud_firestore:extractDeepLinksForAarRelease', task ':cloud_firestore:extractReleaseAnnotations', task ':cloud_firestore:mergeReleaseConsumerProguardFiles', task ':cloud_firestore:mergeReleaseJavaResource', task ':cloud_firestore:syncReleaseLibJars', task ':cloud_firestore:bundleReleaseLocalLintAar', task ':firebase_auth:stripReleaseDebugSymbols', task ':firebase_auth:copyReleaseJniLibsProjectAndLocalJars', task ':firebase_auth:extractDeepLinksForAarRelease', task ':firebase_auth:extractReleaseAnnotations', task ':firebase_auth:mergeReleaseConsumerProguardFiles', task ':firebase_auth:mergeReleaseJavaResource', task ':firebase_auth:syncReleaseLibJars', task ':firebase_auth:bundleReleaseLocalLintAar', task ':firebase_core:stripReleaseDebugSymbols', task ':firebase_core:copyReleaseJniLibsProjectAndLocalJars', task ':firebase_core:extractDeepLinksForAarRelease', task ':firebase_core:extractReleaseAnnotations', task ':firebase_core:mergeReleaseConsumerProguardFiles', task ':firebase_core:mergeReleaseJavaResource', task ':firebase_core:syncReleaseLibJars', task ':firebase_core:bundleReleaseLocalLintAar', task ':shared_preferences_android:stripReleaseDebugSymbols', task ':shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars', task ':shared_preferences_android:extractDeepLinksForAarRelease', task ':shared_preferences_android:extractReleaseAnnotations', task ':shared_preferences_android:mergeReleaseConsumerProguardFiles', task ':shared_preferences_android:mergeReleaseJavaResource', task ':shared_preferences_android:syncReleaseLibJars', task ':shared_preferences_android:bundleReleaseLocalLintAar', task ':firebase_core:writeReleaseLintModelMetadata', task ':cloud_firestore:lintVitalAnalyzeRelease', task ':cloud_firestore:writeReleaseLintModelMetadata', task ':firebase_auth:lintVitalAnalyzeRelease', task ':firebase_auth:writeReleaseLintModelMetadata', task ':firebase_core:lintVitalAnalyzeRelease', task ':shared_preferences_android:lintVitalAnalyzeRelease', task ':shared_preferences_android:writeReleaseLintModelMetadata', task ':app:lintVitalAnalyzeRelease', task ':cloud_firestore:generateReleaseLintVitalModel', task ':firebase_auth:generateReleaseLintVitalModel', task ':firebase_core:generateReleaseLintVitalModel', task ':shared_preferences_android:generateReleaseLintVitalModel', task ':app:lintVitalReportRelease', task ':app:lintVitalRelease', task ':app:convertShrunkResourcesToBinaryRelease', task ':app:optimizeReleaseResources', task ':app:collectReleaseDependencies', task ':app:sdkReleaseDependencyData', task ':app:validateSigningRelease', task ':app:writeReleaseAppMetadata', task ':app:writeReleaseSigningConfigVersions', task ':app:packageRelease', task ':app:createReleaseApkListingFileRedirect', task ':app:assembleRelease', task ':cloud_firestore:bundleReleaseAar', task ':cloud_firestore:mapReleaseSourceSetPaths', task ':cloud_firestore:mergeReleaseResources', task ':firebase_core:compileReleaseLibraryResources', task ':cloud_firestore:verifyReleaseResources', task ':cloud_firestore:assembleRelease', task ':firebase_auth:bundleReleaseAar', task ':firebase_auth:mapReleaseSourceSetPaths', task ':firebase_auth:mergeReleaseResources', task ':firebase_auth:verifyReleaseResources', task ':firebase_auth:assembleRelease', task ':firebase_core:bundleReleaseAar', task ':firebase_core:mapReleaseSourceSetPaths', task ':firebase_core:mergeReleaseResources', task ':firebase_core:verifyReleaseResources', task ':firebase_core:assembleRelease', task ':shared_preferences_android:bundleReleaseAar', task ':shared_preferences_android:mapReleaseSourceSetPaths', task ':shared_preferences_android:mergeReleaseResources', task ':shared_preferences_android:verifyReleaseResources', task ':shared_preferences_android:assembleRelease']
+Tasks that were excluded: []
+work action Parameters of FilterShrinkerRulesTransform (Thread[included builds,5,main]) started.
+work action Parameters of ExtractAarTransform (Thread[included builds,5,main]) started.
+work action Parameters of ExtractAarTransform (Thread[included builds,5,main]) started.
+work action Parameters of ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :app:ReleaseMinSdkCheck (Thread[included builds,5,main]) started.
+:app:ReleaseMinSdkCheck (Thread[included builds,5,main]) started.
+
+> Task :app:ReleaseMinSdkCheck
+Caching disabled for task ':app:ReleaseMinSdkCheck' because:
+  Build cache is disabled
+Task ':app:ReleaseMinSdkCheck' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :app:compileFlutterBuildRelease (Thread[included builds,5,main]) started.
+:app:compileFlutterBuildRelease (Thread[included builds,5,main]) started.
+
+> Task :app:compileFlutterBuildRelease UP-TO-DATE
+Caching disabled for task ':app:compileFlutterBuildRelease' because:
+  Build cache is disabled
+  Caching has not been enabled for the task
+Skipping task ':app:compileFlutterBuildRelease' as it is up-to-date.
+Resolve mutations for :app:packJniLibsflutterBuildRelease (Thread[included builds,5,main]) started.
+:app:packJniLibsflutterBuildRelease (Thread[included builds,5,main]) started.
+
+> Task :app:packJniLibsflutterBuildRelease UP-TO-DATE
+Caching disabled for task ':app:packJniLibsflutterBuildRelease' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':app:packJniLibsflutterBuildRelease' as it is up-to-date.
+Resolve mutations for :app:preBuild (Thread[included builds,5,main]) started.
+:app:preBuild (Thread[included builds,5,main]) started.
+
+> Task :app:preBuild UP-TO-DATE
+Skipping task ':app:preBuild' as it has no actions.
+Resolve mutations for :app:preReleaseBuild (Thread[included builds,5,main]) started.
+:app:preReleaseBuild (Thread[included builds,5,main]) started.
+
+> Task :app:preReleaseBuild UP-TO-DATE
+Skipping task ':app:preReleaseBuild' as it has no actions.
+Resolve mutations for :app:configureCMakeRelease[arm64-v8a] (Thread[included builds,5,main]) started.
+:app:configureCMakeRelease[arm64-v8a] (Thread[included builds,5,main]) started.
+
+> Task :app:configureCMakeRelease[arm64-v8a]
+Caching disabled for task ':app:configureCMakeRelease[arm64-v8a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:configureCMakeRelease[arm64-v8a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: SDK Manager found the following installed packages: build-tools;29.0.2 build-tools;30.0.3 build-tools;33.0.1 build-tools;34.0.0 build-tools;35.0.0 build-tools;36.0.0 cmake;3.18.1 cmake;3.22.1 cmdline-tools;latest emulator ndk;25.1.8937393 ndk;26.1.10909125 ndk;26.3.11579264 ndk;27.0.12077973 ndk;28.2.13676358 platform-tools platforms;android-28 platforms;android-30 platforms;android-31 platforms;android-33 platforms;android-34 platforms;android-35 platforms;android-36 sources;android-36 system-images;android-36;google_apis_playstore;x86_64
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|arm64-v8a : Start JSON generation. Platform version: 24 min SDK version: arm64-v8a
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|arm64-v8a : JSON '/home/devmahnx/Dev/foodly_ui-main/build/.cxx/release/4vq24b4j/arm64-v8a/android_gradle_build.json' was up-to-date
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|arm64-v8a : JSON generation completed without problems
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|arm64-v8a : Writing build model to /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/cxx/release/4vq24b4j/logs/arm64-v8a/build_model.json
+Resolve mutations for :app:buildCMakeRelease[arm64-v8a] (Thread[included builds,5,main]) started.
+:app:buildCMakeRelease[arm64-v8a] (Thread[included builds,5,main]) started.
+
+> Task :app:buildCMakeRelease[arm64-v8a]
+Caching disabled for task ':app:buildCMakeRelease[arm64-v8a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:buildCMakeRelease[arm64-v8a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: starting build
+C/C++: reading expected JSONs
+C/C++: done reading expected JSONs
+C/C++: executing build commands for targets that produce .so files or executables
+C/C++: evaluate miniconfig
+C/C++: no libraries
+Resolve mutations for :app:configureCMakeRelease[armeabi-v7a] (Thread[included builds,5,main]) started.
+:app:configureCMakeRelease[armeabi-v7a] (Thread[included builds,5,main]) started.
+
+> Task :app:configureCMakeRelease[armeabi-v7a]
+Caching disabled for task ':app:configureCMakeRelease[armeabi-v7a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:configureCMakeRelease[armeabi-v7a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|armeabi-v7a : Start JSON generation. Platform version: 24 min SDK version: armeabi-v7a
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|armeabi-v7a : JSON '/home/devmahnx/Dev/foodly_ui-main/build/.cxx/release/4vq24b4j/armeabi-v7a/android_gradle_build.json' was up-to-date
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|armeabi-v7a : JSON generation completed without problems
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|armeabi-v7a : Writing build model to /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/cxx/release/4vq24b4j/logs/armeabi-v7a/build_model.json
+Resolve mutations for :app:buildCMakeRelease[armeabi-v7a] (Thread[included builds,5,main]) started.
+:app:buildCMakeRelease[armeabi-v7a] (Thread[included builds,5,main]) started.
+
+> Task :app:buildCMakeRelease[armeabi-v7a]
+Caching disabled for task ':app:buildCMakeRelease[armeabi-v7a]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:buildCMakeRelease[armeabi-v7a]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: starting build
+C/C++: reading expected JSONs
+C/C++: done reading expected JSONs
+C/C++: executing build commands for targets that produce .so files or executables
+C/C++: evaluate miniconfig
+C/C++: no libraries
+Resolve mutations for :app:configureCMakeRelease[x86_64] (Thread[included builds,5,main]) started.
+:app:configureCMakeRelease[x86_64] (Thread[included builds,5,main]) started.
+
+> Task :app:configureCMakeRelease[x86_64]
+Caching disabled for task ':app:configureCMakeRelease[x86_64]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:configureCMakeRelease[x86_64]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|x86_64 : Start JSON generation. Platform version: 24 min SDK version: x86_64
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|x86_64 : JSON '/home/devmahnx/Dev/foodly_ui-main/build/.cxx/release/4vq24b4j/x86_64/android_gradle_build.json' was up-to-date
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|x86_64 : JSON generation completed without problems
+C/C++: /home/devmahnx/flutter/packages/flutter_tools/gradle/src/main/scripts/CMakeLists.txt release|x86_64 : Writing build model to /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/cxx/release/4vq24b4j/logs/x86_64/build_model.json
+Resolve mutations for :app:buildCMakeRelease[x86_64] (Thread[included builds,5,main]) started.
+:app:buildCMakeRelease[x86_64] (Thread[included builds,5,main]) started.
+
+> Task :app:buildCMakeRelease[x86_64]
+Caching disabled for task ':app:buildCMakeRelease[x86_64]' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:buildCMakeRelease[x86_64]' is not up-to-date because:
+  Task.upToDateWhen is false.
+C/C++: starting build
+C/C++: reading expected JSONs
+C/C++: done reading expected JSONs
+C/C++: executing build commands for targets that produce .so files or executables
+C/C++: evaluate miniconfig
+C/C++: no libraries
+Resolve mutations for :app:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+:app:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :cloud_firestore:preBuild (Thread[included builds,5,main]) started.
+:cloud_firestore:preBuild (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:preBuild UP-TO-DATE
+Skipping task ':cloud_firestore:preBuild' as it has no actions.
+Resolve mutations for :cloud_firestore:preReleaseBuild (Thread[included builds,5,main]) started.
+:cloud_firestore:preReleaseBuild (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:preReleaseBuild UP-TO-DATE
+Skipping task ':cloud_firestore:preReleaseBuild' as it has no actions.
+Resolve mutations for :cloud_firestore:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:mergeReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :cloud_firestore:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseNativeLibs NO-SOURCE
+Skipping task ':cloud_firestore:mergeReleaseNativeLibs' as it has no source files and no previous output files.
+Resolve mutations for :cloud_firestore:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+:cloud_firestore:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:copyReleaseJniLibsProjectOnly UP-TO-DATE
+Caching disabled for task ':cloud_firestore:copyReleaseJniLibsProjectOnly' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:copyReleaseJniLibsProjectOnly' as it is up-to-date.
+work action resolve jni (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:preBuild (Thread[included builds,5,main]) started.
+:firebase_auth:preBuild (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:preBuild UP-TO-DATE
+Skipping task ':firebase_auth:preBuild' as it has no actions.
+Resolve mutations for :firebase_auth:preReleaseBuild (Thread[included builds,5,main]) started.
+:firebase_auth:preReleaseBuild (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:preReleaseBuild UP-TO-DATE
+Skipping task ':firebase_auth:preReleaseBuild' as it has no actions.
+Resolve mutations for :firebase_auth:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:mergeReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :firebase_auth:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseNativeLibs NO-SOURCE
+Skipping task ':firebase_auth:mergeReleaseNativeLibs' as it has no source files and no previous output files.
+Resolve mutations for :firebase_auth:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+:firebase_auth:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:copyReleaseJniLibsProjectOnly UP-TO-DATE
+Caching disabled for task ':firebase_auth:copyReleaseJniLibsProjectOnly' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:copyReleaseJniLibsProjectOnly' as it is up-to-date.
+work action resolve jni (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:preBuild (Thread[included builds,5,main]) started.
+:firebase_core:preBuild (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:preBuild UP-TO-DATE
+Skipping task ':firebase_core:preBuild' as it has no actions.
+Resolve mutations for :firebase_core:preReleaseBuild (Thread[included builds,5,main]) started.
+:firebase_core:preReleaseBuild (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:preReleaseBuild UP-TO-DATE
+Skipping task ':firebase_core:preReleaseBuild' as it has no actions.
+Resolve mutations for :firebase_core:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:mergeReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :firebase_core:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseNativeLibs NO-SOURCE
+Skipping task ':firebase_core:mergeReleaseNativeLibs' as it has no source files and no previous output files.
+Resolve mutations for :firebase_core:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+:firebase_core:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:copyReleaseJniLibsProjectOnly UP-TO-DATE
+Caching disabled for task ':firebase_core:copyReleaseJniLibsProjectOnly' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:copyReleaseJniLibsProjectOnly' as it is up-to-date.
+work action resolve jni (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:preBuild (Thread[included builds,5,main]) started.
+:shared_preferences_android:preBuild (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:preBuild UP-TO-DATE
+Skipping task ':shared_preferences_android:preBuild' as it has no actions.
+Resolve mutations for :shared_preferences_android:preReleaseBuild (Thread[included builds,5,main]) started.
+:shared_preferences_android:preReleaseBuild (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:preReleaseBuild UP-TO-DATE
+Skipping task ':shared_preferences_android:preReleaseBuild' as it has no actions.
+Resolve mutations for :shared_preferences_android:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseJniLibFolders (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseJniLibFolders UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseJniLibFolders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:mergeReleaseJniLibFolders' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseNativeLibs NO-SOURCE
+Skipping task ':shared_preferences_android:mergeReleaseNativeLibs' as it has no source files and no previous output files.
+Resolve mutations for :shared_preferences_android:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+:shared_preferences_android:copyReleaseJniLibsProjectOnly (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:copyReleaseJniLibsProjectOnly UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:copyReleaseJniLibsProjectOnly' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:copyReleaseJniLibsProjectOnly' as it is up-to-date.
+work action resolve jni (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+:app:mergeReleaseNativeLibs (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseNativeLibs UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseNativeLibs' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mergeReleaseNativeLibs' as it is up-to-date.
+Resolve mutations for :app:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+:app:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+
+> Task :app:stripReleaseDebugSymbols UP-TO-DATE
+Caching disabled for task ':app:stripReleaseDebugSymbols' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:stripReleaseDebugSymbols' as it is up-to-date.
+Resolve mutations for :app:extractReleaseNativeSymbolTables (Thread[included builds,5,main]) started.
+:app:extractReleaseNativeSymbolTables (Thread[included builds,5,main]) started.
+
+> Task :app:extractReleaseNativeSymbolTables UP-TO-DATE
+Caching disabled for task ':app:extractReleaseNativeSymbolTables' because:
+  Build cache is disabled
+Skipping task ':app:extractReleaseNativeSymbolTables' as it is up-to-date.
+Resolve mutations for :app:mergeReleaseNativeDebugMetadata (Thread[included builds,5,main]) started.
+:app:mergeReleaseNativeDebugMetadata (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseNativeDebugMetadata UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseNativeDebugMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mergeReleaseNativeDebugMetadata' as it is up-to-date.
+Resolve mutations for :cloud_firestore:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseBuildConfig UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseBuildConfig' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:generateReleaseBuildConfig' as it is up-to-date.
+Resolve mutations for :cloud_firestore:generateReleaseResValues (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseResValues (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseResValues UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:generateReleaseResValues' as it is up-to-date.
+Resolve mutations for :cloud_firestore:generateReleaseResources (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseResources UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseResources' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:generateReleaseResources' as it is up-to-date.
+Resolve mutations for :cloud_firestore:packageReleaseResources (Thread[included builds,5,main]) started.
+:cloud_firestore:packageReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:packageReleaseResources UP-TO-DATE
+Caching disabled for task ':cloud_firestore:packageReleaseResources' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:packageReleaseResources' as it is up-to-date.
+work action resolve packageReleaseResources (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+:cloud_firestore:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:parseReleaseLocalResources UP-TO-DATE
+Caching disabled for task ':cloud_firestore:parseReleaseLocalResources' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:parseReleaseLocalResources' as it is up-to-date.
+Resolve mutations for :cloud_firestore:generateReleaseRFile (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseRFile (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseRFile UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseRFile' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:generateReleaseRFile' as it is up-to-date.
+work action resolve package-aware-r.txt (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:javaPreCompileRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:javaPreCompileRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:javaPreCompileRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:javaPreCompileRelease' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:javaPreCompileRelease' as it is up-to-date.
+Resolve mutations for :firebase_core:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseBuildConfig UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseBuildConfig' because:
+  Build cache is disabled
+Skipping task ':firebase_core:generateReleaseBuildConfig' as it is up-to-date.
+Resolve mutations for :firebase_core:generateReleaseResValues (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseResValues (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseResValues UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':firebase_core:generateReleaseResValues' as it is up-to-date.
+Resolve mutations for :firebase_core:generateReleaseResources (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:generateReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_core:packageReleaseResources (Thread[included builds,5,main]) started.
+:firebase_core:packageReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:packageReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_core:packageReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:packageReleaseResources' as it is up-to-date.
+work action resolve packageReleaseResources (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+:firebase_core:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:parseReleaseLocalResources UP-TO-DATE
+Caching disabled for task ':firebase_core:parseReleaseLocalResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:parseReleaseLocalResources' as it is up-to-date.
+Resolve mutations for :firebase_core:generateReleaseRFile (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseRFile (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseRFile UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseRFile' because:
+  Build cache is disabled
+Skipping task ':firebase_core:generateReleaseRFile' as it is up-to-date.
+work action resolve package-aware-r.txt (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:javaPreCompileRelease (Thread[included builds,5,main]) started.
+:firebase_core:javaPreCompileRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:javaPreCompileRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:javaPreCompileRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_core:javaPreCompileRelease' as it is up-to-date.
+Resolve mutations for :firebase_core:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+:firebase_core:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:compileReleaseJavaWithJavac UP-TO-DATE
+Custom actions are attached to task ':firebase_core:compileReleaseJavaWithJavac'.
+Caching disabled for task ':firebase_core:compileReleaseJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':firebase_core:compileReleaseJavaWithJavac' as it is up-to-date.
+No compile result for :firebase_core:compileReleaseJavaWithJavac
+No compile result for :firebase_core:compileReleaseJavaWithJavac
+Resolve mutations for :firebase_core:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+:firebase_core:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:bundleLibCompileToJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:bundleLibCompileToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:bundleLibCompileToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+:cloud_firestore:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:compileReleaseJavaWithJavac UP-TO-DATE
+Custom actions are attached to task ':cloud_firestore:compileReleaseJavaWithJavac'.
+Caching disabled for task ':cloud_firestore:compileReleaseJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:compileReleaseJavaWithJavac' as it is up-to-date.
+No compile result for :cloud_firestore:compileReleaseJavaWithJavac
+No compile result for :cloud_firestore:compileReleaseJavaWithJavac
+Resolve mutations for :cloud_firestore:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseGeneratedProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:mergeReleaseGeneratedProguardFiles' as it is up-to-date.
+Resolve mutations for :cloud_firestore:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:cloud_firestore:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:exportReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':cloud_firestore:exportReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:exportReleaseConsumerProguardFiles' as it is up-to-date.
+work action resolve exportReleaseConsumerProguardFiles (project :cloud_firestore) (Thread[included builds,5,main]) started.
+FilterShrinkerRulesTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseBuildConfig (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseBuildConfig UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseBuildConfig' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:generateReleaseBuildConfig' as it is up-to-date.
+Resolve mutations for :firebase_auth:generateReleaseResValues (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseResValues (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseResValues UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:generateReleaseResValues' as it is up-to-date.
+Resolve mutations for :firebase_auth:generateReleaseResources (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:generateReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_auth:packageReleaseResources (Thread[included builds,5,main]) started.
+:firebase_auth:packageReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:packageReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_auth:packageReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:packageReleaseResources' as it is up-to-date.
+work action resolve packageReleaseResources (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+:firebase_auth:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:parseReleaseLocalResources UP-TO-DATE
+Caching disabled for task ':firebase_auth:parseReleaseLocalResources' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:parseReleaseLocalResources' as it is up-to-date.
+Resolve mutations for :firebase_auth:generateReleaseRFile (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseRFile (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseRFile UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseRFile' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:generateReleaseRFile' as it is up-to-date.
+work action resolve package-aware-r.txt (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:javaPreCompileRelease (Thread[included builds,5,main]) started.
+:firebase_auth:javaPreCompileRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:javaPreCompileRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:javaPreCompileRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:javaPreCompileRelease' as it is up-to-date.
+Resolve mutations for :firebase_auth:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+:firebase_auth:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:compileReleaseJavaWithJavac UP-TO-DATE
+Custom actions are attached to task ':firebase_auth:compileReleaseJavaWithJavac'.
+Caching disabled for task ':firebase_auth:compileReleaseJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:compileReleaseJavaWithJavac' as it is up-to-date.
+No compile result for :firebase_auth:compileReleaseJavaWithJavac
+No compile result for :firebase_auth:compileReleaseJavaWithJavac
+Resolve mutations for :firebase_auth:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseGeneratedProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:mergeReleaseGeneratedProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_auth:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:firebase_auth:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:exportReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_auth:exportReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:exportReleaseConsumerProguardFiles' as it is up-to-date.
+work action resolve exportReleaseConsumerProguardFiles (project :firebase_auth) (Thread[included builds,5,main]) started.
+FilterShrinkerRulesTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseGeneratedProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:mergeReleaseGeneratedProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_core:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:firebase_core:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:exportReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_core:exportReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:exportReleaseConsumerProguardFiles' as it is up-to-date.
+work action resolve exportReleaseConsumerProguardFiles (project :firebase_core) (Thread[included builds,5,main]) started.
+FilterShrinkerRulesTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+:shared_preferences_android:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':shared_preferences_android:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :shared_preferences_android:generateReleaseResValues (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseResValues (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseResValues UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:generateReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:generateReleaseResValues' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:generateReleaseResources (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseResources UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:generateReleaseResources' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:generateReleaseResources' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:packageReleaseResources (Thread[included builds,5,main]) started.
+:shared_preferences_android:packageReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:packageReleaseResources UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:packageReleaseResources' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:packageReleaseResources' as it is up-to-date.
+work action resolve packageReleaseResources (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+:shared_preferences_android:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:parseReleaseLocalResources UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:parseReleaseLocalResources' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:parseReleaseLocalResources' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:generateReleaseRFile (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseRFile (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseRFile UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:generateReleaseRFile' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:generateReleaseRFile' as it is up-to-date.
+work action resolve package-aware-r.txt (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:compileReleaseKotlin (Thread[included builds,5,main]) started.
+:shared_preferences_android:compileReleaseKotlin (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:compileReleaseKotlin UP-TO-DATE
+Adding -Xuse-inline-scopes-numbers Kotlin compiler flag for task :shared_preferences_android:compileDebugAndroidTestKotlin
+Caching disabled for task ':shared_preferences_android:compileReleaseKotlin' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:compileReleaseKotlin' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:javaPreCompileRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:javaPreCompileRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:javaPreCompileRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:javaPreCompileRelease' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:javaPreCompileRelease' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+:shared_preferences_android:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:compileReleaseJavaWithJavac UP-TO-DATE
+Custom actions are attached to task ':shared_preferences_android:compileReleaseJavaWithJavac'.
+Caching disabled for task ':shared_preferences_android:compileReleaseJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:compileReleaseJavaWithJavac' as it is up-to-date.
+No compile result for :shared_preferences_android:compileReleaseJavaWithJavac
+No compile result for :shared_preferences_android:compileReleaseJavaWithJavac
+Resolve mutations for :shared_preferences_android:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseGeneratedProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:mergeReleaseGeneratedProguardFiles' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:shared_preferences_android:exportReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:exportReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:exportReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:exportReleaseConsumerProguardFiles' as it is up-to-date.
+work action resolve exportReleaseConsumerProguardFiles (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+FilterShrinkerRulesTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :app:buildKotlinToolingMetadata (Thread[included builds,5,main]) started.
+:app:buildKotlinToolingMetadata (Thread[included builds,5,main]) started.
+
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+Caching disabled for task ':app:buildKotlinToolingMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:buildKotlinToolingMetadata' as it is up-to-date.
+Resolve mutations for :app:checkReleaseDuplicateClasses (Thread[included builds,5,main]) started.
+:app:checkReleaseDuplicateClasses (Thread[included builds,5,main]) started.
+
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+Caching disabled for task ':app:checkReleaseDuplicateClasses' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkReleaseDuplicateClasses' as it is up-to-date.
+Resolve mutations for :app:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+:app:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':app:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :cloud_firestore:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+:cloud_firestore:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:writeReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':cloud_firestore:writeReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:writeReleaseAarMetadata' as it is up-to-date.
+work action resolve aar-metadata.properties (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+:firebase_auth:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:writeReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':firebase_auth:writeReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:writeReleaseAarMetadata' as it is up-to-date.
+work action resolve aar-metadata.properties (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+:firebase_core:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:writeReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':firebase_core:writeReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:writeReleaseAarMetadata' as it is up-to-date.
+work action resolve aar-metadata.properties (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+:shared_preferences_android:writeReleaseAarMetadata (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:writeReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:writeReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:writeReleaseAarMetadata' as it is up-to-date.
+work action resolve aar-metadata.properties (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:checkReleaseAarMetadata (Thread[included builds,5,main]) started.
+:app:checkReleaseAarMetadata (Thread[included builds,5,main]) started.
+
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+Caching disabled for task ':app:checkReleaseAarMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkReleaseAarMetadata' as it is up-to-date.
+Resolve mutations for :app:cleanMergeReleaseAssets (Thread[included builds,5,main]) started.
+:app:cleanMergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :app:cleanMergeReleaseAssets
+Caching disabled for task ':app:cleanMergeReleaseAssets' because:
+  Build cache is disabled
+Task ':app:cleanMergeReleaseAssets' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :app:mergeReleaseShaders (Thread[included builds,5,main]) started.
+:app:mergeReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseShaders UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeReleaseShaders' as it is up-to-date.
+Resolve mutations for :app:compileReleaseShaders (Thread[included builds,5,main]) started.
+:app:compileReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :app:compileReleaseShaders NO-SOURCE
+Skipping task ':app:compileReleaseShaders' as it has no source files and no previous output files.
+Resolve mutations for :app:generateReleaseAssets (Thread[included builds,5,main]) started.
+:app:generateReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :app:generateReleaseAssets UP-TO-DATE
+Skipping task ':app:generateReleaseAssets' as it has no actions.
+Resolve mutations for :cloud_firestore:mergeReleaseShaders (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseShaders UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:mergeReleaseShaders' as it is up-to-date.
+Resolve mutations for :cloud_firestore:compileReleaseShaders (Thread[included builds,5,main]) started.
+:cloud_firestore:compileReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:compileReleaseShaders NO-SOURCE
+Skipping task ':cloud_firestore:compileReleaseShaders' as it has no source files and no previous output files.
+Resolve mutations for :cloud_firestore:generateReleaseAssets (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseAssets UP-TO-DATE
+Skipping task ':cloud_firestore:generateReleaseAssets' as it has no actions.
+Resolve mutations for :cloud_firestore:mergeReleaseAssets (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseAssets UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseAssets' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:mergeReleaseAssets' as it is up-to-date.
+work action resolve mergeReleaseAssets (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:mergeReleaseShaders (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseShaders UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:mergeReleaseShaders' as it is up-to-date.
+Resolve mutations for :firebase_auth:compileReleaseShaders (Thread[included builds,5,main]) started.
+:firebase_auth:compileReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:compileReleaseShaders NO-SOURCE
+Skipping task ':firebase_auth:compileReleaseShaders' as it has no source files and no previous output files.
+Resolve mutations for :firebase_auth:generateReleaseAssets (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseAssets UP-TO-DATE
+Skipping task ':firebase_auth:generateReleaseAssets' as it has no actions.
+Resolve mutations for :firebase_auth:mergeReleaseAssets (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseAssets UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseAssets' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:mergeReleaseAssets' as it is up-to-date.
+work action resolve mergeReleaseAssets (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:mergeReleaseShaders (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseShaders UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:mergeReleaseShaders' as it is up-to-date.
+Resolve mutations for :firebase_core:compileReleaseShaders (Thread[included builds,5,main]) started.
+:firebase_core:compileReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:compileReleaseShaders NO-SOURCE
+Skipping task ':firebase_core:compileReleaseShaders' as it has no source files and no previous output files.
+Resolve mutations for :firebase_core:generateReleaseAssets (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseAssets UP-TO-DATE
+Skipping task ':firebase_core:generateReleaseAssets' as it has no actions.
+Resolve mutations for :firebase_core:mergeReleaseAssets (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseAssets UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseAssets' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:mergeReleaseAssets' as it is up-to-date.
+work action resolve mergeReleaseAssets (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:mergeReleaseShaders (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseShaders UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseShaders' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:mergeReleaseShaders' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:compileReleaseShaders (Thread[included builds,5,main]) started.
+:shared_preferences_android:compileReleaseShaders (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:compileReleaseShaders NO-SOURCE
+Skipping task ':shared_preferences_android:compileReleaseShaders' as it has no source files and no previous output files.
+Resolve mutations for :shared_preferences_android:generateReleaseAssets (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseAssets UP-TO-DATE
+Skipping task ':shared_preferences_android:generateReleaseAssets' as it has no actions.
+Resolve mutations for :shared_preferences_android:mergeReleaseAssets (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseAssets UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseAssets' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:mergeReleaseAssets' as it is up-to-date.
+work action resolve mergeReleaseAssets (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:mergeReleaseAssets (Thread[included builds,5,main]) started.
+:app:mergeReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseAssets
+Caching disabled for task ':app:mergeReleaseAssets' because:
+  Build cache is disabled
+  Simple merging task
+Task ':app:mergeReleaseAssets' is not up-to-date because:
+  Output property 'outputDir' file /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/assets/release/mergeReleaseAssets has been removed.
+The input changes require a full rebuild for incremental task ':app:mergeReleaseAssets'.
+Resolve mutations for :app:copyFlutterAssetsRelease (Thread[included builds,5,main]) started.
+:app:copyFlutterAssetsRelease (Thread[included builds,5,main]) started.
+
+> Task :app:copyFlutterAssetsRelease
+Caching disabled for task ':app:copyFlutterAssetsRelease' because:
+  Build cache is disabled
+  Not worth caching
+Task ':app:copyFlutterAssetsRelease' is not up-to-date because:
+  Output property 'destinationDir' file /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/assets/release/mergeReleaseAssets/flutter_assets has been removed.
+  Output property 'destinationDir' file /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/assets/release/mergeReleaseAssets/flutter_assets/AssetManifest.bin has been removed.
+  Output property 'destinationDir' file /home/devmahnx/Dev/foodly_ui-main/build/app/intermediates/assets/release/mergeReleaseAssets/flutter_assets/FontManifest.json has been removed.
+  and more...
+Resolve mutations for :app:generateReleaseResValues (Thread[included builds,5,main]) started.
+:app:generateReleaseResValues (Thread[included builds,5,main]) started.
+
+> Task :app:generateReleaseResValues UP-TO-DATE
+Caching disabled for task ':app:generateReleaseResValues' because:
+  Build cache is disabled
+Skipping task ':app:generateReleaseResValues' as it is up-to-date.
+Resolve mutations for :app:processReleaseGoogleServices (Thread[included builds,5,main]) started.
+:app:processReleaseGoogleServices (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseGoogleServices UP-TO-DATE
+Caching disabled for task ':app:processReleaseGoogleServices' because:
+  Build cache is disabled
+Skipping task ':app:processReleaseGoogleServices' as it is up-to-date.
+Resolve mutations for :app:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+:app:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':app:mapReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mapReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :app:generateReleaseResources (Thread[included builds,5,main]) started.
+:app:generateReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :app:generateReleaseResources UP-TO-DATE
+Caching disabled for task ':app:generateReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:generateReleaseResources' as it is up-to-date.
+Resolve mutations for :app:mergeReleaseResources (Thread[included builds,5,main]) started.
+:app:mergeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseResources UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:mergeReleaseResources' as it is up-to-date.
+Resolve mutations for :app:packageReleaseResources (Thread[included builds,5,main]) started.
+:app:packageReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :app:packageReleaseResources UP-TO-DATE
+Caching disabled for task ':app:packageReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:packageReleaseResources' as it is up-to-date.
+Resolve mutations for :app:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+:app:parseReleaseLocalResources (Thread[included builds,5,main]) started.
+
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+Caching disabled for task ':app:parseReleaseLocalResources' because:
+  Build cache is disabled
+Skipping task ':app:parseReleaseLocalResources' as it is up-to-date.
+Resolve mutations for :app:createReleaseCompatibleScreenManifests (Thread[included builds,5,main]) started.
+:app:createReleaseCompatibleScreenManifests (Thread[included builds,5,main]) started.
+
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+Caching disabled for task ':app:createReleaseCompatibleScreenManifests' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:createReleaseCompatibleScreenManifests' as it is up-to-date.
+Resolve mutations for :app:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+:app:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+Caching disabled for task ':app:extractDeepLinksRelease' because:
+  Build cache is disabled
+Skipping task ':app:extractDeepLinksRelease' as it is up-to-date.
+Resolve mutations for :cloud_firestore:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:extractDeepLinksRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:extractDeepLinksRelease' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:extractDeepLinksRelease' as it is up-to-date.
+work action resolve navigation.json (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:processReleaseManifest (Thread[included builds,5,main]) started.
+:cloud_firestore:processReleaseManifest (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:processReleaseManifest UP-TO-DATE
+Caching disabled for task ':cloud_firestore:processReleaseManifest' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:processReleaseManifest' as it is up-to-date.
+work action resolve AndroidManifest.xml (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+:firebase_auth:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:extractDeepLinksRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:extractDeepLinksRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:extractDeepLinksRelease' as it is up-to-date.
+work action resolve navigation.json (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:processReleaseManifest (Thread[included builds,5,main]) started.
+:firebase_auth:processReleaseManifest (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:processReleaseManifest UP-TO-DATE
+Caching disabled for task ':firebase_auth:processReleaseManifest' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:processReleaseManifest' as it is up-to-date.
+work action resolve AndroidManifest.xml (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+:firebase_core:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:extractDeepLinksRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:extractDeepLinksRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_core:extractDeepLinksRelease' as it is up-to-date.
+work action resolve navigation.json (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:processReleaseManifest (Thread[included builds,5,main]) started.
+:firebase_core:processReleaseManifest (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:processReleaseManifest UP-TO-DATE
+Caching disabled for task ':firebase_core:processReleaseManifest' because:
+  Build cache is disabled
+Skipping task ':firebase_core:processReleaseManifest' as it is up-to-date.
+work action resolve AndroidManifest.xml (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:extractDeepLinksRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:extractDeepLinksRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:extractDeepLinksRelease' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:extractDeepLinksRelease' as it is up-to-date.
+work action resolve navigation.json (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:processReleaseManifest (Thread[included builds,5,main]) started.
+:shared_preferences_android:processReleaseManifest (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:processReleaseManifest UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:processReleaseManifest' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:processReleaseManifest' as it is up-to-date.
+work action resolve AndroidManifest.xml (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:processReleaseMainManifest (Thread[included builds,5,main]) started.
+:app:processReleaseMainManifest (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseMainManifest UP-TO-DATE
+Caching disabled for task ':app:processReleaseMainManifest' because:
+  Build cache is disabled
+Skipping task ':app:processReleaseMainManifest' as it is up-to-date.
+Resolve mutations for :app:outputReleaseAppLinkSettings (Thread[included builds,5,main]) started.
+:app:outputReleaseAppLinkSettings (Thread[included builds,5,main]) started.
+
+> Task :app:outputReleaseAppLinkSettings UP-TO-DATE
+Caching disabled for task ':app:outputReleaseAppLinkSettings' because:
+  Build cache is disabled
+  Caching has not been enabled for the task
+Skipping task ':app:outputReleaseAppLinkSettings' as it is up-to-date.
+Resolve mutations for :app:processReleaseManifest (Thread[included builds,5,main]) started.
+:app:processReleaseManifest (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseManifest UP-TO-DATE
+Caching disabled for task ':app:processReleaseManifest' because:
+  Build cache is disabled
+Skipping task ':app:processReleaseManifest' as it is up-to-date.
+Resolve mutations for :app:processReleaseManifestForPackage (Thread[included builds,5,main]) started.
+:app:processReleaseManifestForPackage (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+Custom actions are attached to task ':app:processReleaseManifestForPackage'.
+Caching disabled for task ':app:processReleaseManifestForPackage' because:
+  Build cache is disabled
+Skipping task ':app:processReleaseManifestForPackage' as it is up-to-date.
+Resolve mutations for :app:processReleaseResources (Thread[included builds,5,main]) started.
+:app:processReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseResources UP-TO-DATE
+Registered task dependencies: app:releaseCompileClasspath
+Skipping misunderstood TO dep string: project :cloud_firestore
+Skipping misunderstood TO dep string: project :firebase_core
+Skipping misunderstood TO dep string: project :firebase_auth
+Skipping misunderstood TO dep string: project :firebase_core
+Skipping misunderstood TO dep string: project :firebase_core
+Skipping misunderstood TO dep string: project :shared_preferences_android
+Starting dependency analysis
+Caching disabled for task ':app:processReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:processReleaseResources' as it is up-to-date.
+Resolve mutations for :cloud_firestore:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:bundleLibCompileToJarRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:bundleLibCompileToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:bundleLibCompileToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+:firebase_auth:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:bundleLibCompileToJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:bundleLibCompileToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:bundleLibCompileToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:bundleLibCompileToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:bundleLibCompileToJarRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:bundleLibCompileToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:bundleLibCompileToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:compileReleaseKotlin (Thread[included builds,5,main]) started.
+:app:compileReleaseKotlin (Thread[included builds,5,main]) started.
+
+> Task :app:compileReleaseKotlin UP-TO-DATE
+Adding -Xuse-inline-scopes-numbers Kotlin compiler flag for task :app:compileDebugAndroidTestKotlin
+Registered task dependencies: app:kotlinCompilerClasspath
+Starting dependency analysis
+Registered task dependencies: app:kotlinCompilerPluginClasspathRelease
+Starting dependency analysis
+Caching disabled for task ':app:compileReleaseKotlin' because:
+  Build cache is disabled
+Skipping task ':app:compileReleaseKotlin' as it is up-to-date.
+Resolve mutations for :app:javaPreCompileRelease (Thread[included builds,5,main]) started.
+:app:javaPreCompileRelease (Thread[included builds,5,main]) started.
+
+> Task :app:javaPreCompileRelease UP-TO-DATE
+Caching disabled for task ':app:javaPreCompileRelease' because:
+  Build cache is disabled
+Skipping task ':app:javaPreCompileRelease' as it is up-to-date.
+Resolve mutations for :app:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+:app:compileReleaseJavaWithJavac (Thread[included builds,5,main]) started.
+
+> Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+Custom actions are attached to task ':app:compileReleaseJavaWithJavac'.
+Caching disabled for task ':app:compileReleaseJavaWithJavac' because:
+  Build cache is disabled
+Skipping task ':app:compileReleaseJavaWithJavac' as it is up-to-date.
+No compile result for :app:compileReleaseJavaWithJavac
+No compile result for :app:compileReleaseJavaWithJavac
+Resolve mutations for :cloud_firestore:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+:cloud_firestore:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:prepareReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':cloud_firestore:prepareReleaseArtProfile' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:prepareReleaseArtProfile' as it is up-to-date.
+work action resolve baseline-prof.txt (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+:firebase_auth:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:prepareReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':firebase_auth:prepareReleaseArtProfile' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:prepareReleaseArtProfile' as it is up-to-date.
+work action resolve baseline-prof.txt (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+:firebase_core:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:prepareReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':firebase_core:prepareReleaseArtProfile' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:prepareReleaseArtProfile' as it is up-to-date.
+work action resolve baseline-prof.txt (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+:shared_preferences_android:prepareReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:prepareReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:prepareReleaseArtProfile' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:prepareReleaseArtProfile' as it is up-to-date.
+work action resolve baseline-prof.txt (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:mergeReleaseArtProfile (Thread[included builds,5,main]) started.
+:app:mergeReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseArtProfile' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeReleaseArtProfile' as it is up-to-date.
+Resolve mutations for :cloud_firestore:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:bundleLibRuntimeToJarRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:bundleLibRuntimeToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:bundleLibRuntimeToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+:firebase_auth:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:bundleLibRuntimeToJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:bundleLibRuntimeToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:bundleLibRuntimeToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+:firebase_core:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:bundleLibRuntimeToJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:bundleLibRuntimeToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:bundleLibRuntimeToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:bundleLibRuntimeToJarRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:bundleLibRuntimeToJarRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:bundleLibRuntimeToJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:bundleLibRuntimeToJarRelease' as it is up-to-date.
+work action resolve classes.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:expandReleaseArtProfileWildcards (Thread[included builds,5,main]) started.
+:app:expandReleaseArtProfileWildcards (Thread[included builds,5,main]) started.
+
+> Task :app:expandReleaseArtProfileWildcards UP-TO-DATE
+Caching disabled for task ':app:expandReleaseArtProfileWildcards' because:
+  Build cache is disabled
+Skipping task ':app:expandReleaseArtProfileWildcards' as it is up-to-date.
+Resolve mutations for :app:extractProguardFiles (Thread[included builds,5,main]) started.
+:app:extractProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :app:extractProguardFiles UP-TO-DATE
+Caching disabled for task ':app:extractProguardFiles' because:
+  Build cache is disabled
+  Fast task
+Skipping task ':app:extractProguardFiles' as it is up-to-date.
+Resolve mutations for :app:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+:app:mergeReleaseGeneratedProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseGeneratedProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeReleaseGeneratedProguardFiles' as it is up-to-date.
+Resolve mutations for :app:processReleaseJavaRes (Thread[included builds,5,main]) started.
+:app:processReleaseJavaRes (Thread[included builds,5,main]) started.
+
+> Task :app:processReleaseJavaRes UP-TO-DATE
+file or directory '/home/devmahnx/Dev/foodly_ui-main/android/app/src/main/resources', not found
+file or directory '/home/devmahnx/Dev/foodly_ui-main/android/app/src/release/resources', not found
+file or directory '/home/devmahnx/Dev/foodly_ui-main/android/app/src/main/resources', not found
+file or directory '/home/devmahnx/Dev/foodly_ui-main/android/app/src/release/resources', not found
+Caching disabled for task ':app:processReleaseJavaRes' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:processReleaseJavaRes' as it is up-to-date.
+Resolve mutations for :cloud_firestore:processReleaseJavaRes (Thread[included builds,5,main]) started.
+:cloud_firestore:processReleaseJavaRes (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:processReleaseJavaRes NO-SOURCE
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/cloud_firestore-5.6.12/android/src/main/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/cloud_firestore-5.6.12/android/src/release/resources', not found
+Skipping task ':cloud_firestore:processReleaseJavaRes' as it has no source files and no previous output files.
+work action resolve out (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:processReleaseJavaRes (Thread[included builds,5,main]) started.
+:firebase_auth:processReleaseJavaRes (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:processReleaseJavaRes NO-SOURCE
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_auth-5.7.0/android/src/main/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_auth-5.7.0/android/src/release/resources', not found
+Skipping task ':firebase_auth:processReleaseJavaRes' as it has no source files and no previous output files.
+work action resolve out (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:processReleaseJavaRes (Thread[included builds,5,main]) started.
+:firebase_core:processReleaseJavaRes (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:processReleaseJavaRes NO-SOURCE
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_core-3.15.2/android/src/main/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/firebase_core-3.15.2/android/src/release/resources', not found
+Skipping task ':firebase_core:processReleaseJavaRes' as it has no source files and no previous output files.
+work action resolve out (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:processReleaseJavaRes (Thread[included builds,5,main]) started.
+:shared_preferences_android:processReleaseJavaRes (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:processReleaseJavaRes UP-TO-DATE
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.23/android/src/main/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.23/android/src/release/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.23/android/src/main/resources', not found
+file or directory '/home/devmahnx/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.23/android/src/release/resources', not found
+Caching disabled for task ':shared_preferences_android:processReleaseJavaRes' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:processReleaseJavaRes' as it is up-to-date.
+work action resolve out (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+:app:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:mergeReleaseJavaResource' as it is up-to-date.
+Resolve mutations for :app:mergeReleaseStartupProfile (Thread[included builds,5,main]) started.
+:app:mergeReleaseStartupProfile (Thread[included builds,5,main]) started.
+
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+Caching disabled for task ':app:mergeReleaseStartupProfile' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':app:mergeReleaseStartupProfile' as it is up-to-date.
+Resolve mutations for :app:minifyReleaseWithR8 (Thread[included builds,5,main]) started.
+:app:minifyReleaseWithR8 (Thread[included builds,5,main]) started.
+
+> Task :app:minifyReleaseWithR8 UP-TO-DATE
+Caching disabled for task ':app:minifyReleaseWithR8' because:
+  Build cache is disabled
+Skipping task ':app:minifyReleaseWithR8' as it is up-to-date.
+Resolve mutations for :app:compileReleaseArtProfile (Thread[included builds,5,main]) started.
+:app:compileReleaseArtProfile (Thread[included builds,5,main]) started.
+
+> Task :app:compileReleaseArtProfile UP-TO-DATE
+Caching disabled for task ':app:compileReleaseArtProfile' because:
+  Build cache is disabled
+Skipping task ':app:compileReleaseArtProfile' as it is up-to-date.
+Resolve mutations for :app:compressReleaseAssets (Thread[included builds,5,main]) started.
+:app:compressReleaseAssets (Thread[included builds,5,main]) started.
+
+> Task :app:compressReleaseAssets UP-TO-DATE
+Caching disabled for task ':app:compressReleaseAssets' because:
+  Build cache is disabled
+Skipping task ':app:compressReleaseAssets' as it is up-to-date.
+Resolve mutations for :app:extractReleaseVersionControlInfo (Thread[included builds,5,main]) started.
+:app:extractReleaseVersionControlInfo (Thread[included builds,5,main]) started.
+
+> Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+Caching disabled for task ':app:extractReleaseVersionControlInfo' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:extractReleaseVersionControlInfo' as it is up-to-date.
+Resolve mutations for :cloud_firestore:createFullJarRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:createFullJarRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:createFullJarRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:createFullJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:createFullJarRelease' as it is up-to-date.
+work action resolve full.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve full.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:extractProguardFiles (Thread[included builds,5,main]) started.
+:cloud_firestore:extractProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:extractProguardFiles UP-TO-DATE
+Caching disabled for task ':cloud_firestore:extractProguardFiles' because:
+  Build cache is disabled
+  Fast task
+Skipping task ':cloud_firestore:extractProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_core:createFullJarRelease (Thread[included builds,5,main]) started.
+:firebase_core:createFullJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:createFullJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:createFullJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:createFullJarRelease' as it is up-to-date.
+work action resolve full.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve full.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:extractProguardFiles (Thread[included builds,5,main]) started.
+:firebase_core:extractProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:extractProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_core:extractProguardFiles' because:
+  Build cache is disabled
+  Fast task
+Skipping task ':firebase_core:extractProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_core:generateReleaseLintModel (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseLintModel (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseLintModel UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseLintModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:generateReleaseLintModel' as it is up-to-date.
+work action resolve generateReleaseLintModel (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintModel (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+:firebase_core:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:prepareLintJarForPublish UP-TO-DATE
+Caching disabled for task ':firebase_core:prepareLintJarForPublish' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:prepareLintJarForPublish' as it is up-to-date.
+work action resolve lint.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve lint.jar (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:generateReleaseLintModel (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseLintModel (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseLintModel UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseLintModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:generateReleaseLintModel' as it is up-to-date.
+work action resolve generateReleaseLintModel (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintModel (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+:cloud_firestore:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:prepareLintJarForPublish UP-TO-DATE
+Caching disabled for task ':cloud_firestore:prepareLintJarForPublish' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:prepareLintJarForPublish' as it is up-to-date.
+work action resolve lint.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve lint.jar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:createFullJarRelease (Thread[included builds,5,main]) started.
+:firebase_auth:createFullJarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:createFullJarRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:createFullJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:createFullJarRelease' as it is up-to-date.
+work action resolve full.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve full.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:extractProguardFiles (Thread[included builds,5,main]) started.
+:firebase_auth:extractProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:extractProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_auth:extractProguardFiles' because:
+  Build cache is disabled
+  Fast task
+Skipping task ':firebase_auth:extractProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_auth:generateReleaseLintModel (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseLintModel (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseLintModel UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseLintModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:generateReleaseLintModel' as it is up-to-date.
+work action resolve generateReleaseLintModel (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintModel (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+:firebase_auth:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:prepareLintJarForPublish UP-TO-DATE
+Caching disabled for task ':firebase_auth:prepareLintJarForPublish' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:prepareLintJarForPublish' as it is up-to-date.
+work action resolve lint.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve lint.jar (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:createFullJarRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:createFullJarRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:createFullJarRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:createFullJarRelease' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:createFullJarRelease' as it is up-to-date.
+work action resolve full.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve full.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:extractProguardFiles (Thread[included builds,5,main]) started.
+:shared_preferences_android:extractProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:extractProguardFiles UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:extractProguardFiles' because:
+  Build cache is disabled
+  Fast task
+Skipping task ':shared_preferences_android:extractProguardFiles' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:generateReleaseLintModel (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseLintModel (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseLintModel UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:generateReleaseLintModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:generateReleaseLintModel' as it is up-to-date.
+work action resolve generateReleaseLintModel (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintModel (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+:shared_preferences_android:prepareLintJarForPublish (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:prepareLintJarForPublish UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:prepareLintJarForPublish' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:prepareLintJarForPublish' as it is up-to-date.
+work action resolve lint.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve lint.jar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:generateReleaseLintVitalReportModel (Thread[included builds,5,main]) started.
+:app:generateReleaseLintVitalReportModel (Thread[included builds,5,main]) started.
+
+> Task :app:generateReleaseLintVitalReportModel UP-TO-DATE
+Caching disabled for task ':app:generateReleaseLintVitalReportModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:generateReleaseLintVitalReportModel' as it is up-to-date.
+Resolve mutations for :cloud_firestore:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+:cloud_firestore:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:stripReleaseDebugSymbols NO-SOURCE
+Skipping task ':cloud_firestore:stripReleaseDebugSymbols' as it has no source files and no previous output files.
+Resolve mutations for :cloud_firestore:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+:cloud_firestore:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+Caching disabled for task ':cloud_firestore:copyReleaseJniLibsProjectAndLocalJars' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:copyReleaseJniLibsProjectAndLocalJars' as it is up-to-date.
+Resolve mutations for :cloud_firestore:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:extractDeepLinksForAarRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:extractDeepLinksForAarRelease' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:extractDeepLinksForAarRelease' as it is up-to-date.
+Resolve mutations for :cloud_firestore:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+:cloud_firestore:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:extractReleaseAnnotations UP-TO-DATE
+Caching disabled for task ':cloud_firestore:extractReleaseAnnotations' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:extractReleaseAnnotations' as it is up-to-date.
+Resolve mutations for :cloud_firestore:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':cloud_firestore:mergeReleaseConsumerProguardFiles' as it is up-to-date.
+Resolve mutations for :cloud_firestore:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseJavaResource UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:mergeReleaseJavaResource' as it is up-to-date.
+Resolve mutations for :cloud_firestore:syncReleaseLibJars (Thread[included builds,5,main]) started.
+:cloud_firestore:syncReleaseLibJars (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:syncReleaseLibJars UP-TO-DATE
+Caching disabled for task ':cloud_firestore:syncReleaseLibJars' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:syncReleaseLibJars' as it is up-to-date.
+Resolve mutations for :cloud_firestore:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+:cloud_firestore:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:bundleReleaseLocalLintAar UP-TO-DATE
+Caching disabled for task ':cloud_firestore:bundleReleaseLocalLintAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:bundleReleaseLocalLintAar' as it is up-to-date.
+work action resolve out.aar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve out.aar (project :cloud_firestore) (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+:firebase_auth:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:stripReleaseDebugSymbols NO-SOURCE
+Skipping task ':firebase_auth:stripReleaseDebugSymbols' as it has no source files and no previous output files.
+Resolve mutations for :firebase_auth:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+:firebase_auth:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+Caching disabled for task ':firebase_auth:copyReleaseJniLibsProjectAndLocalJars' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:copyReleaseJniLibsProjectAndLocalJars' as it is up-to-date.
+Resolve mutations for :firebase_auth:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+:firebase_auth:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:extractDeepLinksForAarRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:extractDeepLinksForAarRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:extractDeepLinksForAarRelease' as it is up-to-date.
+Resolve mutations for :firebase_auth:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+:firebase_auth:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:extractReleaseAnnotations UP-TO-DATE
+Caching disabled for task ':firebase_auth:extractReleaseAnnotations' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:extractReleaseAnnotations' as it is up-to-date.
+Resolve mutations for :firebase_auth:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_auth:mergeReleaseConsumerProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_auth:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseJavaResource UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:mergeReleaseJavaResource' as it is up-to-date.
+Resolve mutations for :firebase_auth:syncReleaseLibJars (Thread[included builds,5,main]) started.
+:firebase_auth:syncReleaseLibJars (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:syncReleaseLibJars UP-TO-DATE
+Caching disabled for task ':firebase_auth:syncReleaseLibJars' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:syncReleaseLibJars' as it is up-to-date.
+Resolve mutations for :firebase_auth:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+:firebase_auth:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:bundleReleaseLocalLintAar UP-TO-DATE
+Caching disabled for task ':firebase_auth:bundleReleaseLocalLintAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:bundleReleaseLocalLintAar' as it is up-to-date.
+work action resolve out.aar (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve out.aar (project :firebase_auth) (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+:firebase_core:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:stripReleaseDebugSymbols NO-SOURCE
+Skipping task ':firebase_core:stripReleaseDebugSymbols' as it has no source files and no previous output files.
+Resolve mutations for :firebase_core:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+:firebase_core:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+Caching disabled for task ':firebase_core:copyReleaseJniLibsProjectAndLocalJars' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:copyReleaseJniLibsProjectAndLocalJars' as it is up-to-date.
+Resolve mutations for :firebase_core:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+:firebase_core:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:extractDeepLinksForAarRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:extractDeepLinksForAarRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_core:extractDeepLinksForAarRelease' as it is up-to-date.
+Resolve mutations for :firebase_core:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+:firebase_core:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:extractReleaseAnnotations UP-TO-DATE
+Caching disabled for task ':firebase_core:extractReleaseAnnotations' because:
+  Build cache is disabled
+Skipping task ':firebase_core:extractReleaseAnnotations' as it is up-to-date.
+Resolve mutations for :firebase_core:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':firebase_core:mergeReleaseConsumerProguardFiles' as it is up-to-date.
+Resolve mutations for :firebase_core:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseJavaResource UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:mergeReleaseJavaResource' as it is up-to-date.
+Resolve mutations for :firebase_core:syncReleaseLibJars (Thread[included builds,5,main]) started.
+:firebase_core:syncReleaseLibJars (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:syncReleaseLibJars UP-TO-DATE
+Caching disabled for task ':firebase_core:syncReleaseLibJars' because:
+  Build cache is disabled
+Skipping task ':firebase_core:syncReleaseLibJars' as it is up-to-date.
+Resolve mutations for :firebase_core:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+:firebase_core:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:bundleReleaseLocalLintAar UP-TO-DATE
+Caching disabled for task ':firebase_core:bundleReleaseLocalLintAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:bundleReleaseLocalLintAar' as it is up-to-date.
+work action resolve out.aar (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve out.aar (project :firebase_core) (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+:shared_preferences_android:stripReleaseDebugSymbols (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:stripReleaseDebugSymbols NO-SOURCE
+Skipping task ':shared_preferences_android:stripReleaseDebugSymbols' as it has no source files and no previous output files.
+Resolve mutations for :shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+:shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:copyReleaseJniLibsProjectAndLocalJars' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:extractDeepLinksForAarRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:extractDeepLinksForAarRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:extractDeepLinksForAarRelease' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:extractDeepLinksForAarRelease' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+:shared_preferences_android:extractReleaseAnnotations (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:extractReleaseAnnotations UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:extractReleaseAnnotations' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:extractReleaseAnnotations' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseConsumerProguardFiles (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseConsumerProguardFiles UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseConsumerProguardFiles' because:
+  Build cache is disabled
+  Simple merging task
+Skipping task ':shared_preferences_android:mergeReleaseConsumerProguardFiles' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseJavaResource (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseJavaResource UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseJavaResource' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:mergeReleaseJavaResource' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:syncReleaseLibJars (Thread[included builds,5,main]) started.
+:shared_preferences_android:syncReleaseLibJars (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:syncReleaseLibJars UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:syncReleaseLibJars' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:syncReleaseLibJars' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+:shared_preferences_android:bundleReleaseLocalLintAar (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:bundleReleaseLocalLintAar UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:bundleReleaseLocalLintAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:bundleReleaseLocalLintAar' as it is up-to-date.
+work action resolve out.aar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve out.aar (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+:firebase_core:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:writeReleaseLintModelMetadata UP-TO-DATE
+Caching disabled for task ':firebase_core:writeReleaseLintModelMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:writeReleaseLintModelMetadata' as it is up-to-date.
+work action resolve lint-model-metadata.properties (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve lint-model-metadata.properties (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:lintVitalAnalyzeRelease UP-TO-DATE
+Caching disabled for task ':cloud_firestore:lintVitalAnalyzeRelease' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:lintVitalAnalyzeRelease' as it is up-to-date.
+work action resolve out (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve out (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+:cloud_firestore:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:writeReleaseLintModelMetadata UP-TO-DATE
+Caching disabled for task ':cloud_firestore:writeReleaseLintModelMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:writeReleaseLintModelMetadata' as it is up-to-date.
+work action resolve lint-model-metadata.properties (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve lint-model-metadata.properties (project :cloud_firestore) (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+ExtractAarTransform (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+:firebase_auth:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:lintVitalAnalyzeRelease UP-TO-DATE
+Caching disabled for task ':firebase_auth:lintVitalAnalyzeRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:lintVitalAnalyzeRelease' as it is up-to-date.
+work action resolve out (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve out (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+:firebase_auth:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:writeReleaseLintModelMetadata UP-TO-DATE
+Caching disabled for task ':firebase_auth:writeReleaseLintModelMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:writeReleaseLintModelMetadata' as it is up-to-date.
+work action resolve lint-model-metadata.properties (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve lint-model-metadata.properties (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+:firebase_core:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:lintVitalAnalyzeRelease UP-TO-DATE
+Caching disabled for task ':firebase_core:lintVitalAnalyzeRelease' because:
+  Build cache is disabled
+Skipping task ':firebase_core:lintVitalAnalyzeRelease' as it is up-to-date.
+work action resolve out (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve out (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:lintVitalAnalyzeRelease UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:lintVitalAnalyzeRelease' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:lintVitalAnalyzeRelease' as it is up-to-date.
+work action resolve out (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve out (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+:shared_preferences_android:writeReleaseLintModelMetadata (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:writeReleaseLintModelMetadata UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:writeReleaseLintModelMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:writeReleaseLintModelMetadata' as it is up-to-date.
+work action resolve lint-model-metadata.properties (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve lint-model-metadata.properties (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+:app:lintVitalAnalyzeRelease (Thread[included builds,5,main]) started.
+
+> Task :app:lintVitalAnalyzeRelease UP-TO-DATE
+Caching disabled for task ':app:lintVitalAnalyzeRelease' because:
+  Build cache is disabled
+Skipping task ':app:lintVitalAnalyzeRelease' as it is up-to-date.
+Resolve mutations for :cloud_firestore:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+:cloud_firestore:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:generateReleaseLintVitalModel UP-TO-DATE
+Caching disabled for task ':cloud_firestore:generateReleaseLintVitalModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:generateReleaseLintVitalModel' as it is up-to-date.
+work action resolve generateReleaseLintVitalModel (project :cloud_firestore) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintVitalModel (project :cloud_firestore) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_auth:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+:firebase_auth:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:generateReleaseLintVitalModel UP-TO-DATE
+Caching disabled for task ':firebase_auth:generateReleaseLintVitalModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:generateReleaseLintVitalModel' as it is up-to-date.
+work action resolve generateReleaseLintVitalModel (project :firebase_auth) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintVitalModel (project :firebase_auth) (Thread[included builds,5,main]) started.
+Resolve mutations for :firebase_core:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+:firebase_core:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:generateReleaseLintVitalModel UP-TO-DATE
+Caching disabled for task ':firebase_core:generateReleaseLintVitalModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:generateReleaseLintVitalModel' as it is up-to-date.
+work action resolve generateReleaseLintVitalModel (project :firebase_core) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintVitalModel (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :shared_preferences_android:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+:shared_preferences_android:generateReleaseLintVitalModel (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:generateReleaseLintVitalModel UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:generateReleaseLintVitalModel' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:generateReleaseLintVitalModel' as it is up-to-date.
+work action resolve generateReleaseLintVitalModel (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+work action resolve generateReleaseLintVitalModel (project :shared_preferences_android) (Thread[included builds,5,main]) started.
+Resolve mutations for :app:lintVitalReportRelease (Thread[included builds,5,main]) started.
+:app:lintVitalReportRelease (Thread[included builds,5,main]) started.
+
+> Task :app:lintVitalReportRelease UP-TO-DATE
+Caching disabled for task ':app:lintVitalReportRelease' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:lintVitalReportRelease' as it is up-to-date.
+Resolve mutations for :app:lintVitalRelease (Thread[included builds,5,main]) started.
+:app:lintVitalRelease (Thread[included builds,5,main]) started.
+
+> Task :app:lintVitalRelease
+Caching disabled for task ':app:lintVitalRelease' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Task ':app:lintVitalRelease' is not up-to-date because:
+  Task.upToDateWhen is false.
+Resolve mutations for :app:convertShrunkResourcesToBinaryRelease (Thread[included builds,5,main]) started.
+:app:convertShrunkResourcesToBinaryRelease (Thread[included builds,5,main]) started.
+
+> Task :app:convertShrunkResourcesToBinaryRelease UP-TO-DATE
+Custom actions are attached to task ':app:convertShrunkResourcesToBinaryRelease'.
+Caching disabled for task ':app:convertShrunkResourcesToBinaryRelease' because:
+  Build cache is disabled
+Skipping task ':app:convertShrunkResourcesToBinaryRelease' as it is up-to-date.
+Resolve mutations for :app:optimizeReleaseResources (Thread[included builds,5,main]) started.
+:app:optimizeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :app:optimizeReleaseResources UP-TO-DATE
+Custom actions are attached to task ':app:optimizeReleaseResources'.
+Caching disabled for task ':app:optimizeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':app:optimizeReleaseResources' as it is up-to-date.
+Resolve mutations for :app:collectReleaseDependencies (Thread[included builds,5,main]) started.
+:app:collectReleaseDependencies (Thread[included builds,5,main]) started.
+
+> Task :app:collectReleaseDependencies UP-TO-DATE
+Caching disabled for task ':app:collectReleaseDependencies' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:collectReleaseDependencies' as it is up-to-date.
+Resolve mutations for :app:sdkReleaseDependencyData (Thread[included builds,5,main]) started.
+:app:sdkReleaseDependencyData (Thread[included builds,5,main]) started.
+
+> Task :app:sdkReleaseDependencyData UP-TO-DATE
+Caching disabled for task ':app:sdkReleaseDependencyData' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:sdkReleaseDependencyData' as it is up-to-date.
+Resolve mutations for :app:validateSigningRelease (Thread[included builds,5,main]) started.
+:app:validateSigningRelease (Thread[included builds,5,main]) started.
+
+> Task :app:validateSigningRelease UP-TO-DATE
+Caching disabled for task ':app:validateSigningRelease' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:validateSigningRelease' as it is up-to-date.
+Resolve mutations for :app:writeReleaseAppMetadata (Thread[included builds,5,main]) started.
+:app:writeReleaseAppMetadata (Thread[included builds,5,main]) started.
+
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+Caching disabled for task ':app:writeReleaseAppMetadata' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:writeReleaseAppMetadata' as it is up-to-date.
+Resolve mutations for :app:writeReleaseSigningConfigVersions (Thread[included builds,5,main]) started.
+:app:writeReleaseSigningConfigVersions (Thread[included builds,5,main]) started.
+
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+Caching disabled for task ':app:writeReleaseSigningConfigVersions' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:writeReleaseSigningConfigVersions' as it is up-to-date.
+Resolve mutations for :app:packageRelease (Thread[included builds,5,main]) started.
+:app:packageRelease (Thread[included builds,5,main]) started.
+
+> Task :app:packageRelease UP-TO-DATE
+Custom actions are attached to task ':app:packageRelease'.
+Caching disabled for task ':app:packageRelease' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:packageRelease' as it is up-to-date.
+Resolve mutations for :app:createReleaseApkListingFileRedirect (Thread[included builds,5,main]) started.
+:app:createReleaseApkListingFileRedirect (Thread[included builds,5,main]) started.
+
+> Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+Caching disabled for task ':app:createReleaseApkListingFileRedirect' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:createReleaseApkListingFileRedirect' as it is up-to-date.
+Resolve mutations for :app:assembleRelease (Thread[included builds,5,main]) started.
+:app:assembleRelease (Thread[included builds,5,main]) started.
+
+> Task :app:assembleRelease
+Caching disabled for task ':app:assembleRelease' because:
+  Build cache is disabled
+Task ':app:assembleRelease' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :cloud_firestore:bundleReleaseAar (Thread[included builds,5,main]) started.
+:cloud_firestore:bundleReleaseAar (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:bundleReleaseAar UP-TO-DATE
+Caching disabled for task ':cloud_firestore:bundleReleaseAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:bundleReleaseAar' as it is up-to-date.
+Resolve mutations for :cloud_firestore:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+:cloud_firestore:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mapReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mapReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':cloud_firestore:mapReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :cloud_firestore:mergeReleaseResources (Thread[included builds,5,main]) started.
+:cloud_firestore:mergeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:mergeReleaseResources UP-TO-DATE
+Caching disabled for task ':cloud_firestore:mergeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:mergeReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_core:compileReleaseLibraryResources (Thread[included builds,5,main]) started.
+:firebase_core:compileReleaseLibraryResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:compileReleaseLibraryResources UP-TO-DATE
+Caching disabled for task ':firebase_core:compileReleaseLibraryResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:compileReleaseLibraryResources' as it is up-to-date.
+work action resolve out (project :firebase_core) (Thread[included builds,5,main]) started.
+Resolve mutations for :cloud_firestore:verifyReleaseResources (Thread[included builds,5,main]) started.
+:cloud_firestore:verifyReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:verifyReleaseResources UP-TO-DATE
+Caching disabled for task ':cloud_firestore:verifyReleaseResources' because:
+  Build cache is disabled
+Skipping task ':cloud_firestore:verifyReleaseResources' as it is up-to-date.
+Resolve mutations for :cloud_firestore:assembleRelease (Thread[included builds,5,main]) started.
+:cloud_firestore:assembleRelease (Thread[included builds,5,main]) started.
+
+> Task :cloud_firestore:assembleRelease UP-TO-DATE
+Skipping task ':cloud_firestore:assembleRelease' as it has no actions.
+Resolve mutations for :firebase_auth:bundleReleaseAar (Thread[included builds,5,main]) started.
+:firebase_auth:bundleReleaseAar (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:bundleReleaseAar UP-TO-DATE
+Caching disabled for task ':firebase_auth:bundleReleaseAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:bundleReleaseAar' as it is up-to-date.
+Resolve mutations for :firebase_auth:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+:firebase_auth:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mapReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':firebase_auth:mapReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_auth:mapReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :firebase_auth:mergeReleaseResources (Thread[included builds,5,main]) started.
+:firebase_auth:mergeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:mergeReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_auth:mergeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:mergeReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_auth:verifyReleaseResources (Thread[included builds,5,main]) started.
+:firebase_auth:verifyReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:verifyReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_auth:verifyReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_auth:verifyReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_auth:assembleRelease (Thread[included builds,5,main]) started.
+:firebase_auth:assembleRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_auth:assembleRelease UP-TO-DATE
+Skipping task ':firebase_auth:assembleRelease' as it has no actions.
+Resolve mutations for :firebase_core:bundleReleaseAar (Thread[included builds,5,main]) started.
+:firebase_core:bundleReleaseAar (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:bundleReleaseAar UP-TO-DATE
+Caching disabled for task ':firebase_core:bundleReleaseAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:bundleReleaseAar' as it is up-to-date.
+Resolve mutations for :firebase_core:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+:firebase_core:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mapReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':firebase_core:mapReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':firebase_core:mapReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :firebase_core:mergeReleaseResources (Thread[included builds,5,main]) started.
+:firebase_core:mergeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:mergeReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_core:mergeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:mergeReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_core:verifyReleaseResources (Thread[included builds,5,main]) started.
+:firebase_core:verifyReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:verifyReleaseResources UP-TO-DATE
+Caching disabled for task ':firebase_core:verifyReleaseResources' because:
+  Build cache is disabled
+Skipping task ':firebase_core:verifyReleaseResources' as it is up-to-date.
+Resolve mutations for :firebase_core:assembleRelease (Thread[included builds,5,main]) started.
+:firebase_core:assembleRelease (Thread[included builds,5,main]) started.
+
+> Task :firebase_core:assembleRelease UP-TO-DATE
+Skipping task ':firebase_core:assembleRelease' as it has no actions.
+Resolve mutations for :shared_preferences_android:bundleReleaseAar (Thread[included builds,5,main]) started.
+:shared_preferences_android:bundleReleaseAar (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:bundleReleaseAar UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:bundleReleaseAar' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:bundleReleaseAar' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+:shared_preferences_android:mapReleaseSourceSetPaths (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mapReleaseSourceSetPaths UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mapReleaseSourceSetPaths' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':shared_preferences_android:mapReleaseSourceSetPaths' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:mergeReleaseResources (Thread[included builds,5,main]) started.
+:shared_preferences_android:mergeReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:mergeReleaseResources UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:mergeReleaseResources' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:mergeReleaseResources' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:verifyReleaseResources (Thread[included builds,5,main]) started.
+:shared_preferences_android:verifyReleaseResources (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:verifyReleaseResources UP-TO-DATE
+Caching disabled for task ':shared_preferences_android:verifyReleaseResources' because:
+  Build cache is disabled
+Skipping task ':shared_preferences_android:verifyReleaseResources' as it is up-to-date.
+Resolve mutations for :shared_preferences_android:assembleRelease (Thread[included builds,5,main]) started.
+:shared_preferences_android:assembleRelease (Thread[included builds,5,main]) started.
+
+> Task :shared_preferences_android:assembleRelease UP-TO-DATE
+Skipping task ':shared_preferences_android:assembleRelease' as it has no actions.
+Build 707cb118-5415-4967-8f80-3e93299d8b04 is closed
+
+[Incubating] Problems report is available at: file:///home/devmahnx/Dev/foodly_ui-main/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 47s
+221 actionable tasks: 12 executed, 209 up-to-date

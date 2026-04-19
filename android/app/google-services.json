@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1076012274723",
+    "project_id": "foodly-99135",
+    "storage_bucket": "foodly-99135.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076012274723:android:0c1c278bb8d5a152ff0d96",
+        "android_client_info": {
+          "package_name": "io.devmahnx.ordereats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076012274723-9jrf2cke7g0r43v9l2qionsvhji2qbfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.devmahnx.ordereats",
+            "certificate_hash": "7372859a5e7b35b3f44f6ee6c245dd32fa2d0bc7"
+          }
+        },
+        {
+          "client_id": "1076012274723-98v25lq40uaoqh4mnkucprudu5m51ptu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAApg1kwmobKOObi32kB5RBSiJkOEaTgq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076012274723-98v25lq40uaoqh4mnkucprudu5m51ptu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1076012274723-eqkcsauu6gudtqp7vv9blinkcoeuaii1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.devmahnx.ordereats"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

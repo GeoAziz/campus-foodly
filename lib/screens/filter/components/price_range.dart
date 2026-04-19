@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../components/section_title.dart';
 import '../../../constants.dart';
+import '../../../data/providers/filter_provider.dart';
 
-class PriceRange extends StatelessWidget {
+class PriceRange extends ConsumerWidget {
   const PriceRange({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final filterState = ref.watch(restaurantFilterProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SectionTitle(
           title: "Price Range",
-          press: () {},
+          press: () =>
+              ref.read(restaurantFilterProvider.notifier).setPriceTier(5),
           isMainSection: false,
         ),
         const SizedBox(height: defaultPadding),
@@ -29,8 +33,10 @@ class PriceRange extends StatelessWidget {
                   padding: const EdgeInsets.only(right: defaultPadding),
                   child: RoundedButton(
                     index: index,
-                    isActive: index == 2, // for demo just select 3rd item
-                    press: () {},
+                    isActive: (index + 1) == filterState.maxPriceTier,
+                    press: () => ref
+                        .read(restaurantFilterProvider.notifier)
+                        .setPriceTier(index + 1),
                   ),
                 ),
               ),
@@ -66,8 +72,9 @@ class RoundedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
             side: BorderSide(
-                color:
-                    isActive ? primaryColor : bodyTextColor.withOpacity(0.1)),
+                color: isActive
+                    ? primaryColor
+                    : bodyTextColor.withValues(alpha: 0.1)),
           ),
         ),
         onPressed: press,

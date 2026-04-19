@@ -1,0 +1,86 @@
+[
+  {
+    "id": "profile_menu_items--47e46eae15b3523c",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 4
+    },
+    "raw": {
+      "subTitle": "Add Facebook, Twitter etc ",
+      "svgSrc": "assets/icons/fb.svg",
+      "title": "Add Social Account"
+    }
+  },
+  {
+    "id": "profile_menu_items--7f5fe792343af3c2",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 5
+    },
+    "raw": {
+      "subTitle": "Get \\$10 for reffering friends",
+      "svgSrc": "assets/icons/share.svg",
+      "title": "Refer to Friends"
+    }
+  },
+  {
+    "id": "profile_menu_items-1861518ca9c5b9fd",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 0
+    },
+    "raw": {
+      "subTitle": "Change your account information",
+      "svgSrc": "assets/icons/profile.svg",
+      "title": "Profile Information"
+    }
+  },
+  {
+    "id": "profile_menu_items-1cdefe3875b56489",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 3
+    },
+    "raw": {
+      "subTitle": "Add or remove your delivery locations",
+      "svgSrc": "assets/icons/marker.svg",
+      "title": "Locations"
+    }
+  },
+  {
+    "id": "profile_menu_items-701a7fab3dbe626d",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 2
+    },
+    "raw": {
+      "subTitle": "Add your credit & debit cards",
+      "svgSrc": "assets/icons/card.svg",
+      "title": "Payment Methods"
+    }
+  },
+  {
+    "id": "profile_menu_items-7abe4fefad0c435c",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 1
+    },
+    "raw": {
+      "subTitle": "Change your password",
+      "svgSrc": "assets/icons/lock.svg",
+      "title": "Change Password"
+    }
+  }
+]

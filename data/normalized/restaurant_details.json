@@ -1,0 +1,28 @@
+[
+  {
+    "id": "restaurant_details_23d65bdcb8d4",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "deliveryFee": "Free",
+    "deliveryTime": 25,
+    "foodTypes": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "ratingCount": 200,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant_details_global_default",
+    "restaurantId": "",
+    "deliveryFee": "Free",
+    "deliveryTime": 25,
+    "foodTypes": [
+      "Chinese",
+      "American",
+      "Deshi food"
+    ],
+    "ratingCount": 200,
+    "takeAwayLabel": "Take away"
+  }
+]

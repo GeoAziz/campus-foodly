@@ -1,0 +1,74 @@
+[
+  {
+    "id": "menu_items--13562ad21c4fc2df",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Most Populars",
+    "image": "assets/images/featured_items_2.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  },
+  {
+    "id": "menu_items-3cff023fa6d40fcf",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Seafood",
+    "image": "assets/images/featured_items_1.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  },
+  {
+    "id": "menu_items-77b679ead01b63d7",
+    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Appetizers",
+    "image": "assets/images/featured_items_3.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  },
+  {
+    "id": "menu_items-global-most-populars",
+    "restaurantId": "",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Most Populars",
+    "image": "assets/images/featured_items_2.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  },
+  {
+    "id": "menu_items-global-seafood",
+    "restaurantId": "",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Seafood",
+    "image": "assets/images/featured_items_1.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  },
+  {
+    "id": "menu_items-global-appetizers",
+    "restaurantId": "",
+    "description": "Shortbread, chocolate turtle cookies, and red velvet.",
+    "foodType": "Chinese",
+    "category": "Appetizers",
+    "image": "assets/images/featured_items_3.png",
+    "isAvailable": true,
+    "name": "Cookie Sandwich",
+    "price": 7.4,
+    "priceRange": "$$"
+  }
+]

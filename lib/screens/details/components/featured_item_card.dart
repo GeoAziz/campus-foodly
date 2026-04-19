@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../components/app_image.dart';
 import '../../../components/small_dot.dart';
 import '../../../constants.dart';
 
@@ -19,7 +20,7 @@ class FeaturedItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle textStyle = Theme.of(context).textTheme.labelLarge!.copyWith(
-          color: titleColor.withOpacity(0.64),
+          color: titleColor.withValues(alpha: 0.64),
           fontWeight: FontWeight.normal,
         );
     return InkWell(
@@ -36,10 +37,7 @@ class FeaturedItemCard extends StatelessWidget {
                 aspectRatio: 1,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.cover,
-                  ),
+                  child: AppImage(source: image, fit: BoxFit.cover),
                 ),
               ),
               const SizedBox(height: 8),

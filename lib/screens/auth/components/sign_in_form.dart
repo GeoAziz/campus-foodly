@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
-import '../../findRestaurants/find_restaurants_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/routes.dart';
 import '../../../constants.dart';
-import '../forgot_password_screen.dart';
+import '../../../data/providers/auth_provider.dart';
 
-class SignInForm extends StatefulWidget {
+class SignInForm extends ConsumerStatefulWidget {
   const SignInForm({super.key});
 
   @override
-  State<SignInForm> createState() => _SignInFormState();
+  ConsumerState<SignInForm> createState() => _SignInFormState();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _SignInFormState extends ConsumerState<SignInForm> {
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   bool _obscureText = true;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +34,8 @@ class _SignInFormState extends State<SignInForm> {
       child: Column(
         children: [
           TextFormField(
+            controller: _emailController,
             validator: emailValidator.call,
-            onSaved: (value) {},
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(hintText: "Email Address"),
@@ -33,9 +44,9 @@ class _SignInFormState extends State<SignInForm> {
 
           // Password Field
           TextFormField(
+            controller: _passwordController,
             obscureText: _obscureText,
             validator: passwordValidator.call,
-            onSaved: (value) {},
             decoration: InputDecoration(
               hintText: "Password",
               suffixIcon: GestureDetector(
@@ -54,12 +65,7 @@ class _SignInFormState extends State<SignInForm> {
 
           // Forget Password
           GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ForgotPasswordScreen(),
-              ),
-            ),
+            onTap: () => context.pushNamed(AppRoutes.forgotPassword),
             child: Text(
               "Forget Password?",
               style: Theme.of(context)
@@ -72,17 +78,31 @@ class _SignInFormState extends State<SignInForm> {
 
           // Sign In Button
           ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
+            onPressed: () async {
+              if (!_formKey.currentState!.validate()) {
+                return;
+              }
 
-                // just for demo
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FindRestaurantsScreen(),
-                  ),
-                  (_) => true,
+              final success =
+                  await ref.read(authControllerProvider.notifier).signIn(
+                        email: _emailController.text.trim(),
+                        password: _passwordController.text,
+                      );
+
+              if (!context.mounted) {
+                return;
+              }
+
+              if (success) {
+                context.goNamed(AppRoutes.findRestaurants);
+                return;
+              }
+
+              final authState = ref.read(authControllerProvider);
+              final error = authState.error;
+              if (error != null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(authErrorMessage(error))),
                 );
               }
             },

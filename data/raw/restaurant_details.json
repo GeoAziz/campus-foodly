@@ -1,0 +1,28 @@
+[
+  {
+    "id": "restaurant_details_23d65bdcb8d4",
+    "source_file": "lib/screens/details/components/restaurrant_info.dart",
+    "source_symbol": "RestaurantInfo",
+    "source_line": 1,
+    "data": {
+      "deliveryInfo": [
+        {
+          "icon": "assets/icons/delivery.svg",
+          "subText": "Delivery",
+          "text": "Free"
+        },
+        {
+          "icon": "assets/icons/clock.svg",
+          "subText": "Minutes",
+          "text": "25"
+        },
+        {
+          "icon": null,
+          "subText": null,
+          "text": null
+        }
+      ],
+      "name": null
+    }
+  }
+]

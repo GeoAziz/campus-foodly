@@ -1,73 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../components/cards/medium/restaurant_info_medium_card.dart';
-import '../../../components/scalton/medium_card_scalton.dart';
-import '../../../constants.dart';
-import '../../../demo_data.dart';
-import '../../details/details_screen.dart';
+import '../../../components/skeleton/medium_card_skeleton.dart';
+import '../../../core/constants.dart';
+import '../../../core/routes.dart';
+import '../../../data/providers/restaurant_provider.dart';
 
-class MediumCardList extends StatefulWidget {
-  const MediumCardList({super.key});
+class MediumCardList extends ConsumerWidget {
+  const MediumCardList({
+    super.key,
+    this.heroTagPrefix = 'medium',
+    this.showOnlyFeatured = false,
+  });
 
-  @override
-  State<MediumCardList> createState() => _MediumCardListState();
-}
-
-class _MediumCardListState extends State<MediumCardList> {
-  bool isLoading = true;
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 1), () {
-      setState(() {
-        isLoading = false;
-      });
-    });
-  }
+  final String heroTagPrefix;
+  final bool showOnlyFeatured;
 
   @override
-  Widget build(BuildContext context) {
-    // only for demo
-    List data = demoMediumCardData..shuffle();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final restaurantsAsync = showOnlyFeatured
+        ? ref.watch(featuredRestaurantsProvider)
+        : ref.watch(restaurantsProvider);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           width: double.infinity,
           height: 254,
-          child: isLoading
-              ? buildFeaturedPartnersLoadingIndicator()
-              : ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: data.length,
-                  itemBuilder: (context, index) => Padding(
+          child: restaurantsAsync.when(
+            loading: buildFeaturedPartnersLoadingIndicator,
+            error: (error, stackTrace) => Center(
+              child: Text('Unable to load restaurants: ${error.toString()}'),
+            ),
+            data: (restaurants) {
+              if (restaurants.isEmpty) {
+                return Center(
+                  child: Text(
+                    showOnlyFeatured
+                        ? 'No featured partners available.'
+                        : 'No restaurants available.',
+                  ),
+                );
+              }
+
+              return ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: restaurants.length,
+                itemBuilder: (context, index) {
+                  final restaurant = restaurants[index];
+                  return Padding(
                     padding: EdgeInsets.only(
                       left: defaultPadding,
-                      right: (data.length - 1) == index ? defaultPadding : 0,
+                      right: (restaurants.length - 1) == index
+                          ? defaultPadding
+                          : 0,
                     ),
                     child: RestaurantInfoMediumCard(
-                      image: data[index]['image'],
-                      name: data[index]['name'],
-                      location: data[index]['location'],
-                      delivertTime: 25,
-                      rating: 4.6,
-                      press: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DetailsScreen(),
-                          ),
-                        );
-                      },
+                      heroTag: '$heroTagPrefix-${restaurant.id}-$index',
+                      image: restaurant.image,
+                      name: restaurant.name,
+                      location: restaurant.location,
+                      deliveryTime: restaurant.deliveryTime,
+                      rating: restaurant.rating,
+                      press: () => context.pushNamed(
+                        AppRoutes.details,
+                        extra: restaurant,
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
+              );
+            },
+          ),
         ),
       ],
     );
   }
 
-  SingleChildScrollView buildFeaturedPartnersLoadingIndicator() {
+  Widget buildFeaturedPartnersLoadingIndicator() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -75,7 +88,7 @@ class _MediumCardListState extends State<MediumCardList> {
           2,
           (index) => const Padding(
             padding: EdgeInsets.only(left: defaultPadding),
-            child: MediumCardScalton(),
+            child: MediumCardSkeleton(),
           ),
         ),
       ),

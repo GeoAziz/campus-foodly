@@ -1,0 +1,22 @@
+[
+  {
+    "id": "screen_literals--54250a03211fa31a",
+    "entity": "screen_literals",
+    "asset": "assets/images/featured_items_${index + 1}.png",
+    "source": {
+      "file": "lib/screens/details/components/featured_items.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    }
+  },
+  {
+    "id": "screen_literals--3e675263a77caf96",
+    "entity": "screen_literals",
+    "asset": "assets/images/featured_items_${index + 1}.png",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    }
+  }
+]

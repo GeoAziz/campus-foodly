@@ -1,0 +1,47 @@
+[
+  {
+    "id": "categories--1424ccfe0bb3c0ed",
+    "isActive": false,
+    "title": "Pizza"
+  },
+  {
+    "id": "categories--20089887fea9bfaf",
+    "isActive": false,
+    "title": "Brunch"
+  },
+  {
+    "id": "categories--442230fa3b9d8700",
+    "isActive": false,
+    "title": "Dinner"
+  },
+  {
+    "id": "categories--70409da798e1cfa3",
+    "isActive": false,
+    "title": "Breakfast"
+  },
+  {
+    "id": "categories-06e5b705ae30b243",
+    "isActive": false,
+    "title": "Soups"
+  },
+  {
+    "id": "categories-39e27a49d6e67693",
+    "isActive": false,
+    "title": "All"
+  },
+  {
+    "id": "categories-4605e5493e58f5f6",
+    "isActive": false,
+    "title": "Salads"
+  },
+  {
+    "id": "categories-476fb953d894aa76",
+    "isActive": true,
+    "title": "Burgers"
+  },
+  {
+    "id": "categories-579e55f6aa2fb3af",
+    "isActive": false,
+    "title": "Chinese"
+  }
+]

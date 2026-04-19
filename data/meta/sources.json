@@ -1,0 +1,787 @@
+[
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoBigImages",
+    "index": 0
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoBigImages",
+    "index": 1
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoBigImages",
+    "index": 2
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoBigImages",
+    "index": 3
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoMediumCardData",
+    "index": 0
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoMediumCardData",
+    "index": 1
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoMediumCardData",
+    "index": 2
+  },
+  {
+    "file": "lib/demo_data.dart",
+    "block": "demoMediumCardData",
+    "index": 3
+  },
+  {
+    "file": "lib/entry_point.dart",
+    "block": "_navitems",
+    "index": 0
+  },
+  {
+    "file": "lib/entry_point.dart",
+    "block": "_navitems",
+    "index": 1
+  },
+  {
+    "file": "lib/entry_point.dart",
+    "block": "_navitems",
+    "index": 2
+  },
+  {
+    "file": "lib/entry_point.dart",
+    "block": "_navitems",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 4
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 5
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 6
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "choiceOfTopCookies",
+    "index": 7
+  },
+  {
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/addToOrder/components/info.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/addToOrder/components/required_section_title.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/addToOrder/components/rounded_button.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/addToOrder/components/rounded_checkedbox_list_tile.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/components/sign_in_form.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/forgot_password_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/reset_email_sent_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/sign_in_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/sign_up_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/featured_item_card.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/featured_items.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoTabs",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoTabs",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoTabs",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoTabs",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoTabs",
+    "index": 4
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoData_List.generate",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoData_List.generate",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "demoData_List.generate",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/details/components/iteams.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/components/restaurrant_info.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/details/details_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/featured/components/body.dart",
+    "block": "inline_restaurant_cards",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/featured/components/body.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/featured/featurred_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 4
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 5
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 6
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 7
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "demoCategories",
+    "index": 8
+  },
+  {
+    "file": "lib/screens/filter/components/categories.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "block": "demoDietaries",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "block": "demoDietaries",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "block": "demoDietaries",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "block": "demoDietaries",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/components/price_range.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/filter/filter_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/findRestaurants/find_restaurants_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/home/components/medium_card_list.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/home/components/promotion_banner.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/home/home_screen.dart",
+    "block": "inline_restaurant_cards",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/home/home_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/onboarding/components/onboard_content.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "block": "demoData",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "block": "demoData",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "block": "demoData",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/orderDetails/components/order_item_card.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/orderDetails/components/price_row.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/orderDetails/components/total_price.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "block": "demoItems",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "block": "demoItems",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "block": "demoItems",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/phoneLogin/components/otp_form.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/phoneLogin/number_verify_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/phoneLogin/phone_login_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 1
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 2
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 3
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 4
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 5
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/profile/profile_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/search/components/body.dart",
+    "block": "inline_restaurant_cards",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/search/components/body.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/search/search_screen.dart",
+    "block": "inline_restaurant_cards",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/search/search_screen.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/signUp/components/body.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/signUp/components/sign_up_form.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "color_constants",
+    "index": 0
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "color_constants",
+    "index": 1
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "color_constants",
+    "index": 2
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "color_constants",
+    "index": 3
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "color_constants",
+    "index": 4
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "scalar_constants",
+    "index": 5
+  },
+  {
+    "file": "lib/constants.dart",
+    "block": "scalar_constants",
+    "index": 6
+  },
+  {
+    "file": "assets/Illustrations/Illustrations_1.svg",
+    "block": "filesystem_assets",
+    "index": 0
+  },
+  {
+    "file": "assets/Illustrations/Illustrations_2.svg",
+    "block": "filesystem_assets",
+    "index": 1
+  },
+  {
+    "file": "assets/Illustrations/Illustrations_3.svg",
+    "block": "filesystem_assets",
+    "index": 2
+  },
+  {
+    "file": "assets/font/SF Pro Text/SFProText-Bold.ttf",
+    "block": "filesystem_assets",
+    "index": 3
+  },
+  {
+    "file": "assets/font/SF Pro Text/SFProText-Medium.ttf",
+    "block": "filesystem_assets",
+    "index": 4
+  },
+  {
+    "file": "assets/font/SF Pro Text/SFProText-Regular.ttf",
+    "block": "filesystem_assets",
+    "index": 5
+  },
+  {
+    "file": "assets/font/SF Pro Text/SFProText-Semibold.ttf",
+    "block": "filesystem_assets",
+    "index": 6
+  },
+  {
+    "file": "assets/icons/back.svg",
+    "block": "filesystem_assets",
+    "index": 7
+  },
+  {
+    "file": "assets/icons/camera.svg",
+    "block": "filesystem_assets",
+    "index": 8
+  },
+  {
+    "file": "assets/icons/card.svg",
+    "block": "filesystem_assets",
+    "index": 9
+  },
+  {
+    "file": "assets/icons/cart.svg",
+    "block": "filesystem_assets",
+    "index": 10
+  },
+  {
+    "file": "assets/icons/clock.svg",
+    "block": "filesystem_assets",
+    "index": 11
+  },
+  {
+    "file": "assets/icons/close.svg",
+    "block": "filesystem_assets",
+    "index": 12
+  },
+  {
+    "file": "assets/icons/delivery.svg",
+    "block": "filesystem_assets",
+    "index": 13
+  },
+  {
+    "file": "assets/icons/document.svg",
+    "block": "filesystem_assets",
+    "index": 14
+  },
+  {
+    "file": "assets/icons/done.svg",
+    "block": "filesystem_assets",
+    "index": 15
+  },
+  {
+    "file": "assets/icons/facebook.svg",
+    "block": "filesystem_assets",
+    "index": 16
+  },
+  {
+    "file": "assets/icons/fast-delivery.svg",
+    "block": "filesystem_assets",
+    "index": 17
+  },
+  {
+    "file": "assets/icons/fb.svg",
+    "block": "filesystem_assets",
+    "index": 18
+  },
+  {
+    "file": "assets/icons/fire.svg",
+    "block": "filesystem_assets",
+    "index": 19
+  },
+  {
+    "file": "assets/icons/food.svg",
+    "block": "filesystem_assets",
+    "index": 20
+  },
+  {
+    "file": "assets/icons/forward.svg",
+    "block": "filesystem_assets",
+    "index": 21
+  },
+  {
+    "file": "assets/icons/google.svg",
+    "block": "filesystem_assets",
+    "index": 22
+  },
+  {
+    "file": "assets/icons/home.svg",
+    "block": "filesystem_assets",
+    "index": 23
+  },
+  {
+    "file": "assets/icons/invisible.svg",
+    "block": "filesystem_assets",
+    "index": 24
+  },
+  {
+    "file": "assets/icons/location.svg",
+    "block": "filesystem_assets",
+    "index": 25
+  },
+  {
+    "file": "assets/icons/lock.svg",
+    "block": "filesystem_assets",
+    "index": 26
+  },
+  {
+    "file": "assets/icons/logout.svg",
+    "block": "filesystem_assets",
+    "index": 27
+  },
+  {
+    "file": "assets/icons/marker.svg",
+    "block": "filesystem_assets",
+    "index": 28
+  },
+  {
+    "file": "assets/icons/minus.svg",
+    "block": "filesystem_assets",
+    "index": 29
+  },
+  {
+    "file": "assets/icons/notify.svg",
+    "block": "filesystem_assets",
+    "index": 30
+  },
+  {
+    "file": "assets/icons/order.svg",
+    "block": "filesystem_assets",
+    "index": 31
+  },
+  {
+    "file": "assets/icons/phone.svg",
+    "block": "filesystem_assets",
+    "index": 32
+  },
+  {
+    "file": "assets/icons/plus.svg",
+    "block": "filesystem_assets",
+    "index": 33
+  },
+  {
+    "file": "assets/icons/profile.svg",
+    "block": "filesystem_assets",
+    "index": 34
+  },
+  {
+    "file": "assets/icons/rating.svg",
+    "block": "filesystem_assets",
+    "index": 35
+  },
+  {
+    "file": "assets/icons/recomended.svg",
+    "block": "filesystem_assets",
+    "index": 36
+  },
+  {
+    "file": "assets/icons/search.svg",
+    "block": "filesystem_assets",
+    "index": 37
+  },
+  {
+    "file": "assets/icons/share.svg",
+    "block": "filesystem_assets",
+    "index": 38
+  },
+  {
+    "file": "assets/icons/visible.svg",
+    "block": "filesystem_assets",
+    "index": 39
+  },
+  {
+    "file": "assets/images/Banner.png",
+    "block": "filesystem_assets",
+    "index": 40
+  },
+  {
+    "file": "assets/images/Header-image.png",
+    "block": "filesystem_assets",
+    "index": 41
+  },
+  {
+    "file": "assets/images/big_1.png",
+    "block": "filesystem_assets",
+    "index": 42
+  },
+  {
+    "file": "assets/images/big_2.png",
+    "block": "filesystem_assets",
+    "index": 43
+  },
+  {
+    "file": "assets/images/big_3.png",
+    "block": "filesystem_assets",
+    "index": 44
+  },
+  {
+    "file": "assets/images/big_4.png",
+    "block": "filesystem_assets",
+    "index": 45
+  },
+  {
+    "file": "assets/images/featured_items_1.png",
+    "block": "filesystem_assets",
+    "index": 46
+  },
+  {
+    "file": "assets/images/featured_items_2.png",
+    "block": "filesystem_assets",
+    "index": 47
+  },
+  {
+    "file": "assets/images/featured_items_3.png",
+    "block": "filesystem_assets",
+    "index": 48
+  },
+  {
+    "file": "assets/images/medium_1.png",
+    "block": "filesystem_assets",
+    "index": 49
+  },
+  {
+    "file": "assets/images/medium_2.png",
+    "block": "filesystem_assets",
+    "index": 50
+  },
+  {
+    "file": "assets/images/medium_3.png",
+    "block": "filesystem_assets",
+    "index": 51
+  },
+  {
+    "file": "assets/images/medium_4.png",
+    "block": "filesystem_assets",
+    "index": 52
+  }
+]

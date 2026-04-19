@@ -8,9 +8,11 @@ class BigCardImageSlide extends StatefulWidget {
   const BigCardImageSlide({
     super.key,
     required this.images,
+    this.heroTag,
   });
 
   final List images;
+  final String? heroTag;
 
   @override
   State<BigCardImageSlide> createState() => _BigCardImageSlideState();
@@ -32,8 +34,10 @@ class _BigCardImageSlideState extends State<BigCardImageSlide> {
               });
             },
             itemCount: widget.images.length,
-            itemBuilder: (context, index) =>
-                BigCardImage(image: widget.images[index]),
+            itemBuilder: (context, index) => BigCardImage(
+              image: widget.images[index],
+              heroTag: index == 0 ? widget.heroTag : null,
+            ),
           ),
           Positioned(
             bottom: defaultPadding,

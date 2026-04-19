@@ -1,34 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'constants.dart';
+import 'data/providers/ui_state_provider.dart';
 import 'screens/home/home_screen.dart';
-import 'screens/orderDetails/order_details_screen.dart';
+import 'screens/order_details/order_details_screen.dart';
 import 'screens/profile/profile_screen.dart';
 import 'screens/search/search_screen.dart';
 
-class EntryPoint extends StatefulWidget {
+class EntryPoint extends ConsumerWidget {
   const EntryPoint({super.key});
 
-  @override
-  State<EntryPoint> createState() => _EntryPointState();
-}
-
-class _EntryPointState extends State<EntryPoint> {
-  // Bydefault first one is selected
-  int _selectedIndex = 0;
-
-  // List of nav items
-  final List<Map<String, dynamic>> _navitems = [
-    {"icon": "assets/icons/home.svg", "title": "Home"},
-    {"icon": "assets/icons/search.svg", "title": "Search"},
-    {"icon": "assets/icons/order.svg", "title": "Orders"},
-    {"icon": "assets/icons/profile.svg", "title": "Profile"},
+  static final List<Map<String, dynamic>> _navitems = [
+    {'icon': 'assets/icons/home.svg', 'title': 'Home'},
+    {'icon': 'assets/icons/search.svg', 'title': 'Search'},
+    {'icon': 'assets/icons/order.svg', 'title': 'Orders'},
+    {'icon': 'assets/icons/profile.svg', 'title': 'Profile'},
   ];
 
-// Screens
-  final List<Widget> _screens = [
+  static final List<Widget> _screens = [
     const HomeScreen(),
     const SearchScreen(),
     const OrderDetailsScreen(),
@@ -36,18 +28,18 @@ class _EntryPointState extends State<EntryPoint> {
   ];
 
   @override
-  Widget build(BuildContext context) {
-    /// If you set your home screen as first screen make sure call [SizeConfig().init(context)]
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedIndex = ref.watch(entryTabIndexProvider);
 
     return Scaffold(
-      body: _screens[_selectedIndex],
+      body: IndexedStack(
+        index: selectedIndex,
+        children: _screens,
+      ),
       bottomNavigationBar: CupertinoTabBar(
-        onTap: (value) {
-          setState(() {
-            _selectedIndex = value;
-          });
-        },
-        currentIndex: _selectedIndex,
+        onTap: (value) =>
+            ref.read(entryTabIndexProvider.notifier).state = value,
+        currentIndex: selectedIndex,
         activeColor: primaryColor,
         inactiveColor: bodyTextColor,
         items: List.generate(
@@ -58,7 +50,7 @@ class _EntryPointState extends State<EntryPoint> {
               height: 30,
               width: 30,
               colorFilter: ColorFilter.mode(
-                  index == _selectedIndex ? primaryColor : bodyTextColor,
+                  index == selectedIndex ? primaryColor : bodyTextColor,
                   BlendMode.srcIn),
             ),
             label: _navitems[index]["title"],

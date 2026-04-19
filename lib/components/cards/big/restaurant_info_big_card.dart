@@ -14,6 +14,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
   final int numOfRating, deliveryTime;
   final bool isFreeDelivery;
   final VoidCallback press;
+  final String? heroTag;
 
   const RestaurantInfoBigCard({
     super.key,
@@ -25,6 +26,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
     required this.images,
     required this.foodType,
     required this.press,
+    this.heroTag,
   });
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // pass list of images here
-          BigCardImageSlide(images: images),
+          BigCardImageSlide(images: images, heroTag: heroTag),
           const SizedBox(height: defaultPadding / 2),
           Text(name, style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: defaultPadding / 4),
@@ -53,7 +55,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
                       .textTheme
                       .bodyLarge!
                       .color!
-                      .withOpacity(0.5),
+                      .withValues(alpha: 0.5),
                   BlendMode.srcIn,
                 ),
               ),
@@ -75,7 +77,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
                       .textTheme
                       .bodyLarge!
                       .color!
-                      .withOpacity(0.5),
+                      .withValues(alpha: 0.5),
                   BlendMode.srcIn,
                 ),
               ),

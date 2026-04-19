@@ -1,0 +1,54 @@
+[
+  {
+    "id": "nav_items--1fb3651cced2e00e",
+    "entity": "nav_items",
+    "source": {
+      "file": "lib/entry_point.dart",
+      "block": "_navitems",
+      "index": 2
+    },
+    "raw": {
+      "icon": "assets/icons/order.svg",
+      "title": "Orders"
+    }
+  },
+  {
+    "id": "nav_items--6b6ccc4eac0b1c4e",
+    "entity": "nav_items",
+    "source": {
+      "file": "lib/entry_point.dart",
+      "block": "_navitems",
+      "index": 1
+    },
+    "raw": {
+      "icon": "assets/icons/search.svg",
+      "title": "Search"
+    }
+  },
+  {
+    "id": "nav_items-22715a905bf2ab28",
+    "entity": "nav_items",
+    "source": {
+      "file": "lib/entry_point.dart",
+      "block": "_navitems",
+      "index": 3
+    },
+    "raw": {
+      "icon": "assets/icons/profile.svg",
+      "title": "Profile"
+    }
+  },
+  {
+    "id": "nav_items-27d33d926f7c549f",
+    "entity": "nav_items",
+    "source": {
+      "file": "lib/entry_point.dart",
+      "block": "_navitems",
+      "index": 0
+    },
+    "raw": {
+      "icon": "assets/icons/home.svg",
+      "title": "Home"
+    }
+  }
+]

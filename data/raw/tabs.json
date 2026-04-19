@@ -1,0 +1,62 @@
+[
+  {
+    "id": "tabs--50c260fe416a42af",
+    "entity": "tabs",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoTabs",
+      "index": 4
+    },
+    "raw": {
+      "title": "Dim Sum"
+    }
+  },
+  {
+    "id": "tabs--6795e5f85e544415",
+    "entity": "tabs",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoTabs",
+      "index": 1
+    },
+    "raw": {
+      "title": "Beef & Lamb"
+    }
+  },
+  {
+    "id": "tabs--92c1305e6ff182a",
+    "entity": "tabs",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoTabs",
+      "index": 3
+    },
+    "raw": {
+      "title": "Appetizers"
+    }
+  },
+  {
+    "id": "tabs-53306b4bb818f267",
+    "entity": "tabs",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoTabs",
+      "index": 0
+    },
+    "raw": {
+      "title": "Most Populars"
+    }
+  },
+  {
+    "id": "tabs-73a6801893bdd4a9",
+    "entity": "tabs",
+    "source": {
+      "file": "lib/screens/details/components/iteams.dart",
+      "block": "demoTabs",
+      "index": 2
+    },
+    "raw": {
+      "title": "Seafood"
+    }
+  }
+]

@@ -1,15 +1,37 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/models/featured_item.dart';
 import '../../../constants.dart';
 import 'featured_item_card.dart';
 
 class FeaturedItems extends StatelessWidget {
   const FeaturedItems({
     super.key,
+    required this.items,
   });
+
+  final List<FeaturedItem> items;
 
   @override
   Widget build(BuildContext context) {
+    if (items.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Featured Items",
+                style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: defaultPadding),
+            Text(
+              'Featured items are not available for this partner yet.',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ],
+        ),
+      );
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,14 +46,16 @@ class FeaturedItems extends StatelessWidget {
           child: Row(
             children: [
               ...List.generate(
-                3, // for demo we use 3
+                items.length,
                 (index) => Padding(
                   padding: const EdgeInsets.only(left: defaultPadding),
                   child: FeaturedItemCard(
-                    title: "Cookie Sandwich",
-                    image: "assets/images/featured _items_${index + 1}.png",
-                    foodType: "Chines",
-                    priceRange: "\$" * 2,
+                    title: items[index].title,
+                    image: items[index].image,
+                    foodType: items[index].foodType,
+                    priceRange: items[index].priceRange.isEmpty
+                        ? r'$$'
+                        : items[index].priceRange,
                     press: () {},
                   ),
                 ),

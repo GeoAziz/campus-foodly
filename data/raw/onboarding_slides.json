@@ -1,0 +1,44 @@
+[
+  {
+    "id": "onboarding_slides--11ee5fa261a6d4d6",
+    "entity": "onboarding_slides",
+    "source": {
+      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "block": "demoData",
+      "index": 1
+    },
+    "raw": {
+      "illustration": "assets/Illustrations/Illustrations_2.svg",
+      "text": "Free delivery for new customers via Apple Pay\\nand others payment methods.",
+      "title": "Free delivery offers"
+    }
+  },
+  {
+    "id": "onboarding_slides--592023af1dbd02d",
+    "entity": "onboarding_slides",
+    "source": {
+      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "block": "demoData",
+      "index": 2
+    },
+    "raw": {
+      "illustration": "assets/Illustrations/Illustrations_3.svg",
+      "text": "Easily find your type of food craving and\\nyou’ll get delivery in wide range.",
+      "title": "Choose your food"
+    }
+  },
+  {
+    "id": "onboarding_slides--edff8bcbb01dee7",
+    "entity": "onboarding_slides",
+    "source": {
+      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "block": "demoData",
+      "index": 0
+    },
+    "raw": {
+      "illustration": "assets/Illustrations/Illustrations_1.svg",
+      "text": "Order from the best local restaurants \\nwith easy, on-demand delivery.",
+      "title": "All your favorites"
+    }
+  }
+]

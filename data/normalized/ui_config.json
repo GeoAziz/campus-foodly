@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ui_config--2d484c914abff85a",
+    "name": "primaryColor",
+    "type": "color",
+    "value": "0xFF22A45D"
+  },
+  {
+    "id": "ui_config--a9ab42ef1241eb3",
+    "name": "titleColor",
+    "type": "color",
+    "value": "0xFF010F07"
+  },
+  {
+    "id": "ui_config-0755da03add3e162",
+    "name": "accentColor",
+    "type": "color",
+    "value": "0xFFEF9920"
+  },
+  {
+    "id": "ui_config-16d4e4845943db62",
+    "name": "kDefaultDuration",
+    "type": "Duration",
+    "value": "Duration(milliseconds: 250)"
+  },
+  {
+    "id": "ui_config-1c720b2d02421769",
+    "name": "bodyTextColor",
+    "type": "color",
+    "value": "0xFF868686"
+  },
+  {
+    "id": "ui_config-382a073572e3d5e3",
+    "name": "inputColor",
+    "type": "color",
+    "value": "0xFFFBFBFB"
+  },
+  {
+    "id": "ui_config-7585ca530834350d",
+    "name": "defaultPadding",
+    "type": "double",
+    "value": "16"
+  }
+]

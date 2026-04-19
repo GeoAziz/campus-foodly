@@ -1,12 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'sign_in_screen.dart';
 
-import '../../components/buttons/socal_button.dart';
+import '../../components/buttons/social_button.dart';
 import '../../components/welcome_text.dart';
+import '../../core/routes.dart';
 import '../../constants.dart';
-import '../signUp/components/sign_up_form.dart';
+import '../sign_up/components/sign_up_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -46,12 +47,7 @@ class SignUpScreen extends StatelessWidget {
                         text: "Sign In",
                         style: const TextStyle(color: primaryColor),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const SignInScreen(),
-                                ),
-                              ),
+                          ..onTap = () => context.pushNamed(AppRoutes.signIn),
                       ),
                     ],
                   ),
@@ -70,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding),
 
               // Facebook
-              SocalButton(
+              SocialButton(
                 press: () {},
                 text: "Connect with Facebook",
                 color: const Color(0xFF395998),
@@ -85,7 +81,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding),
 
               // Google
-              SocalButton(
+              SocialButton(
                 press: () {},
                 text: "Connect with Google",
                 color: const Color(0xFF4285F4),

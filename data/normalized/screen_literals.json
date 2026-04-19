@@ -1,0 +1,635 @@
+[
+  {
+    "id": "screen_literals--1317704434c4b237",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/profile/profile_screen.dart",
+    "stringLiteralCount": 0,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals--28d627802134671f",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "stringLiteralCount": 11,
+    "textLiteralCount": 11,
+    "textLiterals": [
+      "Checkout (\\$20.10)",
+      "Combo Burger",
+      "Cookie Sandwich",
+      "Delivery",
+      "Oyster Dish",
+      "Shortbread, chocolate turtle cookies, and red velvet.",
+      "Subtotal",
+      "Your Orders",
+      "numOfItem",
+      "price",
+      "title"
+    ]
+  },
+  {
+    "id": "screen_literals--2b9eaf4f9b541535",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/facebook.svg",
+      "assets/icons/google.svg"
+    ],
+    "file": "lib/screens/signUp/components/body.dart",
+    "stringLiteralCount": 9,
+    "textLiteralCount": 7,
+    "textLiterals": [
+      "Already have account?",
+      "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
+      "Connect with Facebook",
+      "Connect with Google",
+      "Create Account",
+      "Enter your Name, Email and Password \nfor sign up.",
+      "Sign In"
+    ]
+  },
+  {
+    "id": "screen_literals--2cd89a3e4849c804",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "stringLiteralCount": 11,
+    "textLiteralCount": 11,
+    "textLiterals": [
+      "0",
+      "Add to Order (\\$11.98)",
+      "Choice of Bottom Cookie",
+      "Choice of top Cookie",
+      "Cookies and Cream",
+      "Funfetti",
+      "M and M",
+      "Peanut Butter",
+      "Red Velvet",
+      "Snickerdoodle",
+      "White Chocolate Macadamia"
+    ]
+  },
+  {
+    "id": "screen_literals--3199b9fec4a5fa23",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/featured/components/body.dart",
+    "stringLiteralCount": 4,
+    "textLiteralCount": 4,
+    "textLiterals": [
+      "American",
+      "Chinese",
+      "Deshi food",
+      "McDonald's"
+    ]
+  },
+  {
+    "id": "screen_literals--36a1e937d9a96106",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/search.svg",
+      "assets/icons/share.svg"
+    ],
+    "file": "lib/screens/details/details_screen.dart",
+    "stringLiteralCount": 2,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals--3ca2c15426ac3da8",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/images/Header-image.png"
+    ],
+    "file": "lib/screens/addToOrder/components/info.dart",
+    "stringLiteralCount": 6,
+    "textLiteralCount": 5,
+    "textLiterals": [
+      "American",
+      "Chinese",
+      "Cookie Sandwich",
+      "Deshi food",
+      "Shortbread, chocolate turtle cookies, and red velvet. 8 ounces cream cheese, softened."
+    ]
+  },
+  {
+    "id": "screen_literals--3e675263a77caf96",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/images/featured_items_${index + 1}.png"
+    ],
+    "file": "lib/screens/details/components/iteams.dart",
+    "stringLiteralCount": 16,
+    "textLiteralCount": 15,
+    "textLiterals": [
+      "Appetizers",
+      "Beef & Lamb",
+      "Chinese",
+      "Cookie Sandwich",
+      "Dim Sum",
+      "Most Populars",
+      "Seafood",
+      "Shortbread, chocolate turtle cookies, and red velvet.",
+      "\\$",
+      "description",
+      "foodType",
+      "image",
+      "price",
+      "priceRange",
+      "title"
+    ]
+  },
+  {
+    "id": "screen_literals--3fe02cde5cc9651b",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/clock.svg",
+      "assets/icons/delivery.svg"
+    ],
+    "file": "lib/screens/details/components/restaurrant_info.dart",
+    "stringLiteralCount": 12,
+    "textLiteralCount": 10,
+    "textLiterals": [
+      "$text",
+      "25",
+      "American",
+      "Chinese",
+      "Delivery",
+      "Deshi food",
+      "Free",
+      "Mayfield Bakery & Cafe",
+      "Minutes",
+      "Take away"
+    ]
+  },
+  {
+    "id": "screen_literals--418c142fc2ccfd06",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/filter/components/dietaries.dart",
+    "stringLiteralCount": 7,
+    "textLiteralCount": 7,
+    "textLiterals": [
+      "Any",
+      "Dietary",
+      "Gluten-Free",
+      "Vegan",
+      "Vegetarian",
+      "isActive",
+      "title"
+    ]
+  },
+  {
+    "id": "screen_literals--4469d055692a9237",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/onboarding/components/onboard_content.dart",
+    "stringLiteralCount": 0,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals--47689ff9e9be293d",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/auth/components/sign_in_form.dart",
+    "stringLiteralCount": 4,
+    "textLiteralCount": 4,
+    "textLiterals": [
+      "Email Address",
+      "Forget Password?",
+      "Password",
+      "Sign in"
+    ]
+  },
+  {
+    "id": "screen_literals--54250a03211fa31a",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/images/featured_items_${index + 1}.png"
+    ],
+    "file": "lib/screens/details/components/featured_items.dart",
+    "stringLiteralCount": 5,
+    "textLiteralCount": 4,
+    "textLiterals": [
+      "Chines",
+      "Cookie Sandwich",
+      "Featured Items",
+      "\\$"
+    ]
+  },
+  {
+    "id": "screen_literals--57e57703a2ad3413",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/addToOrder/components/rounded_button.dart",
+    "stringLiteralCount": 0,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals--59e9e60b1dbd4a39",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/home/home_screen.dart",
+    "stringLiteralCount": 10,
+    "textLiteralCount": 10,
+    "textLiterals": [
+      "All Restaurants",
+      "American",
+      "Best Pick",
+      "Chinese",
+      "Delivery to",
+      "Deshi food",
+      "Featured Partners",
+      "Filter",
+      "McDonald's",
+      "San Francisco"
+    ]
+  },
+  {
+    "id": "screen_literals--5a2b6799f7dd289f",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/images/Banner.png"
+    ],
+    "file": "lib/screens/home/components/promotion_banner.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals--5ddd6bd384edea07",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/signUp/components/sign_up_form.dart",
+    "stringLiteralCount": 5,
+    "textLiteralCount": 5,
+    "textLiterals": [
+      "Confirm Password",
+      "Email Address",
+      "Full Name",
+      "Password",
+      "Sign Up"
+    ]
+  },
+  {
+    "id": "screen_literals--6d252835d5f3d4f8",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/addToOrder/components/required_section_title.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "Required"
+    ]
+  },
+  {
+    "id": "screen_literals--7094335db557dc60",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/filter/components/categories.dart",
+    "stringLiteralCount": 12,
+    "textLiteralCount": 12,
+    "textLiterals": [
+      "All",
+      "Breakfast",
+      "Brunch",
+      "Burgers",
+      "Categories",
+      "Chinese",
+      "Dinner",
+      "Pizza",
+      "Salads",
+      "Soups",
+      "isActive",
+      "title"
+    ]
+  },
+  {
+    "id": "screen_literals--731a32830655d638",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/orderDetails/components/order_item_card.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "USD$price"
+    ]
+  },
+  {
+    "id": "screen_literals--cf0970c2ce403da",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/orderDetails/components/price_row.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "\\$$price"
+    ]
+  },
+  {
+    "id": "screen_literals--fabc4ea062f65f1",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/auth/forgot_password_screen.dart",
+    "stringLiteralCount": 5,
+    "textLiteralCount": 5,
+    "textLiterals": [
+      "Email Address",
+      "Enter your email address and we will \nsend you a reset instructions.",
+      "Forgot Password",
+      "Forgot password",
+      "Reset password"
+    ]
+  },
+  {
+    "id": "screen_literals-0c9b23d30abce396",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/phoneLogin/phone_login_screen.dart",
+    "stringLiteralCount": 5,
+    "textLiteralCount": 5,
+    "textLiterals": [
+      "Enter your phone number to use foodly \nand enjoy your food :)",
+      "Get started with Foodly",
+      "Login to Foodly",
+      "Phone Number",
+      "Sign Up"
+    ]
+  },
+  {
+    "id": "screen_literals-0fc8f7311721242f",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/phoneLogin/number_verify_screen.dart",
+    "stringLiteralCount": 6,
+    "textLiteralCount": 6,
+    "textLiterals": [
+      "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
+      "Didn’t receive code?",
+      "Enter the 4-Digit code sent to you at \n+1501333982",
+      "Login to Foodly",
+      "Resend Again.",
+      "Verify phone number"
+    ]
+  },
+  {
+    "id": "screen_literals-251492d03ece6790",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/orderDetails/components/total_price.dart",
+    "stringLiteralCount": 3,
+    "textLiteralCount": 3,
+    "textLiterals": [
+      "(incl. VAT)",
+      "Total",
+      "\\$$price"
+    ]
+  },
+  {
+    "id": "screen_literals-269c93ae41d8e4d3",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/location.svg",
+      "assets/icons/marker.svg"
+    ],
+    "file": "lib/screens/findRestaurants/find_restaurants_screen.dart",
+    "stringLiteralCount": 7,
+    "textLiteralCount": 5,
+    "textLiterals": [
+      "Continue",
+      "Enter a new address",
+      "Find restaurants near you",
+      "Please enter your location or allow access to \nyour location to find restaurants near you.",
+      "Use current location"
+    ]
+  },
+  {
+    "id": "screen_literals-27a881deb8704b7a",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/featured/featurred_screen.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "Featured Partners"
+    ]
+  },
+  {
+    "id": "screen_literals-27e83517f1b66cac",
+    "assetLiteralCount": 3,
+    "assetLiterals": [
+      "assets/Illustrations/Illustrations_1.svg",
+      "assets/Illustrations/Illustrations_2.svg",
+      "assets/Illustrations/Illustrations_3.svg"
+    ],
+    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "stringLiteralCount": 13,
+    "textLiteralCount": 10,
+    "textLiterals": [
+      "All your favorites",
+      "Choose your food",
+      "Easily find your type of food craving and\nyou’ll get delivery in wide range.",
+      "Free delivery for new customers via Apple Pay\nand others payment methods.",
+      "Free delivery offers",
+      "Get Started",
+      "Order from the best local restaurants \nwith easy, on-demand delivery.",
+      "illustration",
+      "text",
+      "title"
+    ]
+  },
+  {
+    "id": "screen_literals-2efbb726652524ec",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/home/components/medium_card_list.dart",
+    "stringLiteralCount": 3,
+    "textLiteralCount": 3,
+    "textLiterals": [
+      "image",
+      "location",
+      "name"
+    ]
+  },
+  {
+    "id": "screen_literals-34740994c309e589",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/icons/search.svg"
+    ],
+    "file": "lib/screens/search/components/body.dart",
+    "stringLiteralCount": 9,
+    "textLiteralCount": 8,
+    "textLiterals": [
+      "American",
+      "Chinese",
+      "Deshi food",
+      "McDonald's",
+      "Search",
+      "Search Results",
+      "Search on foodly",
+      "Top Restaurants"
+    ]
+  },
+  {
+    "id": "screen_literals-359e751236313a10",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/phoneLogin/components/otp_form.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "Continue"
+    ]
+  },
+  {
+    "id": "screen_literals-3f8998fe242eb586",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/facebook.svg",
+      "assets/icons/google.svg"
+    ],
+    "file": "lib/screens/auth/sign_up_screen.dart",
+    "stringLiteralCount": 10,
+    "textLiteralCount": 8,
+    "textLiterals": [
+      "Already have account?",
+      "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
+      "Connect with Facebook",
+      "Connect with Google",
+      "Create Account",
+      "Enter your Name, Email and Password \nfor sign up.",
+      "Sign In",
+      "Sign Up"
+    ]
+  },
+  {
+    "id": "screen_literals-4eabfcacf6aeea42",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/auth/reset_email_sent_screen.dart",
+    "stringLiteralCount": 4,
+    "textLiteralCount": 4,
+    "textLiterals": [
+      "Forgot Password",
+      "Reset email sent",
+      "Send again",
+      "We have sent a instructions email to \ntheflutterway@email.com."
+    ]
+  },
+  {
+    "id": "screen_literals-625892e4fe6c4fa4",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/filter/filter_screen.dart",
+    "stringLiteralCount": 1,
+    "textLiteralCount": 1,
+    "textLiterals": [
+      "Filters"
+    ]
+  },
+  {
+    "id": "screen_literals-62e59a0213133f21",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/addToOrder/components/rounded_checkedbox_list_tile.dart",
+    "stringLiteralCount": 0,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals-63afc54342478f58",
+    "assetLiteralCount": 6,
+    "assetLiterals": [
+      "assets/icons/card.svg",
+      "assets/icons/fb.svg",
+      "assets/icons/lock.svg",
+      "assets/icons/marker.svg",
+      "assets/icons/profile.svg",
+      "assets/icons/share.svg"
+    ],
+    "file": "lib/screens/profile/components/body.dart",
+    "stringLiteralCount": 20,
+    "textLiteralCount": 14,
+    "textLiterals": [
+      "Account Settings",
+      "Add Facebook, Twitter etc",
+      "Add Social Account",
+      "Add or remove your delivery locations",
+      "Add your credit & debit cards",
+      "Change Password",
+      "Change your account information",
+      "Change your password",
+      "Get \\$10 for reffering friends",
+      "Locations",
+      "Payment Methods",
+      "Profile Information",
+      "Refer to Friends",
+      "Update your settings like notifications, payments, profile edit etc."
+    ]
+  },
+  {
+    "id": "screen_literals-63ce4735f60f6acf",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/details/components/featured_item_card.dart",
+    "stringLiteralCount": 0,
+    "textLiteralCount": 0,
+    "textLiterals": []
+  },
+  {
+    "id": "screen_literals-651e980ad2b2b10a",
+    "assetLiteralCount": 2,
+    "assetLiterals": [
+      "assets/icons/facebook.svg",
+      "assets/icons/google.svg"
+    ],
+    "file": "lib/screens/auth/sign_in_screen.dart",
+    "stringLiteralCount": 9,
+    "textLiteralCount": 7,
+    "textLiterals": [
+      "Connect with Facebook",
+      "Connect with Google",
+      "Create new account.",
+      "Don’t have account?",
+      "Enter your Phone number or Email \naddress for sign in. Enjoy your food :)",
+      "Sign In",
+      "Welcome to"
+    ]
+  },
+  {
+    "id": "screen_literals-689a0800d2cc783d",
+    "assetLiteralCount": 0,
+    "assetLiterals": [],
+    "file": "lib/screens/filter/components/price_range.dart",
+    "stringLiteralCount": 2,
+    "textLiteralCount": 2,
+    "textLiterals": [
+      "Price Range",
+      "\\$"
+    ]
+  },
+  {
+    "id": "screen_literals-75faaa51513dd23d",
+    "assetLiteralCount": 1,
+    "assetLiterals": [
+      "assets/icons/search.svg"
+    ],
+    "file": "lib/screens/search/search_screen.dart",
+    "stringLiteralCount": 9,
+    "textLiteralCount": 8,
+    "textLiterals": [
+      "American",
+      "Chinese",
+      "Deshi food",
+      "McDonald's",
+      "Search",
+      "Search Results",
+      "Search on foodly",
+      "Top Restaurants"
+    ]
+  }
+]

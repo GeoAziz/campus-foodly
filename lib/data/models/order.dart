@@ -1,0 +1,50 @@
+import 'order_item.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' show Timestamp;
+
+class Order {
+  const Order({
+    required this.id,
+    required this.userId,
+    required this.restaurantId,
+    required this.items,
+    required this.status,
+    required this.createdAt,
+  });
+
+  final String id;
+  final String userId;
+  final String restaurantId;
+  final List<OrderItem> items;
+  final String status;
+  final DateTime createdAt;
+
+  double get totalAmount => items.fold(0, (sum, item) => sum + item.totalPrice);
+
+  factory Order.fromMap(String id, Map<String, dynamic> data) {
+    final createdAtValue = data['createdAt'];
+    return Order(
+      id: id,
+      userId: data['userId'] as String? ?? '',
+      restaurantId: data['restaurantId'] as String? ?? '',
+      items: (data['items'] as List<dynamic>? ?? const [])
+          .map((item) => OrderItem.fromMap(item as Map<String, dynamic>))
+          .toList(growable: false),
+      status: data['status'] as String? ?? 'pending',
+      createdAt: createdAtValue is Timestamp
+          ? createdAtValue.toDate()
+          : createdAtValue is DateTime
+              ? createdAtValue
+              : DateTime.now(),
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'userId': userId,
+      'restaurantId': restaurantId,
+      'items': items.map((item) => item.toMap()).toList(growable: false),
+      'status': status,
+      'createdAt': createdAt,
+    };
+  }
+}

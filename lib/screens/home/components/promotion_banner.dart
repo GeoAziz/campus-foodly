@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../components/scalton/scalton_rounded_container.dart';
+import '../../../components/skeleton/skeleton_rounded_container.dart';
 
-import '../../../constants.dart';
+import '../../../core/constants.dart';
 
 class PromotionBanner extends StatefulWidget {
   const PromotionBanner({super.key});
@@ -11,7 +11,6 @@ class PromotionBanner extends StatefulWidget {
 }
 
 class _PromotionBannerState extends State<PromotionBanner> {
-  
   bool isLoading = true;
   @override
   void initState() {
@@ -30,7 +29,7 @@ class _PromotionBannerState extends State<PromotionBanner> {
       child: isLoading
           ? const AspectRatio(
               aspectRatio: 1.97,
-              child: ScaltonRoundedContainer(radious: 12),
+              child: SkeletonRoundedContainer(radius: 12),
             )
           : ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(12)),

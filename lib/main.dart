@@ -1,41 +1,84 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'screens/onboarding/onboarding_scrreen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const MyApp());
+import 'core/theme.dart';
+import 'core/router.dart';
+import 'data/providers/auth_provider.dart';
+import 'data/providers/theme_provider.dart';
+import 'data/services/firebase_service.dart';
+import 'data/services/notification_service.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Object? firebaseInitError;
+
+  try {
+    await FirebaseService.initialize();
+  } catch (error) {
+    firebaseInitError = error;
+  }
+
+  runApp(
+    ProviderScope(
+      child: MyApp(firebaseInitError: firebaseInitError),
+    ),
+  );
+
+  if (firebaseInitError == null) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      unawaited(NotificationService.initialize());
+    });
+  }
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends ConsumerWidget {
+  const MyApp({super.key, this.firebaseInitError});
 
-  // This widget is the root of your application.
+  final Object? firebaseInitError;
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'The Flutter Way - Foodly UI Kit',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: primaryColor,
-            foregroundColor: Colors.white,
-            minimumSize: const Size(double.infinity, 40),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(authStateChangesProvider, (previous, next) {
+      next.whenData((user) {
+        if (user == null) {
+          NotificationService.clearSyncedUser();
+          return;
+        }
+        NotificationService.syncTokenForUser(user.id);
+      });
+    });
+
+    if (firebaseInitError != null) {
+      return MaterialApp(
+        title: 'OrderEats',
+        theme: buildLightThemeData(),
+        darkTheme: buildDarkThemeData(),
+        home: Scaffold(
+          appBar: AppBar(title: const Text('Configuration Error')),
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Text(
+                'Firebase initialization failed. Add platform Firebase files and valid options before running the app.\n\nError: $firebaseInitError',
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: bodyTextColor),
-          bodySmall: TextStyle(color: bodyTextColor),
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          contentPadding: EdgeInsets.all(defaultPadding),
-          hintStyle: TextStyle(color: bodyTextColor),
-        ),
-      ),
-      home: const OnboardingScreen(),
+      );
+    }
+
+    final themeModeAsync = ref.watch(themeModeProvider);
+    final themeMode = themeModeAsync.valueOrNull ?? ThemeMode.system;
+    final router = ref.watch(routerProvider);
+
+    return MaterialApp.router(
+      title: 'OrderEats',
+      theme: buildLightThemeData(),
+      darkTheme: buildDarkThemeData(),
+      themeMode: themeMode,
+      routerConfig: router,
     );
   }
 }

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "categories--1424ccfe0bb3c0ed",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 5
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Pizza"
+    }
+  },
+  {
+    "id": "categories--20089887fea9bfaf",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 1
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Brunch"
+    }
+  },
+  {
+    "id": "categories--442230fa3b9d8700",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 2
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Dinner"
+    }
+  },
+  {
+    "id": "categories--70409da798e1cfa3",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 8
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Breakfast"
+    }
+  },
+  {
+    "id": "categories-06e5b705ae30b243",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 7
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Soups"
+    }
+  },
+  {
+    "id": "categories-39e27a49d6e67693",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 0
+    },
+    "raw": {
+      "isActive": false,
+      "title": "All"
+    }
+  },
+  {
+    "id": "categories-4605e5493e58f5f6",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 6
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Salads"
+    }
+  },
+  {
+    "id": "categories-476fb953d894aa76",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 3
+    },
+    "raw": {
+      "isActive": true,
+      "title": "Burgers"
+    }
+  },
+  {
+    "id": "categories-579e55f6aa2fb3af",
+    "entity": "categories",
+    "source": {
+      "file": "lib/screens/filter/components/categories.dart",
+      "block": "demoCategories",
+      "index": 4
+    },
+    "raw": {
+      "isActive": false,
+      "title": "Chinese"
+    }
+  }
+]

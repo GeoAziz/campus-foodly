@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../components/buttons/socal_button.dart';
+import '../../components/buttons/social_button.dart';
 import '../../components/welcome_text.dart';
+import '../../core/routes.dart';
 import '../../constants.dart';
-import 'sign_up_screen.dart';
 import 'components/sign_in_form.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -35,6 +36,14 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding * 1.5),
 
               Center(
+                child: TextButton(
+                  onPressed: () => context.pushNamed(AppRoutes.phoneLogin),
+                  child: const Text('Use phone number instead'),
+                ),
+              ),
+              const SizedBox(height: defaultPadding / 2),
+
+              Center(
                 child: Text.rich(
                   TextSpan(
                     style: Theme.of(context)
@@ -47,12 +56,7 @@ class SignInScreen extends StatelessWidget {
                         text: "Create new account.",
                         style: const TextStyle(color: primaryColor),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const SignUpScreen(),
-                                ),
-                              ),
+                          ..onTap = () => context.pushNamed(AppRoutes.signUp),
                       )
                     ],
                   ),
@@ -61,7 +65,7 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding),
 
               // Facebook
-              SocalButton(
+              SocialButton(
                 press: () {},
                 text: "Connect with Facebook",
                 color: const Color(0xFF395998),
@@ -76,7 +80,7 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(height: defaultPadding),
 
               // Google
-              SocalButton(
+              SocialButton(
                 press: () {},
                 text: "Connect with Google",
                 color: const Color(0xFF4285F4),

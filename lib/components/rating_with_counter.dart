@@ -22,7 +22,7 @@ class RatingWithCounter extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .labelSmall!
-              .copyWith(color: titleColor.withOpacity(0.74)),
+              .copyWith(color: titleColor.withValues(alpha: 0.74)),
         ),
         const SizedBox(width: 8),
         SvgPicture.asset(
@@ -39,7 +39,7 @@ class RatingWithCounter extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .labelSmall!
-                .copyWith(color: titleColor.withOpacity(0.74))),
+                .copyWith(color: titleColor.withValues(alpha: 0.74))),
       ],
     );
   }

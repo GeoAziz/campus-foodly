@@ -1,0 +1,22 @@
+[
+  {
+    "id": "nav_items--1fb3651cced2e00e",
+    "icon": "assets/icons/order.svg",
+    "title": "Orders"
+  },
+  {
+    "id": "nav_items--6b6ccc4eac0b1c4e",
+    "icon": "assets/icons/search.svg",
+    "title": "Search"
+  },
+  {
+    "id": "nav_items-22715a905bf2ab28",
+    "icon": "assets/icons/profile.svg",
+    "title": "Profile"
+  },
+  {
+    "id": "nav_items-27d33d926f7c549f",
+    "icon": "assets/icons/home.svg",
+    "title": "Home"
+  }
+]
