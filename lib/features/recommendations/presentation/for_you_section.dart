@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../components/cards/big/restaurant_info_big_card.dart';
 import '../../../components/section_title.dart';
 import '../../../constants.dart';
+import '../../../core/routes.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../providers/recommendation_provider.dart';
 
@@ -24,7 +26,11 @@ class ForYouSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionTitle(title: 'For You', press: () {}),
+        const SectionTitle(
+          title: 'For You',
+          showAction: false,
+          press: _noop,
+        ),
         const SizedBox(height: defaultPadding),
         recommendations.when(
           loading: () => const Padding(
@@ -33,7 +39,18 @@ class ForYouSection extends ConsumerWidget {
           ),
           error: (error, stackTrace) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-            child: Text('Recommendations unavailable: ${error.toString()}'),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Recommendations unavailable: ${error.toString()}'),
+                TextButton(
+                  onPressed: () => ref.invalidate(
+                    forYouRecommendationsProvider(user.id),
+                  ),
+                  child: const Text('Retry'),
+                ),
+              ],
+            ),
           ),
           data: (restaurants) {
             if (restaurants.isEmpty) {
@@ -54,13 +71,19 @@ class ForYouSection extends ConsumerWidget {
                         defaultPadding,
                       ),
                       child: RestaurantInfoBigCard(
+                        heroTag: 'for-you-${restaurant.id}',
                         images: [restaurant.image],
                         name: restaurant.name,
                         rating: restaurant.rating,
-                        numOfRating: 200,
+                        numOfRating: restaurant.ratingCount,
                         deliveryTime: restaurant.deliveryTime,
-                        foodType: const ['Recommended'],
-                        press: () {},
+                        foodType: restaurant.categories.isEmpty
+                            ? const ['Recommended']
+                            : restaurant.categories,
+                        press: () => context.pushNamed(
+                          AppRoutes.details,
+                          extra: restaurant,
+                        ),
                       ),
                     ),
                   )
@@ -72,3 +95,5 @@ class ForYouSection extends ConsumerWidget {
     );
   }
 }
+
+void _noop() {}
