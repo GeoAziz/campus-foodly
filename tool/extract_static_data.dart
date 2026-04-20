@@ -462,14 +462,310 @@ class StaticDataExtractor {
         'id': record['id'],
         ...normalized,
       };
+
+      if (entity == 'restaurants' && !_isValidRestaurantRecord(normalized)) {
+        continue;
+      }
+
       entities.putIfAbsent(entity, () => []).add(normalizedRecord);
     }
+
+    _ensurePartnerScopedEntities(entities);
 
     for (final entry in entities.entries) {
       entry.value
           .sort((a, b) => (a['id'] as String).compareTo(b['id'] as String));
     }
     return entities;
+  }
+
+  void _ensurePartnerScopedEntities(
+      Map<String, List<Map<String, dynamic>>> entities) {
+    final restaurants = entities['restaurants'];
+    if (restaurants == null || restaurants.isEmpty) {
+      return;
+    }
+
+    final validRestaurants = restaurants.where((restaurant) {
+      final id = restaurant['id']?.toString() ?? '';
+      return id.isNotEmpty;
+    }).toList(growable: false);
+
+    if (validRestaurants.isEmpty) {
+      return;
+    }
+
+    final detailRows = entities.putIfAbsent('restaurant_details', () => []);
+    final featuredRows = entities.putIfAbsent('featured_items', () => []);
+    final tabRows = entities.putIfAbsent('menu_tabs', () => []);
+    final menuRows = entities.putIfAbsent('menu_items', () => []);
+
+    final detailByRestaurant = <String, bool>{};
+    for (final row in detailRows) {
+      final restaurantId = row['restaurantId']?.toString() ?? '';
+      if (restaurantId.isNotEmpty) {
+        detailByRestaurant[restaurantId] = true;
+      }
+    }
+
+    final featuredByRestaurant = <String, List<Map<String, dynamic>>>{};
+    for (final row in featuredRows) {
+      final restaurantId = row['restaurantId']?.toString() ?? '';
+      if (restaurantId.isEmpty) {
+        continue;
+      }
+      featuredByRestaurant.putIfAbsent(restaurantId, () => []).add(row);
+    }
+
+    final tabsByRestaurant = <String, List<Map<String, dynamic>>>{};
+    for (final row in tabRows) {
+      final restaurantId = row['restaurantId']?.toString() ?? '';
+      if (restaurantId.isEmpty) {
+        continue;
+      }
+      tabsByRestaurant.putIfAbsent(restaurantId, () => []).add(row);
+    }
+
+    final menuByRestaurant = <String, List<Map<String, dynamic>>>{};
+    for (final row in menuRows) {
+      final restaurantId = row['restaurantId']?.toString() ?? '';
+      if (restaurantId.isEmpty) {
+        continue;
+      }
+      menuByRestaurant.putIfAbsent(restaurantId, () => []).add(row);
+    }
+
+    final featuredTemplates = _buildTemplateRows(
+      rows: featuredRows,
+      entity: 'featured_items',
+      sortBy: 'position',
+    );
+    final tabTemplates = _buildTemplateRows(
+      rows: tabRows,
+      entity: 'menu_tabs',
+      sortBy: 'position',
+    );
+    final menuTemplates = _buildTemplateRows(
+      rows: menuRows,
+      entity: 'menu_items',
+      sortBy: 'category',
+    );
+
+    for (final restaurant in validRestaurants) {
+      final restaurantId = restaurant['id'] as String;
+      final restaurantName = (restaurant['name']?.toString() ?? 'Restaurant')
+          .trim();
+      final categories = ((restaurant['categories'] as List?)
+                  ?.map((item) => item.toString())
+                  .where((item) => item.trim().isNotEmpty)
+                  .toList(growable: false)) ??
+          const <String>[];
+      final deliveryFee = (restaurant['deliveryFee']?.toString() ?? 'Free');
+      final deliveryTime = (restaurant['deliveryTime'] as num?)?.toInt() ?? 25;
+      final ratingCount = (restaurant['ratingCount'] as num?)?.toInt() ?? 200;
+      final priceTier = (restaurant['priceTier'] as num?)?.toInt() ?? 2;
+      final image = restaurant['image']?.toString() ?? '';
+
+      // Partner-scoped datasets are generated for this restaurant, so keep
+      // isFeatured aligned with the data contract used by validators and UI.
+      restaurant['isFeatured'] = true;
+
+      if (detailByRestaurant[restaurantId] != true) {
+        detailRows.add(_sortKeysDeep({
+          'id': _buildSyntheticId('restaurant_details', restaurantId, 0),
+          'restaurantId': restaurantId,
+          'deliveryFee': deliveryFee,
+          'deliveryTime': deliveryTime,
+          'foodTypes':
+              categories.isEmpty ? const ['Popular'] : categories,
+          'ratingCount': ratingCount,
+          'takeAwayLabel': 'Take away',
+        }));
+      }
+
+      if ((featuredByRestaurant[restaurantId] ?? const []).isEmpty) {
+        final generatedFeatured = featuredTemplates.isNotEmpty
+            ? featuredTemplates
+            : [
+                {
+                  'title': '$restaurantName Special',
+                  'foodType':
+                      categories.isNotEmpty ? categories.first : 'Popular',
+                  'image': image,
+                  'position': 0,
+                  'priceRange': _priceRangeForTier(priceTier),
+                }
+              ];
+
+        for (var i = 0; i < generatedFeatured.length; i++) {
+          final template = generatedFeatured[i];
+          featuredRows.add(_sortKeysDeep({
+            'id': _buildSyntheticId('featured_items', restaurantId, i),
+            'restaurantId': restaurantId,
+            'title': template['title']?.toString().trim().isNotEmpty == true
+                ? template['title']
+                : '$restaurantName Item ${i + 1}',
+            'image': template['image']?.toString().trim().isNotEmpty == true
+                ? template['image']
+                : image,
+            'foodType':
+                template['foodType']?.toString().trim().isNotEmpty == true
+                    ? template['foodType']
+                    : (categories.isNotEmpty ? categories.first : 'Popular'),
+            'position': (template['position'] as num?)?.toInt() ?? i,
+            'priceRange':
+                template['priceRange']?.toString().trim().isNotEmpty == true
+                    ? template['priceRange']
+                    : _priceRangeForTier(priceTier),
+          }));
+        }
+      }
+
+      if ((tabsByRestaurant[restaurantId] ?? const []).isEmpty) {
+        final generatedTabs = tabTemplates.isNotEmpty
+            ? tabTemplates
+            : _tabsFromCategories(categories);
+
+        for (var i = 0; i < generatedTabs.length; i++) {
+          final template = generatedTabs[i];
+          tabRows.add(_sortKeysDeep({
+            'id': _buildSyntheticId('menu_tabs', restaurantId, i),
+            'restaurantId': restaurantId,
+            'title': template['title']?.toString().trim().isNotEmpty == true
+                ? template['title']
+                : 'Menu ${i + 1}',
+            'position': (template['position'] as num?)?.toInt() ?? i,
+          }));
+        }
+      }
+
+      if ((menuByRestaurant[restaurantId] ?? const []).isEmpty) {
+        final generatedMenu = menuTemplates.isNotEmpty
+            ? menuTemplates
+            : [
+                {
+                  'name': '$restaurantName Combo',
+                  'description': 'Chef special from $restaurantName.',
+                  'price': 7.4,
+                  'category':
+                      categories.isNotEmpty ? categories.first : 'Most Populars',
+                  'foodType':
+                      categories.isNotEmpty ? categories.first : 'Popular',
+                  'priceRange': _priceRangeForTier(priceTier),
+                  'image': image,
+                  'isAvailable': true,
+                }
+              ];
+
+        for (var i = 0; i < generatedMenu.length; i++) {
+          final template = generatedMenu[i];
+          menuRows.add(_sortKeysDeep({
+            'id': _buildSyntheticId('menu_items', restaurantId, i),
+            'restaurantId': restaurantId,
+            'name': template['name']?.toString().trim().isNotEmpty == true
+                ? template['name']
+                : '$restaurantName Item ${i + 1}',
+            'description':
+                template['description']?.toString() ?? 'Chef special.',
+            'price': _normalizeMenuPrice(template['price']),
+            'category': template['category']?.toString().trim().isNotEmpty ==
+                    true
+                ? template['category']
+                : (categories.isNotEmpty ? categories.first : 'Most Populars'),
+            'foodType': template['foodType']?.toString().trim().isNotEmpty ==
+                    true
+                ? template['foodType']
+                : (categories.isNotEmpty ? categories.first : 'Popular'),
+            'priceRange':
+                template['priceRange']?.toString().trim().isNotEmpty == true
+                    ? template['priceRange']
+                    : _priceRangeForTier(priceTier),
+            'image': template['image']?.toString().trim().isNotEmpty == true
+                ? template['image']
+                : image,
+            'isAvailable': template['isAvailable'] is bool
+                ? template['isAvailable']
+                : true,
+          }));
+        }
+      }
+    }
+  }
+
+  List<Map<String, dynamic>> _buildTemplateRows({
+    required List<Map<String, dynamic>> rows,
+    required String entity,
+    required String sortBy,
+  }) {
+    final globalRows = rows
+        .where((row) => (row['restaurantId']?.toString() ?? '').isEmpty)
+        .toList(growable: false);
+    final scopedRows = rows
+        .where((row) => (row['restaurantId']?.toString() ?? '').isNotEmpty)
+        .toList(growable: false);
+    final source = globalRows.isNotEmpty ? globalRows : scopedRows;
+
+    final cleaned = source
+        .map((row) {
+          final copy = Map<String, dynamic>.from(row);
+          copy.remove('id');
+          copy.remove('restaurantId');
+          return _sortKeysDeep(copy);
+        })
+        .toList(growable: false);
+
+    cleaned.sort((left, right) {
+      final leftValue = left[sortBy];
+      final rightValue = right[sortBy];
+      if (leftValue is num && rightValue is num) {
+        return leftValue.compareTo(rightValue);
+      }
+      return leftValue.toString().compareTo(rightValue.toString());
+    });
+
+    return cleaned;
+  }
+
+  List<Map<String, dynamic>> _tabsFromCategories(List<String> categories) {
+    final source = categories.isNotEmpty
+        ? categories
+        : const ['Most Populars', 'Chef Specials', 'Recommended'];
+    return source
+        .asMap()
+        .entries
+        .map((entry) => {
+              'title': entry.value,
+              'position': entry.key,
+            })
+        .toList(growable: false);
+  }
+
+  String _buildSyntheticId(String entity, String restaurantId, int index) {
+    final seed = '$entity|$restaurantId|$index';
+    final hash = _fnv1a64(seed).toRadixString(16).padLeft(16, '0');
+    return '${entity}_$hash';
+  }
+
+  bool _isValidRestaurantRecord(Map<String, dynamic> normalized) {
+    final name = normalized['name']?.toString().trim() ?? '';
+    final image = normalized['image']?.toString().trim() ?? '';
+    final location = normalized['location']?.toString().trim() ?? '';
+    return name.isNotEmpty && image.isNotEmpty && location.isNotEmpty;
+  }
+
+  String _priceRangeForTier(int tier) {
+    final clamped = tier.clamp(1, 4);
+    return List.filled(clamped, r'$').join();
+  }
+
+  double _normalizeMenuPrice(dynamic value) {
+    if (value is num) {
+      return value.toDouble();
+    }
+    if (value is String) {
+      return double.tryParse(value.trim()) ?? 7.4;
+    }
+    return 7.4;
   }
 
   Map<String, dynamic> _normalizeRecord(
