@@ -8,21 +8,25 @@ import '../../../core/constants.dart';
 import '../../../core/routes.dart';
 import '../../../data/providers/restaurant_provider.dart';
 
+enum MediumCardListType { all, featured, bestPick }
+
 class MediumCardList extends ConsumerWidget {
   const MediumCardList({
     super.key,
     this.heroTagPrefix = 'medium',
-    this.showOnlyFeatured = false,
+    this.listType = MediumCardListType.all,
   });
 
   final String heroTagPrefix;
-  final bool showOnlyFeatured;
+  final MediumCardListType listType;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final restaurantsAsync = showOnlyFeatured
-        ? ref.watch(featuredRestaurantsProvider)
-        : ref.watch(restaurantsProvider);
+    final restaurantsAsync = switch (listType) {
+      MediumCardListType.featured => ref.watch(featuredRestaurantsProvider),
+      MediumCardListType.bestPick => ref.watch(bestPickRestaurantsProvider),
+      MediumCardListType.all => ref.watch(restaurantsProvider),
+    };
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,15 +37,28 @@ class MediumCardList extends ConsumerWidget {
           child: restaurantsAsync.when(
             loading: buildFeaturedPartnersLoadingIndicator,
             error: (error, stackTrace) => Center(
-              child: Text('Unable to load restaurants: ${error.toString()}'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('Unable to load restaurants: ${error.toString()}'),
+                  TextButton(
+                    onPressed: () => ref.invalidate(restaurantsProvider),
+                    child: const Text('Retry'),
+                  ),
+                ],
+              ),
             ),
             data: (restaurants) {
               if (restaurants.isEmpty) {
                 return Center(
                   child: Text(
-                    showOnlyFeatured
-                        ? 'No featured partners available.'
-                        : 'No restaurants available.',
+                    switch (listType) {
+                      MediumCardListType.featured =>
+                        'No featured partners available.',
+                      MediumCardListType.bestPick =>
+                        'No best picks available yet.',
+                      MediumCardListType.all => 'No restaurants available.',
+                    },
                   ),
                 );
               }

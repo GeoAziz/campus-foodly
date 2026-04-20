@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/svg.dart';
@@ -98,6 +99,20 @@ class DetailsScreen extends ConsumerWidget {
                   ),
                 ),
               ),
+              if (kDebugMode)
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: defaultPadding,
+                    vertical: defaultPadding / 2,
+                  ),
+                  child: _PartnerDataDiagnostics(
+                    restaurantId: restaurantId,
+                    restaurantDetailAsync: restaurantDetailAsync,
+                    featuredItemsAsync: featuredItemsAsync,
+                    menuTabsAsync: menuTabsAsync,
+                    menuItemsAsync: menuItemsAsync,
+                  ),
+                ),
               if (restaurantId != null)
                 restaurantDetailAsync.when(
                   loading: () => const SizedBox.shrink(),
@@ -221,6 +236,75 @@ class _MissingDataNotice extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _PartnerDataDiagnostics extends StatelessWidget {
+  const _PartnerDataDiagnostics({
+    required this.restaurantId,
+    required this.restaurantDetailAsync,
+    required this.featuredItemsAsync,
+    required this.menuTabsAsync,
+    required this.menuItemsAsync,
+  });
+
+  final String? restaurantId;
+  final AsyncValue<RestaurantDetail?> restaurantDetailAsync;
+  final AsyncValue<List<FeaturedItem>> featuredItemsAsync;
+  final AsyncValue<List<MenuTabItem>> menuTabsAsync;
+  final AsyncValue<List<MenuItem>> menuItemsAsync;
+
+  String _valueStatus<T>(AsyncValue<T> value, bool Function(T data) isEmpty) {
+    return value.when(
+      loading: () => 'loading',
+      error: (_, __) => 'error',
+      data: (data) => isEmpty(data) ? 'empty' : 'ok',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final detailsStatus = _valueStatus<RestaurantDetail?>(
+      restaurantDetailAsync,
+      (data) => data == null,
+    );
+    final featuredStatus = _valueStatus<List<FeaturedItem>>(
+      featuredItemsAsync,
+      (data) => data.isEmpty,
+    );
+    final tabsStatus = _valueStatus<List<MenuTabItem>>(
+      menuTabsAsync,
+      (data) => data.isEmpty,
+    );
+    final itemsStatus = _valueStatus<List<MenuItem>>(
+      menuItemsAsync,
+      (data) => data.isEmpty,
+    );
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(defaultPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Debug Data Diagnostics',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: 6),
+            Text('restaurantId: ${restaurantId ?? '(null)'}'),
+            Text('restaurant_details: $detailsStatus'),
+            Text('featured_items: $featuredStatus'),
+            Text('menu_tabs: $tabsStatus'),
+            Text('menu_items: $itemsStatus'),
           ],
         ),
       ),

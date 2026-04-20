@@ -7,6 +7,7 @@ import '../../components/buttons/secondary_button.dart';
 import '../../components/welcome_text.dart';
 import '../../core/constants.dart';
 import '../../core/routes.dart';
+import '../../data/providers/location_provider.dart';
 import '../../data/services/location_service.dart';
 
 class FindRestaurantsScreen extends ConsumerStatefulWidget {
@@ -19,7 +20,14 @@ class FindRestaurantsScreen extends ConsumerStatefulWidget {
 
 class _FindRestaurantsScreenState extends ConsumerState<FindRestaurantsScreen> {
   final _locationService = LocationService();
+  final _addressController = TextEditingController();
   String _locationLabel = 'Use current location';
+
+  @override
+  void dispose() {
+    _addressController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +56,15 @@ class _FindRestaurantsScreenState extends ConsumerState<FindRestaurantsScreen> {
               SecondaryButton(
                 press: () async {
                   try {
-                    final position =
-                        await _locationService.getCurrentPosition();
+                    await _locationService.getCurrentPosition();
                     if (!context.mounted) return;
+                    final label = 'Current location';
+                    await ref
+                        .read(selectedLocationProvider.notifier)
+                        .setLocationLabel(label);
                     setState(() {
-                      _locationLabel =
-                          '${position.latitude.toStringAsFixed(4)}, ${position.longitude.toStringAsFixed(4)}';
+                      _locationLabel = label;
+                      _addressController.text = label;
                     });
                   } catch (error) {
                     if (!context.mounted) return;
@@ -91,7 +102,7 @@ class _FindRestaurantsScreenState extends ConsumerState<FindRestaurantsScreen> {
                 child: Column(
                   children: [
                     TextFormField(
-                      // onSaved: (value) => _location = value,
+                      controller: _addressController,
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!
@@ -112,8 +123,13 @@ class _FindRestaurantsScreenState extends ConsumerState<FindRestaurantsScreen> {
                     ),
                     const SizedBox(height: defaultPadding),
                     ElevatedButton(
-                      onPressed: () {
-                        // Use your onw way how you combine both New Address and Current Location
+                      onPressed: () async {
+                        final enteredAddress = _addressController.text.trim();
+                        if (enteredAddress.isNotEmpty) {
+                          await ref
+                              .read(selectedLocationProvider.notifier)
+                              .setLocationLabel(enteredAddress);
+                        }
                         context.goNamed(AppRoutes.app);
                       },
                       child: const Text("Continue"),
