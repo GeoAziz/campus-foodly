@@ -90,7 +90,8 @@ class HomeScreen extends ConsumerWidget {
         child: RefreshIndicator(
           onRefresh: refreshHome,
           child: restaurantsAsync.when(
-            loading: () => buildCenteredState(const CircularProgressIndicator()),
+            loading: () =>
+                buildCenteredState(const CircularProgressIndicator()),
             error: (error, stackTrace) => buildCenteredState(
               Column(
                 mainAxisSize: MainAxisSize.min,
@@ -111,7 +112,8 @@ class HomeScreen extends ConsumerWidget {
               return CustomScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
                 slivers: [
-                  const SliverToBoxAdapter(child: SizedBox(height: defaultPadding)),
+                  const SliverToBoxAdapter(
+                      child: SizedBox(height: defaultPadding)),
                   SliverToBoxAdapter(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -205,7 +207,8 @@ class HomeScreen extends ConsumerWidget {
                       childCount: restaurants.length,
                     ),
                   ),
-                  const SliverToBoxAdapter(child: SizedBox(height: defaultPadding)),
+                  const SliverToBoxAdapter(
+                      child: SizedBox(height: defaultPadding)),
                 ],
               );
             },
