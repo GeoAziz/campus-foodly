@@ -17,221 +17,211 @@
     }
   },
   {
-    "id": "screen_literals--28d627802134671f",
+    "id": "screen_literals--166aeea3ae8f9982",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/orderDetails/order_details_screen.dart",
+      "file": "lib/screens/order_details/components/order_item_card.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/orderDetails/order_details_screen.dart",
-      "stringLiteralCount": 11,
-      "textLiteralCount": 11,
+      "file": "lib/screens/order_details/components/order_item_card.dart",
+      "stringLiteralCount": 2,
+      "textLiteralCount": 2,
       "textLiterals": [
-        "Checkout (\\$20.10)",
-        "Combo Burger",
-        "Cookie Sandwich",
-        "Delivery",
-        "Oyster Dish",
-        "Shortbread, chocolate turtle cookies, and red velvet.",
-        "Subtotal",
-        "Your Orders",
-        "numOfItem",
-        "price",
-        "title"
+        "Remove",
+        "USD$price"
       ]
     }
   },
   {
-    "id": "screen_literals--2b9eaf4f9b541535",
+    "id": "screen_literals--178573fe9999de14",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/signUp/components/body.dart",
+      "file": "lib/screens/phone_login/components/otp_form.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 2,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/phone_login/components/otp_form.dart",
+      "stringLiteralCount": 1,
+      "textLiteralCount": 1,
+      "textLiterals": [
+        "Continue"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals--1ab552db8dde2229",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/search/search_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 1,
       "assetLiterals": [
-        "assets/icons/facebook.svg",
-        "assets/icons/google.svg"
+        "assets/icons/search.svg"
       ],
-      "file": "lib/screens/signUp/components/body.dart",
-      "stringLiteralCount": 9,
-      "textLiteralCount": 7,
-      "textLiterals": [
-        "Already have account?",
-        "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
-        "Connect with Facebook",
-        "Connect with Google",
-        "Create Account",
-        "Enter your Name, Email and Password \nfor sign up.",
-        "Sign In"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals--2cd89a3e4849c804",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/addToOrder/add_to_order_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+      "file": "lib/screens/search/search_screen.dart",
       "stringLiteralCount": 11,
-      "textLiteralCount": 11,
+      "textLiteralCount": 10,
       "textLiterals": [
-        "0",
-        "Add to Order (\\$11.98)",
-        "Choice of Bottom Cookie",
-        "Choice of top Cookie",
-        "Cookies and Cream",
-        "Funfetti",
-        "M and M",
-        "Peanut Butter",
-        "Red Velvet",
-        "Snickerdoodle",
-        "White Chocolate Macadamia"
+        "All",
+        "Any",
+        "No restaurants found for your search.",
+        "Popular",
+        "Search",
+        "Search OrderEats restaurants",
+        "Search Results",
+        "Top Restaurants",
+        "Unable to load restaurants. ${error.toString()}",
+        "search-${restaurant.id}"
       ]
     }
   },
   {
-    "id": "screen_literals--3199b9fec4a5fa23",
+    "id": "screen_literals--241ff99598fb3346",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/featured/components/body.dart",
+      "file": "lib/screens/search/components/body.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/featured/components/body.dart",
-      "stringLiteralCount": 4,
-      "textLiteralCount": 4,
+      "assetLiteralCount": 1,
+      "assetLiterals": [
+        "assets/icons/search.svg"
+      ],
+      "file": "lib/screens/search/components/body.dart",
+      "stringLiteralCount": 14,
+      "textLiteralCount": 13,
       "textLiterals": [
         "American",
         "Chinese",
         "Deshi food",
-        "McDonald's"
+        "Search",
+        "Search OrderEats restaurants",
+        "Search Results",
+        "Top Restaurants",
+        "categories",
+        "deliveryTime",
+        "image",
+        "name",
+        "rating",
+        "ratingCount"
       ]
     }
   },
   {
-    "id": "screen_literals--36a1e937d9a96106",
+    "id": "screen_literals--25ba1efbf90342eb",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/details/details_screen.dart",
+      "file": "lib/screens/add_to_order/components/rounded_button.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 2,
-      "assetLiterals": [
-        "assets/icons/search.svg",
-        "assets/icons/share.svg"
-      ],
-      "file": "lib/screens/details/details_screen.dart",
-      "stringLiteralCount": 2,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/add_to_order/components/rounded_button.dart",
+      "stringLiteralCount": 0,
       "textLiteralCount": 0,
       "textLiterals": []
     }
   },
   {
-    "id": "screen_literals--3ca2c15426ac3da8",
+    "id": "screen_literals--25f7768173f08685",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/addToOrder/components/info.dart",
+      "file": "lib/screens/auth/reset_email_sent_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 1,
-      "assetLiterals": [
-        "assets/images/Header-image.png"
-      ],
-      "file": "lib/screens/addToOrder/components/info.dart",
-      "stringLiteralCount": 6,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/auth/reset_email_sent_screen.dart",
+      "stringLiteralCount": 5,
       "textLiteralCount": 5,
       "textLiterals": [
-        "American",
-        "Chinese",
-        "Cookie Sandwich",
-        "Deshi food",
-        "Shortbread, chocolate turtle cookies, and red velvet. 8 ounces cream cheese, softened."
+        "Back to sign in",
+        "Forgot Password",
+        "Reset email sent",
+        "Send again",
+        "We have sent password reset instructions to\nyour email address."
       ]
     }
   },
   {
-    "id": "screen_literals--3e675263a77caf96",
+    "id": "screen_literals--278da4e5cfd2ad2f",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/details/components/iteams.dart",
+      "file": "lib/screens/profile/components/body.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 1,
+      "assetLiteralCount": 7,
       "assetLiterals": [
-        "assets/images/featured_items_${index + 1}.png"
+        "assets/icons/card.svg",
+        "assets/icons/fb.svg",
+        "assets/icons/lock.svg",
+        "assets/icons/logout.svg",
+        "assets/icons/marker.svg",
+        "assets/icons/profile.svg",
+        "assets/icons/share.svg"
       ],
-      "file": "lib/screens/details/components/iteams.dart",
-      "stringLiteralCount": 16,
-      "textLiteralCount": 15,
+      "file": "lib/screens/profile/components/body.dart",
+      "stringLiteralCount": 29,
+      "textLiteralCount": 22,
       "textLiterals": [
-        "Appetizers",
-        "Beef & Lamb",
-        "Chinese",
-        "Cookie Sandwich",
-        "Dim Sum",
-        "Most Populars",
-        "Seafood",
-        "Shortbread, chocolate turtle cookies, and red velvet.",
-        "\\$",
-        "description",
-        "foodType",
-        "image",
-        "price",
-        "priceRange",
-        "title"
+        "Account Settings",
+        "Add Facebook, Twitter etc",
+        "Add Social Account",
+        "Add or remove your delivery locations",
+        "Add your credit & debit cards",
+        "Change Password",
+        "Change your account information",
+        "Change your password",
+        "Coming soon",
+        "Dark Mode",
+        "Get \\$10 for reffering friends",
+        "Locations",
+        "Log out of your account",
+        "Manage your notification preferences",
+        "Notifications",
+        "Payment Methods",
+        "Profile Information",
+        "Refer to Friends",
+        "Referral program coming soon",
+        "Sign Out",
+        "Update your settings like notifications, payments, profile edit etc.",
+        "Use Material You dark theme"
       ]
     }
   },
   {
-    "id": "screen_literals--3fe02cde5cc9651b",
+    "id": "screen_literals--3f3f7c05dacd0de6",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/details/components/restaurrant_info.dart",
+      "file": "lib/screens/order_details/components/price_row.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 2,
-      "assetLiterals": [
-        "assets/icons/clock.svg",
-        "assets/icons/delivery.svg"
-      ],
-      "file": "lib/screens/details/components/restaurrant_info.dart",
-      "stringLiteralCount": 12,
-      "textLiteralCount": 10,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/order_details/components/price_row.dart",
+      "stringLiteralCount": 1,
+      "textLiteralCount": 1,
       "textLiterals": [
-        "$text",
-        "25",
-        "American",
-        "Chinese",
-        "Delivery",
-        "Deshi food",
-        "Free",
-        "Mayfield Bakery & Cafe",
-        "Minutes",
-        "Take away"
+        "\\$$price"
       ]
     }
   },
@@ -261,6 +251,31 @@
     }
   },
   {
+    "id": "screen_literals--41d28f6d8c16a4bc",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/home/components/medium_card_list.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/home/components/medium_card_list.dart",
+      "stringLiteralCount": 7,
+      "textLiteralCount": 7,
+      "textLiterals": [
+        "$heroTagPrefix-${restaurant.id}-$index",
+        "No best picks available yet.",
+        "No featured partners available.",
+        "No restaurants available.",
+        "Retry",
+        "Unable to load restaurants: ${error.toString()}",
+        "medium"
+      ]
+    }
+  },
+  {
     "id": "screen_literals--4469d055692a9237",
     "entity": "screen_literals",
     "source": {
@@ -272,6 +287,23 @@
       "assetLiteralCount": 0,
       "assetLiterals": [],
       "file": "lib/screens/onboarding/components/onboard_content.dart",
+      "stringLiteralCount": 0,
+      "textLiteralCount": 0,
+      "textLiterals": []
+    }
+  },
+  {
+    "id": "screen_literals--46110293a890436f",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/add_to_order/components/rounded_checkbox_list_tile.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/add_to_order/components/rounded_checkbox_list_tile.dart",
       "stringLiteralCount": 0,
       "textLiteralCount": 0,
       "textLiterals": []
@@ -300,71 +332,66 @@
     }
   },
   {
-    "id": "screen_literals--54250a03211fa31a",
+    "id": "screen_literals--5343fe8c5c888ecd",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/details/components/featured_items.dart",
+      "file": "lib/screens/auth/auth_error_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 1,
-      "assetLiterals": [
-        "assets/images/featured_items_${index + 1}.png"
-      ],
-      "file": "lib/screens/details/components/featured_items.dart",
-      "stringLiteralCount": 5,
-      "textLiteralCount": 4,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/auth/auth_error_screen.dart",
+      "stringLiteralCount": 3,
+      "textLiteralCount": 3,
       "textLiterals": [
-        "Chines",
-        "Cookie Sandwich",
-        "Featured Items",
-        "\\$"
+        "Authentication Error",
+        "Back to Sign In",
+        "Unknown authentication error."
       ]
     }
   },
   {
-    "id": "screen_literals--57e57703a2ad3413",
+    "id": "screen_literals--559864fcd25257e2",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/addToOrder/components/rounded_button.dart",
+      "file": "lib/screens/details/details_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/addToOrder/components/rounded_button.dart",
-      "stringLiteralCount": 0,
-      "textLiteralCount": 0,
-      "textLiterals": []
-    }
-  },
-  {
-    "id": "screen_literals--59e9e60b1dbd4a39",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/home/home_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/home/home_screen.dart",
-      "stringLiteralCount": 10,
-      "textLiteralCount": 10,
+      "assetLiteralCount": 2,
+      "assetLiterals": [
+        "assets/icons/search.svg",
+        "assets/icons/share.svg"
+      ],
+      "file": "lib/screens/details/details_screen.dart",
+      "stringLiteralCount": 24,
+      "textLiteralCount": 22,
       "textLiterals": [
-        "All Restaurants",
         "American",
-        "Best Pick",
         "Chinese",
-        "Delivery to",
+        "Debug Data Diagnostics",
         "Deshi food",
-        "Featured Partners",
-        "Filter",
-        "McDonald's",
-        "San Francisco"
+        "Featured items are unavailable right now for this partner.",
+        "Free",
+        "Menu items are unavailable right now.",
+        "Restaurant Details",
+        "Restaurant details are unavailable right now for this partner.",
+        "Take away",
+        "This partner does not have any menu items yet.",
+        "This partner is missing restaurant detail data.",
+        "empty",
+        "error",
+        "featured_items: $featuredStatus",
+        "loading",
+        "menu_items: $itemsStatus",
+        "menu_tabs: $tabsStatus",
+        "ok",
+        "restaurantId: ${restaurantId ??",
+        "restaurant_details: $detailsStatus",
+        "}"
       ]
     }
   },
@@ -388,44 +415,95 @@
     }
   },
   {
-    "id": "screen_literals--5ddd6bd384edea07",
+    "id": "screen_literals--5dd1b605cd9bf978",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/signUp/components/sign_up_form.dart",
+      "file": "lib/screens/order_details/components/total_price.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/signUp/components/sign_up_form.dart",
-      "stringLiteralCount": 5,
-      "textLiteralCount": 5,
+      "file": "lib/screens/order_details/components/total_price.dart",
+      "stringLiteralCount": 3,
+      "textLiteralCount": 3,
       "textLiterals": [
-        "Confirm Password",
-        "Email Address",
-        "Full Name",
-        "Password",
-        "Sign Up"
+        "(incl. VAT)",
+        "Total",
+        "\\$$price"
       ]
     }
   },
   {
-    "id": "screen_literals--6d252835d5f3d4f8",
+    "id": "screen_literals--61d812272a51b0b6",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/addToOrder/components/required_section_title.dart",
+      "file": "lib/screens/onboarding/onboarding_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 3,
+      "assetLiterals": [
+        "assets/Illustrations/Illustrations_1.svg",
+        "assets/Illustrations/Illustrations_2.svg",
+        "assets/Illustrations/Illustrations_3.svg"
+      ],
+      "file": "lib/screens/onboarding/onboarding_screen.dart",
+      "stringLiteralCount": 13,
+      "textLiteralCount": 10,
+      "textLiterals": [
+        "All your favorites",
+        "Choose your food",
+        "Easily find your type of food craving and\nyou’ll get delivery in wide range.",
+        "Free delivery for new customers via Apple Pay\nand others payment methods.",
+        "Free delivery offers",
+        "Get Started",
+        "Order from the best local restaurants \nwith easy, on-demand delivery.",
+        "illustration",
+        "text",
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals--6744546fb1a91b8",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/add_to_order/components/required_section_title.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/addToOrder/components/required_section_title.dart",
+      "file": "lib/screens/add_to_order/components/required_section_title.dart",
       "stringLiteralCount": 1,
       "textLiteralCount": 1,
       "textLiterals": [
         "Required"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals--6bcf9b7e4ba0932c",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/filter/filter_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/filter/filter_screen.dart",
+      "stringLiteralCount": 3,
+      "textLiteralCount": 3,
+      "textLiterals": [
+        "Filters",
+        "Minimum Rating: ${filterState.minRating.toStringAsFixed(1)}",
+        "Reset"
       ]
     }
   },
@@ -460,139 +538,108 @@
     }
   },
   {
-    "id": "screen_literals--731a32830655d638",
+    "id": "screen_literals--716ccef43b5a22bf",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/orderDetails/components/order_item_card.dart",
+      "file": "lib/screens/add_to_order/add_to_order_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/orderDetails/components/order_item_card.dart",
-      "stringLiteralCount": 1,
-      "textLiteralCount": 1,
+      "assetLiteralCount": 1,
+      "assetLiterals": [
+        "assets/images/big_1.png"
+      ],
+      "file": "lib/screens/add_to_order/add_to_order_screen.dart",
+      "stringLiteralCount": 17,
+      "textLiteralCount": 16,
       "textLiterals": [
-        "USD$price"
+        "${choiceOfTopCookies[state.choiceOfTopCookie]} x ${choiceOfTopCookies[state.choiceOfBottomCookie]}",
+        "0",
+        "Add to Order (\\$11.98)",
+        "Choice of Bottom Cookie",
+        "Choice of top Cookie",
+        "Cookies and Cream",
+        "Dessert",
+        "Funfetti",
+        "M and M",
+        "Peanut Butter",
+        "Red Velvet",
+        "Snickerdoodle",
+        "Top: ${choiceOfTopCookies[state.choiceOfTopCookie]}, Bottom: ${choiceOfTopCookies[state.choiceOfBottomCookie]}",
+        "White Chocolate Macadamia",
+        "cookie-${state.choiceOfTopCookie}-${state.choiceOfBottomCookie}",
+        "demo-desserts"
       ]
     }
   },
   {
-    "id": "screen_literals--cf0970c2ce403da",
+    "id": "screen_literals--71e790b0360181af",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/orderDetails/components/price_row.dart",
+      "file": "lib/screens/home/home_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/orderDetails/components/price_row.dart",
-      "stringLiteralCount": 1,
-      "textLiteralCount": 1,
+      "assetLiteralCount": 2,
+      "assetLiterals": [
+        "assets/images/big_1.png",
+        "assets/images/big_2.png"
+      ],
+      "file": "lib/screens/home/home_screen.dart",
+      "stringLiteralCount": 15,
+      "textLiteralCount": 13,
       "textLiterals": [
-        "\\$$price"
+        "All Restaurants",
+        "Best Pick",
+        "Choose location",
+        "Delivery to",
+        "Featured Partners",
+        "Filter",
+        "Popular",
+        "Retry",
+        "Unable to load home data: ${error.toString()}",
+        "home-all-${restaurant.id}",
+        "home-best-pick",
+        "home-featured",
+        "home-hero-main"
       ]
     }
   },
   {
-    "id": "screen_literals--fabc4ea062f65f1",
+    "id": "screen_literals--740ef0e6c9296313",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/auth/forgot_password_screen.dart",
+      "file": "lib/screens/sign_up/components/body.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/auth/forgot_password_screen.dart",
-      "stringLiteralCount": 5,
-      "textLiteralCount": 5,
+      "assetLiteralCount": 2,
+      "assetLiterals": [
+        "assets/icons/facebook.svg",
+        "assets/icons/google.svg"
+      ],
+      "file": "lib/screens/sign_up/components/body.dart",
+      "stringLiteralCount": 9,
+      "textLiteralCount": 7,
       "textLiterals": [
-        "Email Address",
-        "Enter your email address and we will \nsend you a reset instructions.",
-        "Forgot Password",
-        "Forgot password",
-        "Reset password"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-0c9b23d30abce396",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/phoneLogin/phone_login_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/phoneLogin/phone_login_screen.dart",
-      "stringLiteralCount": 5,
-      "textLiteralCount": 5,
-      "textLiterals": [
-        "Enter your phone number to use foodly \nand enjoy your food :)",
-        "Get started with Foodly",
-        "Login to Foodly",
-        "Phone Number",
-        "Sign Up"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-0fc8f7311721242f",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/phoneLogin/number_verify_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/phoneLogin/number_verify_screen.dart",
-      "stringLiteralCount": 6,
-      "textLiteralCount": 6,
-      "textLiterals": [
+        "Already have account?",
         "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
-        "Didn’t receive code?",
-        "Enter the 4-Digit code sent to you at \n+1501333982",
-        "Login to Foodly",
-        "Resend Again.",
-        "Verify phone number"
+        "Connect with Facebook",
+        "Connect with Google",
+        "Create Account",
+        "Enter your Name, Email and Password \nfor sign up.",
+        "Sign In"
       ]
     }
   },
   {
-    "id": "screen_literals-251492d03ece6790",
+    "id": "screen_literals--7e0e6f85e1efc37f",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/orderDetails/components/total_price.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/orderDetails/components/total_price.dart",
-      "stringLiteralCount": 3,
-      "textLiteralCount": 3,
-      "textLiterals": [
-        "(incl. VAT)",
-        "Total",
-        "\\$$price"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-269c93ae41d8e4d3",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/findRestaurants/find_restaurants_screen.dart",
+      "file": "lib/screens/find_restaurants/find_restaurants_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
@@ -602,11 +649,12 @@
         "assets/icons/location.svg",
         "assets/icons/marker.svg"
       ],
-      "file": "lib/screens/findRestaurants/find_restaurants_screen.dart",
-      "stringLiteralCount": 7,
-      "textLiteralCount": 5,
+      "file": "lib/screens/find_restaurants/find_restaurants_screen.dart",
+      "stringLiteralCount": 8,
+      "textLiteralCount": 6,
       "textLiterals": [
         "Continue",
+        "Current location",
         "Enter a new address",
         "Find restaurants near you",
         "Please enter your location or allow access to \nyour location to find restaurants near you.",
@@ -615,121 +663,150 @@
     }
   },
   {
-    "id": "screen_literals-27a881deb8704b7a",
+    "id": "screen_literals--f167380bfb70612",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/featured/featurred_screen.dart",
+      "file": "lib/screens/featured/components/body.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/featured/featurred_screen.dart",
-      "stringLiteralCount": 1,
-      "textLiteralCount": 1,
+      "file": "lib/screens/featured/components/body.dart",
+      "stringLiteralCount": 4,
+      "textLiteralCount": 4,
       "textLiterals": [
-        "Featured Partners"
+        "No featured partners are configured yet.",
+        "Popular",
+        "Unable to load featured restaurants: ${error.toString()}",
+        "featured-${restaurant.id}"
       ]
     }
   },
   {
-    "id": "screen_literals-27e83517f1b66cac",
+    "id": "screen_literals-0015645ccda2b51e",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 3,
-      "assetLiterals": [
-        "assets/Illustrations/Illustrations_1.svg",
-        "assets/Illustrations/Illustrations_2.svg",
-        "assets/Illustrations/Illustrations_3.svg"
-      ],
-      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
-      "stringLiteralCount": 13,
-      "textLiteralCount": 10,
-      "textLiterals": [
-        "All your favorites",
-        "Choose your food",
-        "Easily find your type of food craving and\nyou’ll get delivery in wide range.",
-        "Free delivery for new customers via Apple Pay\nand others payment methods.",
-        "Free delivery offers",
-        "Get Started",
-        "Order from the best local restaurants \nwith easy, on-demand delivery.",
-        "illustration",
-        "text",
-        "title"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-2efbb726652524ec",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/home/components/medium_card_list.dart",
+      "file": "lib/screens/details/components/featured_items.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/home/components/medium_card_list.dart",
+      "file": "lib/screens/details/components/featured_items.dart",
       "stringLiteralCount": 3,
       "textLiteralCount": 3,
       "textLiterals": [
-        "image",
-        "location",
-        "name"
+        "$$",
+        "Featured Items",
+        "Featured items are not available for this partner yet."
       ]
     }
   },
   {
-    "id": "screen_literals-34740994c309e589",
+    "id": "screen_literals-1cf8f75e4ed54be4",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/search/components/body.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 1,
-      "assetLiterals": [
-        "assets/icons/search.svg"
-      ],
-      "file": "lib/screens/search/components/body.dart",
-      "stringLiteralCount": 9,
-      "textLiteralCount": 8,
-      "textLiterals": [
-        "American",
-        "Chinese",
-        "Deshi food",
-        "McDonald's",
-        "Search",
-        "Search Results",
-        "Search on foodly",
-        "Top Restaurants"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-359e751236313a10",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/phoneLogin/components/otp_form.dart",
+      "file": "lib/screens/order_details/order_details_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/phoneLogin/components/otp_form.dart",
-      "stringLiteralCount": 1,
-      "textLiteralCount": 1,
+      "file": "lib/screens/order_details/order_details_screen.dart",
+      "stringLiteralCount": 10,
+      "textLiteralCount": 10,
       "textLiterals": [
-        "Continue"
+        "Added to cart",
+        "Checkout (\\$${subtotal.toStringAsFixed(2)})",
+        "Delivery",
+        "Subtotal",
+        "Track Order",
+        "Your Orders",
+        "Your cart is empty. Add a dish to continue.",
+        "amount",
+        "cart-draft",
+        "orderId"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals-30e51a768e82ed65",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/auth/sign_in_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 2,
+      "assetLiterals": [
+        "assets/icons/facebook.svg",
+        "assets/icons/google.svg"
+      ],
+      "file": "lib/screens/auth/sign_in_screen.dart",
+      "stringLiteralCount": 10,
+      "textLiteralCount": 8,
+      "textLiterals": [
+        "Connect with Facebook",
+        "Connect with Google",
+        "Create new account.",
+        "Don’t have account?",
+        "Enter your Phone number or Email \naddress for sign in. Enjoy your food :)",
+        "Sign In",
+        "Use phone number instead",
+        "Welcome to"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals-34ac9d9b9ad6f0d9",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/phone_login/number_verify_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/phone_login/number_verify_screen.dart",
+      "stringLiteralCount": 7,
+      "textLiteralCount": 7,
+      "textLiterals": [
+        "By Signing up you agree to our Terms \nConditions & Privacy Policy.",
+        "Didn’t receive code?",
+        "Enter the 4-Digit code sent to you at \n${phoneState.phoneNumber.isEmpty ? '+1501333982' : phoneState.phoneNumber}",
+        "Phone Verification",
+        "Resend Again.",
+        "Use a different number",
+        "Verify phone number"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals-3efb1b69ca6231ea",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/phone_login/phone_login_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/phone_login/phone_login_screen.dart",
+      "stringLiteralCount": 5,
+      "textLiteralCount": 5,
+      "textLiterals": [
+        "Enter your phone number to continue with secure sign in.",
+        "Get started with OrderEats",
+        "Phone Number",
+        "Phone Sign In",
+        "Send code"
       ]
     }
   },
@@ -763,99 +840,140 @@
     }
   },
   {
-    "id": "screen_literals-4eabfcacf6aeea42",
+    "id": "screen_literals-42d5953f34c50873",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/auth/reset_email_sent_screen.dart",
+      "file": "lib/screens/details/components/restaurant_info.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 0,
-      "assetLiterals": [],
-      "file": "lib/screens/auth/reset_email_sent_screen.dart",
-      "stringLiteralCount": 4,
-      "textLiteralCount": 4,
+      "assetLiteralCount": 2,
+      "assetLiterals": [
+        "assets/icons/clock.svg",
+        "assets/icons/delivery.svg"
+      ],
+      "file": "lib/screens/details/components/restaurant_info.dart",
+      "stringLiteralCount": 7,
+      "textLiteralCount": 5,
       "textLiterals": [
-        "Forgot Password",
-        "Reset email sent",
-        "Send again",
-        "We have sent a instructions email to \ntheflutterway@email.com."
+        "$deliveryTime",
+        "$text",
+        "Delivery",
+        "Minutes",
+        "Take away"
       ]
     }
   },
   {
-    "id": "screen_literals-625892e4fe6c4fa4",
+    "id": "screen_literals-4816f1c1181ef232",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/filter/filter_screen.dart",
+      "file": "lib/screens/featured/featured_screen.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/filter/filter_screen.dart",
+      "file": "lib/screens/featured/featured_screen.dart",
       "stringLiteralCount": 1,
       "textLiteralCount": 1,
       "textLiterals": [
-        "Filters"
+        "Featured Partners"
       ]
     }
   },
   {
-    "id": "screen_literals-62e59a0213133f21",
+    "id": "screen_literals-505ce5016fa61c07",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/addToOrder/components/rounded_checkedbox_list_tile.dart",
+      "file": "lib/screens/sign_up/components/sign_up_form.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
       "assetLiteralCount": 0,
       "assetLiterals": [],
-      "file": "lib/screens/addToOrder/components/rounded_checkedbox_list_tile.dart",
-      "stringLiteralCount": 0,
-      "textLiteralCount": 0,
-      "textLiterals": []
+      "file": "lib/screens/sign_up/components/sign_up_form.dart",
+      "stringLiteralCount": 5,
+      "textLiteralCount": 5,
+      "textLiterals": [
+        "Confirm Password",
+        "Email Address",
+        "Full Name",
+        "Password",
+        "Sign Up"
+      ]
     }
   },
   {
-    "id": "screen_literals-63afc54342478f58",
+    "id": "screen_literals-5b090760e67386c2",
     "entity": "screen_literals",
     "source": {
-      "file": "lib/screens/profile/components/body.dart",
+      "file": "lib/screens/details/components/items.dart",
       "block": "screen_literal_scan",
       "index": 0
     },
     "raw": {
-      "assetLiteralCount": 6,
-      "assetLiterals": [
-        "assets/icons/card.svg",
-        "assets/icons/fb.svg",
-        "assets/icons/lock.svg",
-        "assets/icons/marker.svg",
-        "assets/icons/profile.svg",
-        "assets/icons/share.svg"
-      ],
-      "file": "lib/screens/profile/components/body.dart",
-      "stringLiteralCount": 20,
-      "textLiteralCount": 14,
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/details/components/items.dart",
+      "stringLiteralCount": 3,
+      "textLiteralCount": 3,
       "textLiterals": [
-        "Account Settings",
-        "Add Facebook, Twitter etc",
-        "Add Social Account",
-        "Add or remove your delivery locations",
-        "Add your credit & debit cards",
-        "Change Password",
-        "Change your account information",
-        "Change your password",
-        "Get \\$10 for reffering friends",
-        "Locations",
-        "Payment Methods",
-        "Profile Information",
-        "Refer to Friends",
-        "Update your settings like notifications, payments, profile edit etc."
+        "Chinese",
+        "Menu items are not available for this partner yet.",
+        "\\$"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals-5b43d81d2b9e285d",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/auth/forgot_password_screen.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 0,
+      "assetLiterals": [],
+      "file": "lib/screens/auth/forgot_password_screen.dart",
+      "stringLiteralCount": 6,
+      "textLiteralCount": 6,
+      "textLiterals": [
+        "Email Address",
+        "Enter your email address and we will \nsend you a reset instructions.",
+        "Forgot Password",
+        "Forgot password",
+        "Reset password",
+        "email"
+      ]
+    }
+  },
+  {
+    "id": "screen_literals-5e01e1a8fe45f388",
+    "entity": "screen_literals",
+    "source": {
+      "file": "lib/screens/add_to_order/components/info.dart",
+      "block": "screen_literal_scan",
+      "index": 0
+    },
+    "raw": {
+      "assetLiteralCount": 1,
+      "assetLiterals": [
+        "assets/images/Header-image.png"
+      ],
+      "file": "lib/screens/add_to_order/components/info.dart",
+      "stringLiteralCount": 6,
+      "textLiteralCount": 5,
+      "textLiterals": [
+        "American",
+        "Chinese",
+        "Cookie Sandwich",
+        "Deshi food",
+        "Shortbread, chocolate turtle cookies, and red velvet. 8 ounces cream cheese, softened."
       ]
     }
   },
@@ -877,34 +995,6 @@
     }
   },
   {
-    "id": "screen_literals-651e980ad2b2b10a",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/auth/sign_in_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 2,
-      "assetLiterals": [
-        "assets/icons/facebook.svg",
-        "assets/icons/google.svg"
-      ],
-      "file": "lib/screens/auth/sign_in_screen.dart",
-      "stringLiteralCount": 9,
-      "textLiteralCount": 7,
-      "textLiterals": [
-        "Connect with Facebook",
-        "Connect with Google",
-        "Create new account.",
-        "Don’t have account?",
-        "Enter your Phone number or Email \naddress for sign in. Enjoy your food :)",
-        "Sign In",
-        "Welcome to"
-      ]
-    }
-  },
-  {
     "id": "screen_literals-689a0800d2cc783d",
     "entity": "screen_literals",
     "source": {
@@ -921,34 +1011,6 @@
       "textLiterals": [
         "Price Range",
         "\\$"
-      ]
-    }
-  },
-  {
-    "id": "screen_literals-75faaa51513dd23d",
-    "entity": "screen_literals",
-    "source": {
-      "file": "lib/screens/search/search_screen.dart",
-      "block": "screen_literal_scan",
-      "index": 0
-    },
-    "raw": {
-      "assetLiteralCount": 1,
-      "assetLiterals": [
-        "assets/icons/search.svg"
-      ],
-      "file": "lib/screens/search/search_screen.dart",
-      "stringLiteralCount": 9,
-      "textLiteralCount": 8,
-      "textLiterals": [
-        "American",
-        "Chinese",
-        "Deshi food",
-        "McDonald's",
-        "Search",
-        "Search Results",
-        "Search on foodly",
-        "Top Restaurants"
       ]
     }
   }

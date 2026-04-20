@@ -1,21 +1,21 @@
 {
-  "generatedAtUtc": "2026-04-17T05:44:48.831492Z",
-  "rawRecordCount": 157,
+  "generatedAtUtc": "2026-04-20T03:43:14.267573Z",
+  "rawRecordCount": 143,
   "normalizedEntityCounts": {
     "image_sets": 4,
-    "restaurants": 8,
+    "restaurants": 5,
     "nav_items": 4,
     "choice_options": 8,
-    "screen_literals": 40,
-    "tabs": 5,
-    "menu_items": 3,
+    "screen_literals": 41,
     "categories": 9,
     "dietaries": 4,
     "onboarding_slides": 3,
-    "order_items": 3,
-    "profile_menu_items": 6,
-    "ui_config": 7,
-    "assets_catalog": 53
+    "profile_menu_items": 7,
+    "assets_catalog": 53,
+    "restaurant_details": 5,
+    "featured_items": 5,
+    "menu_tabs": 11,
+    "menu_items": 5
   },
-  "missingAssetCount": 2
+  "missingAssetCount": 0
 }

@@ -1,7 +1,5 @@
 [
   {
-    "id": "restaurant_details_23d65bdcb8d4",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
     "deliveryFee": "Free",
     "deliveryTime": 25,
     "foodTypes": [
@@ -9,20 +7,57 @@
       "American",
       "Deshi food"
     ],
+    "id": "restaurant_details_-3ac71f961f8cfe2f",
     "ratingCount": 200,
+    "restaurantId": "restaurants-1a7165758ebd0cbb",
     "takeAwayLabel": "Take away"
   },
   {
-    "id": "restaurant_details_global_default",
-    "restaurantId": "",
     "deliveryFee": "Free",
     "deliveryTime": 25,
     "foodTypes": [
-      "Chinese",
-      "American",
-      "Deshi food"
+      "Burgers",
+      "Breakfast"
     ],
+    "id": "restaurant_details_-4ad7bf8004bcecc5",
     "ratingCount": 200,
+    "restaurantId": "restaurants--4fadc13a209ad270",
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "deliveryFee": "Free",
+    "deliveryTime": 25,
+    "foodTypes": [
+      "Brunch",
+      "Breakfast"
+    ],
+    "id": "restaurant_details_-4b50e53adeac4a0e",
+    "ratingCount": 200,
+    "restaurantId": "restaurants-7cb473545a75b852",
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "deliveryFee": "Free",
+    "deliveryTime": 30,
+    "foodTypes": [
+      "Dinner",
+      "Pizza"
+    ],
+    "id": "restaurant_details_37f9d1e2f8901a47",
+    "ratingCount": 200,
+    "restaurantId": "restaurants-2d4612c0fbf751d4",
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "deliveryFee": "Free",
+    "deliveryTime": 25,
+    "foodTypes": [
+      "Salads",
+      "Dinner"
+    ],
+    "id": "restaurant_details_797155a1b376a1f6",
+    "ratingCount": 200,
+    "restaurantId": "restaurants-584bfde20f1b19a4",
     "takeAwayLabel": "Take away"
   }
 ]

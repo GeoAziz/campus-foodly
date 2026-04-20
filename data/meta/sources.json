@@ -1,43 +1,48 @@
 [
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoBigImages",
     "index": 0
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoBigImages",
     "index": 1
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoBigImages",
     "index": 2
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoBigImages",
     "index": 3
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoMediumCardData",
     "index": 0
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoMediumCardData",
     "index": 1
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoMediumCardData",
     "index": 2
   },
   {
-    "file": "lib/demo_data.dart",
+    "file": "lib/data/services/mock_data_service.dart",
     "block": "demoMediumCardData",
     "index": 3
+  },
+  {
+    "file": "lib/data/services/mock_data_service.dart",
+    "block": "demoMediumCardData",
+    "index": 4
   },
   {
     "file": "lib/entry_point.dart",
@@ -60,67 +65,77 @@
     "index": 3
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/features/recommendations/presentation/for_you_section.dart",
+    "block": "inline_restaurant_cards",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 0
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 1
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 2
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 3
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 4
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 5
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 6
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "choiceOfTopCookies",
     "index": 7
   },
   {
-    "file": "lib/screens/addToOrder/add_to_order_screen.dart",
+    "file": "lib/screens/add_to_order/add_to_order_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/addToOrder/components/info.dart",
+    "file": "lib/screens/add_to_order/components/info.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/addToOrder/components/required_section_title.dart",
+    "file": "lib/screens/add_to_order/components/required_section_title.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/addToOrder/components/rounded_button.dart",
+    "file": "lib/screens/add_to_order/components/rounded_button.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/addToOrder/components/rounded_checkedbox_list_tile.dart",
+    "file": "lib/screens/add_to_order/components/rounded_checkbox_list_tile.dart",
+    "block": "screen_literal_scan",
+    "index": 0
+  },
+  {
+    "file": "lib/screens/auth/auth_error_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
@@ -160,52 +175,12 @@
     "index": 0
   },
   {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoTabs",
-    "index": 0
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoTabs",
-    "index": 1
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoTabs",
-    "index": 2
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoTabs",
-    "index": 3
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoTabs",
-    "index": 4
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoData_List.generate",
-    "index": 0
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoData_List.generate",
-    "index": 1
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
-    "block": "demoData_List.generate",
-    "index": 2
-  },
-  {
-    "file": "lib/screens/details/components/iteams.dart",
+    "file": "lib/screens/details/components/items.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/details/components/restaurrant_info.dart",
+    "file": "lib/screens/details/components/restaurant_info.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
@@ -225,7 +200,7 @@
     "index": 0
   },
   {
-    "file": "lib/screens/featured/featurred_screen.dart",
+    "file": "lib/screens/featured/featured_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
@@ -315,7 +290,7 @@
     "index": 0
   },
   {
-    "file": "lib/screens/findRestaurants/find_restaurants_screen.dart",
+    "file": "lib/screens/find_restaurants/find_restaurants_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
@@ -345,72 +320,57 @@
     "index": 0
   },
   {
-    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "file": "lib/screens/onboarding/onboarding_screen.dart",
     "block": "demoData",
     "index": 0
   },
   {
-    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "file": "lib/screens/onboarding/onboarding_screen.dart",
     "block": "demoData",
     "index": 1
   },
   {
-    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "file": "lib/screens/onboarding/onboarding_screen.dart",
     "block": "demoData",
     "index": 2
   },
   {
-    "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+    "file": "lib/screens/onboarding/onboarding_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/orderDetails/components/order_item_card.dart",
+    "file": "lib/screens/order_details/components/order_item_card.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/orderDetails/components/price_row.dart",
+    "file": "lib/screens/order_details/components/price_row.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/orderDetails/components/total_price.dart",
+    "file": "lib/screens/order_details/components/total_price.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/orderDetails/order_details_screen.dart",
-    "block": "demoItems",
-    "index": 0
-  },
-  {
-    "file": "lib/screens/orderDetails/order_details_screen.dart",
-    "block": "demoItems",
-    "index": 1
-  },
-  {
-    "file": "lib/screens/orderDetails/order_details_screen.dart",
-    "block": "demoItems",
-    "index": 2
-  },
-  {
-    "file": "lib/screens/orderDetails/order_details_screen.dart",
+    "file": "lib/screens/order_details/order_details_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/phoneLogin/components/otp_form.dart",
+    "file": "lib/screens/phone_login/components/otp_form.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/phoneLogin/number_verify_screen.dart",
+    "file": "lib/screens/phone_login/number_verify_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/phoneLogin/phone_login_screen.dart",
+    "file": "lib/screens/phone_login/phone_login_screen.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
@@ -443,6 +403,11 @@
     "file": "lib/screens/profile/components/body.dart",
     "block": "inline_profile_menu",
     "index": 5
+  },
+  {
+    "file": "lib/screens/profile/components/body.dart",
+    "block": "inline_profile_menu",
+    "index": 6
   },
   {
     "file": "lib/screens/profile/components/body.dart",
@@ -475,49 +440,14 @@
     "index": 0
   },
   {
-    "file": "lib/screens/signUp/components/body.dart",
+    "file": "lib/screens/sign_up/components/body.dart",
     "block": "screen_literal_scan",
     "index": 0
   },
   {
-    "file": "lib/screens/signUp/components/sign_up_form.dart",
+    "file": "lib/screens/sign_up/components/sign_up_form.dart",
     "block": "screen_literal_scan",
     "index": 0
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "color_constants",
-    "index": 0
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "color_constants",
-    "index": 1
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "color_constants",
-    "index": 2
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "color_constants",
-    "index": 3
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "color_constants",
-    "index": 4
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "scalar_constants",
-    "index": 5
-  },
-  {
-    "file": "lib/constants.dart",
-    "block": "scalar_constants",
-    "index": 6
   },
   {
     "file": "assets/Illustrations/Illustrations_1.svg",
@@ -750,17 +680,17 @@
     "index": 45
   },
   {
-    "file": "assets/images/featured_items_1.png",
+    "file": "assets/images/featured _items_1.png",
     "block": "filesystem_assets",
     "index": 46
   },
   {
-    "file": "assets/images/featured_items_2.png",
+    "file": "assets/images/featured _items_2.png",
     "block": "filesystem_assets",
     "index": 47
   },
   {
-    "file": "assets/images/featured_items_3.png",
+    "file": "assets/images/featured _items_3.png",
     "block": "filesystem_assets",
     "index": 48
   },

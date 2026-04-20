@@ -1,62 +1,68 @@
 [
   {
-    "id": "menu_tabs_-5471a740a16",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "position": 2,
-    "title": "Seafood"
-  },
-  {
-    "id": "menu_tabs_-8d31a4ae5d5",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "position": 3,
-    "title": "Appetizers"
-  },
-  {
-    "id": "menu_tabs_0-14f87ea8ba",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "position": 4,
-    "title": "Dim Sum"
-  },
-  {
-    "id": "menu_tabs_2b7e4fa8c9b5",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "position": 0,
-    "title": "Most Populars"
-  },
-  {
-    "id": "menu_tabs_304949450e52",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
+    "id": "menu_tabs_-5bea8de887048a97",
     "position": 1,
-    "title": "Beef & Lamb"
+    "restaurantId": "restaurants-7cb473545a75b852",
+    "title": "Breakfast"
   },
   {
-    "id": "menu_tabs_global_2",
-    "restaurantId": "",
-    "position": 2,
-    "title": "Seafood"
-  },
-  {
-    "id": "menu_tabs_global_3",
-    "restaurantId": "",
-    "position": 3,
-    "title": "Appetizers"
-  },
-  {
-    "id": "menu_tabs_global_4",
-    "restaurantId": "",
-    "position": 4,
-    "title": "Dim Sum"
-  },
-  {
-    "id": "menu_tabs_global_0",
-    "restaurantId": "",
+    "id": "menu_tabs_-5bea8ee887048c4a",
     "position": 0,
-    "title": "Most Populars"
+    "restaurantId": "restaurants-7cb473545a75b852",
+    "title": "Brunch"
   },
   {
-    "id": "menu_tabs_global_1",
-    "restaurantId": "",
+    "id": "menu_tabs_00a9d54fb7f4e82a",
+    "position": 0,
+    "restaurantId": "restaurants-584bfde20f1b19a4",
+    "title": "Salads"
+  },
+  {
+    "id": "menu_tabs_00a9d64fb7f4e9dd",
     "position": 1,
-    "title": "Beef & Lamb"
+    "restaurantId": "restaurants-584bfde20f1b19a4",
+    "title": "Dinner"
+  },
+  {
+    "id": "menu_tabs_095697aa4986808f",
+    "position": 2,
+    "restaurantId": "restaurants-1a7165758ebd0cbb",
+    "title": "Deshi food"
+  },
+  {
+    "id": "menu_tabs_095698aa49868242",
+    "position": 1,
+    "restaurantId": "restaurants-1a7165758ebd0cbb",
+    "title": "American"
+  },
+  {
+    "id": "menu_tabs_095699aa498683f5",
+    "position": 0,
+    "restaurantId": "restaurants-1a7165758ebd0cbb",
+    "title": "Chinese"
+  },
+  {
+    "id": "menu_tabs_3ef33660f5033e88",
+    "position": 1,
+    "restaurantId": "restaurants-2d4612c0fbf751d4",
+    "title": "Pizza"
+  },
+  {
+    "id": "menu_tabs_3ef33760f503403b",
+    "position": 0,
+    "restaurantId": "restaurants-2d4612c0fbf751d4",
+    "title": "Dinner"
+  },
+  {
+    "id": "menu_tabs_6e65e9d11ca5ce4c",
+    "position": 1,
+    "restaurantId": "restaurants--4fadc13a209ad270",
+    "title": "Breakfast"
+  },
+  {
+    "id": "menu_tabs_6e65ead11ca5cfff",
+    "position": 0,
+    "restaurantId": "restaurants--4fadc13a209ad270",
+    "title": "Burgers"
   }
 ]

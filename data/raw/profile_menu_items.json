@@ -1,20 +1,6 @@
 [
   {
-    "id": "profile_menu_items--47e46eae15b3523c",
-    "entity": "profile_menu_items",
-    "source": {
-      "file": "lib/screens/profile/components/body.dart",
-      "block": "inline_profile_menu",
-      "index": 4
-    },
-    "raw": {
-      "subTitle": "Add Facebook, Twitter etc ",
-      "svgSrc": "assets/icons/fb.svg",
-      "title": "Add Social Account"
-    }
-  },
-  {
-    "id": "profile_menu_items--7f5fe792343af3c2",
+    "id": "profile_menu_items--535230d593079380",
     "entity": "profile_menu_items",
     "source": {
       "file": "lib/screens/profile/components/body.dart",
@@ -22,9 +8,24 @@
       "index": 5
     },
     "raw": {
+      "isComingSoon": true,
       "subTitle": "Get \\$10 for reffering friends",
       "svgSrc": "assets/icons/share.svg",
       "title": "Refer to Friends"
+    }
+  },
+  {
+    "id": "profile_menu_items--5dc5a7eedbde5f5f",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 6
+    },
+    "raw": {
+      "subTitle": "Log out of your account",
+      "svgSrc": "assets/icons/logout.svg",
+      "title": "Sign Out"
     }
   },
   {
@@ -53,6 +54,21 @@
       "subTitle": "Add or remove your delivery locations",
       "svgSrc": "assets/icons/marker.svg",
       "title": "Locations"
+    }
+  },
+  {
+    "id": "profile_menu_items-28c3286ed816c301",
+    "entity": "profile_menu_items",
+    "source": {
+      "file": "lib/screens/profile/components/body.dart",
+      "block": "inline_profile_menu",
+      "index": 4
+    },
+    "raw": {
+      "isComingSoon": false,
+      "subTitle": "Add Facebook, Twitter etc ",
+      "svgSrc": "assets/icons/fb.svg",
+      "title": "Add Social Account"
     }
   },
   {

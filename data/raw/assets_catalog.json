@@ -1,816 +1,24 @@
 [
   {
-    "id": "assets_catalog--16631e8ffc183927",
+    "id": "assets_catalog--157376d9f49bafef",
     "entity": "assets_catalog",
     "source": {
-      "file": "assets/images/big_4.png",
-      "block": "filesystem_assets",
-      "index": 45
-    },
-    "raw": {
-      "assetPath": "assets/images/big_4.png",
-      "contentHash": "3d01d669dd37c9bf",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/big_4.png",
-      "fileName": "big_4.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.461Z",
-      "sizeBytes": 901911
-    }
-  },
-  {
-    "id": "assets_catalog--1c9ac9443f0e5afd",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/featured_items_2.png",
-      "block": "filesystem_assets",
-      "index": 47
-    },
-    "raw": {
-      "assetPath": "assets/images/featured_items_2.png",
-      "contentHash": "-fbcf48768e5b24e",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/featured_items_2.png",
-      "fileName": "featured_items_2.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.465Z",
-      "sizeBytes": 612115
-    }
-  },
-  {
-    "id": "assets_catalog--1d073a30793dcf02",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/big_2.png",
-      "block": "filesystem_assets",
-      "index": 43
-    },
-    "raw": {
-      "assetPath": "assets/images/big_2.png",
-      "contentHash": "1923fc67979f93b8",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/big_2.png",
-      "fileName": "big_2.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.461Z",
-      "sizeBytes": 1315144
-    }
-  },
-  {
-    "id": "assets_catalog--202fbf2650dc025b",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/logout.svg",
-      "block": "filesystem_assets",
-      "index": 27
-    },
-    "raw": {
-      "assetPath": "assets/icons/logout.svg",
-      "contentHash": "2ac6a7547658379c",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/logout.svg",
-      "fileName": "logout.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1114
-    }
-  },
-  {
-    "id": "assets_catalog--248a4cbc48135489",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/Illustrations/Illustrations_1.svg",
-      "block": "filesystem_assets",
-      "index": 0
-    },
-    "raw": {
-      "assetPath": "assets/Illustrations/Illustrations_1.svg",
-      "contentHash": "3fd623300914ff77",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/Illustrations/Illustrations_1.svg",
-      "fileName": "Illustrations_1.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.431Z",
-      "sizeBytes": 9590
-    }
-  },
-  {
-    "id": "assets_catalog--2dfdaadb167e4379",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/notify.svg",
-      "block": "filesystem_assets",
-      "index": 30
-    },
-    "raw": {
-      "assetPath": "assets/icons/notify.svg",
-      "contentHash": "-14ab4493296e4a2f",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/notify.svg",
-      "fileName": "notify.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 509
-    }
-  },
-  {
-    "id": "assets_catalog--2f59f4bede55e776",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/big_1.png",
-      "block": "filesystem_assets",
-      "index": 42
-    },
-    "raw": {
-      "assetPath": "assets/images/big_1.png",
-      "contentHash": "4bc6173a062f3ad8",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/big_1.png",
-      "fileName": "big_1.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.458Z",
-      "sizeBytes": 1000363
-    }
-  },
-  {
-    "id": "assets_catalog--31d8a22993e1f8ee",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/Illustrations/Illustrations_3.svg",
-      "block": "filesystem_assets",
-      "index": 2
-    },
-    "raw": {
-      "assetPath": "assets/Illustrations/Illustrations_3.svg",
-      "contentHash": "6fc291325d971700",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/Illustrations/Illustrations_3.svg",
-      "fileName": "Illustrations_3.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.431Z",
-      "sizeBytes": 29276
-    }
-  },
-  {
-    "id": "assets_catalog--38132e12894ecfd9",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/visible.svg",
-      "block": "filesystem_assets",
-      "index": 39
-    },
-    "raw": {
-      "assetPath": "assets/icons/visible.svg",
-      "contentHash": "-15bb5c6f07f24bd7",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/visible.svg",
-      "fileName": "visible.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 446
-    }
-  },
-  {
-    "id": "assets_catalog--3d9b00118f614e9a",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/profile.svg",
-      "block": "filesystem_assets",
-      "index": 34
-    },
-    "raw": {
-      "assetPath": "assets/icons/profile.svg",
-      "contentHash": "0f71f876e6aa17db",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/profile.svg",
-      "fileName": "profile.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 564
-    }
-  },
-  {
-    "id": "assets_catalog--42b9d878a1bc9364",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/back.svg",
-      "block": "filesystem_assets",
-      "index": 7
-    },
-    "raw": {
-      "assetPath": "assets/icons/back.svg",
-      "contentHash": "-4bc6767425d35d22",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/back.svg",
-      "fileName": "back.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 482
-    }
-  },
-  {
-    "id": "assets_catalog--42da74334dae80f0",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/search.svg",
-      "block": "filesystem_assets",
-      "index": 37
-    },
-    "raw": {
-      "assetPath": "assets/icons/search.svg",
-      "contentHash": "-4de2cb975010e8bc",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/search.svg",
-      "fileName": "search.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 724
-    }
-  },
-  {
-    "id": "assets_catalog--43fdd5687af59dec",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/order.svg",
-      "block": "filesystem_assets",
-      "index": 31
-    },
-    "raw": {
-      "assetPath": "assets/icons/order.svg",
-      "contentHash": "-11cd79ad7293f471",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/order.svg",
-      "fileName": "order.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1397
-    }
-  },
-  {
-    "id": "assets_catalog--458d514eac33e84a",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/recomended.svg",
-      "block": "filesystem_assets",
-      "index": 36
-    },
-    "raw": {
-      "assetPath": "assets/icons/recomended.svg",
-      "contentHash": "6d4f858036fe4894",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/recomended.svg",
-      "fileName": "recomended.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 458
-    }
-  },
-  {
-    "id": "assets_catalog--4759942e9e7899fb",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/minus.svg",
-      "block": "filesystem_assets",
-      "index": 29
-    },
-    "raw": {
-      "assetPath": "assets/icons/minus.svg",
-      "contentHash": "31fc0bc66ed02e0d",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/minus.svg",
-      "fileName": "minus.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 172
-    }
-  },
-  {
-    "id": "assets_catalog--4860c71aa2c8b3d0",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/marker.svg",
-      "block": "filesystem_assets",
-      "index": 28
-    },
-    "raw": {
-      "assetPath": "assets/icons/marker.svg",
-      "contentHash": "41d412620d1f09c8",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/marker.svg",
-      "fileName": "marker.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 579
-    }
-  },
-  {
-    "id": "assets_catalog--4aee2c841cde1269",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/location.svg",
-      "block": "filesystem_assets",
-      "index": 25
-    },
-    "raw": {
-      "assetPath": "assets/icons/location.svg",
-      "contentHash": "5d5486a8a65149b5",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/location.svg",
-      "fileName": "location.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 536
-    }
-  },
-  {
-    "id": "assets_catalog--567f7bceffef3759",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/Header-image.png",
-      "block": "filesystem_assets",
-      "index": 41
-    },
-    "raw": {
-      "assetPath": "assets/images/Header-image.png",
-      "contentHash": "-50289a340f285ed5",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/Header-image.png",
-      "fileName": "Header-image.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.455Z",
-      "sizeBytes": 1352831
-    }
-  },
-  {
-    "id": "assets_catalog--5f4acfea557985c4",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/Banner.png",
-      "block": "filesystem_assets",
-      "index": 40
-    },
-    "raw": {
-      "assetPath": "assets/images/Banner.png",
-      "contentHash": "-6f9d1e669f4f27ab",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/Banner.png",
-      "fileName": "Banner.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.455Z",
-      "sizeBytes": 76254
-    }
-  },
-  {
-    "id": "assets_catalog--60e4e8be0825eae",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/big_3.png",
-      "block": "filesystem_assets",
-      "index": 44
-    },
-    "raw": {
-      "assetPath": "assets/images/big_3.png",
-      "contentHash": "40a5e5c44c8ec62a",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/big_3.png",
-      "fileName": "big_3.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.461Z",
-      "sizeBytes": 1145691
-    }
-  },
-  {
-    "id": "assets_catalog--641711921b3d82a1",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/fire.svg",
-      "block": "filesystem_assets",
-      "index": 19
-    },
-    "raw": {
-      "assetPath": "assets/icons/fire.svg",
-      "contentHash": "4f561b1998cda02f",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/fire.svg",
-      "fileName": "fire.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 486
-    }
-  },
-  {
-    "id": "assets_catalog--66dddaee638208a7",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/invisible.svg",
-      "block": "filesystem_assets",
-      "index": 24
-    },
-    "raw": {
-      "assetPath": "assets/icons/invisible.svg",
-      "contentHash": "332dc471368b9597",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/invisible.svg",
-      "fileName": "invisible.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 562
-    }
-  },
-  {
-    "id": "assets_catalog--69a14a8ea5acc139",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/delivery.svg",
-      "block": "filesystem_assets",
-      "index": 13
-    },
-    "raw": {
-      "assetPath": "assets/icons/delivery.svg",
-      "contentHash": "-6037e100bd7dfd97",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/delivery.svg",
-      "fileName": "delivery.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 2456
-    }
-  },
-  {
-    "id": "assets_catalog--6a7396dc5dcf29e8",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/google.svg",
-      "block": "filesystem_assets",
-      "index": 22
-    },
-    "raw": {
-      "assetPath": "assets/icons/google.svg",
-      "contentHash": "-532dd30c7837ed09",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/google.svg",
-      "fileName": "google.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1621
-    }
-  },
-  {
-    "id": "assets_catalog--7545bc59fdfff472",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/lock.svg",
-      "block": "filesystem_assets",
-      "index": 26
-    },
-    "raw": {
-      "assetPath": "assets/icons/lock.svg",
-      "contentHash": "5fa5d4728a7ad81c",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/lock.svg",
-      "fileName": "lock.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 414
-    }
-  },
-  {
-    "id": "assets_catalog--792c62542ae0c130",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/medium_3.png",
-      "block": "filesystem_assets",
-      "index": 51
-    },
-    "raw": {
-      "assetPath": "assets/images/medium_3.png",
-      "contentHash": "-6f4037cd6297f96c",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/medium_3.png",
-      "fileName": "medium_3.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.468Z",
-      "sizeBytes": 533149
-    }
-  },
-  {
-    "id": "assets_catalog--e22103a57223435",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/food.svg",
-      "block": "filesystem_assets",
-      "index": 20
-    },
-    "raw": {
-      "assetPath": "assets/icons/food.svg",
-      "contentHash": "085cffcb5020ef96",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/food.svg",
-      "fileName": "food.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1280
-    }
-  },
-  {
-    "id": "assets_catalog--f6f700e48e1fc78",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/cart.svg",
-      "block": "filesystem_assets",
-      "index": 10
-    },
-    "raw": {
-      "assetPath": "assets/icons/cart.svg",
-      "contentHash": "-361cd09ac1fa19a8",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/cart.svg",
-      "fileName": "cart.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 924
-    }
-  },
-  {
-    "id": "assets_catalog-0733ac1f62b6358c",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/fast-delivery.svg",
-      "block": "filesystem_assets",
-      "index": 17
-    },
-    "raw": {
-      "assetPath": "assets/icons/fast-delivery.svg",
-      "contentHash": "7c0d00cd0106b297",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/fast-delivery.svg",
-      "fileName": "fast-delivery.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1283
-    }
-  },
-  {
-    "id": "assets_catalog-0d783d01e9bd640f",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/phone.svg",
-      "block": "filesystem_assets",
-      "index": 32
-    },
-    "raw": {
-      "assetPath": "assets/icons/phone.svg",
-      "contentHash": "-57e2df4b42aa9988",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/phone.svg",
-      "fileName": "phone.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1528
-    }
-  },
-  {
-    "id": "assets_catalog-1700cefb4cd38e0d",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/rating.svg",
-      "block": "filesystem_assets",
-      "index": 35
-    },
-    "raw": {
-      "assetPath": "assets/icons/rating.svg",
-      "contentHash": "135445312330aefe",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/rating.svg",
-      "fileName": "rating.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 806
-    }
-  },
-  {
-    "id": "assets_catalog-1714bcd4ad0d5890",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/share.svg",
-      "block": "filesystem_assets",
-      "index": 38
-    },
-    "raw": {
-      "assetPath": "assets/icons/share.svg",
-      "contentHash": "-3fe3fb8dbb51fbac",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/share.svg",
-      "fileName": "share.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 1419
-    }
-  },
-  {
-    "id": "assets_catalog-1ac89d49ce84a5e6",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/featured_items_1.png",
+      "file": "assets/images/featured _items_1.png",
       "block": "filesystem_assets",
       "index": 46
     },
     "raw": {
-      "assetPath": "assets/images/featured_items_1.png",
+      "assetPath": "assets/images/featured _items_1.png",
       "contentHash": "540def41356df797",
       "extension": "png",
-      "extractedCopyPath": "data/assets/images/featured_items_1.png",
-      "fileName": "featured_items_1.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.461Z",
+      "extractedCopyPath": "data/assets/images/featured _items_1.png",
+      "fileName": "featured _items_1.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
       "sizeBytes": 42053
     }
   },
   {
-    "id": "assets_catalog-1c45fcc567a4e46d",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/home.svg",
-      "block": "filesystem_assets",
-      "index": 23
-    },
-    "raw": {
-      "assetPath": "assets/icons/home.svg",
-      "contentHash": "-6e3cb8d9bb305839",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/home.svg",
-      "fileName": "home.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 696
-    }
-  },
-  {
-    "id": "assets_catalog-216004701c80c8cd",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/font/SF Pro Text/SFProText-Medium.ttf",
-      "block": "filesystem_assets",
-      "index": 4
-    },
-    "raw": {
-      "assetPath": "assets/font/SF Pro Text/SFProText-Medium.ttf",
-      "contentHash": "-452bcfb80821b22f",
-      "extension": "ttf",
-      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Medium.ttf",
-      "fileName": "SFProText-Medium.ttf",
-      "modifiedAtUtc": "2026-04-17T05:15:57.445Z",
-      "sizeBytes": 453296
-    }
-  },
-  {
-    "id": "assets_catalog-246dd646a871623c",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/medium_4.png",
-      "block": "filesystem_assets",
-      "index": 52
-    },
-    "raw": {
-      "assetPath": "assets/images/medium_4.png",
-      "contentHash": "-69436b3ddcbd32b6",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/medium_4.png",
-      "fileName": "medium_4.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.468Z",
-      "sizeBytes": 767749
-    }
-  },
-  {
-    "id": "assets_catalog-290c8c581bfba61e",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/font/SF Pro Text/SFProText-Regular.ttf",
-      "block": "filesystem_assets",
-      "index": 5
-    },
-    "raw": {
-      "assetPath": "assets/font/SF Pro Text/SFProText-Regular.ttf",
-      "contentHash": "35a3244b99ac0c14",
-      "extension": "ttf",
-      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Regular.ttf",
-      "fileName": "SFProText-Regular.ttf",
-      "modifiedAtUtc": "2026-04-17T05:15:57.448Z",
-      "sizeBytes": 434120
-    }
-  },
-  {
-    "id": "assets_catalog-2996ac2e53e497a8",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/font/SF Pro Text/SFProText-Bold.ttf",
-      "block": "filesystem_assets",
-      "index": 3
-    },
-    "raw": {
-      "assetPath": "assets/font/SF Pro Text/SFProText-Bold.ttf",
-      "contentHash": "67f364aca8686be7",
-      "extension": "ttf",
-      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Bold.ttf",
-      "fileName": "SFProText-Bold.ttf",
-      "modifiedAtUtc": "2026-04-17T05:15:57.438Z",
-      "sizeBytes": 456924
-    }
-  },
-  {
-    "id": "assets_catalog-2e13651d2cee7dd4",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/card.svg",
-      "block": "filesystem_assets",
-      "index": 9
-    },
-    "raw": {
-      "assetPath": "assets/icons/card.svg",
-      "contentHash": "-5a8d5356fb058e0e",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/card.svg",
-      "fileName": "card.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 680
-    }
-  },
-  {
-    "id": "assets_catalog-318ff0b845f5845f",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/plus.svg",
-      "block": "filesystem_assets",
-      "index": 33
-    },
-    "raw": {
-      "assetPath": "assets/icons/plus.svg",
-      "contentHash": "4a9071834e808391",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/plus.svg",
-      "fileName": "plus.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 415
-    }
-  },
-  {
-    "id": "assets_catalog-362319783a1c0f6c",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/fb.svg",
-      "block": "filesystem_assets",
-      "index": 18
-    },
-    "raw": {
-      "assetPath": "assets/icons/fb.svg",
-      "contentHash": "-d35e650f32d55bb",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/fb.svg",
-      "fileName": "fb.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 407
-    }
-  },
-  {
-    "id": "assets_catalog-36dba5765899a340",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/document.svg",
-      "block": "filesystem_assets",
-      "index": 14
-    },
-    "raw": {
-      "assetPath": "assets/icons/document.svg",
-      "contentHash": "52eedb670a2de4c4",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/document.svg",
-      "fileName": "document.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 514
-    }
-  },
-  {
-    "id": "assets_catalog-4b7ff1c9785b5fd0",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/images/featured_items_3.png",
-      "block": "filesystem_assets",
-      "index": 48
-    },
-    "raw": {
-      "assetPath": "assets/images/featured_items_3.png",
-      "contentHash": "-1d058e5cfae0a2df",
-      "extension": "png",
-      "extractedCopyPath": "data/assets/images/featured_items_3.png",
-      "fileName": "featured_items_3.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.465Z",
-      "sizeBytes": 454378
-    }
-  },
-  {
-    "id": "assets_catalog-4c281557fd12c26f",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/close.svg",
-      "block": "filesystem_assets",
-      "index": 12
-    },
-    "raw": {
-      "assetPath": "assets/icons/close.svg",
-      "contentHash": "-7510b3e8825f2671",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/close.svg",
-      "fileName": "close.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 676
-    }
-  },
-  {
-    "id": "assets_catalog-4cfb0a3bdcb038c2",
-    "entity": "assets_catalog",
-    "source": {
-      "file": "assets/icons/forward.svg",
-      "block": "filesystem_assets",
-      "index": 21
-    },
-    "raw": {
-      "assetPath": "assets/icons/forward.svg",
-      "contentHash": "359961ae4337b86a",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/forward.svg",
-      "fileName": "forward.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 482
-    }
-  },
-  {
-    "id": "assets_catalog-5b61fda5f06ce334",
+    "id": "assets_catalog--18d68ba3a7a05a0",
     "entity": "assets_catalog",
     "source": {
       "file": "assets/icons/facebook.svg",
@@ -823,48 +31,408 @@
       "extension": "svg",
       "extractedCopyPath": "data/assets/icons/facebook.svg",
       "fileName": "facebook.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
       "sizeBytes": 1057
     }
   },
   {
-    "id": "assets_catalog-61cb51c806eb08d3",
+    "id": "assets_catalog--18ea2b6797856a6c",
     "entity": "assets_catalog",
     "source": {
-      "file": "assets/icons/done.svg",
+      "file": "assets/icons/google.svg",
       "block": "filesystem_assets",
-      "index": 15
+      "index": 22
     },
     "raw": {
-      "assetPath": "assets/icons/done.svg",
-      "contentHash": "1c42a2553e52a12d",
+      "assetPath": "assets/icons/google.svg",
+      "contentHash": "-532dd30c7837ed09",
       "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/done.svg",
-      "fileName": "done.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 489
+      "extractedCopyPath": "data/assets/icons/google.svg",
+      "fileName": "google.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1621
     }
   },
   {
-    "id": "assets_catalog-63f33dc9a931a87f",
+    "id": "assets_catalog--1aa8c17423e56f89",
     "entity": "assets_catalog",
     "source": {
-      "file": "assets/Illustrations/Illustrations_2.svg",
+      "file": "assets/images/big_1.png",
       "block": "filesystem_assets",
-      "index": 1
+      "index": 42
     },
     "raw": {
-      "assetPath": "assets/Illustrations/Illustrations_2.svg",
-      "contentHash": "-5def8030a901b01b",
-      "extension": "svg",
-      "extractedCopyPath": "data/assets/Illustrations/Illustrations_2.svg",
-      "fileName": "Illustrations_2.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.431Z",
-      "sizeBytes": 6649
+      "assetPath": "assets/images/big_1.png",
+      "contentHash": "4bc6173a062f3ad8",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/big_1.png",
+      "fileName": "big_1.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1000363
     }
   },
   {
-    "id": "assets_catalog-7134d61a611afcaa",
+    "id": "assets_catalog--1c5274b94bae807e",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/recomended.svg",
+      "block": "filesystem_assets",
+      "index": 36
+    },
+    "raw": {
+      "assetPath": "assets/icons/recomended.svg",
+      "contentHash": "6d4f858036fe4894",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/recomended.svg",
+      "fileName": "recomended.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 458
+    }
+  },
+  {
+    "id": "assets_catalog--1ce6860e35b62501",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/food.svg",
+      "block": "filesystem_assets",
+      "index": 20
+    },
+    "raw": {
+      "assetPath": "assets/icons/food.svg",
+      "contentHash": "085cffcb5020ef96",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/food.svg",
+      "fileName": "food.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1280
+    }
+  },
+  {
+    "id": "assets_catalog--20eae35906e5af6c",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/medium_3.png",
+      "block": "filesystem_assets",
+      "index": 51
+    },
+    "raw": {
+      "assetPath": "assets/images/medium_3.png",
+      "contentHash": "-6f4037cd6297f96c",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/medium_3.png",
+      "fileName": "medium_3.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 533149
+    }
+  },
+  {
+    "id": "assets_catalog--2365e0e0bd579490",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/back.svg",
+      "block": "filesystem_assets",
+      "index": 7
+    },
+    "raw": {
+      "assetPath": "assets/icons/back.svg",
+      "contentHash": "-4bc6767425d35d22",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/back.svg",
+      "fileName": "back.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 482
+    }
+  },
+  {
+    "id": "assets_catalog--24de8ee2d3c01b10",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/order.svg",
+      "block": "filesystem_assets",
+      "index": 31
+    },
+    "raw": {
+      "assetPath": "assets/icons/order.svg",
+      "contentHash": "-11cd79ad7293f471",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/order.svg",
+      "fileName": "order.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1397
+    }
+  },
+  {
+    "id": "assets_catalog--2933fff7c4ff2c97",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/font/SF Pro Text/SFProText-Bold.ttf",
+      "block": "filesystem_assets",
+      "index": 3
+    },
+    "raw": {
+      "assetPath": "assets/font/SF Pro Text/SFProText-Bold.ttf",
+      "contentHash": "67f364aca8686be7",
+      "extension": "ttf",
+      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Bold.ttf",
+      "fileName": "SFProText-Bold.ttf",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 456924
+    }
+  },
+  {
+    "id": "assets_catalog--2e9d26baf6931ca7",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/rating.svg",
+      "block": "filesystem_assets",
+      "index": 35
+    },
+    "raw": {
+      "assetPath": "assets/icons/rating.svg",
+      "contentHash": "135445312330aefe",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/rating.svg",
+      "fileName": "rating.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 806
+    }
+  },
+  {
+    "id": "assets_catalog--2f8c405eaf168134",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/marker.svg",
+      "block": "filesystem_assets",
+      "index": 28
+    },
+    "raw": {
+      "assetPath": "assets/icons/marker.svg",
+      "contentHash": "41d412620d1f09c8",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/marker.svg",
+      "fileName": "marker.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 579
+    }
+  },
+  {
+    "id": "assets_catalog--46946f7fb7e4fcd4",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/share.svg",
+      "block": "filesystem_assets",
+      "index": 38
+    },
+    "raw": {
+      "assetPath": "assets/icons/share.svg",
+      "contentHash": "-3fe3fb8dbb51fbac",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/share.svg",
+      "fileName": "share.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1419
+    }
+  },
+  {
+    "id": "assets_catalog--48d8337a082f0846",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/profile.svg",
+      "block": "filesystem_assets",
+      "index": 34
+    },
+    "raw": {
+      "assetPath": "assets/icons/profile.svg",
+      "contentHash": "0f71f876e6aa17db",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/profile.svg",
+      "fileName": "profile.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 564
+    }
+  },
+  {
+    "id": "assets_catalog--4ee290771345e2ca",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/forward.svg",
+      "block": "filesystem_assets",
+      "index": 21
+    },
+    "raw": {
+      "assetPath": "assets/icons/forward.svg",
+      "contentHash": "359961ae4337b86a",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/forward.svg",
+      "fileName": "forward.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 482
+    }
+  },
+  {
+    "id": "assets_catalog--52cc54cf7c57db9f",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/logout.svg",
+      "block": "filesystem_assets",
+      "index": 27
+    },
+    "raw": {
+      "assetPath": "assets/icons/logout.svg",
+      "contentHash": "2ac6a7547658379c",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/logout.svg",
+      "fileName": "logout.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1114
+    }
+  },
+  {
+    "id": "assets_catalog--571359a93d7ee27d",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/notify.svg",
+      "block": "filesystem_assets",
+      "index": 30
+    },
+    "raw": {
+      "assetPath": "assets/icons/notify.svg",
+      "contentHash": "-14ab4493296e4a2f",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/notify.svg",
+      "fileName": "notify.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 509
+    }
+  },
+  {
+    "id": "assets_catalog--58a62b3540be85cf",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/minus.svg",
+      "block": "filesystem_assets",
+      "index": 29
+    },
+    "raw": {
+      "assetPath": "assets/icons/minus.svg",
+      "contentHash": "31fc0bc66ed02e0d",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/minus.svg",
+      "fileName": "minus.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 172
+    }
+  },
+  {
+    "id": "assets_catalog--6366f45e36954098",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/font/SF Pro Text/SFProText-Regular.ttf",
+      "block": "filesystem_assets",
+      "index": 5
+    },
+    "raw": {
+      "assetPath": "assets/font/SF Pro Text/SFProText-Regular.ttf",
+      "contentHash": "35a3244b99ac0c14",
+      "extension": "ttf",
+      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Regular.ttf",
+      "fileName": "SFProText-Regular.ttf",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 434120
+    }
+  },
+  {
+    "id": "assets_catalog--6f94ea524ba1d8b5",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/plus.svg",
+      "block": "filesystem_assets",
+      "index": 33
+    },
+    "raw": {
+      "assetPath": "assets/icons/plus.svg",
+      "contentHash": "4a9071834e808391",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/plus.svg",
+      "fileName": "plus.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 415
+    }
+  },
+  {
+    "id": "assets_catalog--7702ea0abffa1c6d",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/big_3.png",
+      "block": "filesystem_assets",
+      "index": 44
+    },
+    "raw": {
+      "assetPath": "assets/images/big_3.png",
+      "contentHash": "40a5e5c44c8ec62a",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/big_3.png",
+      "fileName": "big_3.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1145691
+    }
+  },
+  {
+    "id": "assets_catalog--7b3ae0a9b7d78e65",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/fire.svg",
+      "block": "filesystem_assets",
+      "index": 19
+    },
+    "raw": {
+      "assetPath": "assets/icons/fire.svg",
+      "contentHash": "4f561b1998cda02f",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/fire.svg",
+      "fileName": "fire.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 486
+    }
+  },
+  {
+    "id": "assets_catalog--7ca956f8c201fd1e",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/big_4.png",
+      "block": "filesystem_assets",
+      "index": 45
+    },
+    "raw": {
+      "assetPath": "assets/images/big_4.png",
+      "contentHash": "3d01d669dd37c9bf",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/big_4.png",
+      "fileName": "big_4.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 901911
+    }
+  },
+  {
+    "id": "assets_catalog--7f260c317d0a300b",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/invisible.svg",
+      "block": "filesystem_assets",
+      "index": 24
+    },
+    "raw": {
+      "assetPath": "assets/icons/invisible.svg",
+      "contentHash": "332dc471368b9597",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/invisible.svg",
+      "fileName": "invisible.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 562
+    }
+  },
+  {
+    "id": "assets_catalog--c2468bb9c7612e2",
     "entity": "assets_catalog",
     "source": {
       "file": "assets/images/medium_2.png",
@@ -877,48 +445,102 @@
       "extension": "png",
       "extractedCopyPath": "data/assets/images/medium_2.png",
       "fileName": "medium_2.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.468Z",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
       "sizeBytes": 230473
     }
   },
   {
-    "id": "assets_catalog-71f8718ec6aece8a",
+    "id": "assets_catalog--c6f80347813342d",
     "entity": "assets_catalog",
     "source": {
-      "file": "assets/icons/camera.svg",
+      "file": "assets/icons/delivery.svg",
       "block": "filesystem_assets",
-      "index": 8
+      "index": 13
     },
     "raw": {
-      "assetPath": "assets/icons/camera.svg",
-      "contentHash": "-59b2e63ab6711023",
+      "assetPath": "assets/icons/delivery.svg",
+      "contentHash": "-6037e100bd7dfd97",
       "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/camera.svg",
-      "fileName": "camera.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 961
+      "extractedCopyPath": "data/assets/icons/delivery.svg",
+      "fileName": "delivery.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 2456
     }
   },
   {
-    "id": "assets_catalog-72bf4f640d7cc3c0",
+    "id": "assets_catalog--df85614788d975d",
     "entity": "assets_catalog",
     "source": {
-      "file": "assets/icons/clock.svg",
+      "file": "assets/icons/close.svg",
       "block": "filesystem_assets",
-      "index": 11
+      "index": 12
     },
     "raw": {
-      "assetPath": "assets/icons/clock.svg",
-      "contentHash": "232e9157aca5208d",
+      "assetPath": "assets/icons/close.svg",
+      "contentHash": "-7510b3e8825f2671",
       "extension": "svg",
-      "extractedCopyPath": "data/assets/icons/clock.svg",
-      "fileName": "clock.svg",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
-      "sizeBytes": 651
+      "extractedCopyPath": "data/assets/icons/close.svg",
+      "fileName": "close.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 676
     }
   },
   {
-    "id": "assets_catalog-753fb7aeb022b0e7",
+    "id": "assets_catalog-0175ef54aa4fb6ff",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/Header-image.png",
+      "block": "filesystem_assets",
+      "index": 41
+    },
+    "raw": {
+      "assetPath": "assets/images/Header-image.png",
+      "contentHash": "-50289a340f285ed5",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/Header-image.png",
+      "fileName": "Header-image.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1352831
+    }
+  },
+  {
+    "id": "assets_catalog-0295e82e40e00588",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/card.svg",
+      "block": "filesystem_assets",
+      "index": 9
+    },
+    "raw": {
+      "assetPath": "assets/icons/card.svg",
+      "contentHash": "-5a8d5356fb058e0e",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/card.svg",
+      "fileName": "card.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 680
+    }
+  },
+  {
+    "id": "assets_catalog-05e751b4ffb15e5b",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/big_2.png",
+      "block": "filesystem_assets",
+      "index": 43
+    },
+    "raw": {
+      "assetPath": "assets/images/big_2.png",
+      "contentHash": "1923fc67979f93b8",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/big_2.png",
+      "fileName": "big_2.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1315144
+    }
+  },
+  {
+    "id": "assets_catalog-0809d0e63869bfd3",
     "entity": "assets_catalog",
     "source": {
       "file": "assets/images/medium_1.png",
@@ -931,12 +553,336 @@
       "extension": "png",
       "extractedCopyPath": "data/assets/images/medium_1.png",
       "fileName": "medium_1.png",
-      "modifiedAtUtc": "2026-04-17T05:15:57.468Z",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
       "sizeBytes": 705079
     }
   },
   {
-    "id": "assets_catalog-7d519d3bea10b445",
+    "id": "assets_catalog-087e6e5e4acd276d",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/featured _items_3.png",
+      "block": "filesystem_assets",
+      "index": 48
+    },
+    "raw": {
+      "assetPath": "assets/images/featured _items_3.png",
+      "contentHash": "-1d058e5cfae0a2df",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/featured _items_3.png",
+      "fileName": "featured _items_3.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 454378
+    }
+  },
+  {
+    "id": "assets_catalog-0a0e025f5ae7819a",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/lock.svg",
+      "block": "filesystem_assets",
+      "index": 26
+    },
+    "raw": {
+      "assetPath": "assets/icons/lock.svg",
+      "contentHash": "5fa5d4728a7ad81c",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/lock.svg",
+      "fileName": "lock.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 414
+    }
+  },
+  {
+    "id": "assets_catalog-0dfc3ab5dea8540d",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/Illustrations/Illustrations_2.svg",
+      "block": "filesystem_assets",
+      "index": 1
+    },
+    "raw": {
+      "assetPath": "assets/Illustrations/Illustrations_2.svg",
+      "contentHash": "-5def8030a901b01b",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/Illustrations/Illustrations_2.svg",
+      "fileName": "Illustrations_2.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 6649
+    }
+  },
+  {
+    "id": "assets_catalog-0f19cab03d906cec",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/search.svg",
+      "block": "filesystem_assets",
+      "index": 37
+    },
+    "raw": {
+      "assetPath": "assets/icons/search.svg",
+      "contentHash": "-4de2cb975010e8bc",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/search.svg",
+      "fileName": "search.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 724
+    }
+  },
+  {
+    "id": "assets_catalog-0f36160a37287d14",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/cart.svg",
+      "block": "filesystem_assets",
+      "index": 10
+    },
+    "raw": {
+      "assetPath": "assets/icons/cart.svg",
+      "contentHash": "-361cd09ac1fa19a8",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/cart.svg",
+      "fileName": "cart.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 924
+    }
+  },
+  {
+    "id": "assets_catalog-1e2f7c153ad30d17",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/done.svg",
+      "block": "filesystem_assets",
+      "index": 15
+    },
+    "raw": {
+      "assetPath": "assets/icons/done.svg",
+      "contentHash": "1c42a2553e52a12d",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/done.svg",
+      "fileName": "done.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 489
+    }
+  },
+  {
+    "id": "assets_catalog-1e75ca52908a8ee0",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/featured _items_2.png",
+      "block": "filesystem_assets",
+      "index": 47
+    },
+    "raw": {
+      "assetPath": "assets/images/featured _items_2.png",
+      "contentHash": "-fbcf48768e5b24e",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/featured _items_2.png",
+      "fileName": "featured _items_2.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 612115
+    }
+  },
+  {
+    "id": "assets_catalog-2789112417a8f763",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/phone.svg",
+      "block": "filesystem_assets",
+      "index": 32
+    },
+    "raw": {
+      "assetPath": "assets/icons/phone.svg",
+      "contentHash": "-57e2df4b42aa9988",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/phone.svg",
+      "fileName": "phone.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1528
+    }
+  },
+  {
+    "id": "assets_catalog-27f230022b3d5a7b",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/visible.svg",
+      "block": "filesystem_assets",
+      "index": 39
+    },
+    "raw": {
+      "assetPath": "assets/icons/visible.svg",
+      "contentHash": "-15bb5c6f07f24bd7",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/visible.svg",
+      "fileName": "visible.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 446
+    }
+  },
+  {
+    "id": "assets_catalog-2bb3ba2d3738e960",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/fb.svg",
+      "block": "filesystem_assets",
+      "index": 18
+    },
+    "raw": {
+      "assetPath": "assets/icons/fb.svg",
+      "contentHash": "-d35e650f32d55bb",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/fb.svg",
+      "fileName": "fb.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 407
+    }
+  },
+  {
+    "id": "assets_catalog-2ecd8682a5c7777e",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/camera.svg",
+      "block": "filesystem_assets",
+      "index": 8
+    },
+    "raw": {
+      "assetPath": "assets/icons/camera.svg",
+      "contentHash": "-59b2e63ab6711023",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/camera.svg",
+      "fileName": "camera.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 961
+    }
+  },
+  {
+    "id": "assets_catalog-2ed588b13bfa559c",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/clock.svg",
+      "block": "filesystem_assets",
+      "index": 11
+    },
+    "raw": {
+      "assetPath": "assets/icons/clock.svg",
+      "contentHash": "232e9157aca5208d",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/clock.svg",
+      "fileName": "clock.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 651
+    }
+  },
+  {
+    "id": "assets_catalog-345c9ae39b456cd8",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/Illustrations/Illustrations_3.svg",
+      "block": "filesystem_assets",
+      "index": 2
+    },
+    "raw": {
+      "assetPath": "assets/Illustrations/Illustrations_3.svg",
+      "contentHash": "6fc291325d971700",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/Illustrations/Illustrations_3.svg",
+      "fileName": "Illustrations_3.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 29276
+    }
+  },
+  {
+    "id": "assets_catalog-380bc41a019e0bdc",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/font/SF Pro Text/SFProText-Medium.ttf",
+      "block": "filesystem_assets",
+      "index": 4
+    },
+    "raw": {
+      "assetPath": "assets/font/SF Pro Text/SFProText-Medium.ttf",
+      "contentHash": "-452bcfb80821b22f",
+      "extension": "ttf",
+      "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Medium.ttf",
+      "fileName": "SFProText-Medium.ttf",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 453296
+    }
+  },
+  {
+    "id": "assets_catalog-4817d675d5760149",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/home.svg",
+      "block": "filesystem_assets",
+      "index": 23
+    },
+    "raw": {
+      "assetPath": "assets/icons/home.svg",
+      "contentHash": "-6e3cb8d9bb305839",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/home.svg",
+      "fileName": "home.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 696
+    }
+  },
+  {
+    "id": "assets_catalog-5076f87b73ca9a63",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/location.svg",
+      "block": "filesystem_assets",
+      "index": 25
+    },
+    "raw": {
+      "assetPath": "assets/icons/location.svg",
+      "contentHash": "5d5486a8a65149b5",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/location.svg",
+      "fileName": "location.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 536
+    }
+  },
+  {
+    "id": "assets_catalog-5ed4bcae7d598a5c",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/medium_4.png",
+      "block": "filesystem_assets",
+      "index": 52
+    },
+    "raw": {
+      "assetPath": "assets/images/medium_4.png",
+      "contentHash": "-69436b3ddcbd32b6",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/medium_4.png",
+      "fileName": "medium_4.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 767749
+    }
+  },
+  {
+    "id": "assets_catalog-63c796b4905f9000",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/fast-delivery.svg",
+      "block": "filesystem_assets",
+      "index": 17
+    },
+    "raw": {
+      "assetPath": "assets/icons/fast-delivery.svg",
+      "contentHash": "7c0d00cd0106b297",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/fast-delivery.svg",
+      "fileName": "fast-delivery.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 1283
+    }
+  },
+  {
+    "id": "assets_catalog-6441e133f885fad9",
     "entity": "assets_catalog",
     "source": {
       "file": "assets/font/SF Pro Text/SFProText-Semibold.ttf",
@@ -949,8 +895,62 @@
       "extension": "ttf",
       "extractedCopyPath": "data/assets/font/SF Pro Text/SFProText-Semibold.ttf",
       "fileName": "SFProText-Semibold.ttf",
-      "modifiedAtUtc": "2026-04-17T05:15:57.451Z",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
       "sizeBytes": 453440
+    }
+  },
+  {
+    "id": "assets_catalog-646eace0c4142c7c",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/icons/document.svg",
+      "block": "filesystem_assets",
+      "index": 14
+    },
+    "raw": {
+      "assetPath": "assets/icons/document.svg",
+      "contentHash": "52eedb670a2de4c4",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/icons/document.svg",
+      "fileName": "document.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 514
+    }
+  },
+  {
+    "id": "assets_catalog-6eb3b272462670c5",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/Illustrations/Illustrations_1.svg",
+      "block": "filesystem_assets",
+      "index": 0
+    },
+    "raw": {
+      "assetPath": "assets/Illustrations/Illustrations_1.svg",
+      "contentHash": "3fd623300914ff77",
+      "extension": "svg",
+      "extractedCopyPath": "data/assets/Illustrations/Illustrations_1.svg",
+      "fileName": "Illustrations_1.svg",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 9590
+    }
+  },
+  {
+    "id": "assets_catalog-7c022cb119bc12a4",
+    "entity": "assets_catalog",
+    "source": {
+      "file": "assets/images/Banner.png",
+      "block": "filesystem_assets",
+      "index": 40
+    },
+    "raw": {
+      "assetPath": "assets/images/Banner.png",
+      "contentHash": "-6f9d1e669f4f27ab",
+      "extension": "png",
+      "extractedCopyPath": "data/assets/images/Banner.png",
+      "fileName": "Banner.png",
+      "modifiedAtUtc": "2024-08-10T02:57:39.000Z",
+      "sizeBytes": 76254
     }
   }
 ]

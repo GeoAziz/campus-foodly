@@ -1,56 +1,47 @@
 [
   {
-    "id": "featured_items_-1ea26ec0f91",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
     "foodType": "Chinese",
-    "image": "assets/images/featured_items_3.png",
-    "position": 2,
-    "priceRange": "$$",
-    "title": "Cookie Sandwich"
-  },
-  {
-    "id": "featured_items_-212fc1db77d",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "foodType": "Chinese",
-    "image": "assets/images/featured_items_1.png",
+    "id": "featured_items_-6f6c10c9319eee20",
+    "image": "assets/images/big_1.png",
     "position": 0,
     "priceRange": "$$",
-    "title": "Cookie Sandwich"
+    "restaurantId": "restaurants-1a7165758ebd0cbb",
+    "title": "Mayfield Bakery & Cafe Special"
   },
   {
-    "id": "featured_items_51aabb162e2a",
-    "restaurantId": "restaurants-mayfield-bakery-cafe",
-    "foodType": "Chinese",
-    "image": "assets/images/featured_items_2.png",
-    "position": 1,
-    "priceRange": "$$",
-    "title": "Cookie Sandwich"
+    "foodType": "Dinner",
+    "id": "featured_items_-71902d8ab59060ca",
+    "image": "assets/images/medium_2.png",
+    "position": 0,
+    "priceRange": "$$$",
+    "restaurantId": "restaurants-2d4612c0fbf751d4",
+    "title": "Mario Italiano Special"
   },
   {
-    "id": "featured_items_global_2",
-    "restaurantId": "",
-    "foodType": "Chinese",
-    "image": "assets/images/featured_items_3.png",
-    "position": 2,
-    "priceRange": "$$",
-    "title": "Cookie Sandwich"
-  },
-  {
-    "id": "featured_items_global_0",
-    "restaurantId": "",
-    "foodType": "Chinese",
-    "image": "assets/images/featured_items_1.png",
+    "foodType": "Brunch",
+    "id": "featured_items_18e1b13f0e7b2e57",
+    "image": "assets/images/medium_1.png",
     "position": 0,
     "priceRange": "$$",
-    "title": "Cookie Sandwich"
+    "restaurantId": "restaurants-7cb473545a75b852",
+    "title": "Daylight Coffee Special"
   },
   {
-    "id": "featured_items_global_1",
-    "restaurantId": "",
-    "foodType": "Chinese",
-    "image": "assets/images/featured_items_2.png",
-    "position": 1,
+    "foodType": "Burgers",
+    "id": "featured_items_259bbc8ee877bb24",
+    "image": "assets/images/medium_3.png",
+    "position": 0,
     "priceRange": "$$",
-    "title": "Cookie Sandwich"
+    "restaurantId": "restaurants--4fadc13a209ad270",
+    "title": "McDonald’s Special"
+  },
+  {
+    "foodType": "Salads",
+    "id": "featured_items_4b7708d1ea4040bb",
+    "image": "assets/images/medium_4.png",
+    "position": 0,
+    "priceRange": "$$$$",
+    "restaurantId": "restaurants-584bfde20f1b19a4",
+    "title": "The Halal Guys Special"
   }
 ]

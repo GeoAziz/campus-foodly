@@ -1,9 +1,9 @@
 [
   {
-    "id": "onboarding_slides--11ee5fa261a6d4d6",
+    "id": "onboarding_slides--d45ac5f04a03c9e",
     "entity": "onboarding_slides",
     "source": {
-      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "file": "lib/screens/onboarding/onboarding_screen.dart",
       "block": "demoData",
       "index": 1
     },
@@ -14,10 +14,10 @@
     }
   },
   {
-    "id": "onboarding_slides--592023af1dbd02d",
+    "id": "onboarding_slides-06b847c1bc8164db",
     "entity": "onboarding_slides",
     "source": {
-      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "file": "lib/screens/onboarding/onboarding_screen.dart",
       "block": "demoData",
       "index": 2
     },
@@ -28,10 +28,10 @@
     }
   },
   {
-    "id": "onboarding_slides--edff8bcbb01dee7",
+    "id": "onboarding_slides-5d497cfb983adac1",
     "entity": "onboarding_slides",
     "source": {
-      "file": "lib/screens/onboarding/onboarding_scrreen.dart",
+      "file": "lib/screens/onboarding/onboarding_screen.dart",
       "block": "demoData",
       "index": 0
     },

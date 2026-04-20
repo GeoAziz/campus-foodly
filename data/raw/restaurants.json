@@ -1,133 +1,6 @@
 [
   {
-    "id": "restaurants--431de72e186a38e8",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/screens/search/components/body.dart",
-      "block": "inline_restaurant_cards",
-      "index": 0
-    },
-    "raw": {
-      "deliveryTime": 25,
-      "image": "assets/images/big_1.png",
-      "foodType": [
-        "Chinese",
-        "American",
-        "Deshi food"
-      ],
-      "name": "McDonald's",
-      "numOfRating": 200,
-      "rating": 4.3
-    }
-  },
-  {
-    "id": "restaurants--6fc8a14f74feebe6",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/demo_data.dart",
-      "block": "demoMediumCardData",
-      "index": 3
-    },
-    "raw": {
-      "delivertTime": 25,
-      "image": "assets/images/medium_4.png",
-      "location": "Colarodo, San Francisco",
-      "name": "The Halal Guys",
-      "rating": 4.6
-    }
-  },
-  {
-    "id": "restaurants--77d8004c6b8f2b6c",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/screens/search/search_screen.dart",
-      "block": "inline_restaurant_cards",
-      "index": 0
-    },
-    "raw": {
-      "deliveryTime": 25,
-      "image": "assets/images/big_2.png",
-      "foodType": [
-        "Chinese",
-        "American",
-        "Deshi food"
-      ],
-      "name": "McDonald's",
-      "numOfRating": 200,
-      "rating": 4.3
-    }
-  },
-  {
-    "id": "restaurants--8229d96f6d242cf",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/demo_data.dart",
-      "block": "demoMediumCardData",
-      "index": 2
-    },
-    "raw": {
-      "delivertTime": 25,
-      "image": "assets/images/medium_3.png",
-      "location": "Colarodo, San Francisco",
-      "name": "McDonald’s",
-      "rating": 4.8
-    }
-  },
-  {
-    "id": "restaurants-2050f78932f0d681",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/demo_data.dart",
-      "block": "demoMediumCardData",
-      "index": 1
-    },
-    "raw": {
-      "delivertTime": 30,
-      "image": "assets/images/medium_2.png",
-      "location": "Colarodo, San Francisco",
-      "name": "Mario Italiano",
-      "rating": 4.3
-    }
-  },
-  {
-    "id": "restaurants-358d00e36cd928ea",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/screens/featured/components/body.dart",
-      "block": "inline_restaurant_cards",
-      "index": 0
-    },
-    "raw": {
-      "deliveryTime": 25,
-      "image": "assets/images/big_3.png",
-      "foodType": [
-        "Chinese",
-        "American",
-        "Deshi food"
-      ],
-      "name": "McDonald's",
-      "numOfRating": 200,
-      "rating": 4.3
-    }
-  },
-  {
-    "id": "restaurants-5cfbe998872adca9",
-    "entity": "restaurants",
-    "source": {
-      "file": "lib/demo_data.dart",
-      "block": "demoMediumCardData",
-      "index": 0
-    },
-    "raw": {
-      "delivertTime": 25,
-      "image": "assets/images/medium_1.png",
-      "location": "Colarodo, San Francisco",
-      "name": "Daylight Coffee",
-      "rating": 4.6
-    }
-  },
-  {
-    "id": "restaurants-7987a9ca8bbd7d36",
+    "id": "restaurants--267f2c9290a996b5",
     "entity": "restaurants",
     "source": {
       "file": "lib/screens/home/home_screen.dart",
@@ -135,16 +8,186 @@
       "index": 0
     },
     "raw": {
+      "heroTag": "home-all-${restaurant.id}",
+      "images": []
+    }
+  },
+  {
+    "id": "restaurants--4fadc13a209ad270",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/data/services/mock_data_service.dart",
+      "block": "demoMediumCardData",
+      "index": 3
+    },
+    "raw": {
+      "categories": [
+        "Burgers",
+        "Breakfast"
+      ],
       "deliveryTime": 25,
-      "image": "assets/images/big_4.png",
-      "foodType": [
+      "dietaries": [
+        "Any"
+      ],
+      "image": "assets/images/medium_3.png",
+      "location": "Colarodo, San Francisco",
+      "name": "McDonald’s",
+      "priceTier": 2,
+      "rating": 4.8
+    }
+  },
+  {
+    "id": "restaurants--77f7809b62dd4a5e",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/features/recommendations/presentation/for_you_section.dart",
+      "block": "inline_restaurant_cards",
+      "index": 0
+    },
+    "raw": {
+      "heroTag": "for-you-${restaurant.id}",
+      "images": []
+    }
+  },
+  {
+    "id": "restaurants-1a7165758ebd0cbb",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/data/services/mock_data_service.dart",
+      "block": "demoMediumCardData",
+      "index": 0
+    },
+    "raw": {
+      "categories": [
         "Chinese",
         "American",
         "Deshi food"
       ],
-      "name": "McDonald's",
-      "numOfRating": 200,
+      "deliveryFee": "Free",
+      "deliveryTime": 25,
+      "dietaries": [
+        "Any"
+      ],
+      "image": "assets/images/big_1.png",
+      "location": "San Francisco",
+      "name": "Mayfield Bakery & Cafe",
+      "priceTier": 2,
+      "rating": 4.3,
+      "ratingCount": 200
+    }
+  },
+  {
+    "id": "restaurants-25acb2838a2458f1",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/screens/search/search_screen.dart",
+      "block": "inline_restaurant_cards",
+      "index": 0
+    },
+    "raw": {
+      "foodType": [
+        "Popular"
+      ],
+      "heroTag": "search-${restaurant.id}",
+      "images": [],
+      "numOfRating": 200
+    }
+  },
+  {
+    "id": "restaurants-2d4612c0fbf751d4",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/data/services/mock_data_service.dart",
+      "block": "demoMediumCardData",
+      "index": 2
+    },
+    "raw": {
+      "categories": [
+        "Dinner",
+        "Pizza"
+      ],
+      "deliveryTime": 30,
+      "dietaries": [
+        "Any"
+      ],
+      "image": "assets/images/medium_2.png",
+      "location": "Colarodo, San Francisco",
+      "name": "Mario Italiano",
+      "priceTier": 3,
       "rating": 4.3
+    }
+  },
+  {
+    "id": "restaurants-4d1d4f242c72977a",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/screens/featured/components/body.dart",
+      "block": "inline_restaurant_cards",
+      "index": 0
+    },
+    "raw": {
+      "heroTag": "featured-${restaurant.id}",
+      "images": []
+    }
+  },
+  {
+    "id": "restaurants-584bfde20f1b19a4",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/data/services/mock_data_service.dart",
+      "block": "demoMediumCardData",
+      "index": 4
+    },
+    "raw": {
+      "categories": [
+        "Salads",
+        "Dinner"
+      ],
+      "deliveryTime": 25,
+      "dietaries": [
+        "Gluten-Free"
+      ],
+      "image": "assets/images/medium_4.png",
+      "location": "Colarodo, San Francisco",
+      "name": "The Halal Guys",
+      "priceTier": 4,
+      "rating": 4.6
+    }
+  },
+  {
+    "id": "restaurants-7913ae14f37b4c9b",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/screens/search/components/body.dart",
+      "block": "inline_restaurant_cards",
+      "index": 0
+    },
+    "raw": {
+      "images": []
+    }
+  },
+  {
+    "id": "restaurants-7cb473545a75b852",
+    "entity": "restaurants",
+    "source": {
+      "file": "lib/data/services/mock_data_service.dart",
+      "block": "demoMediumCardData",
+      "index": 1
+    },
+    "raw": {
+      "categories": [
+        "Brunch",
+        "Breakfast"
+      ],
+      "deliveryTime": 25,
+      "dietaries": [
+        "Vegetarian"
+      ],
+      "image": "assets/images/medium_1.png",
+      "location": "Colarodo, San Francisco",
+      "name": "Daylight Coffee",
+      "priceTier": 2,
+      "rating": 4.6
     }
   }
 ]
