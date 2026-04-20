@@ -30,3 +30,23 @@ bash scripts/build_release_android.sh
 ```
 
 This uses direct Gradle `assembleRelease`, which avoids the wrapper path that can terminate early on some environments.
+
+## Partner Data Validation
+
+Validate featured-partner data integrity before releasing:
+
+```bash
+node ./scripts/validate_partner_data.js
+```
+
+What this checks:
+
+- missing partner-scoped sections (`restaurant_details`, `featured_items`, `menu_tabs`, `menu_items`)
+- featured flag mismatches (`isFeatured` not aligned with scoped content)
+- duplicate IDs inside normalized collections
+- orphan `restaurantId` references to unknown restaurants
+
+Exit code behavior:
+
+- `0`: release gate checks pass
+- `1`: one or more featured-partner contract violations or structural data issues found
