@@ -102,3 +102,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: SF Pro Text
+      fonts:
+        - asset: assets/font/SF Pro Text/SFProText-Regular.ttf
+          weight: 400
+        - asset: assets/font/SF Pro Text/SFProText-Medium.ttf
+          weight: 500
+        - asset: assets/font/SF Pro Text/SFProText-Semibold.ttf
+          weight: 600
+        - asset: assets/font/SF Pro Text/SFProText-Bold.ttf
+          weight: 700
