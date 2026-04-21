@@ -19,7 +19,8 @@ class OrderDeliveredScreen extends ConsumerWidget {
 
     final order = orderAsync.valueOrNull;
     final payment = paymentAsync.valueOrNull;
-    final deliveredAt = payment?.updatedAt ?? order?.createdAt ?? DateTime.now();
+    final deliveredAt =
+        payment?.updatedAt ?? order?.createdAt ?? DateTime.now();
 
     return Scaffold(
       appBar: AppBar(title: const Text('Order Delivered')),
@@ -59,10 +60,11 @@ class OrderDeliveredScreen extends ConsumerWidget {
                     Text(
                       'Your order has arrived',
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                          ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                              ),
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -82,7 +84,8 @@ class OrderDeliveredScreen extends ConsumerWidget {
                 deliveredAt: deliveredAt,
                 totalPaid: payment?.amount ?? order?.totalAmount,
                 itemCount: order?.items.length,
-                deliveryAddress: _deliveryAddressLabel(order?.deliveryAddressLabel, order?.deliveryAddressLine),
+                deliveryAddress: _deliveryAddressLabel(
+                    order?.deliveryAddressLabel, order?.deliveryAddressLine),
                 paymentMethod: _paymentMethodLabel(payment?.provider),
                 paymentStatus: _paymentStatusLabel(payment?.status),
                 phoneNumber: payment?.phoneNumber,
@@ -132,7 +135,9 @@ class _SummaryCard extends StatelessWidget {
       ),
       (
         'Items',
-        itemCount == null ? 'Loading...' : '$itemCount item${itemCount == 1 ? '' : 's'}',
+        itemCount == null
+            ? 'Loading...'
+            : '$itemCount item${itemCount == 1 ? '' : 's'}',
       ),
       ('Delivery address', deliveryAddress),
       ('Payment method', paymentMethod),
@@ -252,7 +257,8 @@ class _ActionCard extends StatelessWidget {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Receipt for order $orderId will be available soon.'),
+                  content: Text(
+                      'Receipt for order $orderId will be available soon.'),
                 ),
               );
             },

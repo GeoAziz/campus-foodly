@@ -52,7 +52,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
       }
     });
 
-    final trackingAsync = ref.watch(orderTrackingStreamProvider(widget.orderId));
+    final trackingAsync =
+        ref.watch(orderTrackingStreamProvider(widget.orderId));
 
     return Scaffold(
       appBar: AppBar(
@@ -89,7 +90,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                   const SizedBox(height: defaultPadding),
                   const _SectionHeading(
                     title: 'Delivery progress',
-                    subtitle: 'A simple view of where your order stands right now.',
+                    subtitle:
+                        'A simple view of where your order stands right now.',
                   ),
                   const SizedBox(height: defaultPadding / 2),
                   _StatusTimeline(tracking: tracking),
@@ -103,7 +105,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                   const SizedBox(height: defaultPadding),
                   const _SectionHeading(
                     title: 'Live map',
-                    subtitle: 'The route updates automatically when location data is available.',
+                    subtitle:
+                        'The route updates automatically when location data is available.',
                   ),
                   const SizedBox(height: defaultPadding / 2),
                   _TrackingMapCard(tracking: tracking),
@@ -126,7 +129,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                   const SizedBox(height: defaultPadding),
                   const _SectionHeading(
                     title: 'Need help?',
-                    subtitle: 'Keep support actions close if something looks off.',
+                    subtitle:
+                        'Keep support actions close if something looks off.',
                   ),
                   const SizedBox(height: defaultPadding / 2),
                   Row(
@@ -136,7 +140,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Support contact is not configured yet.'),
+                                content: Text(
+                                    'Support contact is not configured yet.'),
                               ),
                             );
                           },
@@ -150,7 +155,8 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text('Order ID copied: ${tracking.orderId}'),
+                                content: Text(
+                                    'Order ID copied: ${tracking.orderId}'),
                               ),
                             );
                           },
@@ -289,7 +295,8 @@ class _TrackingHeaderCard extends StatelessWidget {
                       ? Icons.location_on_rounded
                       : Icons.place_outlined,
                   label: 'Location',
-                  value: tracking.hasLocation ? 'Live position' : 'Fallback area',
+                  value:
+                      tracking.hasLocation ? 'Live position' : 'Fallback area',
                 ),
               ),
             ],
@@ -362,7 +369,8 @@ bool _isStepComplete(OrderTrackingStage current, OrderTrackingStage stage) {
     OrderTrackingStage.delivered,
   ];
 
-  return order.indexOf(current) >= order.indexOf(stage) && current != OrderTrackingStage.unknown;
+  return order.indexOf(current) >= order.indexOf(stage) &&
+      current != OrderTrackingStage.unknown;
 }
 
 class _TimelineRow extends StatelessWidget {
@@ -384,7 +392,11 @@ class _TimelineRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final activeColor = isUnknown ? bodyTextColor : (isCurrent ? primaryColor : (isComplete ? const Color(0xFF1E8E3E) : const Color(0xFFD1D5DB)));
+    final activeColor = isUnknown
+        ? bodyTextColor
+        : (isCurrent
+            ? primaryColor
+            : (isComplete ? const Color(0xFF1E8E3E) : const Color(0xFFD1D5DB)));
 
     return Padding(
       padding: EdgeInsets.only(bottom: isLast ? 0 : defaultPadding),
@@ -402,9 +414,11 @@ class _TimelineRow extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: isComplete
-                    ? const Icon(Icons.check_rounded, size: 12, color: Colors.white)
+                    ? const Icon(Icons.check_rounded,
+                        size: 12, color: Colors.white)
                     : isCurrent
-                        ? const Icon(Icons.near_me_rounded, size: 12, color: Colors.white)
+                        ? const Icon(Icons.near_me_rounded,
+                            size: 12, color: Colors.white)
                         : null,
               ),
               if (!isLast)
@@ -465,12 +479,16 @@ class _OrderDetailCard extends StatelessWidget {
       _DetailTile(
         icon: Icons.person_pin_circle_rounded,
         label: 'Courier',
-        value: tracking.hasLocation ? 'Live location available' : 'Waiting for assignment',
+        value: tracking.hasLocation
+            ? 'Live location available'
+            : 'Waiting for assignment',
       ),
       _DetailTile(
         icon: Icons.map_outlined,
         label: 'Route',
-        value: tracking.hasLocation ? 'Navigation active' : 'Tracking will update once location is shared',
+        value: tracking.hasLocation
+            ? 'Navigation active'
+            : 'Tracking will update once location is shared',
       ),
     ];
 
@@ -485,7 +503,8 @@ class _OrderDetailCard extends StatelessWidget {
         children: [
           for (var index = 0; index < tiles.length; index++) ...[
             tiles[index],
-            if (index != tiles.length - 1) const SizedBox(height: defaultPadding / 1.5),
+            if (index != tiles.length - 1)
+              const SizedBox(height: defaultPadding / 1.5),
           ],
         ],
       ),
@@ -626,7 +645,10 @@ class _TrackingMapCard extends StatelessWidget {
                           Text(
                             'Map preview will appear once live location is shared.',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
                                   color: bodyTextColor,
                                   height: 1.4,
                                 ),
@@ -652,8 +674,9 @@ class _TrackingMapCard extends StatelessWidget {
                       polylines: {
                         Polyline(
                           polylineId: const PolylineId('route'),
-                          points: const [_fallbackCenter, _fallbackCenter].toList()
-                            ..[1] = location,
+                          points:
+                              const [_fallbackCenter, _fallbackCenter].toList()
+                                ..[1] = location,
                           color: primaryColor,
                           width: 4,
                         ),

@@ -18,7 +18,7 @@ import 'package:ordereats/features/profile/repositories/profile_repository.dart'
 void main() {
   group('ProfileAddressesScreen', () {
     testWidgets('shows empty state when there are no saved addresses',
-      (tester) async {
+        (tester) async {
       final repository = FakeProfileRepository(addresses: const []);
 
       await pumpAddressesScreen(tester, repository);
@@ -58,7 +58,8 @@ void main() {
       expect(find.text('Home'), findsOneWidget);
       expect(find.text('Work'), findsOneWidget);
       expect(find.text('Default Address'), findsOneWidget);
-      expect(find.text('12 Market St, San Francisco, CA 94103'), findsOneWidget);
+      expect(
+          find.text('12 Market St, San Francisco, CA 94103'), findsOneWidget);
     });
 
     testWidgets('opens add address route from FAB', (tester) async {
@@ -116,7 +117,8 @@ void main() {
       );
     });
 
-    testWidgets('delete action removes address after confirmation', (tester) async {
+    testWidgets('delete action removes address after confirmation',
+        (tester) async {
       final repository = FakeProfileRepository(
         addresses: const [
           Address(

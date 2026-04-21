@@ -44,12 +44,14 @@ class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
     final restaurantId = cartItems.first.menuItem.restaurantId;
 
     // Verify all items are from the same restaurant
-    if (!cartItems.every((item) => item.menuItem.restaurantId == restaurantId)) {
+    if (!cartItems
+        .every((item) => item.menuItem.restaurantId == restaurantId)) {
       throw StateError('All items must be from the same restaurant');
     }
 
     if (deliveryAddressId.isEmpty || deliveryAddressLine.isEmpty) {
-      throw StateError('A delivery address is required before placing an order');
+      throw StateError(
+          'A delivery address is required before placing an order');
     }
 
     // Convert CartItems to OrderItems

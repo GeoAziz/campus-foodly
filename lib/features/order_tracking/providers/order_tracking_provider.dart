@@ -14,11 +14,10 @@ final orderTrackingStreamProvider =
   return ref.watch(orderTrackingRepositoryProvider).watchOrderTracking(orderId);
 });
 
-final orderByIdProvider = FutureProvider.family<Order?, String>((ref, orderId) async {
-  final snapshot = await FirebaseFirestore.instance
-      .collection('orders')
-      .doc(orderId)
-      .get();
+final orderByIdProvider =
+    FutureProvider.family<Order?, String>((ref, orderId) async {
+  final snapshot =
+      await FirebaseFirestore.instance.collection('orders').doc(orderId).get();
 
   final data = snapshot.data();
   if (data == null) {
@@ -55,8 +54,7 @@ final paymentByOrderIdProvider =
     return null;
   }
 
-  final docs = [...query.docs]
-    ..sort((a, b) {
+  final docs = [...query.docs]..sort((a, b) {
       final aTime = _asDateTime(a.data()['updatedAt']);
       final bTime = _asDateTime(b.data()['updatedAt']);
       return bTime.compareTo(aTime);

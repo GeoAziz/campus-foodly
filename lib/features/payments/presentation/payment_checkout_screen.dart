@@ -169,7 +169,8 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: TextButton.icon(
-                  onPressed: () => context.pushNamed(AppRoutes.profileAddresses),
+                  onPressed: () =>
+                      context.pushNamed(AppRoutes.profileAddresses),
                   icon: const Icon(Icons.add_location_alt_rounded),
                   label: const Text('Add delivery address'),
                 ),
@@ -194,22 +195,23 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
             ),
             const SizedBox(height: defaultPadding),
             ElevatedButton(
-              onPressed: paymentState.isSubmitting || user == null || !hasAddress
-                  ? null
-                  : () {
-                      if (!_formKey.currentState!.validate()) {
-                        return;
-                      }
+              onPressed:
+                  paymentState.isSubmitting || user == null || !hasAddress
+                      ? null
+                      : () {
+                          if (!_formKey.currentState!.validate()) {
+                            return;
+                          }
 
-                      ref
-                          .read(paymentControllerProvider.notifier)
-                          .startMpesaCheckout(
-                            orderId: widget.orderId,
-                            userId: user.id,
-                            phoneNumber: _phoneController.text.trim(),
-                            amount: widget.amount,
-                          );
-                    },
+                          ref
+                              .read(paymentControllerProvider.notifier)
+                              .startMpesaCheckout(
+                                orderId: widget.orderId,
+                                userId: user.id,
+                                phoneNumber: _phoneController.text.trim(),
+                                amount: widget.amount,
+                              );
+                        },
               child: paymentState.isSubmitting
                   ? const SizedBox(
                       height: 20,

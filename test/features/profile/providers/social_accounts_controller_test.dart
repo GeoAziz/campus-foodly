@@ -31,14 +31,20 @@ void main() {
 
       await pumpController();
 
-      expect(container.read(socialAccountsControllerProvider('user-1')).accounts,
+      expect(
+          container.read(socialAccountsControllerProvider('user-1')).accounts,
           hasLength(1));
       expect(
-        container.read(socialAccountsControllerProvider('user-1')).isProviderLinked('google'),
+        container
+            .read(socialAccountsControllerProvider('user-1'))
+            .isProviderLinked('google'),
         isTrue,
       );
       expect(
-        container.read(socialAccountsControllerProvider('user-1')).getLinkedAccount('google')?.email,
+        container
+            .read(socialAccountsControllerProvider('user-1'))
+            .getLinkedAccount('google')
+            ?.email,
         'a@b.com',
       );
       expect(controller.state.isLoading, isFalse);
@@ -47,7 +53,8 @@ void main() {
     test('linkAccount replaces an existing provider entry', () async {
       final repository = FakeProfileRepository(
         socialAccounts: const [
-          SocialAccount(provider: 'google', uid: 'old', email: 'old@example.com'),
+          SocialAccount(
+              provider: 'google', uid: 'old', email: 'old@example.com'),
         ],
       );
       final container = ProviderContainer(
@@ -64,7 +71,8 @@ void main() {
       );
       await controller.linkAccount(
         'google',
-        const SocialAccount(provider: 'google', uid: 'new', email: 'new@example.com'),
+        const SocialAccount(
+            provider: 'google', uid: 'new', email: 'new@example.com'),
       );
 
       final state = container.read(socialAccountsControllerProvider('user-1'));

@@ -36,9 +36,9 @@ class Order {
           .map((item) => OrderItem.fromMap(item as Map<String, dynamic>))
           .toList(growable: false),
       status: data['status'] as String? ?? 'pending',
-        deliveryAddressId: data['deliveryAddressId'] as String? ?? '',
-        deliveryAddressLabel: data['deliveryAddressLabel'] as String? ?? '',
-        deliveryAddressLine: data['deliveryAddressLine'] as String? ?? '',
+      deliveryAddressId: data['deliveryAddressId'] as String? ?? '',
+      deliveryAddressLabel: data['deliveryAddressLabel'] as String? ?? '',
+      deliveryAddressLine: data['deliveryAddressLine'] as String? ?? '',
       createdAt: createdAtValue is Timestamp
           ? createdAtValue.toDate()
           : createdAtValue is DateTime

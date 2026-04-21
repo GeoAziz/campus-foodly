@@ -86,7 +86,7 @@ void main() {
       controller.enterEditMode();
       await controller.saveProfile();
 
-      expect(controller.state.error, contains('Profile Error:')); 
+      expect(controller.state.error, contains('Profile Error:'));
       expect(controller.state.isLoading, isFalse);
     });
 

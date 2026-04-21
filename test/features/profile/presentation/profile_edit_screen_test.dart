@@ -38,7 +38,8 @@ void main() {
       await tester.tap(find.widgetWithText(ElevatedButton, 'Edit Profile'));
       await tester.pumpAndSettle();
 
-      expect(find.widgetWithText(ElevatedButton, 'Save Changes'), findsOneWidget);
+      expect(
+          find.widgetWithText(ElevatedButton, 'Save Changes'), findsOneWidget);
       expect(find.widgetWithText(OutlinedButton, 'Cancel'), findsOneWidget);
     });
 
@@ -52,9 +53,13 @@ void main() {
       await tester.tap(find.widgetWithText(ElevatedButton, 'Edit Profile'));
       await tester.pumpAndSettle();
 
-      await tester.enterText(find.widgetWithText(TextFormField, 'Full Name'), 'Alice Updated');
-      await tester.enterText(find.widgetWithText(TextFormField, 'Phone Number'), '555-7777');
-      await tester.enterText(find.widgetWithText(TextFormField, 'Tell us about yourself'), 'Updated bio');
+      await tester.enterText(
+          find.widgetWithText(TextFormField, 'Full Name'), 'Alice Updated');
+      await tester.enterText(
+          find.widgetWithText(TextFormField, 'Phone Number'), '555-7777');
+      await tester.enterText(
+          find.widgetWithText(TextFormField, 'Tell us about yourself'),
+          'Updated bio');
 
       await tester.tap(find.widgetWithText(ElevatedButton, 'Save Changes'));
       await tester.pumpAndSettle();
@@ -92,7 +97,8 @@ void main() {
       await tester.tap(find.widgetWithText(ElevatedButton, 'Edit Profile'));
       await tester.pumpAndSettle();
 
-      await tester.enterText(find.widgetWithText(TextFormField, 'Full Name'), 'Unsaved Name');
+      await tester.enterText(
+          find.widgetWithText(TextFormField, 'Full Name'), 'Unsaved Name');
       await tester.tap(find.widgetWithText(OutlinedButton, 'Cancel'));
       await tester.pumpAndSettle();
 
