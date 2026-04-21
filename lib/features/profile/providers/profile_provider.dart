@@ -10,8 +10,8 @@ import '../models/social_account.dart';
 import '../repositories/profile_repository.dart';
 
 // Profile Repository Provider
-final profileRepositoryProvider = Provider((ref) {
-  return ProfileRepository(FirebaseFirestore.instance);
+final profileRepositoryProvider = Provider<ProfileRepository>((ref) {
+  return FirestoreProfileRepository(FirebaseFirestore.instance);
 });
 
 // Current User's Profile Data

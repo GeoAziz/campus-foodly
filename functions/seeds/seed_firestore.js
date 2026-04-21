@@ -9,6 +9,7 @@
  *   node seed_firestore.js --dry-run          # Preview changes without writing
  *   node seed_firestore.js --dry-run --verbose # Detailed preview mode
  *   node seed_firestore.js --collections restaurants,menu_items
+ *   node seed_firestore.js --source-dir data/normalized_campus --collections restaurants,menu_items
  *   node seed_firestore.js --reset            # Clear selected collections before seeding
  * 
  * Prerequisites:
@@ -437,6 +438,7 @@ async function seedFirestore() {
   const isDryRun = cliArgs.includes('--dry-run');
   const verbose = cliArgs.includes('--verbose');
   const shouldReset = cliArgs.includes('--reset');
+  const sourceDirArg = parseFlagValue(cliArgs, '--source-dir');
   const requestedCollections = parseCollectionsArg(
     parseFlagValue(cliArgs, '--collections'),
   );
@@ -472,7 +474,9 @@ async function seedFirestore() {
   const cloudinaryUrlMap = loadCloudinaryUrlMap();
 
   // Get normalized data directory
-  const normalizedDir = path.join(__dirname, '../../data/normalized');
+  const normalizedDir = sourceDirArg
+    ? path.resolve(WORKSPACE_ROOT, sourceDirArg)
+    : path.join(__dirname, '../../data/normalized');
 
   if (!fs.existsSync(normalizedDir)) {
     console.error(`✗ Normalized data directory not found: ${normalizedDir}`);

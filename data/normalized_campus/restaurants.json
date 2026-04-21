@@ -1,0 +1,205 @@
+[
+  {
+    "id": "restaurants-kca-mama-njeri",
+    "name": "Mama Njeri's Kitchen",
+    "image": "https://source.unsplash.com/400x400/?kenyan,woman,cook,food,africa,kitchen",
+    "location": "KCA - Opposite KCA Gate B, ground floor, blue signboard",
+    "rating": 4.7,
+    "ratingCount": 0,
+    "deliveryTime": 10,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": true,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-kibandaski",
+    "name": "Kibandaski Corner",
+    "image": "https://source.unsplash.com/400x400/?nairobi,street,food,stall,kenya,local",
+    "location": "KCA - KCA Shopping Centre, stall 3, ask for Kamau",
+    "rating": 4.5,
+    "ratingCount": 0,
+    "deliveryTime": 8,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Kenyan Staples",
+      "Street Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-choma-zone",
+    "name": "Choma Zone",
+    "image": "https://source.unsplash.com/400x400/?grill,charcoal,meat,africa,barbecue,smoke",
+    "location": "KCA - Behind KCA parking area, open air charcoal grill - follow the smoke",
+    "rating": 4.8,
+    "ratingCount": 0,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Grilled & Choma"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 4,
+    "isFeatured": true,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-snack-attack",
+    "name": "Snack Attack",
+    "image": "https://source.unsplash.com/400x400/?kiosk,snack,nairobi,street,food,kenya",
+    "location": "KCA - KCA main entrance kiosk, right side of the gate",
+    "rating": 4.6,
+    "ratingCount": 0,
+    "deliveryTime": 5,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Street Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-morning-glory",
+    "name": "Morning Glory",
+    "image": "https://source.unsplash.com/400x400/?kenyan,tea,chai,breakfast,morning,cup,africa",
+    "location": "KCA - Near KCA Library entrance, the blue and yellow stall",
+    "rating": 4.5,
+    "ratingCount": 0,
+    "deliveryTime": 7,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Breakfast",
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-pilau-palace",
+    "name": "Pilau Palace",
+    "image": "https://source.unsplash.com/400x400/?pilau,rice,spiced,kenyan,east,africa,brown,dish",
+    "location": "KCA - KCA Shopping Centre, stall 7, red and white signboard",
+    "rating": 4.9,
+    "ratingCount": 0,
+    "deliveryTime": 12,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Pilau & Rice"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": true,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-chapati-house",
+    "name": "The Chapati House",
+    "image": "https://source.unsplash.com/400x400/?chapati,flatbread,kenyan,layered,wheat,soft",
+    "location": "KCA - Next to KCA Student Centre, follow the rolling pin sound",
+    "rating": 4.6,
+    "ratingCount": 0,
+    "deliveryTime": 10,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-campus-bites",
+    "name": "Campus Bites",
+    "image": "https://source.unsplash.com/400x400/?chips,fries,fried,chicken,kenya,plate,food",
+    "location": "KCA - Ground floor, KCA Shopping Centre - corner stall",
+    "rating": 4.3,
+    "ratingCount": 0,
+    "deliveryTime": 12,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-fresh-sip",
+    "name": "Fresh Sip",
+    "image": "https://source.unsplash.com/400x400/?fresh,juice,tropical,mango,africa,glass,colourful",
+    "location": "KCA - KCA main entrance, left kiosk with the fruit display",
+    "rating": 4.7,
+    "ratingCount": 0,
+    "deliveryTime": 5,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_kca",
+    "isOpen": true
+  },
+  {
+    "id": "restaurants-kca-swahili-plate",
+    "name": "Swahili Plate",
+    "image": "https://source.unsplash.com/400x400/?swahili,coastal,kenya,food,coconut,plate",
+    "location": "KCA - Opposite KCA Gate A, first floor, blue and white decor",
+    "rating": 4.8,
+    "ratingCount": 0,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Coastal Kenyan",
+      "Pilau & Rice"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": true,
+    "campusId": "campus_kca",
+    "isOpen": true
+  }
+]

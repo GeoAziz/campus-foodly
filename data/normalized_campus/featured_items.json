@@ -1,0 +1,38 @@
+[
+  {
+    "id": "featured-items-kca-mama-njeri",
+    "restaurantId": "restaurants-kca-mama-njeri",
+    "title": "Ugali + Beef Stew",
+    "image": "https://source.unsplash.com/800x600/?ugali,beef,stew,kenyan,food,plate",
+    "foodType": "Kenyan Staples",
+    "priceRange": "$$",
+    "position": 0
+  },
+  {
+    "id": "featured-items-kca-choma-zone",
+    "restaurantId": "restaurants-kca-choma-zone",
+    "title": "Nyama Choma 200g",
+    "image": "https://source.unsplash.com/800x600/?nyama,choma,grilled,goat,meat,africa,charcoal,kachumbari",
+    "foodType": "Grilled & Choma",
+    "priceRange": "$$$",
+    "position": 1
+  },
+  {
+    "id": "featured-items-kca-pilau-palace",
+    "restaurantId": "restaurants-kca-pilau-palace",
+    "title": "Pilau ya Nyama",
+    "image": "https://source.unsplash.com/800x600/?pilau,beef,spiced,rice,kenya,east,africa,brown,plate",
+    "foodType": "Pilau & Rice",
+    "priceRange": "$$",
+    "position": 2
+  },
+  {
+    "id": "featured-items-kca-swahili-plate",
+    "restaurantId": "restaurants-kca-swahili-plate",
+    "title": "Wali wa Nazi + Kuku",
+    "image": "https://source.unsplash.com/800x600/?wali,nazi,coconut,rice,chicken,swahili,kenya,coastal,plate",
+    "foodType": "Coastal Kenyan",
+    "priceRange": "$$$",
+    "position": 3
+  }
+]

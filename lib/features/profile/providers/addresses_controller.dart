@@ -70,10 +70,14 @@ class AddressesController extends StateNotifier<AddressesState> {
   Future<void> addAddress(Address address) async {
     try {
       state = state.copyWith(isLoading: true, error: null);
-      await _repository.addAddress(_uid, address);
+      final addressToSave = address.id.isEmpty
+          ? address.copyWith(id: const Uuid().v4())
+          : address;
+
+      await _repository.addAddress(_uid, addressToSave);
       state = state.copyWith(
         isLoading: false,
-        addresses: [...state.addresses, address],
+        addresses: [...state.addresses, addressToSave],
       );
     } catch (e) {
       state = state.copyWith(

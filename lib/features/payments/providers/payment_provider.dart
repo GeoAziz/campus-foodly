@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/payment_status.dart';
@@ -35,7 +36,13 @@ class PaymentState {
 }
 
 final paymentRepositoryProvider = Provider<PaymentRepository>(
-  (ref) => PaymentRepository(FirebaseFirestore.instance),
+  (ref) => PaymentRepository(
+    FirebaseFirestore.instance,
+    // Use mock payment in debug mode for testing
+    useMockPayment: kDebugMode,
+    // Configure callback delay (default 3 seconds)
+    mockPaymentDelay: const Duration(seconds: 3),
+  ),
 );
 
 class PaymentController extends StateNotifier<PaymentState> {

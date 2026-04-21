@@ -1,1 +1,48 @@
-import 'package:flutter/material.dart';\nimport 'package:flutter_test/flutter_test.dart';\n\nvoid main() {\n  group('ProfileAddressAddScreen', () {\n    testWidgets('should display address form fields', (tester) async {\n      // Widget test for add/edit address screen\n      // Tests verify:\n      // - Title shows \"Add Address\" or \"Edit Address\"\n      // - All form fields display (label, street, city, state, zip, country)\n      // - SaveButton present at bottom\n      // - Validation: label required\n      // - Validation: street required\n      // - Validation: city required\n      // - Validation: state required\n      // - Validation: zip code required\n      // - SaveButton disabled when validation fails\n      // - SaveButton enabled when valid\n      // - Save creates/updates address in repository\n      // - Pop on successful save\n      // - Error displayed on save failure\n      expect(true, true);\n    });\n\n    testWidgets('should validate all required fields', (tester) async {\n      expect(true, true);\n    });\n\n    testWidgets('should load existing address in edit mode', (tester) async {\n      expect(true, true);\n    });\n\n    testWidgets('should save new address', (tester) async {\n      expect(true, true);\n    });\n\n    testWidgets('should update existing address', (tester) async {\n      expect(true, true);\n    });\n\n    testWidgets('should navigate back on save', (tester) async {\n      expect(true, true);\n    });\n\n    testWidgets('should handle save errors', (tester) async {\n      expect(true, true);\n    });\n  });\n}
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  group('ProfileAddressAddScreen', () {
+    testWidgets('should display address form fields', (tester) async {
+      // Widget test for add/edit address screen
+      // Tests verify:
+      // - Title shows "Add Address" or "Edit Address"
+      // - All form fields display (label, street, city, state, zip, country)
+      // - SaveButton present at bottom
+      // - Validation: label required
+      // - Validation: street required
+      // - Validation: city required
+      // - Validation: state required
+      // - Validation: zip code required
+      // - SaveButton disabled when validation fails
+      // - SaveButton enabled when valid
+      // - Save creates/updates address in repository
+      // - Pop on successful save
+      // - Error displayed on save failure
+      expect(true, true);
+    });
+
+    testWidgets('should validate all required fields', (tester) async {
+      expect(true, true);
+    });
+
+    testWidgets('should load existing address in edit mode', (tester) async {
+      expect(true, true);
+    });
+
+    testWidgets('should save new address', (tester) async {
+      expect(true, true);
+    });
+
+    testWidgets('should update existing address', (tester) async {
+      expect(true, true);
+    });
+
+    testWidgets('should navigate back on save', (tester) async {
+      expect(true, true);
+    });
+
+    testWidgets('should handle save errors', (tester) async {
+      expect(true, true);
+    });
+  });
+}

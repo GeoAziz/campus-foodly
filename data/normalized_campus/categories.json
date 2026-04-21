@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cat_kenyan_staples",
+    "title": "Kenyan Staples",
+    "isActive": true,
+    "description": "Ugali, rice, beans and classic home-cooked Kenyan meals"
+  },
+  {
+    "id": "cat_grilled",
+    "title": "Grilled & Choma",
+    "isActive": true,
+    "description": "Nyama choma, mishkaki, mutura and fire-grilled favourites"
+  },
+  {
+    "id": "cat_street_food",
+    "title": "Street Food",
+    "isActive": true,
+    "description": "Smokie pasua, samosa, viazi karai, mandazi and campus snacks"
+  },
+  {
+    "id": "cat_breakfast",
+    "title": "Breakfast",
+    "isActive": true,
+    "description": "Chai, uji, mandazi, eggs and Kenyan morning favourites"
+  },
+  {
+    "id": "cat_beverages",
+    "title": "Drinks & Juices",
+    "isActive": true,
+    "description": "Fresh juices, smoothies, sugarcane, madafu and cold drinks"
+  },
+  {
+    "id": "cat_pilau_rice",
+    "title": "Pilau & Rice",
+    "isActive": true,
+    "description": "Kenyan pilau, biryani, wali wa nazi and spiced rice dishes"
+  },
+  {
+    "id": "cat_coastal",
+    "title": "Coastal Kenyan",
+    "isActive": true,
+    "description": "Swahili coastal dishes - wali wa nazi, mahamri, kuku wa kupaka, samaki"
+  },
+  {
+    "id": "cat_fast_food",
+    "title": "Fast Food",
+    "isActive": true,
+    "description": "Chips, fried chicken, burgers and campus quick bites"
+  }
+]

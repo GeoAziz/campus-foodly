@@ -9,6 +9,9 @@ class Order {
     required this.items,
     required this.status,
     required this.createdAt,
+    this.deliveryAddressId = '',
+    this.deliveryAddressLabel = '',
+    this.deliveryAddressLine = '',
   });
 
   final String id;
@@ -17,6 +20,9 @@ class Order {
   final List<OrderItem> items;
   final String status;
   final DateTime createdAt;
+  final String deliveryAddressId;
+  final String deliveryAddressLabel;
+  final String deliveryAddressLine;
 
   double get totalAmount => items.fold(0, (sum, item) => sum + item.totalPrice);
 
@@ -30,6 +36,9 @@ class Order {
           .map((item) => OrderItem.fromMap(item as Map<String, dynamic>))
           .toList(growable: false),
       status: data['status'] as String? ?? 'pending',
+        deliveryAddressId: data['deliveryAddressId'] as String? ?? '',
+        deliveryAddressLabel: data['deliveryAddressLabel'] as String? ?? '',
+        deliveryAddressLine: data['deliveryAddressLine'] as String? ?? '',
       createdAt: createdAtValue is Timestamp
           ? createdAtValue.toDate()
           : createdAtValue is DateTime
@@ -44,6 +53,9 @@ class Order {
       'restaurantId': restaurantId,
       'items': items.map((item) => item.toMap()).toList(growable: false),
       'status': status,
+      'deliveryAddressId': deliveryAddressId,
+      'deliveryAddressLabel': deliveryAddressLabel,
+      'deliveryAddressLine': deliveryAddressLine,
       'createdAt': createdAt,
     };
   }

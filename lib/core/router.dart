@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../entry_point.dart';
+import '../features/order_tracking/presentation/order_delivered_screen.dart';
 import '../features/order_tracking/presentation/order_tracking_screen.dart';
 import '../features/payments/presentation/payment_checkout_screen.dart';
 import '../features/profile/presentation/profile_edit_screen.dart';
@@ -166,6 +167,14 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) {
           final orderId = state.pathParameters['orderId'] ?? '';
           return OrderTrackingScreen(orderId: orderId);
+        },
+      ),
+      GoRoute(
+        path: '/order-delivered/:orderId',
+        name: AppRoutes.orderDelivered,
+        builder: (context, state) {
+          final orderId = state.pathParameters['orderId'] ?? '';
+          return OrderDeliveredScreen(orderId: orderId);
         },
       ),
       GoRoute(

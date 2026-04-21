@@ -2,14 +2,22 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
 
 import '../../../data/services/firebase_service.dart';
+import '../../../data/services/mock_payment_service.dart';
 import '../models/payment_status.dart';
 
 class PaymentRepository {
-  PaymentRepository(this._firestore);
+  PaymentRepository(
+    this._firestore, {
+    this.useMockPayment = false,
+    this.mockPaymentDelay = const Duration(seconds: 3),
+  });
 
   final FirebaseFirestore _firestore;
+  final bool useMockPayment;
+  final Duration mockPaymentDelay;
   static const String _mpesaBackendUrl =
       String.fromEnvironment('MPESA_BACKEND_URL');
 
@@ -18,11 +26,28 @@ class PaymentRepository {
     required String userId,
     required String phoneNumber,
     required double amount,
+    bool? overrideMockPayment,
   }) async {
     if (!FirebaseService.isInitialized) {
       throw StateError('Firebase is not initialized for payments.');
     }
 
+    // Use mock payment in dev mode or when explicitly enabled
+    final shouldMock = overrideMockPayment ?? (useMockPayment || kDebugMode);
+
+    if (shouldMock) {
+      final mockService = MockPaymentService(_firestore);
+      return await mockService.processPayment(
+        orderId: orderId,
+        userId: userId,
+        phoneNumber: phoneNumber,
+        amount: amount,
+        shouldSucceed: true,
+        callbackDelay: mockPaymentDelay,
+      );
+    }
+
+    // Real M-Pesa implementation
     if (_mpesaBackendUrl.isEmpty) {
       throw StateError(
         'MPESA_BACKEND_URL is not configured. Provide your deployed functions URL using --dart-define.',
@@ -71,6 +96,7 @@ class PaymentRepository {
       'createdAt': DateTime.now(),
       'updatedAt': DateTime.now(),
       'callbackPayload': null,
+      'isMocked': false,
     });
 
     return paymentId;
@@ -88,6 +114,14 @@ class PaymentRepository {
       }
 
       return paymentStatusFromString((data['status'] as String?) ?? 'idle');
+    });
+  }
+
+  /// Updates the orderId in a payment record
+  Future<void> linkOrderToPayment(String paymentId, String orderId) async {
+    await _firestore.collection('payments').doc(paymentId).update({
+      'orderId': orderId,
+      'updatedAt': DateTime.now(),
     });
   }
 }

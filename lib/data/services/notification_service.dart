@@ -34,12 +34,18 @@ class NotificationService {
     }
 
     _currentUserId = userId;
-    final token = await _messaging.getToken();
-    if (token == null || token.isEmpty) {
-      return;
-    }
+    try {
+      final token = await _messaging.getToken();
+      if (token == null || token.isEmpty) {
+        return;
+      }
 
-    await _persistToken(userId, token);
+      await _persistToken(userId, token);
+    } catch (error) {
+      debugPrint(
+        'Notification token sync skipped: $error',
+      );
+    }
   }
 
   static Future<void> clearSyncedUser() async {

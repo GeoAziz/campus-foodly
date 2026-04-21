@@ -16,6 +16,7 @@ class AppRoutes {
   static const addToOrder = 'add-to-order';
   static const orderDetails = 'order-details';
   static const orderTracking = 'order-tracking';
+  static const orderDelivered = 'order-delivered';
   static const paymentCheckout = 'payment-checkout';
 
   // Profile Routes

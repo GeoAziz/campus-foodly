@@ -50,6 +50,20 @@ class _ProfileEditScreenState extends ConsumerState<ProfileEditScreen> {
       );
     }
 
+    ref.listen<ProfileEditState>(
+      profileEditControllerProvider(user.id),
+      (previous, next) {
+        final switchedToViewMode =
+            previous?.mode != next.mode && next.mode == ProfileEditMode.view;
+        if (switchedToViewMode) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!mounted) return;
+            _initializeControllers(next);
+          });
+        }
+      },
+    );
+
     final editState = ref.watch(profileEditControllerProvider(user.id));
 
     // Initialize controllers when profile data loads

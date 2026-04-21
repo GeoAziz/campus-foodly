@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geocoding/geocoding.dart';
 
 import '../../../data/providers/auth_provider.dart';
+import '../../../data/services/location_service.dart';
 import '../models/address.dart';
 import '../providers/addresses_controller.dart';
 
@@ -17,6 +19,7 @@ class ProfileAddressAddScreen extends ConsumerStatefulWidget {
 
 class _ProfileAddressAddScreenState
     extends ConsumerState<ProfileAddressAddScreen> {
+  final _locationService = LocationService();
   late TextEditingController _labelController;
   late TextEditingController _streetController;
   late TextEditingController _cityController;
@@ -25,6 +28,10 @@ class _ProfileAddressAddScreenState
   late TextEditingController _countryController;
 
   Address? _existingAddress;
+  double? _latitude;
+  double? _longitude;
+  bool _isFetchingCurrentLocation = false;
+  bool _locationPromptShown = false;
 
   @override
   void initState() {
@@ -35,6 +42,12 @@ class _ProfileAddressAddScreenState
     _stateController = TextEditingController();
     _zipCodeController = TextEditingController();
     _countryController = TextEditingController(text: 'US');
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && widget.addressId == null) {
+        _showCurrentLocationPrompt();
+      }
+    });
   }
 
   @override
@@ -46,6 +59,116 @@ class _ProfileAddressAddScreenState
     _zipCodeController.dispose();
     _countryController.dispose();
     super.dispose();
+  }
+
+  Future<void> _showCurrentLocationPrompt() async {
+    if (_locationPromptShown) return;
+    _locationPromptShown = true;
+
+    final useCurrentLocation = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Use current location?'),
+          content: const Text(
+            'We can turn on Location and prefill this address from where you are now. You can still edit the details before saving.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text('Enter manually'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: const Text('Use current location'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (useCurrentLocation == true && mounted) {
+      await _prefillFromCurrentLocation();
+    }
+  }
+
+  void _setIfBlank(TextEditingController controller, String value) {
+    if (controller.text.trim().isEmpty && value.trim().isNotEmpty) {
+      controller.text = value;
+    }
+  }
+
+  String _streetFromPlacemark(Placemark placemark) {
+    final parts = <String>[
+      placemark.subThoroughfare ?? '',
+      placemark.thoroughfare ?? '',
+    ].where((part) => part.trim().isNotEmpty).toList();
+
+    if (parts.isNotEmpty) {
+      return parts.join(' ');
+    }
+
+    return placemark.name ?? '';
+  }
+
+  String? _locationCoordinatesLabel() {
+    if (_latitude == null || _longitude == null) {
+      return null;
+    }
+
+    return '${_latitude!.toStringAsFixed(5)}, ${_longitude!.toStringAsFixed(5)}';
+  }
+
+  Future<void> _prefillFromCurrentLocation() async {
+    setState(() {
+      _isFetchingCurrentLocation = true;
+    });
+
+    try {
+      final position = await _locationService.getCurrentPosition();
+      final placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude,
+      );
+      final placemark = placemarks.isNotEmpty ? placemarks.first : null;
+
+      if (!mounted) return;
+
+      setState(() {
+        _latitude = position.latitude;
+        _longitude = position.longitude;
+      });
+
+      _setIfBlank(_labelController, 'Current location');
+      if (placemark != null) {
+        _setIfBlank(_streetController, _streetFromPlacemark(placemark));
+        _setIfBlank(_cityController,
+            placemark.locality ?? placemark.subAdministrativeArea ?? '');
+        _setIfBlank(_stateController, placemark.administrativeArea ?? '');
+        _setIfBlank(_zipCodeController, placemark.postalCode ?? '');
+        _setIfBlank(_countryController,
+            placemark.isoCountryCode ?? placemark.country ?? 'US');
+      }
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text(
+                  'Current location added. Please review the address before saving.')),
+        );
+      }
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(error.toString())),
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isFetchingCurrentLocation = false;
+        });
+      }
+    }
   }
 
   void _loadExistingAddress(List<Address> addresses) {
@@ -98,16 +221,27 @@ class _ProfileAddressAddScreenState
       return;
     }
 
-    final address = Address(
-      id: _existingAddress?.id ?? '',
-      label: _labelController.text,
-      street: _streetController.text,
-      city: _cityController.text,
-      state: _stateController.text,
-      zipCode: _zipCodeController.text,
-      country: _countryController.text,
-      isDefault: _existingAddress?.isDefault ?? false,
-    );
+    final address = _existingAddress == null
+        ? createNewAddress(
+            label: _labelController.text,
+            street: _streetController.text,
+            city: _cityController.text,
+            state: _stateController.text,
+            zipCode: _zipCodeController.text,
+            country: _countryController.text,
+            latitude: _latitude,
+            longitude: _longitude,
+          )
+        : _existingAddress!.copyWith(
+            label: _labelController.text,
+            street: _streetController.text,
+            city: _cityController.text,
+            state: _stateController.text,
+            zipCode: _zipCodeController.text,
+            country: _countryController.text,
+            latitude: _latitude,
+            longitude: _longitude,
+          );
 
     if (_existingAddress == null) {
       // Add new address
@@ -155,6 +289,109 @@ class _ProfileAddressAddScreenState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (!isEditing) ...[
+                Card(
+                  elevation: 0,
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Speed this up with your location',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Allow location access and we will prefill the address for you. You can edit everything before saving.',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        const SizedBox(height: 12),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton.icon(
+                            onPressed: _isFetchingCurrentLocation
+                                ? null
+                                : _prefillFromCurrentLocation,
+                            icon: _isFetchingCurrentLocation
+                                ? const SizedBox(
+                                    height: 16,
+                                    width: 16,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.white,
+                                      ),
+                                    ),
+                                  )
+                                : const Icon(Icons.my_location),
+                            label: Text(
+                              _isFetchingCurrentLocation
+                                  ? 'Checking location...'
+                                  : 'Use current location',
+                            ),
+                          ),
+                        ),
+                        if (_latitude != null && _longitude != null) ...[
+                          const SizedBox(height: 12),
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .surface
+                                  .withValues(alpha: 0.7),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.place_outlined, size: 20),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Captured from current location',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium
+                                            ?.copyWith(
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                      if (_locationCoordinatesLabel() != null)
+                                        Text(
+                                          _locationCoordinatesLabel()!,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall,
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: _isFetchingCurrentLocation
+                                      ? null
+                                      : _prefillFromCurrentLocation,
+                                  child: const Text('Refresh'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+              ],
               // Label
               Text(
                 'Address Label',
@@ -296,11 +533,12 @@ class _ProfileAddressAddScreenState
                   const SizedBox(width: 12),
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: addressesState.isLoading
-                          ? null
-                          : () {
-                              _saveAddress(user.id, controller);
-                            },
+                      onPressed:
+                          addressesState.isLoading || _isFetchingCurrentLocation
+                              ? null
+                              : () {
+                                  _saveAddress(user.id, controller);
+                                },
                       child: addressesState.isLoading
                           ? const SizedBox(
                               height: 20,

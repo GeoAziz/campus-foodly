@@ -7,100 +7,109 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
 
     function isRestaurantOwner(restaurantId) {
       return isAuthenticated() && 
+        exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
         get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerId == request.auth.uid;
     }
 
     function isDeliveryStaff() {
-      return isAuthenticated() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'delivery';
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'delivery';
+    }
+
+    function isOrderOwner(orderId) {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/orders/$(orderId)) &&
+        get(/databases/$(database)/documents/orders/$(orderId)).data.userId == request.auth.uid;
+    }
+
+    function isValidPaymentStatus(status) {
+      return status in ['pending', 'processing', 'succeeded', 'failed'];
+    }
+
+    function isValidOrderStatus(status) {
+      return status in ['pending', 'accepted', 'preparing', 'ready', 'picked_up', 'delivered', 'cancelled'];
     }
 
     // Users Collection
     match /users/{userId} {
-      // Users can read their own data
-      allow read: if isAuthenticated() && request.auth.uid == userId;
-      
-      // Users can create their own account on signup
-      allow create: if isAuthenticated() && request.auth.uid == userId && 
+      // Users can read their own data; admins can read any user.
+      allow read: if isAdmin() || (isAuthenticated() && request.auth.uid == userId);
+
+      // Users create their own account on signup.
+      allow create: if isAuthenticated() &&
+        request.auth.uid == userId &&
         request.resource.data.uid == userId &&
-        request.resource.data.role in ['user', 'restaurant', 'delivery'];
-      
-      // Users can update their own data
-      allow update: if isAuthenticated() && request.auth.uid == userId &&
-        (resource.data.role == request.resource.data.role || request.resource.data.role in ['user', 'restaurant', 'delivery']);
-      
-      // Admins can read all user data
-      allow read: if isAdmin();
-      
-      // Prevent deletion
+        request.resource.data.role == 'user';
+
+      // Users can update their own profile, but cannot change identity or role.
+      allow update: if isAdmin() || (
+        isAuthenticated() &&
+        request.auth.uid == userId &&
+        request.resource.data.uid == resource.data.uid &&
+        request.resource.data.email == resource.data.email &&
+        request.resource.data.role == resource.data.role
+      );
+
+      // Prevent deletion.
       allow delete: if false;
 
       // User sub-collections
       match /addresses/{addressId} {
-        allow read: if isAuthenticated() && request.auth.uid == userId;
-        allow create: if isAuthenticated() && request.auth.uid == userId;
-        allow update: if isAuthenticated() && request.auth.uid == userId;
-        allow delete: if isAuthenticated() && request.auth.uid == userId;
+        allow read, create, update, delete: if isAuthenticated() && request.auth.uid == userId;
       }
 
       match /paymentMethods/{paymentId} {
-        allow read: if isAuthenticated() && request.auth.uid == userId;
-        allow create: if isAuthenticated() && request.auth.uid == userId;
-        allow update: if isAuthenticated() && request.auth.uid == userId;
-        allow delete: if isAuthenticated() && request.auth.uid == userId;
+        allow read, create, update, delete: if isAuthenticated() && request.auth.uid == userId;
+      }
+
+      match /settings/{settingId} {
+        allow read, create, update, delete: if isAuthenticated() && request.auth.uid == userId;
       }
 
       match /fcmTokens/{tokenId} {
-        allow read: if isAuthenticated() && request.auth.uid == userId;
-        allow create, update, delete: if isAuthenticated() &&
-          request.auth.uid == userId;
+        allow read, create, update, delete: if isAuthenticated() && request.auth.uid == userId;
       }
     }
 
     // Restaurants Collection
     match /restaurants/{restaurantId} {
-      // Anyone can read restaurant info
-      allow read: if request.query.limit <= 100 || isAuthenticated();
+      // Restaurant catalog is public in the app.
+      allow read: if true;
       
-      // Admins can create restaurants
-      allow create: if isAdmin() && request.resource.data.ownerId != null;
+      // Admins manage restaurant entries.
+      allow create: if isAdmin();
       
-      // Restaurant owners and admins can update
-      allow update: if isAdmin() || isRestaurantOwner(restaurantId);
+      allow update: if isAdmin();
       
-      // Only admins can delete
+      // Only admins can delete.
       allow delete: if isAdmin();
 
       // Menu sub-collection
       match /menu/{menuItemId} {
-        // Anyone can read menu items
         allow read: if true;
         
-        // Only restaurant owner and admins can create/update/delete
-        allow create: if isAdmin() || isRestaurantOwner(restaurantId);
-        allow update: if isAdmin() || isRestaurantOwner(restaurantId);
-        allow delete: if isAdmin() || isRestaurantOwner(restaurantId);
+        allow create, update, delete: if isAdmin();
       }
 
       // Reviews sub-collection
       match /reviews/{reviewId} {
-        // Anyone can read reviews
         allow read: if true;
         
-        // Only users who placed the order can write reviews
-        allow create: if isAuthenticated() && 
+        allow create: if isAuthenticated() &&
+          request.resource.data.orderId is string &&
           exists(/databases/$(database)/documents/orders/$(request.resource.data.orderId)) &&
-          get(/databases/$(database)/documents/orders/$(request.resource.data.orderId)).data.userId == request.auth.uid;
-        
-        allow update: if isAuthenticated() && 
-          resource.data.userId == request.auth.uid;
-        
-        allow delete: if isAuthenticated() && 
-          resource.data.userId == request.auth.uid;
+          get(/databases/$(database)/documents/orders/$(request.resource.data.orderId)).data.userId == request.auth.uid &&
+          get(/databases/$(database)/documents/orders/$(request.resource.data.orderId)).data.restaurantId == restaurantId;
+
+        allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
       }
     }
 
@@ -167,73 +176,84 @@ service cloud.firestore {
 
     // Orders Collection
     match /orders/{orderId} {
-      // Users can read their own orders
-      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      
-      // Delivery staff can read assigned orders
-      allow read: if isDeliveryStaff() && resource.data.deliveryPersonId == request.auth.uid;
-      
-      // Restaurant owners can read orders for their restaurant
-      allow read: if isAuthenticated() && 
-        exists(/databases/$(database)/documents/restaurants/$(resource.data.restaurantId)) &&
-        isRestaurantOwner(resource.data.restaurantId);
-      
-      // Admins can read all orders
-      allow read: if isAdmin();
-      
-      // Users can create orders
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid &&
-        request.resource.data.status == 'pending' &&
-        request.resource.data.totalAmount > 0 &&
-        request.resource.data.restaurantId != null &&
-        request.resource.data.items.size() > 0;
-      
-      // Users can update their pending orders
-      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid &&
-        resource.data.status == 'pending';
-      
-      // Restaurant owners can update order status
-      allow update: if isRestaurantOwner(resource.data.restaurantId) &&
-        (request.resource.data.status in ['accepted', 'preparing', 'ready', 'cancelled']);
-      
-      // Delivery staff can mark as picked up and delivered
-      allow update: if isDeliveryStaff() && resource.data.deliveryPersonId == request.auth.uid &&
-        (request.resource.data.status in ['picked_up', 'delivered']);
-      
-      // Admins can update anything
-      allow update: if isAdmin();
-      
-      // Only admins can delete orders that are completed
-      allow delete: if isAdmin() && resource.data.status in ['delivered', 'cancelled'];
+      // Users can read their own orders; admins can read all orders.
+      allow read: if isAdmin() ||
+        (isAuthenticated() && resource.data.userId == request.auth.uid);
 
-      // Order sub-collection for items
-      match /items/{itemId} {
-        allow read: if isAuthenticated() && (
-          resource.parent().parent().data().userId == request.auth.uid ||
-          isRestaurantOwner(resource.parent().parent().data().restaurantId) ||
-          isDeliveryStaff()
-        );
-        allow write: if isAuthenticated() && resource.parent().parent().data().userId == request.auth.uid &&
-          resource.parent().parent().data().status == 'pending';
-      }
+      // Users create pending orders from the cart.
+      allow create: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.items.size() > 0;
+
+      // Owners can keep updating a pending order while preserving the core order data.
+      allow update: if isAdmin() || (
+        isAuthenticated() &&
+        resource.data.userId == request.auth.uid &&
+        resource.data.status == 'pending' &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.restaurantId == resource.data.restaurantId &&
+        request.resource.data.items == resource.data.items &&
+        request.resource.data.createdAt == resource.data.createdAt &&
+        request.resource.data.status == resource.data.status
+      ) || (
+        isRestaurantOwner(resource.data.restaurantId) &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.restaurantId == resource.data.restaurantId &&
+        request.resource.data.items == resource.data.items &&
+        request.resource.data.createdAt == resource.data.createdAt &&
+        request.resource.data.status in ['accepted', 'preparing', 'ready', 'cancelled']
+      ) || (
+        isDeliveryStaff() &&
+        resource.data.deliveryPersonId == request.auth.uid &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.restaurantId == resource.data.restaurantId &&
+        request.resource.data.items == resource.data.items &&
+        request.resource.data.createdAt == resource.data.createdAt &&
+        request.resource.data.status in ['picked_up', 'delivered']
+      );
+
+      // Only admins can delete orders that are completed.
+      allow delete: if isAdmin() && resource.data.status in ['delivered', 'cancelled'];
     }
 
     // Payments Collection
     match /payments/{paymentId} {
-      // Users can read their own payments
-      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
-      
-      // Admins can read all payments
-      allow read: if isAdmin();
-      
-      // Cloud functions create payments
-      allow create: if request.auth.uid != null;
-      
-      // Only allow status updates and never allow amount modification
-      allow update: if (isAuthenticated() && resource.data.userId == request.auth.uid && 
-        request.resource.data.status != resource.data.status) || isAdmin();
+      // Users and admins can read payment records.
+      allow read: if isAdmin() || (isAuthenticated() && resource.data.userId == request.auth.uid);
+
+      // The checkout flow creates the payment record.
+      allow create: if isAuthenticated() &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.paymentId == paymentId &&
+        request.resource.data.orderId is string &&
+        request.resource.data.amount > 0 &&
+        isValidPaymentStatus(request.resource.data.status);
+
+      // Users can keep their payment record in sync while keeping the core identity and amount stable.
+      allow update: if isAdmin() || (
+        isAuthenticated() &&
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.paymentId == resource.data.paymentId &&
+        request.resource.data.amount == resource.data.amount &&
+        request.resource.data.provider == resource.data.provider &&
+        isValidPaymentStatus(request.resource.data.status)
+      );
       
       allow delete: if false;
+    }
+
+    // Order tracking stream used by the user-facing tracking screen.
+    match /order_tracking/{orderId} {
+      allow read: if isAdmin() ||
+        isOrderOwner(orderId) ||
+        (isDeliveryStaff() && exists(/databases/$(database)/documents/orders/$(orderId)) &&
+          get(/databases/$(database)/documents/orders/$(orderId)).data.deliveryPersonId == request.auth.uid) ||
+        (isAuthenticated() && exists(/databases/$(database)/documents/orders/$(orderId)) &&
+          isRestaurantOwner(get(/databases/$(database)/documents/orders/$(orderId)).data.restaurantId));
+
+      allow write: if isAdmin();
     }
 
     // Delivery Requests Collection

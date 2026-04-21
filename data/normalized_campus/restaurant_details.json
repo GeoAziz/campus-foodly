@@ -1,0 +1,115 @@
+[
+  {
+    "id": "restaurant-details-kca-mama-njeri",
+    "restaurantId": "restaurants-kca-mama-njeri",
+    "foodTypes": [
+      "Kenyan Staples"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 10,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-kibandaski",
+    "restaurantId": "restaurants-kca-kibandaski",
+    "foodTypes": [
+      "Kenyan Staples",
+      "Street Food"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 8,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-choma-zone",
+    "restaurantId": "restaurants-kca-choma-zone",
+    "foodTypes": [
+      "Grilled & Choma"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-snack-attack",
+    "restaurantId": "restaurants-kca-snack-attack",
+    "foodTypes": [
+      "Street Food"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 5,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-morning-glory",
+    "restaurantId": "restaurants-kca-morning-glory",
+    "foodTypes": [
+      "Breakfast",
+      "Drinks & Juices"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 7,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-pilau-palace",
+    "restaurantId": "restaurants-kca-pilau-palace",
+    "foodTypes": [
+      "Pilau & Rice"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 12,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-chapati-house",
+    "restaurantId": "restaurants-kca-chapati-house",
+    "foodTypes": [
+      "Kenyan Staples"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 10,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-campus-bites",
+    "restaurantId": "restaurants-kca-campus-bites",
+    "foodTypes": [
+      "Fast Food"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 12,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-fresh-sip",
+    "restaurantId": "restaurants-kca-fresh-sip",
+    "foodTypes": [
+      "Drinks & Juices"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 5,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-kca-swahili-plate",
+    "restaurantId": "restaurants-kca-swahili-plate",
+    "foodTypes": [
+      "Coastal Kenyan",
+      "Pilau & Rice"
+    ],
+    "ratingCount": 0,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  }
+]

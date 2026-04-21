@@ -75,7 +75,10 @@ class SocialAccountsController extends StateNotifier<SocialAccountsState> {
       await _repository.linkSocialAccount(_uid, account);
       state = state.copyWith(
         isLoading: false,
-        accounts: [...state.accounts, account],
+        accounts: [
+          ...state.accounts.where((existing) => existing.provider != provider),
+          account,
+        ],
         success: true,
       );
 

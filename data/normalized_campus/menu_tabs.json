@@ -1,0 +1,80 @@
+[
+  {
+    "id": "menu-tabs-kca-mama-njeri-0-kenyan-staples",
+    "restaurantId": "restaurants-kca-mama-njeri",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-kibandaski-0-kenyan-staples",
+    "restaurantId": "restaurants-kca-kibandaski",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-kibandaski-1-street-food",
+    "restaurantId": "restaurants-kca-kibandaski",
+    "title": "Street Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-kca-choma-zone-0-grilled",
+    "restaurantId": "restaurants-kca-choma-zone",
+    "title": "Grilled & Choma",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-snack-attack-0-street-food",
+    "restaurantId": "restaurants-kca-snack-attack",
+    "title": "Street Food",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-morning-glory-0-breakfast",
+    "restaurantId": "restaurants-kca-morning-glory",
+    "title": "Breakfast",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-morning-glory-1-beverages",
+    "restaurantId": "restaurants-kca-morning-glory",
+    "title": "Drinks & Juices",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-kca-pilau-palace-0-pilau-rice",
+    "restaurantId": "restaurants-kca-pilau-palace",
+    "title": "Pilau & Rice",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-chapati-house-0-kenyan-staples",
+    "restaurantId": "restaurants-kca-chapati-house",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-campus-bites-0-fast-food",
+    "restaurantId": "restaurants-kca-campus-bites",
+    "title": "Fast Food",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-fresh-sip-0-beverages",
+    "restaurantId": "restaurants-kca-fresh-sip",
+    "title": "Drinks & Juices",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-swahili-plate-0-coastal",
+    "restaurantId": "restaurants-kca-swahili-plate",
+    "title": "Coastal Kenyan",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-kca-swahili-plate-1-pilau-rice",
+    "restaurantId": "restaurants-kca-swahili-plate",
+    "title": "Pilau & Rice",
+    "position": 1
+  }
+]

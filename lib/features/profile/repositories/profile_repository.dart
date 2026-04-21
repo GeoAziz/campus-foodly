@@ -6,8 +6,43 @@ import '../models/payment_method.dart';
 import '../models/profile_data.dart';
 import '../models/social_account.dart';
 
-class ProfileRepository {
-  ProfileRepository(this._firestore);
+abstract class ProfileRepository {
+  Future<ProfileData?> getProfile(String uid);
+
+  Future<void> updateProfile(String uid, ProfileData profile);
+
+  Future<List<Address>> getAddresses(String uid);
+
+  Future<void> addAddress(String uid, Address address);
+
+  Future<void> updateAddress(String uid, Address address);
+
+  Future<void> deleteAddress(String uid, String addressId);
+
+  Future<List<PaymentMethod>> getPaymentMethods(String uid);
+
+  Future<void> addPaymentMethod(String uid, PaymentMethod method);
+
+  Future<void> updatePaymentMethod(String uid, PaymentMethod method);
+
+  Future<void> deletePaymentMethod(String uid, String paymentId);
+
+  Future<NotificationPreference?> getNotificationPreferences(String uid);
+
+  Future<void> updateNotificationPreferences(
+    String uid,
+    NotificationPreference prefs,
+  );
+
+  Future<List<SocialAccount>> getSocialAccounts(String uid);
+
+  Future<void> linkSocialAccount(String uid, SocialAccount account);
+
+  Future<void> unlinkSocialAccount(String uid, String provider);
+}
+
+class FirestoreProfileRepository implements ProfileRepository {
+  FirestoreProfileRepository(this._firestore);
 
   final FirebaseFirestore _firestore;
 
@@ -206,9 +241,19 @@ class ProfileRepository {
   ) async {
     try {
       final userDoc = _firestore.collection('users').doc(uid);
-      await userDoc.update({
-        'socialAccounts': FieldValue.arrayUnion([account.toMap()]),
-      });
+      final doc = await userDoc.get();
+      final socialAccounts = doc.data()?['socialAccounts'] as List<dynamic>?;
+      final updated = (socialAccounts ?? const [])
+          .where((item) =>
+              (item as Map<String, dynamic>)['provider'] != account.provider)
+          .map((item) => item as Map<String, dynamic>)
+          .toList();
+
+      updated.add(account.toMap());
+
+      await userDoc.set({
+        'socialAccounts': updated,
+      }, SetOptions(merge: true));
     } catch (e) {
       throw _handleError(e);
     }

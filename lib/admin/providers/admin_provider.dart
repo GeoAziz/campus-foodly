@@ -41,6 +41,9 @@ class AdminOperations {
       restaurantId: order.restaurantId,
       items: order.items,
       status: 'preparing',
+      deliveryAddressId: order.deliveryAddressId,
+      deliveryAddressLabel: order.deliveryAddressLabel,
+      deliveryAddressLine: order.deliveryAddressLine,
       createdAt: order.createdAt,
     );
     return orderRepository.saveOrder(updatedOrder);
