@@ -152,24 +152,30 @@ class AddToOrderScreen extends ConsumerWidget {
                           if (context.mounted) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text(e.message ?? 'Cannot add item to cart'),
-                                backgroundColor: Theme.of(context).colorScheme.error,
+                                content: Text(
+                                    e.message ?? 'Cannot add item to cart'),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.error,
                                 duration: const Duration(seconds: 3),
                               ),
                             );
                           }
-                          LoggerService().w('[AddToOrder] Cross-restaurant error: ${e.message}');
+                          LoggerService().w(
+                              '[AddToOrder] Cross-restaurant error: ${e.message}');
                         } catch (e) {
                           // Handle unexpected errors
                           if (context.mounted) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: const Text('Failed to add item to cart. Please try again.'),
-                                backgroundColor: Theme.of(context).colorScheme.error,
+                                content: const Text(
+                                    'Failed to add item to cart. Please try again.'),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.error,
                               ),
                             );
                           }
-                          LoggerService().e('[AddToOrder] Error adding item: $e');
+                          LoggerService()
+                              .e('[AddToOrder] Error adding item: $e');
                         }
                       },
                       child: const Text("Add to Order (\$11.98)"),

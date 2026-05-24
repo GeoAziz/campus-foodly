@@ -61,11 +61,10 @@ Future<void> main() async {
       ),
     ),
   );
-  
+
   // NOTE: CartController initialization is implicit via ProviderScope
   // and will be initialized when entryPoint listens to cartProvider.
   // See entry_point.dart for cart initialization.
-
 
   if (firebaseInitError == null) {
     WidgetsBinding.instance.addPostFrameCallback((_) {

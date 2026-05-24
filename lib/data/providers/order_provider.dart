@@ -16,7 +16,8 @@ final orderRepositoryProvider = Provider<OrderRepository>(
 /// Provider for real-time order stream for a specific user
 /// Automatically updates when new orders are created or status changes
 /// Returns an empty list if userId is null
-final realTimeOrdersForUserProvider = StreamProvider.family<List<Order>, String?>((ref, userId) async* {
+final realTimeOrdersForUserProvider =
+    StreamProvider.family<List<Order>, String?>((ref, userId) async* {
   if (userId == null) {
     yield [];
     return;

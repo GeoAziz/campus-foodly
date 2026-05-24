@@ -28,7 +28,7 @@ void main() {
     test('Cart is cleared when user logs out', () async {
       // Add test items to cart
       final cartController = container.read(cartProvider.notifier);
-      
+
       final testItem = MenuItem(
         id: 'test-item-1',
         restaurantId: 'test-restaurant',
@@ -41,7 +41,7 @@ void main() {
 
       // Add item to cart
       cartController.addItem(testItem, quantity: 2);
-      
+
       // Verify cart has items
       var cartItems = container.read(cartProvider);
       expect(cartItems.length, 1);
@@ -55,7 +55,8 @@ void main() {
       expect(cartItems.isEmpty, true);
     });
 
-    test('Multiple items in cart from same restaurant are cleared on logout', () async {
+    test('Multiple items in cart from same restaurant are cleared on logout',
+        () async {
       final cartController = container.read(cartProvider.notifier);
 
       final item1 = MenuItem(
@@ -95,7 +96,9 @@ void main() {
       expect(cartItems.isEmpty, true);
     });
 
-    test('Second user does not see first user\'s cart after logout and re-login', () async {
+    test(
+        'Second user does not see first user\'s cart after logout and re-login',
+        () async {
       final cartController = container.read(cartProvider.notifier);
 
       // User 1 adds items to cart
@@ -225,7 +228,7 @@ void main() {
 
       // After invalidation, the provider should be reset
       final orderState = container.read(orderControllerProvider);
-      
+
       // Initial state should be empty
       expect(orderState.value, isEmpty);
     });

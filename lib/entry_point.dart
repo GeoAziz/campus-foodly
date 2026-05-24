@@ -35,7 +35,7 @@ class EntryPoint extends ConsumerWidget {
     // Initialize cart on entry point - loads persisted cart data from device storage
     // This triggers CartController.initializeCart() on first access
     final cartState = ref.watch(cartProvider);
-    
+
     // Log cart initialization for debugging
     debugPrint('[EntryPoint] Cart initialized with ${cartState.length} items');
 
