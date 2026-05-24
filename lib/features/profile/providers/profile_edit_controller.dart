@@ -46,7 +46,16 @@ class ProfileEditState {
       success: success ?? this.success,
     );
   }
-}
+
+  /// Check if there are unsaved changes in edit mode
+  bool get hasUnsavedChanges {
+    if (mode != ProfileEditMode.edit || profileData == null) {
+      return false;
+    }
+    return displayName != profileData!.displayName ||
+        phone != profileData!.phone ||
+        bio != profileData!.bio;
+  }
 
 enum ProfileEditMode { view, edit }
 
@@ -137,7 +146,7 @@ class ProfileEditController extends StateNotifier<ProfileEditState> {
   }
 }
 
-final profileEditControllerProvider = StateNotifierProvider.family<
+final profileEditControllerProvider = StateNotifierProvider.family.autoDispose<
     ProfileEditController, ProfileEditState, String>((ref, uid) {
   final repository = ref.watch(profileRepositoryProvider);
   return ProfileEditController(repository, uid);

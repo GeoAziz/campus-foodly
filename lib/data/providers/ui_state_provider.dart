@@ -255,6 +255,6 @@ class AddToOrderController extends StateNotifier<AddToOrderState> {
 }
 
 final addToOrderControllerProvider =
-    StateNotifierProvider<AddToOrderController, AddToOrderState>(
+    StateNotifierProvider.autoDispose<AddToOrderController, AddToOrderState>(
   (ref) => AddToOrderController(),
 );

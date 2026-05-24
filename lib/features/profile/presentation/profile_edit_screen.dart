@@ -71,7 +71,37 @@ class _ProfileEditScreenState extends ConsumerState<ProfileEditScreen> {
       _initializeControllers(editState);
     }
 
-    return Scaffold(
+    return PopScope(
+      canPop: !editState.hasUnsavedChanges,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        // Show warning dialog if there are unsaved changes
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Unsaved Changes'),
+            content: const Text('You have unsaved changes. Do you want to discard them?'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Keep Editing'),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Cancel edit mode and discard changes
+                  ref
+                      .read(profileEditControllerProvider(user.id).notifier)
+                      .cancelEdit();
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                },
+                child: const Text('Discard'),
+              ),
+            ],
+          ),
+        );
+      },
+      child: Scaffold(
       appBar: AppBar(
         title: const Text('Edit Profile'),
         elevation: 0,
@@ -268,6 +298,7 @@ class _ProfileEditScreenState extends ConsumerState<ProfileEditScreen> {
                 ),
               ),
             ),
+      ),
     );
   }
 }

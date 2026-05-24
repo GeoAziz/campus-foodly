@@ -102,6 +102,6 @@ class PaymentController extends StateNotifier<PaymentState> {
 }
 
 final paymentControllerProvider =
-    StateNotifierProvider<PaymentController, PaymentState>(
+    StateNotifierProvider.autoDispose<PaymentController, PaymentState>(
   (ref) => PaymentController(ref.watch(paymentRepositoryProvider)),
 );

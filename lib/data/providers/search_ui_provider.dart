@@ -67,6 +67,6 @@ class SearchUiController extends StateNotifier<SearchUiState> {
 
 // Provider for search UI state with debouncing
 final searchUiControllerProvider =
-    StateNotifierProvider<SearchUiController, SearchUiState>(
+    StateNotifierProvider.autoDispose<SearchUiController, SearchUiState>(
   (ref) => SearchUiController(),
 );
