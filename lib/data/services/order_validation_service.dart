@@ -37,8 +37,8 @@ class OrderValidationService {
     if (cartItems.isEmpty) return true;
 
     final firstRestaurantId = cartItems.first.menuItem.restaurantId;
-    final allSameRestaurant =
-        cartItems.every((item) => item.menuItem.restaurantId == firstRestaurantId);
+    final allSameRestaurant = cartItems
+        .every((item) => item.menuItem.restaurantId == firstRestaurantId);
 
     if (!allSameRestaurant) {
       debugPrint('[OrderValidation] Items from different restaurants detected');
@@ -48,12 +48,15 @@ class OrderValidationService {
   }
 
   /// Validate cart has minimum required items
-  static bool validateMinimumItems(List<CartItem> cartItems, {int minimum = 1}) {
-    final totalItems = cartItems.fold<int>(0, (sum, item) => sum + item.quantity);
+  static bool validateMinimumItems(List<CartItem> cartItems,
+      {int minimum = 1}) {
+    final totalItems =
+        cartItems.fold<int>(0, (sum, item) => sum + item.quantity);
     final isValid = totalItems >= minimum;
 
     if (!isValid) {
-      debugPrint('[OrderValidation] Minimum $minimum items required, got $totalItems');
+      debugPrint(
+          '[OrderValidation] Minimum $minimum items required, got $totalItems');
     }
 
     return isValid;
@@ -90,7 +93,8 @@ class OrderValidationService {
       errors.add('All items must be from the same restaurant');
     }
 
-    if (!validateCheckoutAmount(cartItems: cartItems, checkoutAmount: checkoutAmount)) {
+    if (!validateCheckoutAmount(
+        cartItems: cartItems, checkoutAmount: checkoutAmount)) {
       errors.add('Order amount does not match cart items');
     }
 

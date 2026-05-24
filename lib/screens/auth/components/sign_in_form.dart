@@ -31,7 +31,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
   Widget build(BuildContext context) {
     final authState = ref.watch(authControllerProvider);
     final isLoading = authState.isLoading;
-    
+
     return Form(
       key: _formKey,
       child: Column(
@@ -77,10 +77,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                 : () => context.pushNamed(AppRoutes.forgotPassword),
             child: Text(
               "Forget Password?",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: isLoading ? Colors.grey : null,
                   ),
@@ -129,8 +126,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                       width: 20,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.white),
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     )
                   : const Text("Sign in"),

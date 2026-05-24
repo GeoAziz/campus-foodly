@@ -6,10 +6,10 @@ import 'package:logger/logger.dart';
 class ConnectivityService {
   static final ConnectivityService _instance = ConnectivityService._internal();
   static final Logger _logger = Logger();
-  
+
   final Connectivity _connectivity = Connectivity();
   ConnectivityResult? _lastResult;
-  
+
   factory ConnectivityService() {
     return _instance;
   }
@@ -21,7 +21,7 @@ class ConnectivityService {
     try {
       _lastResult = await _connectivity.checkConnectivity();
       _logger.i('Initial connectivity: $_lastResult');
-      
+
       _connectivity.onConnectivityChanged.listen(
         (result) {
           _logger.i('Connectivity changed: $result');
@@ -47,7 +47,7 @@ class ConnectivityService {
 
   /// Listen to connectivity changes
   void Function(ConnectivityResult)? _listener;
-  
+
   void addListener(Function(ConnectivityResult) listener) {
     _listener = listener;
   }
@@ -79,7 +79,8 @@ class ConnectivityService {
           rethrow;
         }
 
-        _logger.w('Operation failed, retrying in $delay. Attempt $retries/$maxRetries');
+        _logger.w(
+            'Operation failed, retrying in $delay. Attempt $retries/$maxRetries');
         await Future.delayed(delay);
         delay *= 2; // Exponential backoff
       }

@@ -79,7 +79,8 @@ void main() {
       }
 
       final params = OrderPaginationParams(pageSize: 10);
-      final result = await repository.fetchOrdersForUserPaginated('user-123', params);
+      final result =
+          await repository.fetchOrdersForUserPaginated('user-123', params);
 
       expect(result.orders.length, 10);
       expect(result.hasMore, false); // In-memory repo returns all

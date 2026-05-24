@@ -16,11 +16,11 @@ import 'data/services/logger_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize logging first
   final logger = LoggerService();
   logger.i('=== Campus Foodly App Starting ===');
-  
+
   Object? firebaseInitError;
   List<String> initializationWarnings = [];
 
@@ -29,23 +29,23 @@ Future<void> main() async {
     logger.i('Initializing Firebase...');
     await FirebaseService.initialize();
     logger.i('Firebase initialized successfully');
-    
+
     // Initialize Firebase App Check for security
     logger.i('Initializing Firebase App Check...');
     await AppCheckService().initialize();
-    
+
     // Initialize Crash Reporting
     logger.i('Initializing Crash Reporting...');
     await CrashReportingService().initialize();
-    
+
     // Initialize Connectivity Service for offline support
     logger.i('Initializing Connectivity Service...');
     await ConnectivityService().initialize();
-    
+
     // Initialize Idempotency Service for duplicate prevention
     logger.i('Initializing Idempotency Service...');
     await IdempotencyService().initialize();
-    
+
     logger.i('All services initialized successfully');
   } catch (error) {
     firebaseInitError = error;
@@ -71,7 +71,7 @@ Future<void> main() async {
 
 class MyApp extends ConsumerWidget {
   const MyApp({
-    super.key, 
+    super.key,
     this.firebaseInitError,
     this.initializationWarnings = const [],
   });
@@ -82,7 +82,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final logger = LoggerService();
-    
+
     ref.listen(authStateChangesProvider, (previous, next) {
       next.whenData((user) {
         if (user == null) {

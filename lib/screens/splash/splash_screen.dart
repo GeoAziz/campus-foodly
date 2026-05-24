@@ -56,7 +56,9 @@ class SplashScreen extends ConsumerWidget {
 
             // Status Message
             Text(
-              authState.isLoading ? 'Logging you back in...' : 'Preparing app...',
+              authState.isLoading
+                  ? 'Logging you back in...'
+                  : 'Preparing app...',
               style: const TextStyle(
                 fontSize: 14,
                 color: Colors.grey,

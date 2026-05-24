@@ -18,7 +18,7 @@ class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
 
   final OrderRepository _repository;
   final IdempotencyService _idempotencyService = IdempotencyService();
-  
+
   // Track loaded user to prevent duplicate fetches on same user
   String? _loadedUserId;
 
@@ -33,7 +33,7 @@ class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
     state = await AsyncValue.guard(
       () => _repository.fetchOrdersForUser(userId),
     );
-    
+
     if (!state.hasError) {
       _loadedUserId = userId;
     }
@@ -73,7 +73,8 @@ class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
 
     // 3. Check if this operation was already attempted
     if (_idempotencyService.isKeyValid(idempotencyKey)) {
-      debugPrint('[OrderController] Duplicate order creation detected: $idempotencyKey');
+      debugPrint(
+          '[OrderController] Duplicate order creation detected: $idempotencyKey');
       throw StateError('Order creation already in progress. Please wait.');
     }
 

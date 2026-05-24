@@ -8,7 +8,7 @@ class IdempotencyService {
   static final IdempotencyService _instance = IdempotencyService._internal();
   static final Logger _logger = Logger();
   static const String _boxName = 'idempotency_keys';
-  
+
   late final Box<String> _idempotencyBox;
   bool _initialized = false;
 
@@ -26,7 +26,7 @@ class IdempotencyService {
       _idempotencyBox = await Hive.openBox<String>(_boxName);
       _logger.i('IdempotencyService initialized');
       _initialized = true;
-      
+
       // Clean up old keys (older than 24 hours)
       await _cleanupOldKeys();
     } catch (e) {
@@ -87,7 +87,8 @@ class IdempotencyService {
   }
 
   /// Clean up old keys (older than specified duration)
-  Future<void> _cleanupOldKeys({Duration maxAge = const Duration(hours: 24)}) async {
+  Future<void> _cleanupOldKeys(
+      {Duration maxAge = const Duration(hours: 24)}) async {
     try {
       final keysToRemove = <String>[];
       final now = DateTime.now();

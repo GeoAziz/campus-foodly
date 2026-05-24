@@ -32,7 +32,8 @@ class CartController extends StateNotifier<List<CartItem>> {
       final persistedItems = await _persistence!.loadCart();
       state = persistedItems;
       _isInitialized = true;
-      debugPrint('[CartController] Initialized with ${persistedItems.length} items');
+      debugPrint(
+          '[CartController] Initialized with ${persistedItems.length} items');
     } catch (e) {
       debugPrint('[CartController] Error initializing cart: $e');
       _isInitialized = true;
@@ -151,7 +152,8 @@ class CartController extends StateNotifier<List<CartItem>> {
   }
 
   /// Get the restaurant ID of items in the cart (or null if empty)
-  String? get restaurantId => state.isEmpty ? null : state.first.menuItem.restaurantId;
+  String? get restaurantId =>
+      state.isEmpty ? null : state.first.menuItem.restaurantId;
 
   double get subtotal => state.fold(0, (sum, item) => sum + item.totalPrice);
 }

@@ -11,7 +11,7 @@ extension AutoDisposeExt on Ref {
 }
 
 /// Documentation of providers that should have .autoDispose modifier:
-/// 
+///
 /// CRITICAL - Already use auto-dispose (built-in):
 /// - FutureProvider (auto-dispose by default)
 /// - StreamProvider (auto-dispose by default)
@@ -37,7 +37,7 @@ extension AutoDisposeExt on Ref {
 ///   (ref) => MyController(),
 /// );
 /// ```
-/// 
+///
 /// This automatically disposes the provider when no longer watched,
 /// freeing memory and resources.
 

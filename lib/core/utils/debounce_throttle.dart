@@ -42,8 +42,7 @@ class Throttler {
     final now = DateTime.now();
     final lastExecution = _lastExecuted;
 
-    if (lastExecution == null ||
-        now.difference(lastExecution) >= interval) {
+    if (lastExecution == null || now.difference(lastExecution) >= interval) {
       _lastExecuted = now;
       await callback();
     }

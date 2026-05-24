@@ -91,13 +91,13 @@ class AuthController extends AsyncNotifier<AppUser?> {
 
   Future<void> signOut() async {
     await _repository.signOut();
-    
+
     // Clear user-specific data on logout
     try {
       // Clear cart to prevent showing previous user's cart
       final cartController = ref.read(cartProvider.notifier);
       await cartController.clear();
-      
+
       // Invalidate other user-specific providers to force refresh
       ref.invalidate(orderControllerProvider);
       ref.invalidate(restaurantDetailProvider);
@@ -107,7 +107,7 @@ class AuthController extends AsyncNotifier<AppUser?> {
     } catch (e) {
       debugPrint('[AuthController] Error clearing user data on logout: $e');
     }
-    
+
     state = const AsyncValue.data(null);
   }
 }

@@ -33,19 +33,19 @@ class OrderInput {
   });
 
   Map<String, dynamic> toMap() => {
-    'userId': userId,
-    'restaurantId': restaurantId,
-    'items': items,
-    'totalPrice': totalPrice,
-    'tax': tax,
-    'deliveryFee': deliveryFee,
-    'couponCode': couponCode,
-    'idempotencyKey': idempotencyKey,
-    'deliveryAddress': deliveryAddress,
-    'specialInstructions': specialInstructions,
-    'status': 'pending',
-    'createdAt': FieldValue.serverTimestamp(),
-  };
+        'userId': userId,
+        'restaurantId': restaurantId,
+        'items': items,
+        'totalPrice': totalPrice,
+        'tax': tax,
+        'deliveryFee': deliveryFee,
+        'couponCode': couponCode,
+        'idempotencyKey': idempotencyKey,
+        'deliveryAddress': deliveryAddress,
+        'specialInstructions': specialInstructions,
+        'status': 'pending',
+        'createdAt': FieldValue.serverTimestamp(),
+      };
 }
 
 /// Pagination parameters for order queries
@@ -126,7 +126,8 @@ class FirestoreOrderRepository implements OrderRepository {
           .collection('orders')
           .where('userId', isEqualTo: userId)
           .orderBy('createdAt', descending: true)
-          .limit(params.pageSize + 1); // Fetch one extra to determine if hasMore
+          .limit(
+              params.pageSize + 1); // Fetch one extra to determine if hasMore
 
       if (params.startAfter != null) {
         query = query.startAfterDocument(params.startAfter!);
@@ -134,15 +135,15 @@ class FirestoreOrderRepository implements OrderRepository {
 
       final snapshot = await query.get();
       final hasMore = snapshot.docs.length > params.pageSize;
-      final documents = hasMore
-          ? snapshot.docs.sublist(0, params.pageSize)
-          : snapshot.docs;
+      final documents =
+          hasMore ? snapshot.docs.sublist(0, params.pageSize) : snapshot.docs;
 
       final orders = documents
           .map((doc) => Order.fromMap(doc.id, doc.data()))
           .toList(growable: false);
 
-      _logger.i('Fetched ${orders.length} orders (hasMore: $hasMore) for user: $userId');
+      _logger.i(
+          'Fetched ${orders.length} orders (hasMore: $hasMore) for user: $userId');
 
       return OrderQueryResult(
         orders: orders,
@@ -173,10 +174,7 @@ class FirestoreOrderRepository implements OrderRepository {
   @override
   Future<void> saveOrder(Order order) async {
     try {
-      await _firestore
-          .collection('orders')
-          .doc(order.id)
-          .set(order.toMap());
+      await _firestore.collection('orders').doc(order.id).set(order.toMap());
       _logger.i('Order saved: ${order.id}');
     } catch (e) {
       _logger.e('Error saving order: $e');
@@ -188,14 +186,16 @@ class FirestoreOrderRepository implements OrderRepository {
   Future<void> createOrder(OrderInput orderInput) async {
     // Check connectivity first
     if (!_connectivityService.isOnline) {
-      throw Exception('No internet connection. Please check your connection and try again.');
+      throw Exception(
+          'No internet connection. Please check your connection and try again.');
     }
 
     try {
       // Verify idempotency key hasn't been used
       if (_idempotencyService.hasKey(orderInput.idempotencyKey)) {
         _logger.w('Duplicate order attempt: ${orderInput.idempotencyKey}');
-        throw Exception('This order has already been placed. Please refresh and try again.');
+        throw Exception(
+            'This order has already been placed. Please refresh and try again.');
       }
 
       // Store idempotency key before attempting creation
@@ -203,9 +203,7 @@ class FirestoreOrderRepository implements OrderRepository {
 
       // Create order with server-side validation
       final orderData = orderInput.toMap();
-      final result = await _firestore
-          .collection('orders')
-          .add(orderData);
+      final result = await _firestore.collection('orders').add(orderData);
 
       _logger.i('Order created successfully: ${result.id}');
     } catch (e) {
@@ -219,13 +217,10 @@ class FirestoreOrderRepository implements OrderRepository {
   @override
   Future<void> updateOrderStatus(String orderId, String newStatus) async {
     try {
-      await _firestore
-          .collection('orders')
-          .doc(orderId)
-          .update({
-            'status': newStatus,
-            'updatedAt': FieldValue.serverTimestamp(),
-          });
+      await _firestore.collection('orders').doc(orderId).update({
+        'status': newStatus,
+        'updatedAt': FieldValue.serverTimestamp(),
+      });
       _logger.i('Order status updated: $orderId -> $newStatus');
     } catch (e) {
       _logger.e('Error updating order status: $e');
@@ -234,7 +229,8 @@ class FirestoreOrderRepository implements OrderRepository {
   }
 
   @override
-  Future<List<Order>> fetchOrdersByStatus(String status, {int limit = 50}) async {
+  Future<List<Order>> fetchOrdersByStatus(String status,
+      {int limit = 50}) async {
     try {
       final snapshot = await _firestore
           .collection('orders')
@@ -305,8 +301,12 @@ class InMemoryOrderRepository implements OrderRepository {
   }
 
   @override
-  Future<List<Order>> fetchOrdersByStatus(String status, {int limit = 50}) async {
-    return _orders.where((order) => order.status == status).take(limit).toList();
+  Future<List<Order>> fetchOrdersByStatus(String status,
+      {int limit = 50}) async {
+    return _orders
+        .where((order) => order.status == status)
+        .take(limit)
+        .toList();
   }
 }
 

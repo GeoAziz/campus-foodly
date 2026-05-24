@@ -104,7 +104,7 @@ void main() {
   test('Mock Firebase setup works', () {
     final firestore = createMockFirestore();
     expect(firestore, isNotNull);
-    
+
     final auth = createMockAuth();
     expect(auth, isNotNull);
   });

@@ -10,7 +10,7 @@ enum UserRole {
   admin('admin');
 
   const UserRole(this.value);
-  
+
   final String value;
 
   static UserRole fromString(String? role) {
@@ -24,23 +24,22 @@ enum UserRole {
 /// Role-based access control provider
 final userRoleProvider = Provider<UserRole?>((ref) {
   final authState = ref.watch(authControllerProvider);
-  
+
   // Return null if auth is not loaded or errored
   if (authState.isLoading || authState.hasError) {
     return null;
   }
-  
+
   final user = authState.value;
   if (user == null) return null;
-  
+
   // Parse role from user metadata or default to customer
   final roleString = user.role ?? 'customer';
   return UserRole.fromString(roleString);
 });
 
 /// Check if current user has specific role
-final hasRoleProvider =
-    Provider.family<bool, UserRole>((ref, requiredRole) {
+final hasRoleProvider = Provider.family<bool, UserRole>((ref, requiredRole) {
   final userRole = ref.watch(userRoleProvider);
   if (userRole == null) return false;
   return userRole == requiredRole;
@@ -115,19 +114,23 @@ class RoleBasedAccessControl {
   static bool canPerformAction(String action, UserRole? userRole) {
     if (userRole == null) return false;
 
-    debugPrint('[RBAC] Checking permission: $action for role: ${userRole.value}');
+    debugPrint(
+        '[RBAC] Checking permission: $action for role: ${userRole.value}');
 
     switch (action) {
       case 'view_all_orders':
         return userRole == UserRole.admin;
       case 'manage_restaurants':
-        return userRole == UserRole.admin || userRole == UserRole.restaurantOwner;
+        return userRole == UserRole.admin ||
+            userRole == UserRole.restaurantOwner;
       case 'view_restaurant_analytics':
-        return userRole == UserRole.restaurantOwner || userRole == UserRole.admin;
+        return userRole == UserRole.restaurantOwner ||
+            userRole == UserRole.admin;
       case 'accept_delivery':
         return userRole == UserRole.deliveryDriver;
       case 'mark_order_preparing':
-        return userRole == UserRole.restaurantOwner || userRole == UserRole.admin;
+        return userRole == UserRole.restaurantOwner ||
+            userRole == UserRole.admin;
       case 'mark_order_ready':
         return userRole == UserRole.restaurantOwner ||
             userRole == UserRole.deliveryDriver ||

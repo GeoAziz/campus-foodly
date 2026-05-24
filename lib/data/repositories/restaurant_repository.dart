@@ -7,7 +7,7 @@ import '../services/storage_service.dart';
 
 abstract class RestaurantRepository {
   Future<List<Restaurant>> fetchRestaurants();
-  
+
   /// Fetch restaurants with pagination support
   Future<List<Restaurant>> fetchRestaurantsPage({
     required int pageNumber,
@@ -69,7 +69,7 @@ class FirestoreRestaurantRepository implements RestaurantRepository {
 
     final offset = pageNumber * pageSize;
     final end = (offset + pageSize).clamp(0, allRestaurants.length);
-    
+
     if (offset >= allRestaurants.length) {
       return [];
     }
@@ -138,7 +138,7 @@ class MockRestaurantRepository implements RestaurantRepository {
     final allRestaurants = await fetchRestaurants();
     final offset = pageNumber * pageSize;
     final end = (offset + pageSize).clamp(0, allRestaurants.length);
-    
+
     if (offset >= allRestaurants.length) {
       return [];
     }

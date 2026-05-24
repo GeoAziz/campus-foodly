@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 class LoggerService {
   static final LoggerService _instance = LoggerService._internal();
   static late Logger _logger;
-  
+
   factory LoggerService() {
     return _instance;
   }
@@ -106,7 +106,7 @@ class CrashlyticsOutput extends LogOutput {
   @override
   void output(OutputEvent event) {
     final crashlytics = FirebaseCrashlytics.instance;
-    
+
     for (final line in event.lines) {
       // Log to Crashlytics for production monitoring
       if (event.level == Level.error || event.level == Level.fatal) {
@@ -133,10 +133,10 @@ class LogEvent {
   });
 
   Map<String, dynamic> toJson() => {
-    'timestamp': timestamp,
-    'level': level,
-    'message': message,
-    'error': error.toString(),
-    'stackTrace': stackTrace.toString(),
-  };
+        'timestamp': timestamp,
+        'level': level,
+        'message': message,
+        'error': error.toString(),
+        'stackTrace': stackTrace.toString(),
+      };
 }

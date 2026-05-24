@@ -36,10 +36,10 @@ class SearchUiController extends StateNotifier<SearchUiState> {
   /// The search is only executed after [debounceDuration] has passed without new input
   void updateQuery(String value, {void Function()? onSearch}) {
     state = state.copyWith(query: value, isSearching: false);
-    
+
     // Cancel previous debounce
     _debouncer.cancel();
-    
+
     // Debounce the search
     _debouncer = Debouncer(
       delay: debounceDuration,
@@ -47,7 +47,7 @@ class SearchUiController extends StateNotifier<SearchUiState> {
         onSearch?.call();
       },
     );
-    
+
     _debouncer.call();
   }
 

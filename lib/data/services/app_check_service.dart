@@ -7,7 +7,7 @@ import 'dart:io' show Platform;
 class AppCheckService {
   static final AppCheckService _instance = AppCheckService._internal();
   static final Logger _logger = Logger();
-  
+
   bool _initialized = false;
 
   factory AppCheckService() {

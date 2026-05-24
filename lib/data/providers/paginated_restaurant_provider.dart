@@ -45,7 +45,8 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>(
 /// Paginated restaurants provider with load-more capability
 final paginatedRestaurantsProvider =
     StateNotifierProvider<PaginatedRestaurantsController, PaginationState>(
-  (ref) => PaginatedRestaurantsController(ref.watch(restaurantRepositoryProvider)),
+  (ref) =>
+      PaginatedRestaurantsController(ref.watch(restaurantRepositoryProvider)),
 );
 
 class PaginatedRestaurantsController extends StateNotifier<PaginationState> {
@@ -58,8 +59,8 @@ class PaginatedRestaurantsController extends StateNotifier<PaginationState> {
   Future<void> loadFirstPage() async {
     state = state.copyWith(isLoading: true, error: null, currentPage: 0);
     try {
-      final restaurants =
-          await _repository.fetchRestaurantsPage(pageNumber: 0, pageSize: _pageSize);
+      final restaurants = await _repository.fetchRestaurantsPage(
+          pageNumber: 0, pageSize: _pageSize);
       state = state.copyWith(
         items: restaurants,
         isLoading: false,

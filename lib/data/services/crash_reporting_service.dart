@@ -5,9 +5,10 @@ import 'package:logger/logger.dart';
 /// Service for managing crash reporting and error tracking
 /// Integrates with Firebase Crashlytics for production error monitoring
 class CrashReportingService {
-  static final CrashReportingService _instance = CrashReportingService._internal();
+  static final CrashReportingService _instance =
+      CrashReportingService._internal();
   static final Logger _logger = Logger();
-  
+
   late final FirebaseCrashlytics _crashlytics;
   bool _initialized = false;
 

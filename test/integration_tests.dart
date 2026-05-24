@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Comprehensive integration test suite for Foodly UX/State-Flow improvements
-/// 
+///
 /// This test suite validates all critical fixes implemented:
 /// - Cart persistence and cross-restaurant validation
 /// - Order creation idempotency and amount validation
