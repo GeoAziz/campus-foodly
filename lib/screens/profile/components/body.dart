@@ -145,7 +145,7 @@ class Body extends ConsumerWidget {
                 press: () async {
                   // Clear user-specific data BEFORE signout
                   await ref.read(cartProvider.notifier).clear();
-                  
+
                   await ref.read(authControllerProvider.notifier).signOut();
                   if (context.mounted) {
                     context.goNamed(AppRoutes.signIn);
