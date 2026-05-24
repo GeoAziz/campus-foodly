@@ -7,6 +7,12 @@ import '../services/storage_service.dart';
 
 abstract class RestaurantRepository {
   Future<List<Restaurant>> fetchRestaurants();
+  
+  /// Fetch restaurants with pagination support
+  Future<List<Restaurant>> fetchRestaurantsPage({
+    required int pageNumber,
+    required int pageSize,
+  });
 }
 
 class FirestoreRestaurantRepository implements RestaurantRepository {
@@ -25,6 +31,54 @@ class FirestoreRestaurantRepository implements RestaurantRepository {
     final storage = StorageService.instance;
     return Future.wait(
       restaurants.map((restaurant) async {
+        final resolvedImage =
+            await storage.resolveDownloadUrl(restaurant.image);
+        return Restaurant(
+          id: restaurant.id,
+          name: restaurant.name,
+          image: resolvedImage,
+          location: restaurant.location,
+          rating: restaurant.rating,
+          ratingCount: restaurant.ratingCount,
+          deliveryTime: restaurant.deliveryTime,
+          deliveryFee: restaurant.deliveryFee,
+          priceTier: restaurant.priceTier,
+          categories: restaurant.categories,
+          dietaries: restaurant.dietaries,
+          isFeatured: restaurant.isFeatured,
+        );
+      }),
+    );
+  }
+
+  @override
+  Future<List<Restaurant>> fetchRestaurantsPage({
+    required int pageNumber,
+    required int pageSize,
+  }) async {
+    // Firestore pagination: fetch all sorted, then slice locally
+    // This is a limitation of Firestore's API which doesn't support offset natively
+    final snapshot = await _firestore
+        .collection('restaurants')
+        .orderBy('name') // Consistent ordering for pagination
+        .get();
+
+    final allRestaurants = snapshot.docs
+        .map((doc) => Restaurant.fromMap(doc.id, doc.data()))
+        .toList(growable: false);
+
+    final offset = pageNumber * pageSize;
+    final end = (offset + pageSize).clamp(0, allRestaurants.length);
+    
+    if (offset >= allRestaurants.length) {
+      return [];
+    }
+
+    final paginatedRestaurants = allRestaurants.sublist(offset, end);
+
+    final storage = StorageService.instance;
+    return Future.wait(
+      paginatedRestaurants.map((restaurant) async {
         final resolvedImage =
             await storage.resolveDownloadUrl(restaurant.image);
         return Restaurant(
@@ -74,6 +128,22 @@ class MockRestaurantRepository implements RestaurantRepository {
           ),
         )
         .toList(growable: false);
+  }
+
+  @override
+  Future<List<Restaurant>> fetchRestaurantsPage({
+    required int pageNumber,
+    required int pageSize,
+  }) async {
+    final allRestaurants = await fetchRestaurants();
+    final offset = pageNumber * pageSize;
+    final end = (offset + pageSize).clamp(0, allRestaurants.length);
+    
+    if (offset >= allRestaurants.length) {
+      return [];
+    }
+
+    return allRestaurants.sublist(offset, end);
   }
 }
 

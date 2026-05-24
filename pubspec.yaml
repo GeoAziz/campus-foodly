@@ -31,35 +31,88 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # UI & Design
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.10
+
+  # Forms & Validation
   form_field_validator: ^1.1.0
+
+  # State Management (Riverpod)
   flutter_riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
+
+  # Navigation
   go_router: ^13.0.0
+
+  # Serialization
   freezed: ^2.5.2
+
+  # Firebase Core
   firebase_core: ^3.10.1
   firebase_auth: ^5.4.0
   cloud_firestore: ^5.6.2
   firebase_storage: ^12.4.0
   firebase_messaging: ^15.2.4
+  
+  # Firebase Security & Monitoring
+  firebase_app_check: ^0.2.1
+  firebase_crashlytics: ^4.0.2
+  firebase_analytics: ^11.3.0
+
+  # Location & Maps
   google_maps_flutter: ^2.10.0
   geolocator: ^13.0.2
   geocoding: ^3.0.0
+
+  # Local Storage & Preferences
   shared_preferences: ^2.5.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Networking & Payment Processing
+  http: ^1.1.0
+  dio: ^5.4.0
+  stripe_flutter: ^12.0.0
+
+  # Logging & Error Handling
+  logger: ^2.1.0
+  sentry_flutter: ^8.4.0
+
+  # Connectivity & Offline Support
+  connectivity_plus: ^6.0.0
+  
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.0.0
+  timeago: ^3.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  # Linting & Code Quality
   flutter_lints: ^4.0.0
+
+  # Testing Framework
+  mockito: ^5.4.4
+  mocktail: ^1.1.0
+  
+  # Build & Generation
+  build_runner: ^2.4.6
+  freezed_annotation: ^2.5.0
+  riverpod_generator: ^2.4.0
+  json_serializable: ^6.7.1
+  
+  # Code Generation for Hive
+  hive_generator: ^2.0.0
+  
+  # Integration Testing
+  integration_test:
+    sdk: flutter
+
+  # Performance & Benchmarking
+  benchmark_harness: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

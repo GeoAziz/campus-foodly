@@ -50,4 +50,20 @@ class CartItem {
       'specialInstructions': specialInstructions,
     };
   }
+
+  // JSON serialization methods for persistence
+  Map<String, dynamic> toJson() => toMap();
+
+  factory CartItem.fromJson(Map<String, dynamic> json) {
+    final menuItemData = json['menuItem'] as Map<String, dynamic>? ?? const {};
+    return CartItem(
+      id: json['id'] as String? ?? '',
+      menuItem: MenuItem.fromMap(
+        (menuItemData['id'] as String?) ?? '',
+        menuItemData,
+      ),
+      quantity: (json['quantity'] as num? ?? 0).toInt(),
+      specialInstructions: json['specialInstructions'] as String?,
+    );
+  }
 }

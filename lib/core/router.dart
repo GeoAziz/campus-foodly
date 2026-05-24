@@ -29,10 +29,12 @@ import '../screens/phone_login/phone_login_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../data/models/restaurant.dart';
 import '../data/providers/auth_provider.dart';
+import '../data/providers/role_based_access_provider.dart';
 import 'routes.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authControllerProvider);
+  final userRole = ref.watch(userRoleProvider);
 
   const authRoutes = <String>{
     '/sign-in',
@@ -49,6 +51,13 @@ final routerProvider = Provider<GoRouter>((ref) {
     '/auth-error',
   };
 
+  const adminRoutes = <String>{
+    '/admin',
+    '/admin/dashboard',
+    '/admin/orders',
+    '/admin/restaurants',
+  };
+
   return GoRouter(
     initialLocation: '/onboarding',
     redirect: (context, state) {
@@ -56,6 +65,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       final location = state.matchedLocation;
       final isAuthRoute = authRoutes.contains(location);
       final isPublicRoute = publicRoutes.contains(location);
+      final isAdminRoute =
+          adminRoutes.any((route) => location.startsWith(route));
 
       if (authState.hasError && location != '/auth-error') {
         return '/auth-error';
@@ -63,6 +74,13 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       if (!authState.hasError && location == '/auth-error') {
         return '/sign-in';
+      }
+
+      // Check admin route access
+      if (isAdminRoute && user != null) {
+        if (!RoleBasedAccessControl.canAccessRoute(location, userRole)) {
+          return '/app'; // Redirect to home if no permission
+        }
       }
 
       if (user != null && isAuthRoute) {

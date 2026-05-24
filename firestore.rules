@@ -1,7 +1,9 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Helper functions
+    
+    // ==================== SECURITY FUNCTIONS ====================
+    
     function isAuthenticated() {
       return request.auth != null;
     }
@@ -36,6 +38,61 @@ service cloud.firestore {
 
     function isValidOrderStatus(status) {
       return status in ['pending', 'accepted', 'preparing', 'ready', 'picked_up', 'delivered', 'cancelled'];
+    }
+    
+    // ==================== RATE LIMITING & VALIDATION ====================
+    
+    // Rate limit: max 10 order creates per user per day
+    function checkOrderCreateRateLimit() {
+      return isAuthenticated() &&
+        firestore.query('orders')
+          .where('userId', '==', request.auth.uid)
+          .where('createdAt', '>=', now.toMillis() - (24 * 3600 * 1000))
+          .count() < 10;
+    }
+    
+    // Rate limit: max 5 payment creates per user per day
+    function checkPaymentCreateRateLimit() {
+      return isAuthenticated() &&
+        firestore.query('payments')
+          .where('userId', '==', request.auth.uid)
+          .where('createdAt', '>=', now.toMillis() - (24 * 3600 * 1000))
+          .count() < 5;
+    }
+    
+    // Validate order structure and prevent common attacks
+    function isValidOrderCreate() {
+      return request.resource.data.keys().hasAll(['userId', 'restaurantId', 'items', 'status', 'createdAt', 'idempotencyKey']) &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.items.size() > 0 &&
+        request.resource.data.items.size() <= 100 &&
+        request.resource.data.totalPrice is number &&
+        request.resource.data.totalPrice > 0 &&
+        request.resource.data.totalPrice <= 10000 &&
+        request.resource.data.createdAt == request.time &&
+        request.resource.data.idempotencyKey is string &&
+        request.resource.data.idempotencyKey.size() > 0;
+    }
+    
+    // Check for duplicate orders using idempotency key
+    function isDuplicateOrder() {
+      return firestore.query('orders')
+        .where('userId', '==', request.auth.uid)
+        .where('idempotencyKey', '==', request.resource.data.idempotencyKey)
+        .where('createdAt', '>=', now.toMillis() - (3600 * 1000))
+        .count() > 0;
+    }
+    
+    // Validate payment structure
+    function isValidPaymentCreate() {
+      return request.resource.data.keys().hasAll(['userId', 'orderId', 'amount', 'status', 'provider', 'createdAt']) &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.amount is number &&
+        request.resource.data.amount > 0 &&
+        request.resource.data.amount <= 10000 &&
+        request.resource.data.provider in ['stripe', 'paypal', 'card'] &&
+        isValidPaymentStatus(request.resource.data.status);
     }
 
     // Users Collection
@@ -180,11 +237,11 @@ service cloud.firestore {
       allow read: if isAdmin() ||
         (isAuthenticated() && resource.data.userId == request.auth.uid);
 
-      // Users create pending orders from the cart.
+      // Users create pending orders with idempotency protection and rate limiting
       allow create: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid &&
-        request.resource.data.status == 'pending' &&
-        request.resource.data.items.size() > 0;
+        isValidOrderCreate() &&
+        !isDuplicateOrder() &&
+        checkOrderCreateRateLimit();
 
       // Owners can keep updating a pending order while preserving the core order data.
       allow update: if isAdmin() || (
@@ -222,13 +279,10 @@ service cloud.firestore {
       // Users and admins can read payment records.
       allow read: if isAdmin() || (isAuthenticated() && resource.data.userId == request.auth.uid);
 
-      // The checkout flow creates the payment record.
+      // The checkout flow creates the payment record with validation and rate limiting
       allow create: if isAuthenticated() &&
-        request.resource.data.userId == request.auth.uid &&
-        request.resource.data.paymentId == paymentId &&
-        request.resource.data.orderId is string &&
-        request.resource.data.amount > 0 &&
-        isValidPaymentStatus(request.resource.data.status);
+        isValidPaymentCreate() &&
+        checkPaymentCreateRateLimit();
 
       // Users can keep their payment record in sync while keeping the core identity and amount stable.
       allow update: if isAdmin() || (

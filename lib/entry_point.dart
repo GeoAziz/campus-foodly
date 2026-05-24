@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'constants.dart';
 import 'data/providers/ui_state_provider.dart';
+import 'data/providers/cart_provider.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/order_details/order_details_screen.dart';
 import 'screens/profile/profile_screen.dart';
@@ -30,6 +31,11 @@ class EntryPoint extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedIndex = ref.watch(entryTabIndexProvider);
+
+    // Initialize cart on entry point (loads persisted data)
+    ref.listen(cartProvider, (previous, next) {
+      // Listen to cart changes for any UI updates if needed
+    });
 
     return Scaffold(
       body: IndexedStack(

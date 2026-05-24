@@ -1,10 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/app_user.dart';
 import '../repositories/auth_repository.dart';
 import '../repositories/firebase_auth_repository.dart';
 import '../services/firebase_service.dart';
+import 'cart_provider.dart';
+import 'order_provider.dart';
+import 'restaurant_detail_provider.dart';
+import 'menu_provider.dart';
+import 'featured_item_provider.dart';
+import 'menu_tab_provider.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   if (!FirebaseService.isInitialized) {
@@ -84,6 +91,23 @@ class AuthController extends AsyncNotifier<AppUser?> {
 
   Future<void> signOut() async {
     await _repository.signOut();
+    
+    // Clear user-specific data on logout
+    try {
+      // Clear cart to prevent showing previous user's cart
+      final cartController = ref.read(cartProvider.notifier);
+      await cartController.clear();
+      
+      // Invalidate other user-specific providers to force refresh
+      ref.invalidate(orderControllerProvider);
+      ref.invalidate(restaurantDetailProvider);
+      ref.invalidate(menuItemsProvider);
+      ref.invalidate(featuredItemsProvider);
+      ref.invalidate(menuTabsProvider);
+    } catch (e) {
+      debugPrint('[AuthController] Error clearing user data on logout: $e');
+    }
+    
     state = const AsyncValue.data(null);
   }
 }

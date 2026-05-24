@@ -29,6 +29,9 @@ class _SignInFormState extends ConsumerState<SignInForm> {
 
   @override
   Widget build(BuildContext context) {
+    final authState = ref.watch(authControllerProvider);
+    final isLoading = authState.isLoading;
+    
     return Form(
       key: _formKey,
       child: Column(
@@ -39,6 +42,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(hintText: "Email Address"),
+            enabled: !isLoading,
           ),
           const SizedBox(height: defaultPadding),
 
@@ -50,63 +54,87 @@ class _SignInFormState extends ConsumerState<SignInForm> {
             decoration: InputDecoration(
               hintText: "Password",
               suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
+                onTap: isLoading
+                    ? null
+                    : () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
                 child: _obscureText
                     ? const Icon(Icons.visibility_off, color: bodyTextColor)
                     : const Icon(Icons.visibility, color: bodyTextColor),
               ),
             ),
+            enabled: !isLoading,
           ),
           const SizedBox(height: defaultPadding),
 
           // Forget Password
           GestureDetector(
-            onTap: () => context.pushNamed(AppRoutes.forgotPassword),
+            onTap: isLoading
+                ? null
+                : () => context.pushNamed(AppRoutes.forgotPassword),
             child: Text(
               "Forget Password?",
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!
-                  .copyWith(fontWeight: FontWeight.w500),
+                  .copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: isLoading ? Colors.grey : null,
+                  ),
             ),
           ),
           const SizedBox(height: defaultPadding),
 
-          // Sign In Button
-          ElevatedButton(
-            onPressed: () async {
-              if (!_formKey.currentState!.validate()) {
-                return;
-              }
+          // Sign In Button with Loading State
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: isLoading
+                  ? null
+                  : () async {
+                      if (!_formKey.currentState!.validate()) {
+                        return;
+                      }
 
-              final success =
-                  await ref.read(authControllerProvider.notifier).signIn(
-                        email: _emailController.text.trim(),
-                        password: _passwordController.text,
-                      );
+                      final success = await ref
+                          .read(authControllerProvider.notifier)
+                          .signIn(
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text,
+                          );
 
-              if (!context.mounted) {
-                return;
-              }
+                      if (!context.mounted) {
+                        return;
+                      }
 
-              if (success) {
-                context.goNamed(AppRoutes.findRestaurants);
-                return;
-              }
+                      if (success) {
+                        context.goNamed(AppRoutes.findRestaurants);
+                        return;
+                      }
 
-              final authState = ref.read(authControllerProvider);
-              final error = authState.error;
-              if (error != null) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(authErrorMessage(error))),
-                );
-              }
-            },
-            child: const Text("Sign in"),
+                      final authState = ref.read(authControllerProvider);
+                      final error = authState.error;
+                      if (error != null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(authErrorMessage(error))),
+                        );
+                      }
+                    },
+              child: isLoading
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                    )
+                  : const Text("Sign in"),
+            ),
           ),
         ],
       ),

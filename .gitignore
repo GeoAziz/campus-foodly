@@ -43,5 +43,16 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Environment files (CRITICAL: Never commit secrets)
+.env
+.env.*
+.env.*.local
+!.env.example
+.env.development
+
+# Firebase
 serviceAccountKey.json
+GoogleService-Info.plist
+google-services.json
+
 functions/node_modules/
