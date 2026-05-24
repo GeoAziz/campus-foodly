@@ -162,8 +162,10 @@ class PhoneLoginController extends StateNotifier<PhoneLoginState> {
   }
 }
 
+/// Phone login provider with auto-dispose to prevent memory leaks
+/// Disposes when user navigates away from phone login screen
 final phoneLoginControllerProvider =
-    StateNotifierProvider<PhoneLoginController, PhoneLoginState>(
+    StateNotifierProvider.autoDispose<PhoneLoginController, PhoneLoginState>(
   (ref) => PhoneLoginController(),
 );
 

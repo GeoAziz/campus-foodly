@@ -32,10 +32,12 @@ class EntryPoint extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedIndex = ref.watch(entryTabIndexProvider);
 
-    // Initialize cart on entry point (loads persisted data)
-    ref.listen(cartProvider, (previous, next) {
-      // Listen to cart changes for any UI updates if needed
-    });
+    // Initialize cart on entry point - loads persisted cart data from device storage
+    // This triggers CartController.initializeCart() on first access
+    final cartState = ref.watch(cartProvider);
+    
+    // Log cart initialization for debugging
+    debugPrint('[EntryPoint] Cart initialized with ${cartState.length} items');
 
     return Scaffold(
       body: IndexedStack(

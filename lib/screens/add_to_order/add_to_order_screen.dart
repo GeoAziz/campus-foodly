@@ -7,6 +7,7 @@ import '../../core/routes.dart';
 import '../../data/models/menu_item.dart';
 import '../../data/providers/cart_provider.dart';
 import '../../data/providers/ui_state_provider.dart';
+import '../../data/services/logger_service.dart';
 import 'components/info.dart';
 import 'components/required_section_title.dart';
 import 'components/rounded_checkbox_list_tile.dart';
@@ -130,21 +131,46 @@ class AddToOrderScreen extends ConsumerWidget {
                     const SizedBox(height: defaultPadding),
                     ElevatedButton(
                       onPressed: () {
-                        ref.read(cartProvider.notifier).addItem(
-                              MenuItem(
-                                id: 'cookie-${state.choiceOfTopCookie}-${state.choiceOfBottomCookie}',
-                                restaurantId: 'demo-desserts',
-                                name:
-                                    '${choiceOfTopCookies[state.choiceOfTopCookie]} x ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
-                                price: 11.98,
-                                image: 'assets/images/big_1.png',
-                                description:
-                                    'Top: ${choiceOfTopCookies[state.choiceOfTopCookie]}, Bottom: ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
-                                category: 'Dessert',
+                        try {
+                          ref.read(cartProvider.notifier).addItem(
+                                MenuItem(
+                                  id: 'cookie-${state.choiceOfTopCookie}-${state.choiceOfBottomCookie}',
+                                  restaurantId: 'demo-desserts',
+                                  name:
+                                      '${choiceOfTopCookies[state.choiceOfTopCookie]} x ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
+                                  price: 11.98,
+                                  image: 'assets/images/big_1.png',
+                                  description:
+                                      'Top: ${choiceOfTopCookies[state.choiceOfTopCookie]}, Bottom: ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
+                                  category: 'Dessert',
+                                ),
+                                quantity: state.numOfItems,
+                              );
+                          context.pushNamed(AppRoutes.orderDetails);
+                        } on StateError catch (e) {
+                          // Handle cross-restaurant validation error
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(e.message ?? 'Cannot add item to cart'),
+                                backgroundColor: Theme.of(context).colorScheme.error,
+                                duration: const Duration(seconds: 3),
                               ),
-                              quantity: state.numOfItems,
                             );
-                        context.pushNamed(AppRoutes.orderDetails);
+                          }
+                          LoggerService().w('[AddToOrder] Cross-restaurant error: ${e.message}');
+                        } catch (e) {
+                          // Handle unexpected errors
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: const Text('Failed to add item to cart. Please try again.'),
+                                backgroundColor: Theme.of(context).colorScheme.error,
+                              ),
+                            );
+                          }
+                          LoggerService().e('[AddToOrder] Error adding item: $e');
+                        }
                       },
                       child: const Text("Add to Order (\$11.98)"),
                     ),
