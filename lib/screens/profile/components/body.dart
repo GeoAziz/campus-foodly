@@ -6,6 +6,7 @@ import '../../../constants.dart';
 import '../../../core/routes.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../../../data/providers/theme_provider.dart';
+import '../../../data/providers/cart_provider.dart';
 
 class Body extends ConsumerWidget {
   const Body({super.key});
@@ -142,6 +143,9 @@ class Body extends ConsumerWidget {
                 title: "Sign Out",
                 subTitle: "Log out of your account",
                 press: () async {
+                  // Clear user-specific data BEFORE signout
+                  await ref.read(cartProvider.notifier).clear();
+                  
                   await ref.read(authControllerProvider.notifier).signOut();
                   if (context.mounted) {
                     context.goNamed(AppRoutes.signIn);
