@@ -195,64 +195,66 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
             ),
             const SizedBox(height: defaultPadding),
             ElevatedButton(
-              onPressed:
-                  paymentState.isSubmitting || user == null || !hasAddress
-                      ? null
-                      : () {
-                          if (!_formKey.currentState!.validate()) {
-                            return;
-                          }
+              onPressed: paymentState.isSubmitting ||
+                      user == null ||
+                      !hasAddress
+                  ? null
+                  : () {
+                      if (!_formKey.currentState!.validate()) {
+                        return;
+                      }
 
-                          // Show confirmation dialog before payment
-                          showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              title: const Text('Confirm Payment'),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text('Please review your payment details:'),
-                                  const SizedBox(height: 16),
-                                  Text(
-                                    'Amount: Ksh ${widget.amount.toStringAsFixed(2)}',
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    'Phone: ${_phoneController.text.trim()}',
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                  const SizedBox(height: 16),
-                                  const Text(
-                                    'You will receive an M-Pesa prompt on your phone. Enter your PIN to complete the payment.',
-                                    style: TextStyle(fontSize: 12, color: Colors.grey),
-                                  ),
-                                ],
+                      // Show confirmation dialog before payment
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Confirm Payment'),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Please review your payment details:'),
+                              const SizedBox(height: 16),
+                              Text(
+                                'Amount: Ksh ${widget.amount.toStringAsFixed(2)}',
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => Navigator.pop(context),
-                                  child: const Text('Cancel'),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                    ref
-                                        .read(paymentControllerProvider.notifier)
-                                        .startMpesaCheckout(
-                                          orderId: widget.orderId,
-                                          userId: user.id,
-                                          phoneNumber: _phoneController.text.trim(),
-                                          amount: widget.amount,
-                                        );
-                                  },
-                                  child: const Text('Proceed to Payment'),
-                                ),
-                              ],
+                              const SizedBox(height: 8),
+                              Text(
+                                'Phone: ${_phoneController.text.trim()}',
+                                style: Theme.of(context).textTheme.bodyMedium,
+                              ),
+                              const SizedBox(height: 16),
+                              const Text(
+                                'You will receive an M-Pesa prompt on your phone. Enter your PIN to complete the payment.',
+                                style:
+                                    TextStyle(fontSize: 12, color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: const Text('Cancel'),
                             ),
-                          );
-                        },
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                ref
+                                    .read(paymentControllerProvider.notifier)
+                                    .startMpesaCheckout(
+                                      orderId: widget.orderId,
+                                      userId: user.id,
+                                      phoneNumber: _phoneController.text.trim(),
+                                      amount: widget.amount,
+                                    );
+                              },
+                              child: const Text('Proceed to Payment'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
               child: paymentState.isSubmitting
                   ? const SizedBox(
                       height: 20,

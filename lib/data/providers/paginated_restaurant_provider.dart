@@ -43,8 +43,8 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>(
 );
 
 /// Paginated restaurants provider with load-more capability
-final paginatedRestaurantsProvider =
-    StateNotifierProvider.autoDispose<PaginatedRestaurantsController, PaginationState>(
+final paginatedRestaurantsProvider = StateNotifierProvider.autoDispose<
+    PaginatedRestaurantsController, PaginationState>(
   (ref) =>
       PaginatedRestaurantsController(ref.watch(restaurantRepositoryProvider)),
 );

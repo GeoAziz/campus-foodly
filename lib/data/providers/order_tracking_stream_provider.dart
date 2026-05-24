@@ -15,17 +15,16 @@ final orderStatusStreamProvider =
       .doc(orderId)
       .snapshots()
       .map((snapshot) {
-        if (!snapshot.exists) {
-          return null;
-        }
-        return Order.fromMap(snapshot.id, snapshot.data() as Map<String, dynamic>);
-      })
-      .handleError((error) {
-        // Log error but keep stream open
-        print('[OrderStatusStream] Error loading order status: $error');
-        // Return null to indicate error state
-        return null;
-      });
+    if (!snapshot.exists) {
+      return null;
+    }
+    return Order.fromMap(snapshot.id, snapshot.data() as Map<String, dynamic>);
+  }).handleError((error) {
+    // Log error but keep stream open
+    print('[OrderStatusStream] Error loading order status: $error');
+    // Return null to indicate error state
+    return null;
+  });
 });
 
 /// Real-time tracking updates for active order
@@ -58,58 +57,57 @@ final orderTrackingStreamProvider =
       .doc(orderId)
       .snapshots()
       .asyncMap((snapshot) async {
-        if (!snapshot.exists) {
-          return null;
-        }
+    if (!snapshot.exists) {
+      return null;
+    }
 
-        final data = snapshot.data() as Map<String, dynamic>;
-        final status = data['status'] as String? ?? 'pending';
-        final estimatedDelivery = data['estimatedDeliveryTime'] as int? ?? 0;
-        final lastUpdated = (data['lastUpdated'] as Timestamp?)?.toDate() ?? DateTime.now();
+    final data = snapshot.data() as Map<String, dynamic>;
+    final status = data['status'] as String? ?? 'pending';
+    final estimatedDelivery = data['estimatedDeliveryTime'] as int? ?? 0;
+    final lastUpdated =
+        (data['lastUpdated'] as Timestamp?)?.toDate() ?? DateTime.now();
 
-        // Get driver info if status is out_for_delivery
-        String? driverName;
-        Map<String, double>? driverLocation;
+    // Get driver info if status is out_for_delivery
+    String? driverName;
+    Map<String, double>? driverLocation;
 
-        if (status == 'out_for_delivery') {
-          final driverId = data['driverId'] as String?;
-          if (driverId != null) {
-            try {
-              final driverDoc = await firestore
-                  .collection('drivers')
-                  .doc(driverId)
-                  .get();
+    if (status == 'out_for_delivery') {
+      final driverId = data['driverId'] as String?;
+      if (driverId != null) {
+        try {
+          final driverDoc =
+              await firestore.collection('drivers').doc(driverId).get();
 
-              if (driverDoc.exists) {
-                final driverData = driverDoc.data() as Map<String, dynamic>;
-                driverName = driverData['name'] as String?;
-                final location = driverData['lastLocation'] as Map<String, dynamic>?;
-                if (location != null) {
-                  driverLocation = {
-                    'latitude': (location['latitude'] as num).toDouble(),
-                    'longitude': (location['longitude'] as num).toDouble(),
-                  };
-                }
-              }
-            } catch (e) {
-              print('[OrderTracking] Error loading driver info: $e');
+          if (driverDoc.exists) {
+            final driverData = driverDoc.data() as Map<String, dynamic>;
+            driverName = driverData['name'] as String?;
+            final location =
+                driverData['lastLocation'] as Map<String, dynamic>?;
+            if (location != null) {
+              driverLocation = {
+                'latitude': (location['latitude'] as num).toDouble(),
+                'longitude': (location['longitude'] as num).toDouble(),
+              };
             }
           }
+        } catch (e) {
+          print('[OrderTracking] Error loading driver info: $e');
         }
+      }
+    }
 
-        return OrderTrackingUpdate(
-          orderId: orderId,
-          status: status,
-          estimatedDeliveryMinutes: estimatedDelivery,
-          lastUpdated: lastUpdated,
-          driverLocation: driverLocation,
-          driverName: driverName,
-        );
-      })
-      .handleError((error) {
-        print('[OrderTrackingStream] Error: $error');
-        return null;
-      });
+    return OrderTrackingUpdate(
+      orderId: orderId,
+      status: status,
+      estimatedDeliveryMinutes: estimatedDelivery,
+      lastUpdated: lastUpdated,
+      driverLocation: driverLocation,
+      driverName: driverName,
+    );
+  }).handleError((error) {
+    print('[OrderTrackingStream] Error: $error');
+    return null;
+  });
 });
 
 /// Watch order status with automatic UI updates

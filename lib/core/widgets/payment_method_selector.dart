@@ -57,8 +57,8 @@ class PaymentMethodController extends StateNotifier<PaymentMethodState> {
 }
 
 /// Provider for payment method selection
-final paymentMethodProvider =
-    StateNotifierProvider.autoDispose<PaymentMethodController, PaymentMethodState>(
+final paymentMethodProvider = StateNotifierProvider.autoDispose<
+    PaymentMethodController, PaymentMethodState>(
   (ref) => PaymentMethodController(),
 );
 

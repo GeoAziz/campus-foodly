@@ -162,9 +162,8 @@ class AddressesController extends StateNotifier<AddressesState> {
   }
 }
 
-final addressesControllerProvider =
-    StateNotifierProvider.family.autoDispose<AddressesController, AddressesState, String>(
-        (ref, uid) {
+final addressesControllerProvider = StateNotifierProvider.family
+    .autoDispose<AddressesController, AddressesState, String>((ref, uid) {
   final repository = ref.watch(profileRepositoryProvider);
   return AddressesController(repository, uid);
 });

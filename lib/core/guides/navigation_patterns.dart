@@ -1,5 +1,5 @@
 /// Navigation Pattern Guide for Campus Foodly
-/// 
+///
 /// This document standardizes when to use modal sheets vs full screens
 /// for consistent UX and maintainability.
 

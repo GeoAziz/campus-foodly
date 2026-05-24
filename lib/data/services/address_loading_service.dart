@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 /// Service to manage address loading and prevent race conditions
 /// Ensures only the latest request completes while older requests are ignored
 class AddressLoadingService {
-  static final AddressLoadingService _instance = AddressLoadingService._internal();
+  static final AddressLoadingService _instance =
+      AddressLoadingService._internal();
 
   factory AddressLoadingService() {
     return _instance;
@@ -18,7 +19,8 @@ class AddressLoadingService {
   /// Generate a unique request ID for address loading
   /// Returns a string that uniquely identifies this request
   String generateRequestId(String userId) {
-    final id = '${userId}_${DateTime.now().millisecondsSinceEpoch}_${DateTime.now().microsecond}';
+    final id =
+        '${userId}_${DateTime.now().millisecondsSinceEpoch}_${DateTime.now().microsecond}';
     _activeRequests[userId] = id;
     return id;
   }
@@ -65,13 +67,15 @@ Future<T?> withRaceConditionPrevention<T>({
 
     // Check if this request is still active
     if (!service.isRequestActive(userId, requestId)) {
-      debugPrint('[AddressLoadingService] Request $requestId was superseded by newer request');
+      debugPrint(
+          '[AddressLoadingService] Request $requestId was superseded by newer request');
       onRaceConditionDetected?.call();
       return null;
     }
 
     service.completeRequest(userId);
-    debugPrint('[AddressLoadingService] Request $requestId completed successfully');
+    debugPrint(
+        '[AddressLoadingService] Request $requestId completed successfully');
     return result;
   } catch (e) {
     debugPrint('[AddressLoadingService] Request $requestId failed: $e');
