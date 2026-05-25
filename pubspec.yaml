@@ -56,7 +56,7 @@ dependencies:
   firebase_messaging: ^15.2.4
   
   # Firebase Security & Monitoring
-  firebase_app_check: ^0.2.1
+  firebase_app_check: ^0.3.2+10
   firebase_crashlytics: ^4.0.2
   firebase_analytics: ^11.3.0
 
@@ -73,7 +73,7 @@ dependencies:
   # Networking & Payment Processing
   http: ^1.1.0
   dio: ^5.4.0
-  stripe_flutter: ^12.0.0
+  pay: ^2.0.0
 
   # Logging & Error Handling
   logger: ^2.1.0
@@ -83,7 +83,7 @@ dependencies:
   connectivity_plus: ^6.0.0
   
   # Utilities
-  intl: ^0.19.0
+  intl: ^0.20.0
   uuid: ^4.0.0
   timeago: ^3.6.0
 
@@ -96,11 +96,11 @@ dev_dependencies:
 
   # Testing Framework
   mockito: ^5.4.4
-  mocktail: ^1.1.0
+  mocktail: ^1.0.0
   
   # Build & Generation
   build_runner: ^2.4.6
-  freezed_annotation: ^2.5.0
+  freezed_annotation: ^2.4.1
   riverpod_generator: ^2.4.0
   json_serializable: ^6.7.1
   
@@ -110,9 +110,6 @@ dev_dependencies:
   # Integration Testing
   integration_test:
     sdk: flutter
-
-  # Performance & Benchmarking
-  benchmark_harness: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
