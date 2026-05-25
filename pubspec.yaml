@@ -73,6 +73,7 @@ dependencies:
   # Networking & Payment Processing
   http: ^1.1.0
   dio: ^5.4.0
+  cached_network_image: ^3.3.1
 
   # Logging & Error Handling
   logger: ^2.1.0

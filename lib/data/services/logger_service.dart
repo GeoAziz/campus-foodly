@@ -23,9 +23,8 @@ class LoggerService {
         methodCount: 3,
         errorMethodCount: 8,
         lineLength: 120,
-        colors: !kDebugMode, // Disable colors in production
+        colors: kDebugMode, // Enable colors in debug mode
         printEmojis: kDebugMode,
-        dateTimeFormat: DateTimeFormat.onlyTimeAndSinceLastCall,
       ),
       output: MultiOutput([
         ConsoleOutput(),
@@ -116,15 +115,15 @@ class CrashlyticsOutput extends LogOutput {
   }
 }
 
-/// Simple log event class for structured logging
-class LogEvent {
+/// Simple log event metadata class for structured logging
+class LogEventData {
   final String timestamp;
   final String level;
   final String message;
   final dynamic error;
   final StackTrace? stackTrace;
 
-  LogEvent({
+  LogEventData({
     required this.timestamp,
     required this.level,
     required this.message,

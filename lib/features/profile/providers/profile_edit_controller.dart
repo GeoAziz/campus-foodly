@@ -56,6 +56,7 @@ class ProfileEditState {
         phone != profileData!.phone ||
         bio != profileData!.bio;
   }
+}
 
 enum ProfileEditMode { view, edit }
 

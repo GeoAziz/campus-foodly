@@ -1,10 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
-import '../lib/data/repositories/order_repository.dart';
-import '../lib/data/models/order.dart';
+import 'package:ordereats/data/repositories/order_repository.dart';
+import 'package:ordereats/data/models/order.dart';
 
-@GenerateMocks([FirestoreOrderRepository])
 void main() {
   group('OrderRepository', () {
     late InMemoryOrderRepository repository;
@@ -23,7 +20,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 29.99,
         status: 'pending',
         createdAt: DateTime.now(),
       );
@@ -41,7 +37,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 29.99,
         status: 'pending',
         createdAt: DateTime.now(),
       );
@@ -51,7 +46,6 @@ void main() {
         userId: 'user-456',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 15.99,
         status: 'delivered',
         createdAt: DateTime.now(),
       );
@@ -71,7 +65,6 @@ void main() {
           userId: 'user-123',
           restaurantId: 'rest-1',
           items: [],
-          totalPrice: 29.99,
           status: 'pending',
           createdAt: DateTime.now(),
         );
@@ -92,7 +85,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 29.99,
         status: 'pending',
         createdAt: DateTime.now(),
       );
@@ -110,7 +102,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 29.99,
         status: 'pending',
         createdAt: DateTime.now(),
       );
@@ -128,7 +119,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 29.99,
         status: 'pending',
         createdAt: DateTime.now(),
       );
@@ -138,7 +128,6 @@ void main() {
         userId: 'user-123',
         restaurantId: 'rest-1',
         items: [],
-        totalPrice: 15.99,
         status: 'delivered',
         createdAt: DateTime.now(),
       );

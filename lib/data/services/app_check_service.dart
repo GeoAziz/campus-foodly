@@ -1,5 +1,6 @@
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:logger/logger.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'dart:io' show Platform;
 
 /// Service for managing Firebase App Check
@@ -24,9 +25,8 @@ class AppCheckService {
     try {
       // Use reCAPTCHA v3 for web, or device check for mobile
       await FirebaseAppCheck.instance.activate(
-        webRecaptchaSiteKey: null, // Configure in Firebase Console
         androidProvider: AndroidProvider.playIntegrity,
-        appleProvider: AppleProvider.appAttestProvider,
+        appleProvider: AppleProvider.deviceCheck,
       );
 
       _logger.i('Firebase App Check initialized successfully');
@@ -44,13 +44,11 @@ class AppCheckService {
 
   /// Get App Check token
   /// Returns null if App Check is not available or has not been initialized
-  Future<String?> getToken({bool forceRefresh = false}) async {
+  Future<String?> getToken() async {
     try {
-      final token = await FirebaseAppCheck.instance.getToken(
-        forceRefresh: forceRefresh,
-      );
+      final token = await FirebaseAppCheck.instance.getToken();
       _logger.d('App Check token obtained');
-      return token?.token;
+      return token;
     } catch (e) {
       _logger.w('Failed to get App Check token: $e');
       return null;
@@ -63,7 +61,7 @@ class AppCheckService {
     try {
       final token = await FirebaseAppCheck.instance.getLimitedUseToken();
       _logger.d('Limited use token obtained');
-      return token?.token;
+      return token;
     } catch (e) {
       _logger.w('Failed to get limited use token: $e');
       return null;
@@ -75,12 +73,12 @@ class AppCheckService {
 
   /// Get current platform
   String get currentPlatform {
-    if (Platform.isAndroid) {
+    if (kIsWeb) {
+      return 'web';
+    } else if (Platform.isAndroid) {
       return 'android';
     } else if (Platform.isIOS) {
       return 'ios';
-    } else if (Platform.isWeb) {
-      return 'web';
     } else {
       return 'unknown';
     }

@@ -92,15 +92,4 @@ class CrashReportingService {
     _logger.w('Triggering crash for testing');
     _crashlytics.crash();
   }
-
-  /// Enable/disable crash collection
-  Future<void> setCrashCollectionEnabled(bool enabled) async {
-    await _crashlytics.setCrashCollectionEnabled(enabled);
-    _logger.i('Crash collection enabled: $enabled');
-  }
-
-  /// Check if crash collection is enabled
-  bool get isCrashCollectionEnabled {
-    return _crashlytics.isCrashCollectionEnabled;
-  }
 }

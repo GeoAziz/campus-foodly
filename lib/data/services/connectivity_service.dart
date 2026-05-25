@@ -8,7 +8,7 @@ class ConnectivityService {
   static final Logger _logger = Logger();
 
   final Connectivity _connectivity = Connectivity();
-  ConnectivityResult? _lastResult;
+  List<ConnectivityResult>? _lastResult;
 
   factory ConnectivityService() {
     return _instance;
@@ -39,16 +39,18 @@ class ConnectivityService {
 
   /// Check if device is currently online
   bool get isOnline {
-    return _lastResult != null && _lastResult != ConnectivityResult.none;
+    return _lastResult != null &&
+        _lastResult!.isNotEmpty &&
+        !_lastResult!.contains(ConnectivityResult.none);
   }
 
   /// Get current connectivity status
-  ConnectivityResult? get currentStatus => _lastResult;
+  List<ConnectivityResult>? get currentStatus => _lastResult;
 
   /// Listen to connectivity changes
-  void Function(ConnectivityResult)? _listener;
+  void Function(List<ConnectivityResult>)? _listener;
 
-  void addListener(Function(ConnectivityResult) listener) {
+  void addListener(Function(List<ConnectivityResult>) listener) {
     _listener = listener;
   }
 
@@ -56,7 +58,7 @@ class ConnectivityService {
     _listener = null;
   }
 
-  void _notifyListeners(ConnectivityResult result) {
+  void _notifyListeners(List<ConnectivityResult> result) {
     _listener?.call(result);
   }
 

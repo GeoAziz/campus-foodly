@@ -44,14 +44,14 @@ class OrderInput {
         'deliveryAddress': deliveryAddress,
         'specialInstructions': specialInstructions,
         'status': 'pending',
-        'createdAt': FieldValue.serverTimestamp(),
+        'createdAt': firebase.FieldValue.serverTimestamp(),
       };
 }
 
 /// Pagination parameters for order queries
 class OrderPaginationParams {
   final int pageSize;
-  final DocumentSnapshot? startAfter;
+  final firebase.DocumentSnapshot? startAfter;
 
   OrderPaginationParams({
     this.pageSize = 20,
@@ -62,7 +62,7 @@ class OrderPaginationParams {
 /// Result of paginated order query
 class OrderQueryResult {
   final List<Order> orders;
-  final DocumentSnapshot? lastDocument;
+  final firebase.DocumentSnapshot? lastDocument;
   final bool hasMore;
 
   OrderQueryResult({
@@ -219,7 +219,7 @@ class FirestoreOrderRepository implements OrderRepository {
     try {
       await _firestore.collection('orders').doc(orderId).update({
         'status': newStatus,
-        'updatedAt': FieldValue.serverTimestamp(),
+        'updatedAt': firebase.FieldValue.serverTimestamp(),
       });
       _logger.i('Order status updated: $orderId -> $newStatus');
     } catch (e) {
