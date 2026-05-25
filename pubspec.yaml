@@ -73,7 +73,6 @@ dependencies:
   # Networking & Payment Processing
   http: ^1.1.0
   dio: ^5.4.0
-  pay: ^2.0.0
 
   # Logging & Error Handling
   logger: ^2.1.0
