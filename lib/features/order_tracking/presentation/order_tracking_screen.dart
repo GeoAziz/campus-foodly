@@ -237,7 +237,7 @@ class _TrackingHeaderCard extends StatelessWidget {
                 height: 52,
                 width: 52,
                 decoration: BoxDecoration(
-                  color: stageColor.withValues(alpha: 0.18),
+                  color: stageColor.withOpacity(0.18),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Icon(
@@ -261,7 +261,7 @@ class _TrackingHeaderCard extends StatelessWidget {
                     Text(
                       'Order #${tracking.orderId}',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Colors.white.withValues(alpha: 0.8),
+                            color: Colors.white.withOpacity(0.8),
                           ),
                     ),
                   ],
@@ -274,7 +274,7 @@ class _TrackingHeaderCard extends StatelessWidget {
           Text(
             tracking.statusDescription,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.9),
+                  color: Colors.white.withOpacity(0.9),
                   height: 1.45,
                 ),
           ),
@@ -531,7 +531,7 @@ class _DetailTile extends StatelessWidget {
           height: 44,
           width: 44,
           decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.12),
+            color: primaryColor.withOpacity(0.12),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Icon(icon, color: primaryColor),
@@ -597,7 +597,7 @@ class _TrackingMapCard extends StatelessWidget {
                     height: 36,
                     width: 36,
                     decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.12),
+                      color: primaryColor.withOpacity(0.12),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -633,7 +633,7 @@ class _TrackingMapCard extends StatelessWidget {
                             height: 56,
                             width: 56,
                             decoration: BoxDecoration(
-                              color: primaryColor.withValues(alpha: 0.12),
+                              color: primaryColor.withOpacity(0.12),
                               shape: BoxShape.circle,
                             ),
                             child: const Icon(
@@ -735,7 +735,7 @@ class _StatusPill extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.18),
+        color: color.withOpacity(0.18),
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(
@@ -765,9 +765,9 @@ class _MiniInfoTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(defaultPadding / 1.25),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.1),
+        color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
+        border: Border.all(color: Colors.white.withOpacity(0.12)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -777,7 +777,7 @@ class _MiniInfoTile extends StatelessWidget {
           Text(
             label,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.78),
+                  color: Colors.white.withOpacity(0.78),
                 ),
           ),
           const SizedBox(height: 4),
@@ -902,7 +902,7 @@ class _TrackingErrorState extends StatelessWidget {
                 height: 72,
                 width: 72,
                 decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.12),
+                  color: primaryColor.withOpacity(0.12),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(

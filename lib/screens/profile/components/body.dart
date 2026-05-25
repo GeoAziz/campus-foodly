@@ -103,7 +103,7 @@ class Body extends ConsumerWidget {
                         Icon(
                           Icons.notifications_outlined,
                           size: 24,
-                          color: titleColor.withValues(alpha: 0.64),
+                          color: titleColor.withOpacity(0.64),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
@@ -121,7 +121,7 @@ class Body extends ConsumerWidget {
                                 maxLines: 1,
                                 style: TextStyle(
                                   fontSize: 14,
-                                  color: titleColor.withValues(alpha: 0.54),
+                                  color: titleColor.withOpacity(0.54),
                                 ),
                               ),
                             ],
@@ -192,7 +192,7 @@ class ProfileMenuCard extends StatelessWidget {
                   height: 24,
                   width: 24,
                   colorFilter: ColorFilter.mode(
-                    titleColor.withValues(alpha: 0.64),
+                    titleColor.withOpacity(0.64),
                     BlendMode.srcIn,
                   ),
                 ),
@@ -219,7 +219,7 @@ class ProfileMenuCard extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Theme.of(context)
                                     .primaryColor
-                                    .withValues(alpha: 0.2),
+                                    .withOpacity(0.2),
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(4)),
                               ),
@@ -241,7 +241,7 @@ class ProfileMenuCard extends StatelessWidget {
                         maxLines: 1,
                         style: TextStyle(
                           fontSize: 14,
-                          color: titleColor.withValues(alpha: 0.54),
+                          color: titleColor.withOpacity(0.54),
                         ),
                       ),
                     ],
@@ -252,7 +252,7 @@ class ProfileMenuCard extends StatelessWidget {
                   Icons.arrow_forward_ios_outlined,
                   size: 20,
                   color:
-                      isComingSoon ? titleColor.withValues(alpha: 0.3) : null,
+                      isComingSoon ? titleColor.withOpacity(0.3) : null,
                 )
               ],
             ),

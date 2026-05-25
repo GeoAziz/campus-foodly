@@ -42,7 +42,7 @@ class ProfileNotificationsScreen extends ConsumerWidget {
                         color: Theme.of(context)
                             .colorScheme
                             .error
-                            .withValues(alpha: 0.15),
+                            .withOpacity(0.15),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                             color: Theme.of(context).colorScheme.error),
@@ -61,7 +61,7 @@ class ProfileNotificationsScreen extends ConsumerWidget {
                         color: Theme.of(context)
                             .colorScheme
                             .primary
-                            .withValues(alpha: 0.15),
+                            .withOpacity(0.15),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                             color: Theme.of(context).colorScheme.primary),

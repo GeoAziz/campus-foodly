@@ -47,7 +47,7 @@ class OrderDeliveredScreen extends ConsumerWidget {
                       height: 88,
                       width: 88,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.2),
+                        color: Colors.white.withOpacity(0.2),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
@@ -71,7 +71,7 @@ class OrderDeliveredScreen extends ConsumerWidget {
                       'Thanks for ordering with us. Here is your delivery summary.',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Colors.white.withValues(alpha: 0.9),
+                            color: Colors.white.withOpacity(0.9),
                             height: 1.4,
                           ),
                     ),

@@ -40,7 +40,7 @@ class AddToOrderScreen extends ConsumerWidget {
             style: ElevatedButton.styleFrom(
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(100))),
-              backgroundColor: Colors.black.withValues(alpha: 0.5),
+              backgroundColor: Colors.black.withOpacity(0.5),
               padding: EdgeInsets.zero,
             ),
             child: const Icon(Icons.close, color: Colors.white),

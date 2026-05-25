@@ -55,7 +55,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
                       .textTheme
                       .bodyLarge!
                       .color!
-                      .withValues(alpha: 0.5),
+                      .withOpacity(0.5),
                   BlendMode.srcIn,
                 ),
               ),
@@ -77,7 +77,7 @@ class RestaurantInfoBigCard extends StatelessWidget {
                       .textTheme
                       .bodyLarge!
                       .color!
-                      .withValues(alpha: 0.5),
+                      .withOpacity(0.5),
                   BlendMode.srcIn,
                 ),
               ),

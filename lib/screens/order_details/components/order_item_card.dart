@@ -104,7 +104,7 @@ class NumOfItems extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(4)),
         border: Border.all(
-            width: 0.5, color: const Color(0xFF868686).withValues(alpha: 0.3)),
+            width: 0.5, color: const Color(0xFF868686).withOpacity(0.3)),
       ),
       child: Text(
         numOfItem.toString(),

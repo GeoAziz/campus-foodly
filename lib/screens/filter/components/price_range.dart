@@ -74,7 +74,7 @@ class RoundedButton extends StatelessWidget {
             side: BorderSide(
                 color: isActive
                     ? primaryColor
-                    : bodyTextColor.withValues(alpha: 0.1)),
+                    : bodyTextColor.withOpacity(0.1)),
           ),
         ),
         onPressed: press,

@@ -15,7 +15,7 @@ class SmallDot extends StatelessWidget {
             .textTheme
             .bodyLarge!
             .color!
-            .withValues(alpha: 0.4),
+            .withOpacity(0.4),
         shape: BoxShape.circle,
       ),
     );

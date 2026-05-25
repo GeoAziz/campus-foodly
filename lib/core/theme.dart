@@ -61,7 +61,7 @@ final InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
   enabledBorder: kDefaultOutlineInputBorder,
   focusedBorder: kDefaultOutlineInputBorder.copyWith(
       borderSide: BorderSide(
-    color: primaryColor.withValues(alpha: 0.5),
+    color: primaryColor.withOpacity(0.5),
   )),
   errorBorder: kDefaultOutlineInputBorder.copyWith(
     borderSide: kErrorBorderSide,

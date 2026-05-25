@@ -26,7 +26,7 @@ class RequiredSectionTitle extends StatelessWidget {
             vertical: defaultPadding / 4,
           ),
           decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.2),
+              color: accentColor.withOpacity(0.2),
               borderRadius: const BorderRadius.all(Radius.circular(4))),
           child: Text(
             "Required".toUpperCase(),

@@ -27,7 +27,7 @@ class ProfilePasswordScreen extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withValues(alpha: 0.1),
+                  color: Colors.blue.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -44,7 +44,7 @@ class ProfilePasswordScreen extends ConsumerWidget {
                     color: Theme.of(context)
                         .colorScheme
                         .error
-                        .withValues(alpha: 0.15),
+                        .withOpacity(0.15),
                     borderRadius: BorderRadius.circular(8),
                     border:
                         Border.all(color: Theme.of(context).colorScheme.error),
@@ -62,7 +62,7 @@ class ProfilePasswordScreen extends ConsumerWidget {
                     color: Theme.of(context)
                         .colorScheme
                         .primary
-                        .withValues(alpha: 0.15),
+                        .withOpacity(0.15),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                         color: Theme.of(context).colorScheme.primary),

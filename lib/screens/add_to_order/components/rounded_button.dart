@@ -22,7 +22,7 @@ class RoundedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: const BorderRadius.all(Radius.circular(100)),
             side: BorderSide(
-              color: const Color(0xFF979797).withValues(alpha: 0.1),
+              color: const Color(0xFF979797).withOpacity(0.1),
             ),
           ),
         ),

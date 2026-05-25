@@ -30,7 +30,7 @@ class RoundedCheckboxListTile extends StatelessWidget {
                 Text(
                   text,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: titleColor.withValues(alpha: 0.84), height: 1),
+                      color: titleColor.withOpacity(0.84), height: 1),
                 )
               ],
             ),
@@ -61,8 +61,8 @@ class CircleCheckBox extends StatelessWidget {
         shape: BoxShape.circle,
         border: Border.all(
           color: isActive
-              ? primaryColor.withValues(alpha: 0.54)
-              : const Color(0xFF868686).withValues(alpha: 0.54),
+              ? primaryColor.withOpacity(0.54)
+              : const Color(0xFF868686).withOpacity(0.54),
           width: 0.8,
         ),
       ),

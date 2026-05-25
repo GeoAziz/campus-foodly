@@ -68,7 +68,7 @@ class RestaurantInfoMediumCard extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!
-                      .copyWith(color: titleColor.withValues(alpha: 0.74)),
+                      .copyWith(color: titleColor.withOpacity(0.74)),
                 ),
                 const SmallDot(),
                 Text(
@@ -76,7 +76,7 @@ class RestaurantInfoMediumCard extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelMedium!
-                      .copyWith(color: titleColor.withValues(alpha: 0.74)),
+                      .copyWith(color: titleColor.withOpacity(0.74)),
                 )
               ],
             )

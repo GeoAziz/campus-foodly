@@ -42,7 +42,7 @@ class ProfileAddressesScreen extends ConsumerWidget {
                         color: Theme.of(context)
                             .colorScheme
                             .onSurface
-                            .withValues(alpha: 0.4),
+                            .withOpacity(0.4),
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -92,7 +92,7 @@ class ProfileAddressesScreen extends ConsumerWidget {
                                       color: Theme.of(context)
                                           .colorScheme
                                           .primary
-                                          .withValues(alpha: 0.15),
+                                          .withOpacity(0.15),
                                       borderRadius: const BorderRadius.all(
                                         Radius.circular(4),
                                       ),
