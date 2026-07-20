@@ -6,12 +6,13 @@ import '../services/firebase_service.dart';
 import '../services/storage_service.dart';
 
 abstract class RestaurantRepository {
-  Future<List<Restaurant>> fetchRestaurants();
+  Future<List<Restaurant>> fetchRestaurants({String? campusId});
 
   /// Fetch restaurants with pagination support
   Future<List<Restaurant>> fetchRestaurantsPage({
     required int pageNumber,
     required int pageSize,
+    String? campusId,
   });
 }
 
@@ -21,8 +22,14 @@ class FirestoreRestaurantRepository implements RestaurantRepository {
   final FirebaseFirestore _firestore;
 
   @override
-  Future<List<Restaurant>> fetchRestaurants() async {
-    final snapshot = await _firestore.collection('restaurants').get();
+  Future<List<Restaurant>> fetchRestaurants({String? campusId}) async {
+    Query<Map<String, dynamic>> query = _firestore.collection('restaurants');
+
+    if (campusId != null) {
+      query = query.where('campusId', isEqualTo: campusId);
+    }
+
+    final snapshot = await query.get();
 
     final restaurants = snapshot.docs
         .map((doc) => Restaurant.fromMap(doc.id, doc.data()))
@@ -55,13 +62,19 @@ class FirestoreRestaurantRepository implements RestaurantRepository {
   Future<List<Restaurant>> fetchRestaurantsPage({
     required int pageNumber,
     required int pageSize,
+    String? campusId,
   }) async {
     // Firestore pagination: fetch all sorted, then slice locally
     // This is a limitation of Firestore's API which doesn't support offset natively
-    final snapshot = await _firestore
+    Query<Map<String, dynamic>> query = _firestore
         .collection('restaurants')
-        .orderBy('name') // Consistent ordering for pagination
-        .get();
+        .orderBy('name'); // Consistent ordering for pagination
+
+    if (campusId != null) {
+      query = query.where('campusId', isEqualTo: campusId);
+    }
+
+    final snapshot = await query.get();
 
     final allRestaurants = snapshot.docs
         .map((doc) => Restaurant.fromMap(doc.id, doc.data()))
@@ -102,7 +115,7 @@ class FirestoreRestaurantRepository implements RestaurantRepository {
 
 class MockRestaurantRepository implements RestaurantRepository {
   @override
-  Future<List<Restaurant>> fetchRestaurants() async {
+  Future<List<Restaurant>> fetchRestaurants({String? campusId}) async {
     return demoMediumCardData
         .asMap()
         .entries
@@ -134,8 +147,9 @@ class MockRestaurantRepository implements RestaurantRepository {
   Future<List<Restaurant>> fetchRestaurantsPage({
     required int pageNumber,
     required int pageSize,
+    String? campusId,
   }) async {
-    final allRestaurants = await fetchRestaurants();
+    final allRestaurants = await fetchRestaurants(campusId: campusId);
     final offset = pageNumber * pageSize;
     final end = (offset + pageSize).clamp(0, allRestaurants.length);
 

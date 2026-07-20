@@ -20,6 +20,7 @@ void main() {
           userId: 'user-1',
           restaurantId: 'rest-1',
           status: 'pending',
+          idempotencyKey: 'test-key-1',
           createdAt: DateTime(2026, 4, 20, 10, 30),
           items: const [
             OrderItem(

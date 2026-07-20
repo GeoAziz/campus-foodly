@@ -16,6 +16,9 @@
     "seed:preview": "node seeds/seed_firestore.js --dry-run --verbose",
     "seed:reset": "node seeds/seed_firestore.js --reset",
     "seed:reset:dry-run": "node seeds/seed_firestore.js --reset --dry-run",
+    "seed:campus": "node seeds/seed_firestore.js --source-dir data/normalized_campus --collections restaurants,menu_items,featured_items,menu_tabs,restaurant_details,categories --reset",
+    "seed:campus:dry-run": "node seeds/seed_firestore.js --source-dir data/normalized_campus --collections restaurants,menu_items,featured_items,menu_tabs,restaurant_details,categories --reset --dry-run",
+    "seed:campus:preview": "node seeds/seed_firestore.js --source-dir data/normalized_campus --collections restaurants,menu_items,featured_items,menu_tabs,restaurant_details,categories --reset --dry-run --verbose",
     "validate:hero": "node seeds/validate_home_hero_images.js"
   }
 }

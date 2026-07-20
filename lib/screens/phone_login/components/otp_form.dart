@@ -44,11 +44,11 @@ class _OtpFormState extends ConsumerState<OtpForm> {
     _pin2Controller.dispose();
     _pin3Controller.dispose();
     _pin4Controller.dispose();
-    super.dispose();
     _pin1Node!.dispose();
     _pin2Node!.dispose();
     _pin3Node!.dispose();
     _pin4Node!.dispose();
+    super.dispose();
   }
 
   @override

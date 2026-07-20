@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../constants.dart';
 
 import '../../components/dot_indicators.dart';
@@ -50,8 +51,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               child: ElevatedButton(
-                onPressed: () {
-                  context.pushNamed(AppRoutes.signIn);
+                onPressed: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setBool('has_seen_onboarding', true);
+                  if (context.mounted) {
+                    context.pushNamed(AppRoutes.signIn);
+                  }
                 },
                 child: Text("Get Started".toUpperCase()),
               ),
@@ -76,7 +81,7 @@ List<Map<String, dynamic>> demoData = [
     "illustration": "assets/Illustrations/Illustrations_2.svg",
     "title": "Free delivery offers",
     "text":
-        "Free delivery for new customers via Apple Pay\nand others payment methods.",
+        "Free delivery for new customers via M-Pesa\nand other payment methods.",
   },
   {
     "illustration": "assets/Illustrations/Illustrations_3.svg",

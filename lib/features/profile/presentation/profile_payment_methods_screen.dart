@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../components/skeleton/skeleton_line.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../providers/payment_methods_controller.dart';
 
@@ -29,7 +30,38 @@ class ProfilePaymentMethodsScreen extends ConsumerWidget {
         elevation: 0,
       ),
       body: paymentState.isLoading && paymentState.methods.isEmpty
-          ? const Center(child: CircularProgressIndicator())
+          ? SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: List.generate(
+                    2,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SkeletonLine(
+                                height: 16,
+                                width: 100,
+                              ),
+                              const SizedBox(height: 12),
+                              SkeletonLine(
+                                height: 14,
+                                width: 200,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           : paymentState.methods.isEmpty
               ? Center(
                   child: Column(

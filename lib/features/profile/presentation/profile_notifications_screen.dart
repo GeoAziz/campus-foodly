@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../components/skeleton/skeleton_line.dart';
+import '../../../components/skeleton/skeleton_rounded_container.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../providers/notification_preferences_controller.dart';
 
@@ -30,7 +32,46 @@ class ProfileNotificationsScreen extends ConsumerWidget {
         elevation: 0,
       ),
       body: notifyState.isLoading && notifyState.preferences == null
-          ? const Center(child: CircularProgressIndicator())
+          ? SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: List.generate(
+                    5,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SkeletonLine(
+                                  height: 16,
+                                  width: 150,
+                                ),
+                                const SizedBox(height: 8),
+                                SkeletonLine(
+                                  height: 12,
+                                  width: 200,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          SkeletonRoundedContainer(
+                            height: 24,
+                            width: 50,
+                            radius: 12,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           : SingleChildScrollView(
               child: Column(
                 children: [
@@ -86,7 +127,7 @@ class ProfileNotificationsScreen extends ConsumerWidget {
                           title: 'Push Notifications',
                           subtitle: 'Receive push notifications on your device',
                           value: notifyState.preferences!.pushNotifications,
-                          onChanged: (_) =>
+                          onChanged: (value) =>
                               controller.togglePushNotifications(),
                         ),
                         _NotificationSwitch(
@@ -94,27 +135,29 @@ class ProfileNotificationsScreen extends ConsumerWidget {
                           subtitle:
                               'Get notified when your order status changes',
                           value: notifyState.preferences!.orderUpdates,
-                          onChanged: (_) => controller.toggleOrderUpdates(),
+                          onChanged: (value) => controller.toggleOrderUpdates(),
                         ),
                         _NotificationSwitch(
                           title: 'Promotions',
                           subtitle: 'Receive special offers and discounts',
                           value: notifyState.preferences!.promotions,
-                          onChanged: (_) => controller.togglePromotions(),
+                          onChanged: (value) => controller.togglePromotions(),
                         ),
                         _NotificationSwitch(
                           title: 'New Restaurants',
                           subtitle:
                               'Be the first to know about new restaurants',
                           value: notifyState.preferences!.newRestaurants,
-                          onChanged: (_) => controller.toggleNewRestaurants(),
+                          onChanged: (value) =>
+                              controller.toggleNewRestaurants(),
                         ),
                         _NotificationSwitch(
                           title: 'Restaurant Offers',
                           subtitle:
                               'Receive special offers from your favorite restaurants',
                           value: notifyState.preferences!.restaurantOffers,
-                          onChanged: (_) => controller.toggleRestaurantOffers(),
+                          onChanged: (value) =>
+                              controller.toggleRestaurantOffers(),
                         ),
                       ],
                     ),

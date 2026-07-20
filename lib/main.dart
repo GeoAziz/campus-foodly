@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'dart:async';
 
 import 'core/theme.dart';
@@ -16,6 +17,13 @@ import 'data/services/logger_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // TODO: Load environment variables once flutter_dotenv is available:
+  // import 'package:flutter_dotenv/flutter_dotenv.dart';
+  // await dotenv.load(fileName: '.env.development');
+
+  // Initialize Hive for local storage before any service uses it
+  await Hive.initFlutter();
 
   // Initialize logging first
   final logger = LoggerService();
@@ -146,6 +154,9 @@ class MyApp extends ConsumerWidget {
     final themeModeAsync = ref.watch(themeModeProvider);
     final themeMode = themeModeAsync.valueOrNull ?? ThemeMode.system;
     final router = ref.watch(routerProvider);
+
+    // Register router with notification service for deep linking
+    NotificationService.registerRouter(router);
 
     return MaterialApp.router(
       title: 'Campus Foodly',

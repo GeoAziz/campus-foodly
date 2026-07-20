@@ -15,7 +15,7 @@ class AdminApp extends ConsumerWidget {
     final router = ref.watch(adminRouterProvider);
 
     return MaterialApp.router(
-      title: 'OrderEats Admin',
+      title: 'Campus Foodly Admin',
       routerConfig: router,
     );
   }

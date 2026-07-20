@@ -9,9 +9,12 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>(
   (ref) => buildRestaurantRepository(),
 );
 
-final restaurantsProvider = FutureProvider<List<Restaurant>>(
-  (ref) => ref.watch(restaurantRepositoryProvider).fetchRestaurants(),
-);
+final restaurantsProvider = FutureProvider<List<Restaurant>>((ref) async {
+  final repository = ref.watch(restaurantRepositoryProvider);
+  // In a real app, you'd get campus from selectedCampusIdProvider
+  // For now, fetch all restaurants (campus filtering can be added later if needed)
+  return repository.fetchRestaurants();
+});
 
 const _maxFallbackFeaturedRestaurants = 5;
 const _maxBestPickRestaurants = 5;

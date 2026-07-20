@@ -8,6 +8,7 @@ class AppUser {
     this.displayName,
     this.photoUrl,
     this.role = 'user',
+    this.campusId,
   });
 
   final String id; // uid from Firebase Auth
@@ -16,6 +17,7 @@ class AppUser {
   final String? displayName;
   final String? photoUrl;
   final String role; // 'user', 'restaurant', 'delivery', 'admin'
+  final String? campusId;
 
   factory AppUser.fromFirebaseUser(User user, {String role = 'user'}) {
     return AppUser(
@@ -36,6 +38,7 @@ class AppUser {
       'displayName': displayName,
       'photoUrl': photoUrl,
       'role': role,
+      'campusId': campusId,
     };
   }
 
@@ -46,6 +49,7 @@ class AppUser {
     String? displayName,
     String? photoUrl,
     String? role,
+    String? campusId,
   }) {
     return AppUser(
       id: id ?? this.id,
@@ -54,6 +58,7 @@ class AppUser {
       displayName: displayName ?? this.displayName,
       photoUrl: photoUrl ?? this.photoUrl,
       role: role ?? this.role,
+      campusId: campusId ?? this.campusId,
     );
   }
 }

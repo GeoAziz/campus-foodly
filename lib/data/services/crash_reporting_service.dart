@@ -11,6 +11,8 @@ class CrashReportingService {
 
   late final FirebaseCrashlytics _crashlytics;
   bool _initialized = false;
+  final List<String> _breadcrumbs = [];
+  static const int _maxBreadcrumbs = 50;
 
   factory CrashReportingService() {
     return _instance;
@@ -42,6 +44,38 @@ class CrashReportingService {
     _logger.i('CrashReportingService initialized');
   }
 
+  /// Add a breadcrumb for debugging
+  void addBreadcrumb({
+    required String message,
+    String? category,
+    Map<String, dynamic>? data,
+  }) {
+    try {
+      final timestamp = DateTime.now().toIso8601String();
+      final breadcrumb = '[$timestamp] $category: $message';
+
+      _breadcrumbs.add(breadcrumb);
+
+      // Keep only recent breadcrumbs
+      if (_breadcrumbs.length > _maxBreadcrumbs) {
+        _breadcrumbs.removeAt(0);
+      }
+
+      // Set as custom key for crash reports
+      _crashlytics.setCustomKey('breadcrumbs_count', _breadcrumbs.length);
+
+      if (data != null) {
+        data.forEach((key, value) {
+          _crashlytics.setCustomKey('breadcrumb_$key', value);
+        });
+      }
+
+      _logger.d('Breadcrumb added: $breadcrumb');
+    } catch (e) {
+      _logger.e('Error adding breadcrumb: $e');
+    }
+  }
+
   /// Record a custom error/exception
   Future<void> recordError({
     required dynamic exception,
@@ -49,19 +83,33 @@ class CrashReportingService {
     String? reason,
     bool fatal = false,
   }) async {
-    _logger.e('Recording error: $exception');
-    await _crashlytics.recordError(
-      exception,
-      stackTrace,
-      reason: reason,
-      fatal: fatal,
-    );
+    try {
+      _logger.e('Recording error: $exception');
+
+      // Add breadcrumbs to context
+      for (int i = 0; i < _breadcrumbs.length; i++) {
+        _crashlytics.setCustomKey('breadcrumb_$i', _breadcrumbs[i]);
+      }
+
+      await _crashlytics.recordError(
+        exception,
+        stackTrace,
+        reason: reason,
+        fatal: fatal,
+      );
+    } catch (e) {
+      _logger.e('Error recording crash: $e');
+    }
   }
 
   /// Set custom key-value pairs for context
   void setCustomKey({required String key, required dynamic value}) {
-    _crashlytics.setCustomKey(key, value);
-    _logger.d('Set custom key: $key = $value');
+    try {
+      _crashlytics.setCustomKey(key, value);
+      _logger.d('Set custom key: $key = $value');
+    } catch (e) {
+      _logger.e('Error setting custom key: $e');
+    }
   }
 
   /// Set user information for error reports
@@ -70,21 +118,43 @@ class CrashReportingService {
     String? email,
     String? username,
   }) async {
-    _crashlytics.setUserIdentifier(userId);
-    if (email != null) {
-      _crashlytics.setCustomKey('email', email);
+    try {
+      _crashlytics.setUserIdentifier(userId);
+      if (email != null) {
+        _crashlytics.setCustomKey('email', email);
+      }
+      if (username != null) {
+        _crashlytics.setCustomKey('username', username);
+      }
+      _logger.i('User info set: $userId');
+    } catch (e) {
+      _logger.e('Error setting user info: $e');
     }
-    if (username != null) {
-      _crashlytics.setCustomKey('username', username);
-    }
-    _logger.i('User info set: $userId');
   }
 
   /// Clear user information (e.g., on logout)
   Future<void> clearUserInfo() async {
-    _logger.i('Clearing user info');
-    // Note: Firebase Crashlytics doesn't have a direct clear method
-    // Instead, set empty values or use the next userId
+    try {
+      // Clear breadcrumbs on logout
+      _breadcrumbs.clear();
+      _crashlytics.setCustomKey('breadcrumbs_count', 0);
+
+      // Set empty user identifier
+      _crashlytics.setUserIdentifier('');
+
+      _logger.i('User info and breadcrumbs cleared');
+    } catch (e) {
+      _logger.e('Error clearing user info: $e');
+    }
+  }
+
+  /// Get breadcrumbs for debugging
+  List<String> getBreadcrumbs() => List.from(_breadcrumbs);
+
+  /// Clear all breadcrumbs
+  void clearBreadcrumbs() {
+    _breadcrumbs.clear();
+    _logger.d('Breadcrumbs cleared');
   }
 
   /// Manually trigger a crash (for testing)

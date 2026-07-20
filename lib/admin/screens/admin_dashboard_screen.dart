@@ -49,7 +49,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                   child: FutureBuilder(
                     future: ref
                         .read(adminOperationsProvider)
-                        .fetchRecentOrders(user.id),
+                        .fetchRecentOrders(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(child: CircularProgressIndicator());

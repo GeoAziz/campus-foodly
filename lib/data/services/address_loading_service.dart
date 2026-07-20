@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
+
+final _logger = Logger();
 
 /// Service to manage address loading and prevent race conditions
 /// Ensures only the latest request completes while older requests are ignored
@@ -16,12 +19,22 @@ class AddressLoadingService {
   // Track active request IDs to ignore stale responses
   final Map<String, String> _activeRequests = {};
 
+  // Track request creation times for automatic cleanup
+  final Map<String, DateTime> _requestTimes = {};
+  static const Duration _requestTimeout = Duration(minutes: 5);
+
   /// Generate a unique request ID for address loading
   /// Returns a string that uniquely identifies this request
   String generateRequestId(String userId) {
     final id =
         '${userId}_${DateTime.now().millisecondsSinceEpoch}_${DateTime.now().microsecond}';
     _activeRequests[userId] = id;
+    _requestTimes[id] = DateTime.now();
+
+    // Clean up old requests
+    _cleanupExpiredRequests();
+
+    _logger.d('[AddressLoadingService] Generated request ID: $id');
     return id;
   }
 
@@ -33,19 +46,50 @@ class AddressLoadingService {
 
   /// Mark a request as complete
   void completeRequest(String userId) {
-    _activeRequests.remove(userId);
+    final requestId = _activeRequests[userId];
+    if (requestId != null) {
+      _activeRequests.remove(userId);
+      _requestTimes.remove(requestId);
+      _logger.d('[AddressLoadingService] Completed request: $requestId');
+    }
+  }
+
+  /// Clean up expired requests to prevent memory leaks
+  void _cleanupExpiredRequests() {
+    final now = DateTime.now();
+    final idsToRemove = <String>[];
+
+    _requestTimes.forEach((id, createdAt) {
+      if (now.difference(createdAt) > _requestTimeout) {
+        idsToRemove.add(id);
+      }
+    });
+
+    for (final id in idsToRemove) {
+      _requestTimes.remove(id);
+      // Also remove from active requests if present
+      _activeRequests.removeWhere((_, v) => v == id);
+    }
+
+    if (idsToRemove.isNotEmpty) {
+      _logger.w(
+        '[AddressLoadingService] Cleaned up ${idsToRemove.length} expired requests',
+      );
+    }
   }
 
   /// Clear all active requests (usually on logout)
   void clearAll() {
     _activeRequests.clear();
-    debugPrint('[AddressLoadingService] Cleared all active requests');
+    _requestTimes.clear();
+    _logger.d('[AddressLoadingService] Cleared all active requests');
   }
 
   /// Get stats for debugging
   Map<String, dynamic> getStats() {
     return {
       'activeRequests': _activeRequests.length,
+      'pendingRequestIds': _requestTimes.length,
       'userIds': _activeRequests.keys.toList(),
     };
   }

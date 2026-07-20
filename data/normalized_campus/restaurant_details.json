@@ -5,7 +5,7 @@
     "foodTypes": [
       "Kenyan Staples"
     ],
-    "ratingCount": 0,
+    "ratingCount": 129,
     "deliveryFee": "KES 30",
     "deliveryTime": 10,
     "takeAwayLabel": "Take away"
@@ -17,7 +17,7 @@
       "Kenyan Staples",
       "Street Food"
     ],
-    "ratingCount": 0,
+    "ratingCount": 91,
     "deliveryFee": "KES 30",
     "deliveryTime": 8,
     "takeAwayLabel": "Take away"
@@ -28,7 +28,7 @@
     "foodTypes": [
       "Grilled & Choma"
     ],
-    "ratingCount": 0,
+    "ratingCount": 178,
     "deliveryFee": "KES 30",
     "deliveryTime": 15,
     "takeAwayLabel": "Take away"
@@ -39,7 +39,7 @@
     "foodTypes": [
       "Street Food"
     ],
-    "ratingCount": 0,
+    "ratingCount": 154,
     "deliveryFee": "KES 30",
     "deliveryTime": 5,
     "takeAwayLabel": "Take away"
@@ -51,7 +51,7 @@
       "Breakfast",
       "Drinks & Juices"
     ],
-    "ratingCount": 0,
+    "ratingCount": 142,
     "deliveryFee": "KES 30",
     "deliveryTime": 7,
     "takeAwayLabel": "Take away"
@@ -62,7 +62,7 @@
     "foodTypes": [
       "Pilau & Rice"
     ],
-    "ratingCount": 0,
+    "ratingCount": 152,
     "deliveryFee": "KES 30",
     "deliveryTime": 12,
     "takeAwayLabel": "Take away"
@@ -73,7 +73,7 @@
     "foodTypes": [
       "Kenyan Staples"
     ],
-    "ratingCount": 0,
+    "ratingCount": 118,
     "deliveryFee": "KES 30",
     "deliveryTime": 10,
     "takeAwayLabel": "Take away"
@@ -84,7 +84,7 @@
     "foodTypes": [
       "Fast Food"
     ],
-    "ratingCount": 0,
+    "ratingCount": 207,
     "deliveryFee": "KES 30",
     "deliveryTime": 12,
     "takeAwayLabel": "Take away"
@@ -95,7 +95,7 @@
     "foodTypes": [
       "Drinks & Juices"
     ],
-    "ratingCount": 0,
+    "ratingCount": 123,
     "deliveryFee": "KES 30",
     "deliveryTime": 5,
     "takeAwayLabel": "Take away"
@@ -107,8 +107,270 @@
       "Coastal Kenyan",
       "Pilau & Rice"
     ],
-    "ratingCount": 0,
+    "ratingCount": 216,
     "deliveryFee": "KES 30",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-pizza-point",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "foodTypes": [
+      "Pizza",
+      "Fast Food"
+    ],
+    "ratingCount": 214,
+    "deliveryFee": "KES 50",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-shawarma-hub",
+    "restaurantId": "restaurants-usiu-shawarma-hub",
+    "foodTypes": [
+      "Shawarma & Wraps",
+      "Fast Food"
+    ],
+    "ratingCount": 178,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-wok-and-roll",
+    "restaurantId": "restaurants-usiu-wok-and-roll",
+    "foodTypes": [
+      "Chinese",
+      "Fast Food"
+    ],
+    "ratingCount": 132,
+    "deliveryFee": "KES 50",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-burger-republic",
+    "restaurantId": "restaurants-usiu-burger-republic",
+    "foodTypes": [
+      "Fast Food"
+    ],
+    "ratingCount": 203,
+    "deliveryFee": "KES 50",
+    "deliveryTime": 20,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-green-bowl",
+    "restaurantId": "restaurants-usiu-green-bowl",
+    "foodTypes": [
+      "Healthy",
+      "Drinks & Juices"
+    ],
+    "ratingCount": 96,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-java-junction",
+    "restaurantId": "restaurants-usiu-java-junction",
+    "foodTypes": [
+      "Breakfast",
+      "Drinks & Juices"
+    ],
+    "ratingCount": 241,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-sweet-tooth",
+    "restaurantId": "restaurants-usiu-sweet-tooth",
+    "foodTypes": [
+      "Desserts",
+      "Drinks & Juices"
+    ],
+    "ratingCount": 88,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-usiu-mama-oliech",
+    "restaurantId": "restaurants-usiu-mama-oliech",
+    "foodTypes": [
+      "Kenyan Staples",
+      "Coastal Kenyan"
+    ],
+    "ratingCount": 156,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 20,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-desi-restaurant",
+    "restaurantId": "restaurants-pac-desi-restaurant",
+    "foodTypes": [
+      "Indian"
+    ],
+    "ratingCount": 142,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-mirema-kitchen",
+    "restaurantId": "restaurants-pac-mirema-kitchen",
+    "foodTypes": [
+      "Kenyan Staples"
+    ],
+    "ratingCount": 118,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-pilau-pot",
+    "restaurantId": "restaurants-pac-pilau-pot",
+    "foodTypes": [
+      "Pilau & Rice"
+    ],
+    "ratingCount": 134,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 20,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-chapati-junction",
+    "restaurantId": "restaurants-pac-chapati-junction",
+    "foodTypes": [
+      "Kenyan Staples",
+      "Street Food"
+    ],
+    "ratingCount": 87,
+    "deliveryFee": "Free",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-choma-grill",
+    "restaurantId": "restaurants-pac-choma-grill",
+    "foodTypes": [
+      "Grilled & Choma"
+    ],
+    "ratingCount": 121,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-fresh-blend",
+    "restaurantId": "restaurants-pac-fresh-blend",
+    "foodTypes": [
+      "Drinks & Juices"
+    ],
+    "ratingCount": 74,
+    "deliveryFee": "Free",
+    "deliveryTime": 10,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-pac-coast-flavors",
+    "restaurantId": "restaurants-pac-coast-flavors",
+    "foodTypes": [
+      "Coastal Kenyan"
+    ],
+    "ratingCount": 93,
+    "deliveryFee": "KES 40",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-mess-hall",
+    "restaurantId": "restaurants-ku-mess-hall",
+    "foodTypes": [
+      "Kenyan Staples"
+    ],
+    "ratingCount": 312,
+    "deliveryFee": "Free",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-comrade-kibanda",
+    "restaurantId": "restaurants-ku-comrade-kibanda",
+    "foodTypes": [
+      "Street Food",
+      "Kenyan Staples"
+    ],
+    "ratingCount": 268,
+    "deliveryFee": "Free",
+    "deliveryTime": 10,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-nyama-spot",
+    "restaurantId": "restaurants-ku-nyama-spot",
+    "foodTypes": [
+      "Grilled & Choma"
+    ],
+    "ratingCount": 187,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 25,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-pilau-palace",
+    "restaurantId": "restaurants-ku-pilau-palace",
+    "foodTypes": [
+      "Pilau & Rice"
+    ],
+    "ratingCount": 203,
+    "deliveryFee": "KES 30",
+    "deliveryTime": 20,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-fries-and-fry",
+    "restaurantId": "restaurants-ku-fries-and-fry",
+    "foodTypes": [
+      "Fast Food"
+    ],
+    "ratingCount": 224,
+    "deliveryFee": "Free",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-juice-bar",
+    "restaurantId": "restaurants-ku-juice-bar",
+    "foodTypes": [
+      "Drinks & Juices"
+    ],
+    "ratingCount": 98,
+    "deliveryFee": "Free",
+    "deliveryTime": 10,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-morning-fuel",
+    "restaurantId": "restaurants-ku-morning-fuel",
+    "foodTypes": [
+      "Breakfast"
+    ],
+    "ratingCount": 141,
+    "deliveryFee": "Free",
+    "deliveryTime": 15,
+    "takeAwayLabel": "Take away"
+  },
+  {
+    "id": "restaurant-details-ku-githeri-house",
+    "restaurantId": "restaurants-ku-githeri-house",
+    "foodTypes": [
+      "Kenyan Staples"
+    ],
+    "ratingCount": 176,
+    "deliveryFee": "Free",
     "deliveryTime": 15,
     "takeAwayLabel": "Take away"
   }

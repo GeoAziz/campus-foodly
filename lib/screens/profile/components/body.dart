@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../constants.dart';
 import '../../../core/routes.dart';
 import '../../../data/providers/auth_provider.dart';
+import '../../../data/providers/role_based_access_provider.dart';
 import '../../../data/providers/theme_provider.dart';
 import '../../../data/providers/cart_provider.dart';
 
@@ -16,6 +17,7 @@ class Body extends ConsumerWidget {
     final themeModeAsync = ref.watch(themeModeProvider);
     final themeMode = themeModeAsync.valueOrNull ?? ThemeMode.system;
     final isDarkMode = themeMode == ThemeMode.dark;
+    final userRole = ref.watch(userRoleProvider);
 
     return SafeArea(
       child: SingleChildScrollView(
@@ -138,6 +140,33 @@ class Body extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: defaultPadding / 2),
+              ProfileMenuCard(
+                svgSrc: "assets/icons/profile.svg",
+                title: "Support Tickets",
+                subTitle: "Get help with orders and payments",
+                press: () => context.pushNamed(AppRoutes.supportTickets),
+              ),
+              if (userRole == UserRole.admin)
+                ProfileMenuCard(
+                  svgSrc: "assets/icons/profile.svg",
+                  title: "Admin Dashboard",
+                  subTitle: "Manage orders, restaurants, and users",
+                  press: () => context.pushNamed(AppRoutes.adminDashboard),
+                ),
+              if (userRole == UserRole.restaurantOwner)
+                ProfileMenuCard(
+                  svgSrc: "assets/icons/profile.svg",
+                  title: "Restaurant Dashboard",
+                  subTitle: "View and manage incoming orders",
+                  press: () => context.pushNamed(AppRoutes.restaurantDashboard),
+                ),
+              if (userRole == UserRole.deliveryDriver)
+                ProfileMenuCard(
+                  svgSrc: "assets/icons/profile.svg",
+                  title: "Driver Dashboard",
+                  subTitle: "View and manage your deliveries",
+                  press: () => context.pushNamed(AppRoutes.driverDashboard),
+                ),
               ProfileMenuCard(
                 svgSrc: "assets/icons/logout.svg",
                 title: "Sign Out",

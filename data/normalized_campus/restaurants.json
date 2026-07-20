@@ -2,10 +2,10 @@
   {
     "id": "restaurants-kca-mama-njeri",
     "name": "Mama Njeri's Kitchen",
-    "image": "https://source.unsplash.com/400x400/?kenyan,woman,cook,food,africa,kitchen",
+    "image": "https://images.unsplash.com/photo-1739217744880-472f59559cc5?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Opposite KCA Gate B, ground floor, blue signboard",
     "rating": 4.7,
-    "ratingCount": 0,
+    "ratingCount": 129,
     "deliveryTime": 10,
     "deliveryFee": "KES 30",
     "categories": [
@@ -22,10 +22,10 @@
   {
     "id": "restaurants-kca-kibandaski",
     "name": "Kibandaski Corner",
-    "image": "https://source.unsplash.com/400x400/?nairobi,street,food,stall,kenya,local",
+    "image": "https://images.unsplash.com/photo-1600935926387-12d9b03066f0?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - KCA Shopping Centre, stall 3, ask for Kamau",
     "rating": 4.5,
-    "ratingCount": 0,
+    "ratingCount": 91,
     "deliveryTime": 8,
     "deliveryFee": "KES 30",
     "categories": [
@@ -43,10 +43,10 @@
   {
     "id": "restaurants-kca-choma-zone",
     "name": "Choma Zone",
-    "image": "https://source.unsplash.com/400x400/?grill,charcoal,meat,africa,barbecue,smoke",
+    "image": "https://images.unsplash.com/photo-1683836086240-f775a1f46b36?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Behind KCA parking area, open air charcoal grill - follow the smoke",
     "rating": 4.8,
-    "ratingCount": 0,
+    "ratingCount": 178,
     "deliveryTime": 15,
     "deliveryFee": "KES 30",
     "categories": [
@@ -63,10 +63,10 @@
   {
     "id": "restaurants-kca-snack-attack",
     "name": "Snack Attack",
-    "image": "https://source.unsplash.com/400x400/?kiosk,snack,nairobi,street,food,kenya",
+    "image": "https://images.unsplash.com/photo-1589199750869-334ae4187406?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - KCA main entrance kiosk, right side of the gate",
     "rating": 4.6,
-    "ratingCount": 0,
+    "ratingCount": 154,
     "deliveryTime": 5,
     "deliveryFee": "KES 30",
     "categories": [
@@ -83,10 +83,10 @@
   {
     "id": "restaurants-kca-morning-glory",
     "name": "Morning Glory",
-    "image": "https://source.unsplash.com/400x400/?kenyan,tea,chai,breakfast,morning,cup,africa",
+    "image": "https://images.unsplash.com/photo-1625033405953-f20401c7d848?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Near KCA Library entrance, the blue and yellow stall",
     "rating": 4.5,
-    "ratingCount": 0,
+    "ratingCount": 142,
     "deliveryTime": 7,
     "deliveryFee": "KES 30",
     "categories": [
@@ -104,10 +104,10 @@
   {
     "id": "restaurants-kca-pilau-palace",
     "name": "Pilau Palace",
-    "image": "https://source.unsplash.com/400x400/?pilau,rice,spiced,kenyan,east,africa,brown,dish",
+    "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - KCA Shopping Centre, stall 7, red and white signboard",
     "rating": 4.9,
-    "ratingCount": 0,
+    "ratingCount": 152,
     "deliveryTime": 12,
     "deliveryFee": "KES 30",
     "categories": [
@@ -124,10 +124,10 @@
   {
     "id": "restaurants-kca-chapati-house",
     "name": "The Chapati House",
-    "image": "https://source.unsplash.com/400x400/?chapati,flatbread,kenyan,layered,wheat,soft",
+    "image": "https://images.unsplash.com/photo-1710444448935-48ece3b2bd8a?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Next to KCA Student Centre, follow the rolling pin sound",
     "rating": 4.6,
-    "ratingCount": 0,
+    "ratingCount": 118,
     "deliveryTime": 10,
     "deliveryFee": "KES 30",
     "categories": [
@@ -144,10 +144,10 @@
   {
     "id": "restaurants-kca-campus-bites",
     "name": "Campus Bites",
-    "image": "https://source.unsplash.com/400x400/?chips,fries,fried,chicken,kenya,plate,food",
+    "image": "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Ground floor, KCA Shopping Centre - corner stall",
     "rating": 4.3,
-    "ratingCount": 0,
+    "ratingCount": 207,
     "deliveryTime": 12,
     "deliveryFee": "KES 30",
     "categories": [
@@ -164,10 +164,10 @@
   {
     "id": "restaurants-kca-fresh-sip",
     "name": "Fresh Sip",
-    "image": "https://source.unsplash.com/400x400/?fresh,juice,tropical,mango,africa,glass,colourful",
+    "image": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - KCA main entrance, left kiosk with the fruit display",
     "rating": 4.7,
-    "ratingCount": 0,
+    "ratingCount": 123,
     "deliveryTime": 5,
     "deliveryFee": "KES 30",
     "categories": [
@@ -184,10 +184,10 @@
   {
     "id": "restaurants-kca-swahili-plate",
     "name": "Swahili Plate",
-    "image": "https://source.unsplash.com/400x400/?swahili,coastal,kenya,food,coconut,plate",
+    "image": "https://images.unsplash.com/photo-1665401015549-712c0dc5ef85?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
     "location": "KCA - Opposite KCA Gate A, first floor, blue and white decor",
     "rating": 4.8,
-    "ratingCount": 0,
+    "ratingCount": 216,
     "deliveryTime": 15,
     "deliveryFee": "KES 30",
     "categories": [
@@ -201,5 +201,520 @@
     "isFeatured": true,
     "campusId": "campus_kca",
     "isOpen": true
+  },
+  {
+    "id": "restaurants-usiu-pizza-point",
+    "name": "Pizza Point",
+    "image": "https://images.unsplash.com/photo-1566843972142-a7fcb70de55a?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Student Centre, ground floor",
+    "rating": 4.6,
+    "ratingCount": 214,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 50",
+    "categories": [
+      "Pizza",
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 3,
+    "isFeatured": true,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-usiu-shawarma-hub",
+    "name": "Shawarma Hub",
+    "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Exit 7 arcade",
+    "rating": 4.5,
+    "ratingCount": 178,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Shawarma & Wraps",
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": true,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "23:00"
+  },
+  {
+    "id": "restaurants-usiu-wok-and-roll",
+    "name": "Wok & Roll",
+    "image": "https://images.unsplash.com/photo-1634864572865-1cf8ff8bd23d?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Food Court B",
+    "rating": 4.4,
+    "ratingCount": 132,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 50",
+    "categories": [
+      "Chinese",
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 3,
+    "isFeatured": false,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "11:00",
+    "closesAt": "21:30"
+  },
+  {
+    "id": "restaurants-usiu-burger-republic",
+    "name": "Burger Republic",
+    "image": "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Student Centre",
+    "rating": 4.5,
+    "ratingCount": 203,
+    "deliveryTime": 20,
+    "deliveryFee": "KES 50",
+    "categories": [
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 3,
+    "isFeatured": false,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-usiu-green-bowl",
+    "name": "The Green Bowl",
+    "image": "https://images.unsplash.com/photo-1595786802424-d6efbc413db5?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Library block",
+    "rating": 4.7,
+    "ratingCount": 96,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Healthy",
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 3,
+    "isFeatured": true,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "08:00",
+    "closesAt": "19:00"
+  },
+  {
+    "id": "restaurants-usiu-java-junction",
+    "name": "Java Junction",
+    "image": "https://images.unsplash.com/photo-1593443320739-77f74939d0da?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Main Cafeteria",
+    "rating": 4.3,
+    "ratingCount": 241,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Breakfast",
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "06:30",
+    "closesAt": "20:00"
+  },
+  {
+    "id": "restaurants-usiu-sweet-tooth",
+    "name": "Sweet Tooth",
+    "image": "https://images.unsplash.com/photo-1563589173312-476d8c36b242?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Exit 7 arcade",
+    "rating": 4.6,
+    "ratingCount": 88,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Desserts",
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "21:00"
+  },
+  {
+    "id": "restaurants-usiu-mama-oliech",
+    "name": "Mama Oliech Corner",
+    "image": "https://images.unsplash.com/photo-1718942899999-b3da4177ee2a?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "USIU - Gate C",
+    "rating": 4.4,
+    "ratingCount": 156,
+    "deliveryTime": 20,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Kenyan Staples",
+      "Coastal Kenyan"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_usiu",
+    "isOpen": true,
+    "opensAt": "11:00",
+    "closesAt": "21:00"
+  },
+  {
+    "id": "restaurants-pac-desi-restaurant",
+    "name": "Desi Restaurant",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Off Lumumba Drive",
+    "rating": 4.6,
+    "ratingCount": 142,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Indian"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 3,
+    "isFeatured": true,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "11:00",
+    "closesAt": "22:30"
+  },
+  {
+    "id": "restaurants-pac-mirema-kitchen",
+    "name": "Mirema Kitchen",
+    "image": "https://images.unsplash.com/photo-1763048443535-1243379234e2?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Mirema Drive",
+    "rating": 4.5,
+    "ratingCount": 118,
+    "deliveryTime": 15,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": true,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "07:00",
+    "closesAt": "21:00"
+  },
+  {
+    "id": "restaurants-pac-pilau-pot",
+    "name": "Pilau Pot",
+    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Campus Plaza",
+    "rating": 4.7,
+    "ratingCount": 134,
+    "deliveryTime": 20,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Pilau & Rice"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-pac-chapati-junction",
+    "name": "Chapati Junction",
+    "image": "https://images.unsplash.com/photo-1600935926387-12d9b03066f0?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Gate A",
+    "rating": 4.4,
+    "ratingCount": 87,
+    "deliveryTime": 15,
+    "deliveryFee": "Free",
+    "categories": [
+      "Kenyan Staples",
+      "Street Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "07:00",
+    "closesAt": "20:00"
+  },
+  {
+    "id": "restaurants-pac-choma-grill",
+    "name": "Choma Grill PAC",
+    "image": "https://images.unsplash.com/photo-1683836086240-f775a1f46b36?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Sports field side",
+    "rating": 4.5,
+    "ratingCount": 121,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Grilled & Choma"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "12:00",
+    "closesAt": "23:00"
+  },
+  {
+    "id": "restaurants-pac-fresh-blend",
+    "name": "Fresh Blend",
+    "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Student Centre",
+    "rating": 4.6,
+    "ratingCount": 74,
+    "deliveryTime": 10,
+    "deliveryFee": "Free",
+    "categories": [
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "08:00",
+    "closesAt": "20:00"
+  },
+  {
+    "id": "restaurants-pac-coast-flavors",
+    "name": "Coast Flavors",
+    "image": "https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "PAC - Mirema shops",
+    "rating": 4.5,
+    "ratingCount": 93,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 40",
+    "categories": [
+      "Coastal Kenyan"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_pac",
+    "isOpen": true,
+    "opensAt": "11:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-ku-mess-hall",
+    "name": "KU Mess Hall",
+    "image": "https://images.unsplash.com/photo-1665332561290-cc6757172890?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Main Campus dining hall",
+    "rating": 4.2,
+    "ratingCount": 312,
+    "deliveryTime": 15,
+    "deliveryFee": "Free",
+    "categories": [
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": true,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "06:30",
+    "closesAt": "21:00"
+  },
+  {
+    "id": "restaurants-ku-comrade-kibanda",
+    "name": "Comrade Kibanda",
+    "image": "https://images.unsplash.com/photo-1676560662899-253459ea7419?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Business school walkway",
+    "rating": 4.3,
+    "ratingCount": 268,
+    "deliveryTime": 10,
+    "deliveryFee": "Free",
+    "categories": [
+      "Street Food",
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": true,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "07:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-ku-nyama-spot",
+    "name": "Nyama Spot KU",
+    "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Hostels C area",
+    "rating": 4.4,
+    "ratingCount": 187,
+    "deliveryTime": 25,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Grilled & Choma"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 2,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "12:00",
+    "closesAt": "23:00"
+  },
+  {
+    "id": "restaurants-ku-pilau-palace",
+    "name": "Pilau Palace KU",
+    "image": "https://images.unsplash.com/photo-1634324092526-91f5e878b72f?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Central market",
+    "rating": 4.5,
+    "ratingCount": 203,
+    "deliveryTime": 20,
+    "deliveryFee": "KES 30",
+    "categories": [
+      "Pilau & Rice"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "22:00"
+  },
+  {
+    "id": "restaurants-ku-fries-and-fry",
+    "name": "Fries & Fry",
+    "image": "https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Student Centre",
+    "rating": 4.3,
+    "ratingCount": 224,
+    "deliveryTime": 15,
+    "deliveryFee": "Free",
+    "categories": [
+      "Fast Food"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "10:00",
+    "closesAt": "22:30"
+  },
+  {
+    "id": "restaurants-ku-juice-bar",
+    "name": "Juice Bar KU",
+    "image": "https://images.unsplash.com/photo-1622597467821-df79dcb4f94d?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Library forecourt",
+    "rating": 4.5,
+    "ratingCount": 98,
+    "deliveryTime": 10,
+    "deliveryFee": "Free",
+    "categories": [
+      "Drinks & Juices"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "08:00",
+    "closesAt": "20:00"
+  },
+  {
+    "id": "restaurants-ku-morning-fuel",
+    "name": "Morning Fuel",
+    "image": "https://images.unsplash.com/photo-1619581073186-5b4ae1b0caad?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Hostels D mess",
+    "rating": 4.2,
+    "ratingCount": 141,
+    "deliveryTime": 15,
+    "deliveryFee": "Free",
+    "categories": [
+      "Breakfast"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "06:00",
+    "closesAt": "12:00"
+  },
+  {
+    "id": "restaurants-ku-githeri-house",
+    "name": "Githeri House",
+    "image": "https://images.unsplash.com/photo-1698917467449-08bcd1d9014b?w=800&h=800&fit=crop&crop=entropy&q=80&auto=format",
+    "location": "KU - Education wing",
+    "rating": 4.3,
+    "ratingCount": 176,
+    "deliveryTime": 15,
+    "deliveryFee": "Free",
+    "categories": [
+      "Kenyan Staples"
+    ],
+    "dietaries": [
+      "Any"
+    ],
+    "priceTier": 1,
+    "isFeatured": false,
+    "campusId": "campus_ku",
+    "isOpen": true,
+    "opensAt": "11:00",
+    "closesAt": "20:00"
   }
 ]

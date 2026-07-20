@@ -12,6 +12,12 @@ class Restaurant {
     this.dietaries = const [],
     this.priceTier = 3,
     this.isFeatured = false,
+    this.campusId,
+    this.phone,
+    this.isOpen = true,
+    this.opensAt,
+    this.closesAt,
+    this.description,
   });
 
   final String id;
@@ -26,6 +32,12 @@ class Restaurant {
   final List<String> dietaries;
   final int priceTier;
   final bool isFeatured;
+  final String? campusId;
+  final String? phone;
+  final bool isOpen;
+  final String? opensAt;
+  final String? closesAt;
+  final String? description;
 
   factory Restaurant.fromMap(String id, Map<String, dynamic> data) {
     final categories =
@@ -49,6 +61,12 @@ class Restaurant {
           .toList(growable: false),
       priceTier: (data['priceTier'] as num? ?? 3).toInt(),
       isFeatured: data['isFeatured'] as bool? ?? false,
+      campusId: data['campusId'] as String?,
+      phone: data['phone'] as String?,
+      isOpen: data['is_open'] as bool? ?? true,
+      opensAt: data['opens_at'] as String?,
+      closesAt: data['closes_at'] as String?,
+      description: data['description'] as String?,
     );
   }
 
@@ -65,6 +83,12 @@ class Restaurant {
       'dietaries': dietaries,
       'priceTier': priceTier,
       'isFeatured': isFeatured,
+      'campusId': campusId,
+      'phone': phone,
+      'is_open': isOpen,
+      'opens_at': opensAt,
+      'closes_at': closesAt,
+      'description': description,
     };
   }
 }

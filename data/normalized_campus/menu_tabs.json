@@ -76,5 +76,329 @@
     "restaurantId": "restaurants-kca-swahili-plate",
     "title": "Pilau & Rice",
     "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-pizza-point-0-pizza",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "title": "Pizza",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-pizza-point-1-fast-food",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "title": "Fast Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-pizza-point-2-healthy",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "title": "Healthy",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-pizza-point-3-desserts",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "title": "Desserts",
+    "position": 3
+  },
+  {
+    "id": "menu-tabs-usiu-pizza-point-4-drinks-juices",
+    "restaurantId": "restaurants-usiu-pizza-point",
+    "title": "Drinks & Juices",
+    "position": 4
+  },
+  {
+    "id": "menu-tabs-usiu-shawarma-hub-0-shawarma-wraps",
+    "restaurantId": "restaurants-usiu-shawarma-hub",
+    "title": "Shawarma & Wraps",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-shawarma-hub-1-fast-food",
+    "restaurantId": "restaurants-usiu-shawarma-hub",
+    "title": "Fast Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-shawarma-hub-2-drinks-juices",
+    "restaurantId": "restaurants-usiu-shawarma-hub",
+    "title": "Drinks & Juices",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-wok-and-roll-0-chinese",
+    "restaurantId": "restaurants-usiu-wok-and-roll",
+    "title": "Chinese",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-wok-and-roll-1-pilau-rice",
+    "restaurantId": "restaurants-usiu-wok-and-roll",
+    "title": "Pilau & Rice",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-wok-and-roll-2-drinks-juices",
+    "restaurantId": "restaurants-usiu-wok-and-roll",
+    "title": "Drinks & Juices",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-burger-republic-0-fast-food",
+    "restaurantId": "restaurants-usiu-burger-republic",
+    "title": "Fast Food",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-burger-republic-1-desserts",
+    "restaurantId": "restaurants-usiu-burger-republic",
+    "title": "Desserts",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-burger-republic-2-drinks-juices",
+    "restaurantId": "restaurants-usiu-burger-republic",
+    "title": "Drinks & Juices",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-green-bowl-0-healthy",
+    "restaurantId": "restaurants-usiu-green-bowl",
+    "title": "Healthy",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-green-bowl-1-drinks-juices",
+    "restaurantId": "restaurants-usiu-green-bowl",
+    "title": "Drinks & Juices",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-java-junction-0-drinks-juices",
+    "restaurantId": "restaurants-usiu-java-junction",
+    "title": "Drinks & Juices",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-java-junction-1-breakfast",
+    "restaurantId": "restaurants-usiu-java-junction",
+    "title": "Breakfast",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-java-junction-2-desserts",
+    "restaurantId": "restaurants-usiu-java-junction",
+    "title": "Desserts",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-sweet-tooth-0-desserts",
+    "restaurantId": "restaurants-usiu-sweet-tooth",
+    "title": "Desserts",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-sweet-tooth-1-breakfast",
+    "restaurantId": "restaurants-usiu-sweet-tooth",
+    "title": "Breakfast",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-sweet-tooth-2-drinks-juices",
+    "restaurantId": "restaurants-usiu-sweet-tooth",
+    "title": "Drinks & Juices",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-mama-oliech-0-coastal-kenyan",
+    "restaurantId": "restaurants-usiu-mama-oliech",
+    "title": "Coastal Kenyan",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-usiu-mama-oliech-1-kenyan-staples",
+    "restaurantId": "restaurants-usiu-mama-oliech",
+    "title": "Kenyan Staples",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-usiu-mama-oliech-2-pilau-rice",
+    "restaurantId": "restaurants-usiu-mama-oliech",
+    "title": "Pilau & Rice",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-usiu-mama-oliech-3-drinks-juices",
+    "restaurantId": "restaurants-usiu-mama-oliech",
+    "title": "Drinks & Juices",
+    "position": 3
+  },
+  {
+    "id": "menu-tabs-pac-desi-restaurant-0-indian",
+    "restaurantId": "restaurants-pac-desi-restaurant",
+    "title": "Indian",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-desi-restaurant-1-pilau-rice",
+    "restaurantId": "restaurants-pac-desi-restaurant",
+    "title": "Pilau & Rice",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-pac-desi-restaurant-2-street-food",
+    "restaurantId": "restaurants-pac-desi-restaurant",
+    "title": "Street Food",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-pac-desi-restaurant-3-drinks-juices",
+    "restaurantId": "restaurants-pac-desi-restaurant",
+    "title": "Drinks & Juices",
+    "position": 3
+  },
+  {
+    "id": "menu-tabs-pac-mirema-kitchen-0-kenyan-staples",
+    "restaurantId": "restaurants-pac-mirema-kitchen",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-pilau-pot-0-pilau-rice",
+    "restaurantId": "restaurants-pac-pilau-pot",
+    "title": "Pilau & Rice",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-pilau-pot-1-drinks-juices",
+    "restaurantId": "restaurants-pac-pilau-pot",
+    "title": "Drinks & Juices",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-pac-chapati-junction-0-kenyan-staples",
+    "restaurantId": "restaurants-pac-chapati-junction",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-chapati-junction-1-street-food",
+    "restaurantId": "restaurants-pac-chapati-junction",
+    "title": "Street Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-pac-chapati-junction-2-breakfast",
+    "restaurantId": "restaurants-pac-chapati-junction",
+    "title": "Breakfast",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-pac-choma-grill-0-grilled-choma",
+    "restaurantId": "restaurants-pac-choma-grill",
+    "title": "Grilled & Choma",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-choma-grill-1-street-food",
+    "restaurantId": "restaurants-pac-choma-grill",
+    "title": "Street Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-pac-fresh-blend-0-drinks-juices",
+    "restaurantId": "restaurants-pac-fresh-blend",
+    "title": "Drinks & Juices",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-coast-flavors-0-coastal-kenyan",
+    "restaurantId": "restaurants-pac-coast-flavors",
+    "title": "Coastal Kenyan",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-pac-coast-flavors-1-pilau-rice",
+    "restaurantId": "restaurants-pac-coast-flavors",
+    "title": "Pilau & Rice",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-pac-coast-flavors-2-drinks-juices",
+    "restaurantId": "restaurants-pac-coast-flavors",
+    "title": "Drinks & Juices",
+    "position": 2
+  },
+  {
+    "id": "menu-tabs-ku-mess-hall-0-kenyan-staples",
+    "restaurantId": "restaurants-ku-mess-hall",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-comrade-kibanda-0-kenyan-staples",
+    "restaurantId": "restaurants-ku-comrade-kibanda",
+    "title": "Kenyan Staples",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-comrade-kibanda-1-street-food",
+    "restaurantId": "restaurants-ku-comrade-kibanda",
+    "title": "Street Food",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-ku-nyama-spot-0-grilled-choma",
+    "restaurantId": "restaurants-ku-nyama-spot",
+    "title": "Grilled & Choma",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-pilau-palace-0-pilau-rice",
+    "restaurantId": "restaurants-ku-pilau-palace",
+    "title": "Pilau & Rice",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-pilau-palace-1-kenyan-staples",
+    "restaurantId": "restaurants-ku-pilau-palace",
+    "title": "Kenyan Staples",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-ku-fries-and-fry-0-fast-food",
+    "restaurantId": "restaurants-ku-fries-and-fry",
+    "title": "Fast Food",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-fries-and-fry-1-drinks-juices",
+    "restaurantId": "restaurants-ku-fries-and-fry",
+    "title": "Drinks & Juices",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-ku-juice-bar-0-drinks-juices",
+    "restaurantId": "restaurants-ku-juice-bar",
+    "title": "Drinks & Juices",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-morning-fuel-0-breakfast",
+    "restaurantId": "restaurants-ku-morning-fuel",
+    "title": "Breakfast",
+    "position": 0
+  },
+  {
+    "id": "menu-tabs-ku-morning-fuel-1-coastal-kenyan",
+    "restaurantId": "restaurants-ku-morning-fuel",
+    "title": "Coastal Kenyan",
+    "position": 1
+  },
+  {
+    "id": "menu-tabs-ku-githeri-house-0-kenyan-staples",
+    "restaurantId": "restaurants-ku-githeri-house",
+    "title": "Kenyan Staples",
+    "position": 0
   }
 ]

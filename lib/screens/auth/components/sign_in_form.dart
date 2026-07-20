@@ -71,16 +71,13 @@ class _SignInFormState extends ConsumerState<SignInForm> {
           const SizedBox(height: defaultPadding),
 
           // Forget Password
-          GestureDetector(
-            onTap: isLoading
-                ? null
-                : () => context.pushNamed(AppRoutes.forgotPassword),
-            child: Text(
-              "Forget Password?",
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: isLoading ? Colors.grey : null,
-                  ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: isLoading
+                  ? null
+                  : () => context.pushNamed(AppRoutes.forgotPassword),
+              child: const Text("Forgot Password?"),
             ),
           ),
           const SizedBox(height: defaultPadding),

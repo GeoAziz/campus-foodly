@@ -167,7 +167,7 @@ class _SummaryCard extends StatelessWidget {
           Text(
             isLoading
                 ? 'Loading your final order details...'
-                : 'This gives the user a clear endpoint after tracking.',
+                : 'Here is a summary of your completed delivery.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: bodyTextColor,
                 ),
@@ -236,13 +236,10 @@ class _ActionCard extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding / 2),
           OutlinedButton.icon(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Rating flow is coming in the next update.'),
-                ),
-              );
-            },
+            onPressed: () => context.pushNamed(
+              AppRoutes.reviewOrder,
+              pathParameters: {'orderId': orderId},
+            ),
             icon: const Icon(Icons.star_rate_rounded),
             label: const Text('Rate this order'),
           ),

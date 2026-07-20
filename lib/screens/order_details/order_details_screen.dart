@@ -119,19 +119,6 @@ class _OrderDetailsScreenState extends ConsumerState<OrderDetailsScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: defaultPadding / 2),
-                Text(
-                  'Tracking becomes available after checkout creates a real order.',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: bodyTextColor,
-                      ),
-                ),
-                const SizedBox(height: defaultPadding / 2),
-                const OutlinedButton(
-                  onPressed: null,
-                  child: Text('Track order after payment'),
-                ),
                 const SizedBox(height: defaultPadding),
               ] else ...[
                 const Padding(

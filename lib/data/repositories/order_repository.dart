@@ -83,6 +83,10 @@ abstract class OrderRepository {
   Future<void> createOrder(OrderInput orderInput);
   Future<void> updateOrderStatus(String orderId, String newStatus);
   Future<List<Order>> fetchOrdersByStatus(String status, {int limit = 50});
+  Future<List<Order>> fetchAllOrders({int limit = 100});
+  Future<List<Order>> fetchOrdersForRestaurant(String restaurantId, {int limit = 50});
+  Stream<List<Order>> watchOrdersForUser(String userId);
+  Stream<List<Order>> watchOrdersForRestaurant(String restaurantId);
 }
 
 class FirestoreOrderRepository implements OrderRepository {
@@ -248,6 +252,72 @@ class FirestoreOrderRepository implements OrderRepository {
       rethrow;
     }
   }
+
+  @override
+  Future<List<Order>> fetchAllOrders({int limit = 100}) async {
+    try {
+      final snapshot = await _firestore
+          .collection('orders')
+          .orderBy('createdAt', descending: true)
+          .limit(limit)
+          .get();
+
+      _logger.i('Fetched ${snapshot.docs.length} total orders (admin)');
+      return snapshot.docs
+          .map((doc) => Order.fromMap(doc.id, doc.data()))
+          .toList(growable: false);
+    } catch (e) {
+      _logger.e('Error fetching all orders: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<Order>> fetchOrdersForRestaurant(String restaurantId,
+      {int limit = 50}) async {
+    try {
+      final snapshot = await _firestore
+          .collection('orders')
+          .where('restaurantId', isEqualTo: restaurantId)
+          .orderBy('createdAt', descending: true)
+          .limit(limit)
+          .get();
+
+      _logger.i('Fetched ${snapshot.docs.length} orders for restaurant: $restaurantId');
+      return snapshot.docs
+          .map((doc) => Order.fromMap(doc.id, doc.data()))
+          .toList(growable: false);
+    } catch (e) {
+      _logger.e('Error fetching restaurant orders: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  Stream<List<Order>> watchOrdersForUser(String userId) {
+    return _firestore
+        .collection('orders')
+        .where('userId', isEqualTo: userId)
+        .orderBy('createdAt', descending: true)
+        .limit(50)
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => Order.fromMap(doc.id, doc.data()))
+            .toList(growable: false));
+  }
+
+  @override
+  Stream<List<Order>> watchOrdersForRestaurant(String restaurantId) {
+    return _firestore
+        .collection('orders')
+        .where('restaurantId', isEqualTo: restaurantId)
+        .orderBy('createdAt', descending: true)
+        .limit(50)
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => Order.fromMap(doc.id, doc.data()))
+            .toList(growable: false));
+  }
 }
 
 class InMemoryOrderRepository implements OrderRepository {
@@ -307,6 +377,32 @@ class InMemoryOrderRepository implements OrderRepository {
         .where((order) => order.status == status)
         .take(limit)
         .toList();
+  }
+
+  @override
+  Future<List<Order>> fetchAllOrders({int limit = 100}) async {
+    return _orders.take(limit).toList();
+  }
+
+  @override
+  Future<List<Order>> fetchOrdersForRestaurant(String restaurantId,
+      {int limit = 50}) async {
+    return _orders
+        .where((order) => order.restaurantId == restaurantId)
+        .take(limit)
+        .toList();
+  }
+
+  @override
+  Stream<List<Order>> watchOrdersForUser(String userId) {
+    return Stream.value(
+        _orders.where((order) => order.userId == userId).toList());
+  }
+
+  @override
+  Stream<List<Order>> watchOrdersForRestaurant(String restaurantId) {
+    return Stream.value(
+        _orders.where((order) => order.restaurantId == restaurantId).toList());
   }
 }
 

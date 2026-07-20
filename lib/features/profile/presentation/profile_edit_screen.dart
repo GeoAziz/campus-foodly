@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../components/skeleton/skeleton_line.dart';
+import '../../../components/skeleton/skeleton_rounded_container.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../providers/profile_edit_controller.dart';
 
@@ -108,7 +110,55 @@ class _ProfileEditScreenState extends ConsumerState<ProfileEditScreen> {
           elevation: 0,
         ),
         body: editState.isLoading && editState.profileData == null
-            ? const Center(child: CircularProgressIndicator())
+            ? SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            children: [
+                              SkeletonRoundedContainer(
+                                height: 80,
+                                width: 80,
+                                radius: 40,
+                              ),
+                              const SizedBox(height: 16),
+                              SkeletonLine(
+                                height: 16,
+                                width: 150,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      ...List.generate(
+                        3,
+                        (index) => Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SkeletonLine(
+                                height: 14,
+                                width: 80,
+                              ),
+                              const SizedBox(height: 8),
+                              SkeletonLine(
+                                height: 48,
+                                width: double.infinity,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             : SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),

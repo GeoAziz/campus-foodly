@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,7 @@ import '../../../core/routes.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../../../data/providers/cart_provider.dart';
 import '../../../data/providers/order_provider.dart';
+import '../../../data/services/price_formatter.dart';
 import '../../../features/profile/providers/profile_provider.dart';
 import '../models/payment_status.dart';
 import '../providers/payment_provider.dart';
@@ -28,8 +30,13 @@ class PaymentCheckoutScreen extends ConsumerStatefulWidget {
 
 class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
   final _phoneController = TextEditingController();
+  final _couponController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   ProviderSubscription<PaymentState>? _paymentStatusSub;
+  double _discount = 0;
+  bool _applyingCoupon = false;
+  String? _couponError;
+  String? _appliedCouponCode;
 
   @override
   void initState() {
@@ -129,10 +136,66 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
     }
   }
 
+  Future<void> _applyCoupon() async {
+    final code = _couponController.text.trim().toUpperCase();
+    if (code.isEmpty) return;
+
+    setState(() {
+      _applyingCoupon = true;
+      _couponError = null;
+    });
+
+    try {
+      final snapshot = await FirebaseFirestore.instance
+          .collection('coupons')
+          .where('code', isEqualTo: code)
+          .where('active', isEqualTo: true)
+          .limit(1)
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        setState(() => _couponError = 'Invalid or expired coupon code.');
+        return;
+      }
+
+      final coupon = snapshot.docs.first.data();
+      final expiry = coupon['expiresAt'];
+      if (expiry is Timestamp && expiry.toDate().isBefore(DateTime.now())) {
+        setState(() => _couponError = 'This coupon has expired.');
+        return;
+      }
+
+      final discountType = coupon['discountType'] as String? ?? 'fixed';
+      final discountValue = (coupon['discountValue'] as num?)?.toDouble() ?? 0;
+
+      double discount;
+      if (discountType == 'percentage') {
+        discount = widget.amount * (discountValue / 100);
+      } else {
+        discount = discountValue;
+      }
+
+      // Cap discount at full amount
+      discount = discount.clamp(0.0, widget.amount);
+
+      setState(() {
+        _discount = discount;
+        _appliedCouponCode = code;
+      });
+    } catch (e) {
+      setState(() => _couponError = 'Could not apply coupon. Try again.');
+    } finally {
+      if (mounted) {
+        setState(() => _applyingCoupon = false);
+      }
+    }
+  }
+
   @override
   void dispose() {
     _paymentStatusSub?.close();
     _phoneController.dispose();
+    _couponController.dispose();
     super.dispose();
   }
 
@@ -144,27 +207,108 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
     final addressesAsync = ref.watch(userAddressesProvider);
     final addresses = addressesAsync.valueOrNull ?? const [];
     final hasAddress = addresses.isNotEmpty;
+    final double finalAmount = (widget.amount - _discount).clamp(0.0, double.infinity).toDouble();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('M-Pesa Checkout')),
+      appBar: AppBar(title: const Text('Confirm Payment')),
       body: Padding(
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Order: ${widget.orderId}'),
-            const SizedBox(height: 8),
-            Text('Amount: KES ${widget.amount.toStringAsFixed(2)}'),
+            Text(
+              'Delivery Address',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             const SizedBox(height: 8),
             Text(
               hasAddress
-                  ? 'Delivery address: ${addresses.firstWhere((address) => address.isDefault, orElse: () => addresses.first).formattedAddress}'
-                  : 'Delivery address: Missing',
+                  ? addresses
+                      .firstWhere((address) => address.isDefault,
+                          orElse: () => addresses.first)
+                      .formattedAddress
+                  : 'No address selected',
               style: TextStyle(
-                color: hasAddress ? titleColor : Colors.red,
+                color: hasAddress
+                    ? titleColor
+                    : Theme.of(context).colorScheme.error,
                 fontWeight: FontWeight.w600,
               ),
             ),
+            const SizedBox(height: 16),
+            Text(
+              'Payment Amount',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 8),
+            if (_discount > 0) ...[
+              Text(
+                formatPrice(widget.amount),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      decoration: TextDecoration.lineThrough,
+                      color: Colors.grey,
+                    ),
+              ),
+              const SizedBox(height: 4),
+              Row(
+                children: [
+                  Text(
+                    formatPrice(finalAmount),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          color: Colors.green,
+                        ),
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: Colors.green.withAlpha(30),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text(
+                      '-${formatPrice(_discount)} (${ _appliedCouponCode})',
+                      style: const TextStyle(
+                          color: Colors.green, fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
+            ] else
+              Text(
+                formatPrice(widget.amount),
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            const SizedBox(height: 16),
+            // Coupon code field
+            if (_appliedCouponCode == null) ...[
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _couponController,
+                      textCapitalization: TextCapitalization.characters,
+                      decoration: InputDecoration(
+                        hintText: 'Coupon code',
+                        errorText: _couponError,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    onPressed: _applyingCoupon ? null : _applyCoupon,
+                    child: _applyingCoupon
+                        ? const SizedBox(
+                            height: 16,
+                            width: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Text('Apply'),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+            ],
             if (!hasAddress)
               Padding(
                 padding: const EdgeInsets.only(top: 8),
@@ -216,7 +360,7 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
                               const Text('Please review your payment details:'),
                               const SizedBox(height: 16),
                               Text(
-                                'Amount: Ksh ${widget.amount.toStringAsFixed(2)}',
+                                'Amount: ${formatPrice(finalAmount)}',
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               const SizedBox(height: 8),
@@ -246,7 +390,7 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
                                       orderId: widget.orderId,
                                       userId: user.id,
                                       phoneNumber: _phoneController.text.trim(),
-                                      amount: widget.amount,
+                                      amount: finalAmount,
                                     );
                               },
                               child: const Text('Proceed to Payment'),
@@ -263,28 +407,42 @@ class _PaymentCheckoutScreenState extends ConsumerState<PaymentCheckoutScreen> {
                     )
                   : const Text('Pay with M-Pesa'),
             ),
-            const SizedBox(height: defaultPadding),
-            Text('Payment status: ${paymentState.status.name}'),
-            if (paymentState.paymentId != null) ...[
-              const SizedBox(height: 8),
-              Text('Payment reference: ${paymentState.paymentId}'),
-            ],
             if (paymentState.errorMessage != null) ...[
-              const SizedBox(height: 8),
-              Text(
-                paymentState.errorMessage!,
-                style: const TextStyle(color: Colors.red),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Ensure MPESA_BACKEND_URL is set and your Cloud Function is deployed.',
+              const SizedBox(height: defaultPadding),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.error.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
+                child: Text(
+                  paymentState.errorMessage!,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                ),
               ),
             ],
             if (paymentState.status == PaymentStatus.succeeded) ...[
               const SizedBox(height: defaultPadding),
-              const Text(
-                'Payment confirmed. Creating your order...',
-                style: TextStyle(color: Colors.green),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                child: Text(
+                  'Payment confirmed. Creating your order...',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
               ),
             ],
           ],

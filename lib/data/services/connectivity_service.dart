@@ -1,14 +1,19 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:logger/logger.dart';
 
+typedef ConnectivityListener = void Function(List<ConnectivityResult>);
+
 /// Service to manage device connectivity state
-/// Provides real-time monitoring of network connectivity
+/// Provides real-time monitoring of network connectivity with multiple listeners support
 class ConnectivityService {
   static final ConnectivityService _instance = ConnectivityService._internal();
   static final Logger _logger = Logger();
 
   final Connectivity _connectivity = Connectivity();
   List<ConnectivityResult>? _lastResult;
+
+  // Support multiple listeners
+  final List<ConnectivityListener> _listeners = [];
 
   factory ConnectivityService() {
     return _instance;
@@ -31,6 +36,9 @@ class ConnectivityService {
         onError: (error) {
           _logger.e('Connectivity error: $error');
         },
+        onDone: () {
+          _logger.i('Connectivity stream closed');
+        },
       );
     } catch (e) {
       _logger.e('Failed to initialize connectivity: $e');
@@ -47,19 +55,35 @@ class ConnectivityService {
   /// Get current connectivity status
   List<ConnectivityResult>? get currentStatus => _lastResult;
 
-  /// Listen to connectivity changes
-  void Function(List<ConnectivityResult>)? _listener;
-
-  void addListener(Function(List<ConnectivityResult>) listener) {
-    _listener = listener;
+  /// Add a listener for connectivity changes
+  void addListener(ConnectivityListener listener) {
+    if (!_listeners.contains(listener)) {
+      _listeners.add(listener);
+      _logger.d('Connectivity listener added. Total listeners: ${_listeners.length}');
+    }
   }
 
-  void removeListener() {
-    _listener = null;
+  /// Remove a specific listener
+  void removeListener(ConnectivityListener listener) {
+    _listeners.remove(listener);
+    _logger.d('Connectivity listener removed. Total listeners: ${_listeners.length}');
   }
 
+  /// Remove all listeners (for cleanup on app lifecycle)
+  void removeAllListeners() {
+    _listeners.clear();
+    _logger.d('All connectivity listeners cleared');
+  }
+
+  /// Notify all registered listeners of connectivity change
   void _notifyListeners(List<ConnectivityResult> result) {
-    _listener?.call(result);
+    for (final listener in List.of(_listeners)) {
+      try {
+        listener(result);
+      } catch (e) {
+        _logger.e('Error notifying listener: $e');
+      }
+    }
   }
 
   /// Retry operation with exponential backoff
@@ -73,6 +97,10 @@ class ConnectivityService {
 
     while (true) {
       try {
+        if (!isOnline) {
+          throw ConnectivityException('Device is offline');
+        }
+
         return await operation();
       } catch (e) {
         retries++;
@@ -84,8 +112,17 @@ class ConnectivityService {
         _logger.w(
             'Operation failed, retrying in $delay. Attempt $retries/$maxRetries');
         await Future.delayed(delay);
-        delay *= 2; // Exponential backoff
+        delay *= 2;
       }
     }
   }
+}
+
+/// Exception for connectivity-related errors
+class ConnectivityException implements Exception {
+  ConnectivityException(this.message);
+  final String message;
+
+  @override
+  String toString() => message;
 }

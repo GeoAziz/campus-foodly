@@ -30,24 +30,12 @@ class AdminOperations {
   final OrderRepository orderRepository;
   final RestaurantRepository restaurantRepository;
 
-  Future<List<Order>> fetchRecentOrders(String userId) {
-    return orderRepository.fetchOrdersForUser(userId);
+  Future<List<Order>> fetchRecentOrders() {
+    return orderRepository.fetchAllOrders(limit: 50);
   }
 
-  Future<void> markOrderAsPreparing(Order order) {
-    final updatedOrder = Order(
-      id: order.id,
-      userId: order.userId,
-      restaurantId: order.restaurantId,
-      items: order.items,
-      status: 'preparing',
-      deliveryAddressId: order.deliveryAddressId,
-      deliveryAddressLabel: order.deliveryAddressLabel,
-      deliveryAddressLine: order.deliveryAddressLine,
-      createdAt: order.createdAt,
-    );
-    return orderRepository.saveOrder(updatedOrder);
-  }
+  Future<void> markOrderAsPreparing(Order order) =>
+      orderRepository.updateOrderStatus(order.id, 'preparing');
 
   Future<List<Restaurant>> fetchRestaurants() {
     return restaurantRepository.fetchRestaurants();
@@ -72,6 +60,7 @@ class AdminOperations {
         id: 'admin_seed_${DateTime.now().millisecondsSinceEpoch}',
         userId: userId,
         restaurantId: 'admin-managed',
+        idempotencyKey: 'seed_${DateTime.now().millisecondsSinceEpoch}',
         items: const [
           OrderItem(
             id: 'item-1',

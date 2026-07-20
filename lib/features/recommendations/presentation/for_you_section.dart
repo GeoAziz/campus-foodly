@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../components/cards/big/restaurant_info_big_card.dart';
 import '../../../components/section_title.dart';
+import '../../../components/skeleton/big_card_skeleton.dart';
 import '../../../constants.dart';
 import '../../../core/routes.dart';
 import '../../../data/providers/auth_provider.dart';
@@ -33,9 +34,17 @@ class ForYouSection extends ConsumerWidget {
         ),
         const SizedBox(height: defaultPadding),
         recommendations.when(
-          loading: () => const Padding(
-            padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-            child: CircularProgressIndicator(),
+          loading: () => Padding(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            child: Column(
+              children: List.generate(
+                2,
+                (index) => Padding(
+                  padding: const EdgeInsets.only(bottom: defaultPadding),
+                  child: const BigCardSkeleton(),
+                ),
+              ),
+            ),
           ),
           error: (error, stackTrace) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),

@@ -21,6 +21,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'pending',
+        idempotencyKey: 'key-1',
         createdAt: DateTime.now(),
       );
 
@@ -38,6 +39,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'pending',
+        idempotencyKey: 'key-1',
         createdAt: DateTime.now(),
       );
 
@@ -47,6 +49,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'delivered',
+        idempotencyKey: 'key-2',
         createdAt: DateTime.now(),
       );
 
@@ -66,6 +69,7 @@ void main() {
           restaurantId: 'rest-1',
           items: [],
           status: 'pending',
+          idempotencyKey: 'key-$i',
           createdAt: DateTime.now(),
         );
         await repository.saveOrder(order);
@@ -86,6 +90,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'pending',
+        idempotencyKey: 'key-1',
         createdAt: DateTime.now(),
       );
 
@@ -103,6 +108,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'pending',
+        idempotencyKey: 'key-1',
         createdAt: DateTime.now(),
       );
 
@@ -120,6 +126,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'pending',
+        idempotencyKey: 'key-1',
         createdAt: DateTime.now(),
       );
 
@@ -129,6 +136,7 @@ void main() {
         restaurantId: 'rest-1',
         items: [],
         status: 'delivered',
+        idempotencyKey: 'key-2',
         createdAt: DateTime.now(),
       );
 

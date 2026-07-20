@@ -3,11 +3,12 @@ import 'package:logger/logger.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'dart:io' show Platform;
 
+final _logger = Logger();
+
 /// Service for managing Firebase App Check
 /// App Check helps protect backend resources from abuse by verifying requests from your app
 class AppCheckService {
   static final AppCheckService _instance = AppCheckService._internal();
-  static final Logger _logger = Logger();
 
   bool _initialized = false;
 
@@ -17,55 +18,99 @@ class AppCheckService {
 
   AppCheckService._internal();
 
-  /// Initialize Firebase App Check
-  /// This should be called after Firebase initialization
-  Future<void> initialize() async {
+  /// Initialize Firebase App Check with retry logic
+  Future<void> initialize({int maxRetries = 3}) async {
     if (_initialized) return;
 
-    try {
-      // Use reCAPTCHA v3 for web, or device check for mobile
-      await FirebaseAppCheck.instance.activate(
-        androidProvider: AndroidProvider.playIntegrity,
-        appleProvider: AppleProvider.deviceCheck,
-      );
+    int attempts = 0;
 
-      _logger.i('Firebase App Check initialized successfully');
-      _initialized = true;
+    while (attempts < maxRetries) {
+      try {
+        // Use reCAPTCHA v3 for web, or device check for mobile
+        await FirebaseAppCheck.instance.activate(
+          androidProvider: AndroidProvider.playIntegrity,
+          appleProvider: AppleProvider.deviceCheck,
+        );
 
-      // Enable debug token in development
-      // Uncomment the following to use App Check with an emulator
-      // await FirebaseAppCheck.instance.getToken(forceRefresh: true);
-    } catch (e) {
-      _logger.e('Failed to initialize Firebase App Check: $e');
-      // App Check is optional - the app can still function without it
-      // but it's highly recommended for production
+        _logger.i('Firebase App Check initialized successfully');
+        _initialized = true;
+        return;
+      } catch (e) {
+        attempts++;
+        _logger.w(
+          'App Check initialization failed (attempt $attempts/$maxRetries): $e',
+        );
+
+        if (attempts < maxRetries) {
+          await Future.delayed(Duration(seconds: attempts));
+        } else {
+          _logger.e(
+            'App Check initialization failed after $maxRetries attempts. '
+            'App will continue without App Check protection.',
+          );
+          // App Check is optional - the app can still function without it
+          // but it's highly recommended for production
+          return;
+        }
+      }
     }
   }
 
-  /// Get App Check token
-  /// Returns null if App Check is not available or has not been initialized
-  Future<String?> getToken() async {
-    try {
-      final token = await FirebaseAppCheck.instance.getToken();
-      _logger.d('App Check token obtained');
-      return token;
-    } catch (e) {
-      _logger.w('Failed to get App Check token: $e');
-      return null;
+  /// Get App Check token with retry logic
+  Future<String?> getToken({int maxRetries = 2}) async {
+    int attempts = 0;
+
+    while (attempts < maxRetries) {
+      try {
+        final token = await FirebaseAppCheck.instance
+            .getToken(forceRefresh: attempts > 0)
+            .timeout(const Duration(seconds: 10));
+        _logger.d('App Check token obtained');
+        return token;
+      } catch (e) {
+        attempts++;
+        _logger.w('App Check token request failed (attempt $attempts/$maxRetries): $e');
+
+        if (attempts < maxRetries) {
+          await Future.delayed(Duration(seconds: attempts));
+        } else {
+          _logger.e('Failed to get App Check token after $maxRetries attempts');
+          return null;
+        }
+      }
     }
+
+    return null;
   }
 
-  /// Get limited use token for sensitive operations
+  /// Get limited use token for sensitive operations with retry
   /// Limited-use tokens have a restricted lifetime and can only be used once
-  Future<String?> getLimitedUseToken() async {
-    try {
-      final token = await FirebaseAppCheck.instance.getLimitedUseToken();
-      _logger.d('Limited use token obtained');
-      return token;
-    } catch (e) {
-      _logger.w('Failed to get limited use token: $e');
-      return null;
+  Future<String?> getLimitedUseToken({int maxRetries = 2}) async {
+    int attempts = 0;
+
+    while (attempts < maxRetries) {
+      try {
+        final token = await FirebaseAppCheck.instance
+            .getLimitedUseToken()
+            .timeout(const Duration(seconds: 10));
+        _logger.d('Limited use token obtained');
+        return token;
+      } catch (e) {
+        attempts++;
+        _logger.w(
+          'Limited use token request failed (attempt $attempts/$maxRetries): $e',
+        );
+
+        if (attempts < maxRetries) {
+          await Future.delayed(Duration(seconds: attempts));
+        } else {
+          _logger.e('Failed to get limited use token after $maxRetries attempts');
+          return null;
+        }
+      }
     }
+
+    return null;
   }
 
   /// Check if App Check is initialized and available

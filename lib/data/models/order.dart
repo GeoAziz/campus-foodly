@@ -1,5 +1,5 @@
 import 'order_item.dart';
-import 'package:cloud_firestore/cloud_firestore.dart' show Timestamp;
+import 'package:cloud_firestore/cloud_firestore.dart' show Timestamp, FieldValue;
 
 class Order {
   const Order({
@@ -9,6 +9,7 @@ class Order {
     required this.items,
     required this.status,
     required this.createdAt,
+    required this.idempotencyKey,
     this.deliveryAddressId = '',
     this.deliveryAddressLabel = '',
     this.deliveryAddressLine = '',
@@ -20,6 +21,7 @@ class Order {
   final List<OrderItem> items;
   final String status;
   final DateTime createdAt;
+  final String idempotencyKey;
   final String deliveryAddressId;
   final String deliveryAddressLabel;
   final String deliveryAddressLine;
@@ -36,6 +38,7 @@ class Order {
           .map((item) => OrderItem.fromMap(item as Map<String, dynamic>))
           .toList(growable: false),
       status: data['status'] as String? ?? 'pending',
+      idempotencyKey: data['idempotencyKey'] as String? ?? '',
       deliveryAddressId: data['deliveryAddressId'] as String? ?? '',
       deliveryAddressLabel: data['deliveryAddressLabel'] as String? ?? '',
       deliveryAddressLine: data['deliveryAddressLine'] as String? ?? '',
@@ -53,10 +56,12 @@ class Order {
       'restaurantId': restaurantId,
       'items': items.map((item) => item.toMap()).toList(growable: false),
       'status': status,
+      'totalPrice': totalAmount,
+      'idempotencyKey': idempotencyKey,
       'deliveryAddressId': deliveryAddressId,
       'deliveryAddressLabel': deliveryAddressLabel,
       'deliveryAddressLine': deliveryAddressLine,
-      'createdAt': createdAt,
+      'createdAt': FieldValue.serverTimestamp(),
     };
   }
 }

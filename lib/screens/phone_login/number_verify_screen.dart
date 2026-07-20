@@ -28,8 +28,9 @@ class NumberVerifyScreen extends ConsumerWidget {
             children: [
               WelcomeText(
                 title: "Verify phone number",
-                text:
-                    "Enter the 4-Digit code sent to you at \n${phoneState.phoneNumber.isEmpty ? '+1501333982' : phoneState.phoneNumber}",
+                text: phoneState.phoneNumber.isEmpty
+                    ? "Enter the code sent to your phone number"
+                    : "Enter the code sent to you at ${phoneState.phoneNumber}",
               ),
 
               // OTP form

@@ -8,6 +8,7 @@ import '../../components/section_title.dart';
 import '../../core/constants.dart';
 import '../../core/routes.dart';
 import '../../data/providers/location_provider.dart';
+import '../../data/providers/campus_provider.dart';
 import '../../data/providers/restaurant_provider.dart';
 import '../../features/recommendations/presentation/for_you_section.dart';
 import 'components/medium_card_list.dart';
@@ -19,8 +20,11 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final restaurantsAsync = ref.watch(restaurantsProvider);
-    final locationLabel =
-        ref.watch(selectedLocationProvider).valueOrNull ?? 'Choose location';
+    final selectedCampusAsync = ref.watch(selectedCampusProvider);
+    final locationLabel = selectedCampusAsync.maybeWhen(
+      data: (campus) => campus?.name ?? 'Select Campus',
+      orElse: () => ref.watch(selectedLocationProvider).valueOrNull ?? 'Choose location',
+    );
 
     Future<void> refreshHome() async {
       try {
@@ -45,7 +49,7 @@ class HomeScreen extends ConsumerWidget {
         leading: const SizedBox(),
         leadingWidth: 0,
         title: TextButton(
-          onPressed: () => context.pushNamed(AppRoutes.findRestaurants),
+          onPressed: () => context.pushNamed(AppRoutes.campusSelector),
           style: TextButton.styleFrom(
             padding: EdgeInsets.zero,
             alignment: Alignment.centerLeft,
@@ -56,7 +60,7 @@ class HomeScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Delivery to'.toUpperCase(),
+                'Ordering from'.toUpperCase(),
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!

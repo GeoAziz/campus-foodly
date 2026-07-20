@@ -59,6 +59,34 @@ npm run seed:reset
 npm run seed:reset:dry-run
 ```
 
+## Seeding the campus catalogue (restaurants + menus)
+
+The rich Campus Foodly catalogue — 10 restaurants, 80 menu items, featured
+items, menu tabs, restaurant details and categories — lives in
+`/data/normalized_campus/` (not `/data/normalized/`, which only holds the app
+shell + a stale 5-restaurant sample). Food images are validated Unsplash URLs
+and are passed through untouched (the Cloudinary transform only rewrites
+`assets/...` paths).
+
+```bash
+# Preview exactly what will be written (no creds needed, no network writes)
+npm run seed:campus:dry-run
+
+# Detailed preview including a sample document
+npm run seed:campus:preview
+
+# Write to Firestore (requires GOOGLE_APPLICATION_CREDENTIALS)
+npm run seed:campus
+```
+
+`seed:campus` targets `--source-dir data/normalized_campus`, limits writes to
+`restaurants, menu_items, featured_items, menu_tabs, restaurant_details,
+categories`, and `--reset`s those collections first so stale/mismatched docs
+(e.g. the legacy `kca-rest-00x` restaurants) are cleared before reseeding.
+
+> The Dart `FirestoreSeedService` (`lib/data/services/firestore_seed_service.dart`)
+> is deprecated for restaurant/menu data — do not use it to seed the catalogue.
+
 ## What the script does
 
 - ✅ Reads all JSON files from `/data/normalized/`

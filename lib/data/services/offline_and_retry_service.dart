@@ -1,11 +1,184 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:logger/logger.dart';
 
-/// Handles offline caching for order tracking
+final _logger = Logger();
+
+/// Handles offline caching for orders, addresses, and user data
+/// Persists data to Hive for offline access after app restart
+class OfflineDataService {
+  static final OfflineDataService _instance = OfflineDataService._internal();
+  static const Duration _cacheValidity = Duration(hours: 12);
+
+  late final Box<String> _orderCacheBox;
+  late final Box<String> _addressCacheBox;
+  late final Box<String> _profileCacheBox;
+  bool _initialized = false;
+
+  factory OfflineDataService() {
+    return _instance;
+  }
+
+  OfflineDataService._internal();
+
+  /// Initialize offline storage
+  Future<void> initialize() async {
+    if (_initialized) return;
+
+    try {
+      _orderCacheBox = await Hive.openBox<String>('offline_orders');
+      _addressCacheBox = await Hive.openBox<String>('offline_addresses');
+      _profileCacheBox = await Hive.openBox<String>('offline_profile');
+      _initialized = true;
+      _logger.i('OfflineDataService initialized successfully');
+    } catch (e) {
+      _logger.e('Failed to initialize OfflineDataService: $e');
+      rethrow;
+    }
+  }
+
+  /// Cache order data with timestamp
+  Future<void> cacheOrder({
+    required String orderId,
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      final cacheData = {
+        'data': data,
+        'timestamp': DateTime.now().toIso8601String(),
+      };
+      await _orderCacheBox.put(orderId, jsonEncode(cacheData));
+      _logger.d('[OfflineCache] Cached order: $orderId');
+    } catch (e) {
+      _logger.e('Failed to cache order: $e');
+    }
+  }
+
+  /// Get cached order if available and not expired
+  Map<String, dynamic>? getCachedOrder(String orderId) {
+    try {
+      final cached = _orderCacheBox.get(orderId);
+      if (cached == null) return null;
+
+      final decoded = jsonDecode(cached) as Map<String, dynamic>;
+      final timestamp = DateTime.parse(decoded['timestamp'] as String);
+
+      if (DateTime.now().difference(timestamp) > _cacheValidity) {
+        _orderCacheBox.delete(orderId);
+        _logger.d('[OfflineCache] Order cache expired: $orderId');
+        return null;
+      }
+
+      return decoded['data'] as Map<String, dynamic>;
+    } catch (e) {
+      _logger.e('Error retrieving cached order: $e');
+      return null;
+    }
+  }
+
+  /// Cache address data
+  Future<void> cacheAddress({
+    required String addressId,
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      final cacheData = {
+        'data': data,
+        'timestamp': DateTime.now().toIso8601String(),
+      };
+      await _addressCacheBox.put(addressId, jsonEncode(cacheData));
+      _logger.d('[OfflineCache] Cached address: $addressId');
+    } catch (e) {
+      _logger.e('Failed to cache address: $e');
+    }
+  }
+
+  /// Get cached address if available and not expired
+  Map<String, dynamic>? getCachedAddress(String addressId) {
+    try {
+      final cached = _addressCacheBox.get(addressId);
+      if (cached == null) return null;
+
+      final decoded = jsonDecode(cached) as Map<String, dynamic>;
+      final timestamp = DateTime.parse(decoded['timestamp'] as String);
+
+      if (DateTime.now().difference(timestamp) > _cacheValidity) {
+        _addressCacheBox.delete(addressId);
+        return null;
+      }
+
+      return decoded['data'] as Map<String, dynamic>;
+    } catch (e) {
+      _logger.e('Error retrieving cached address: $e');
+      return null;
+    }
+  }
+
+  /// Cache user profile data
+  Future<void> cacheProfile({required Map<String, dynamic> data}) async {
+    try {
+      final cacheData = {
+        'data': data,
+        'timestamp': DateTime.now().toIso8601String(),
+      };
+      await _profileCacheBox.put('profile', jsonEncode(cacheData));
+      _logger.d('[OfflineCache] Cached profile');
+    } catch (e) {
+      _logger.e('Failed to cache profile: $e');
+    }
+  }
+
+  /// Get cached profile if available and not expired
+  Map<String, dynamic>? getCachedProfile() {
+    try {
+      final cached = _profileCacheBox.get('profile');
+      if (cached == null) return null;
+
+      final decoded = jsonDecode(cached) as Map<String, dynamic>;
+      final timestamp = DateTime.parse(decoded['timestamp'] as String);
+
+      if (DateTime.now().difference(timestamp) > _cacheValidity) {
+        _profileCacheBox.delete('profile');
+        return null;
+      }
+
+      return decoded['data'] as Map<String, dynamic>;
+    } catch (e) {
+      _logger.e('Error retrieving cached profile: $e');
+      return null;
+    }
+  }
+
+  /// Clear cache for specific order
+  Future<void> clearOrder(String orderId) async {
+    await _orderCacheBox.delete(orderId);
+  }
+
+  /// Clear all offline data
+  Future<void> clearAll() async {
+    await _orderCacheBox.clear();
+    await _addressCacheBox.clear();
+    await _profileCacheBox.clear();
+  }
+
+  /// Get all cached orders (for debugging/admin)
+  Map<String, Map<String, dynamic>?> getAllCachedOrders() {
+    final result = <String, Map<String, dynamic>?>{};
+    for (final key in _orderCacheBox.keys) {
+      result[key as String] = getCachedOrder(key as String);
+    }
+    return result;
+  }
+}
+
+/// Legacy in-memory cache for backwards compatibility
 class OrderTrackingOfflineCache {
   static const Duration _cacheValidity = Duration(hours: 12);
 
   final Map<String, _CachedOrderTracking> _cache = {};
+  final OfflineDataService _offlineService = OfflineDataService();
 
   /// Cache order tracking data with timestamp
   void cacheOrderTracking({
@@ -16,6 +189,8 @@ class OrderTrackingOfflineCache {
       data: data,
       timestamp: DateTime.now(),
     );
+    // Also persist to offline storage
+    _offlineService.cacheOrder(orderId: orderId, data: data);
     debugPrint('[OrderTrackingCache] Cached tracking for order: $orderId');
   }
 

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../components/skeleton/skeleton_line.dart';
+import '../../../components/skeleton/skeleton_rounded_container.dart';
 import '../../../data/providers/auth_provider.dart';
-import '../models/social_account.dart';
 import '../providers/social_accounts_controller.dart';
 
 class ProfileSocialScreen extends ConsumerWidget {
@@ -32,7 +33,53 @@ class ProfileSocialScreen extends ConsumerWidget {
         elevation: 0,
       ),
       body: socialState.isLoading && socialState.accounts.isEmpty
-          ? const Center(child: CircularProgressIndicator())
+          ? SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: List.generate(
+                    3,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  SkeletonRoundedContainer(
+                                    height: 32,
+                                    width: 32,
+                                    radius: 8,
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SkeletonLine(height: 16),
+                                        const SizedBox(height: 8),
+                                        SkeletonLine(
+                                          height: 12,
+                                          width: 150,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           : SingleChildScrollView(
               child: Column(
                 children: [
@@ -135,12 +182,12 @@ class ProfileSocialScreen extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () {
-              // TODO: Implement actual social login/linking
-              final socialAccount = SocialAccount(
-                provider: provider.toLowerCase(),
-                uid: 'temp-uid-${provider.toLowerCase()}',
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('$provider linking is not yet implemented'),
+                  backgroundColor: Theme.of(context).colorScheme.error,
+                ),
               );
-              controller.linkAccount(provider.toLowerCase(), socialAccount);
               Navigator.pop(context);
             },
             child: const Text('Link'),
@@ -172,7 +219,12 @@ class ProfileSocialScreen extends ConsumerWidget {
               controller.unlinkAccount(provider.toLowerCase());
               Navigator.pop(context);
             },
-            child: const Text('Unlink', style: TextStyle(color: Colors.red)),
+            child: Text(
+              'Unlink',
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.error,
+              ),
+            ),
           ),
         ],
       ),
@@ -211,10 +263,12 @@ class _SocialProviderCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               )
             : const Text('Not linked'),
-        trailing: ElevatedButton(
+        trailing: FilledButton(
           onPressed: isLinked ? onUnlink : onLink,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: isLinked ? Colors.red : Colors.green,
+          style: FilledButton.styleFrom(
+            backgroundColor: isLinked
+                ? Theme.of(context).colorScheme.error
+                : Theme.of(context).colorScheme.primary,
           ),
           child: Text(isLinked ? 'Unlink' : 'Link'),
         ),

@@ -8,12 +8,15 @@ import '../../data/models/menu_item.dart';
 import '../../data/providers/cart_provider.dart';
 import '../../data/providers/ui_state_provider.dart';
 import '../../data/services/logger_service.dart';
+import '../../data/services/price_formatter.dart';
 import 'components/info.dart';
 import 'components/required_section_title.dart';
 import 'components/rounded_checkbox_list_tile.dart';
 
 class AddToOrderScreen extends ConsumerWidget {
-  const AddToOrderScreen({super.key});
+  const AddToOrderScreen({super.key, this.menuItem});
+
+  final MenuItem? menuItem;
 
   static const List<String> choiceOfTopCookies = [
     'Choice of top Cookie',
@@ -54,7 +57,7 @@ class AddToOrderScreen extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Info(),
+              Info(menuItem: menuItem),
               const SizedBox(height: defaultPadding),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -132,18 +135,20 @@ class AddToOrderScreen extends ConsumerWidget {
                     ElevatedButton(
                       onPressed: () {
                         try {
+                          final itemToAdd = menuItem ??
+                              MenuItem(
+                                id: 'cookie-${state.choiceOfTopCookie}-${state.choiceOfBottomCookie}',
+                                restaurantId: 'demo-desserts',
+                                name:
+                                    '${choiceOfTopCookies[state.choiceOfTopCookie]} x ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
+                                price: 11.98,
+                                image: 'assets/images/big_1.png',
+                                description:
+                                    'Top: ${choiceOfTopCookies[state.choiceOfTopCookie]}, Bottom: ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
+                                category: 'Dessert',
+                              );
                           ref.read(cartProvider.notifier).addItem(
-                                MenuItem(
-                                  id: 'cookie-${state.choiceOfTopCookie}-${state.choiceOfBottomCookie}',
-                                  restaurantId: 'demo-desserts',
-                                  name:
-                                      '${choiceOfTopCookies[state.choiceOfTopCookie]} x ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
-                                  price: 11.98,
-                                  image: 'assets/images/big_1.png',
-                                  description:
-                                      'Top: ${choiceOfTopCookies[state.choiceOfTopCookie]}, Bottom: ${choiceOfTopCookies[state.choiceOfBottomCookie]}',
-                                  category: 'Dessert',
-                                ),
+                                itemToAdd,
                                 quantity: state.numOfItems,
                               );
                           context.pushNamed(AppRoutes.orderDetails);
@@ -178,7 +183,9 @@ class AddToOrderScreen extends ConsumerWidget {
                               .e('[AddToOrder] Error adding item: $e');
                         }
                       },
-                      child: const Text("Add to Order (\$11.98)"),
+                      child: Text(
+                        "Add to Order (${formatPrice((menuItem?.price ?? 11.98) * state.numOfItems)})",
+                      ),
                     ),
                   ],
                 ),

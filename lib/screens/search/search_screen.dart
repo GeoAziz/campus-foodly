@@ -164,7 +164,7 @@ class _SearchFormState extends ConsumerState<SearchForm> {
       style: Theme.of(context).textTheme.labelLarge,
       textInputAction: TextInputAction.search,
       decoration: InputDecoration(
-        hintText: 'Search OrderEats restaurants',
+        hintText: 'Search Campus Foodly restaurants',
         contentPadding: kTextFieldPadding,
         prefixIcon: Padding(
           padding: const EdgeInsets.all(8.0),

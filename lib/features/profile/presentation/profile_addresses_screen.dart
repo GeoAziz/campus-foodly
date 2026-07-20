@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../components/skeleton/skeleton_line.dart';
 import '../../../data/providers/auth_provider.dart';
 import '../../../core/routes.dart';
 import '../providers/addresses_controller.dart';
@@ -30,7 +31,43 @@ class ProfileAddressesScreen extends ConsumerWidget {
         elevation: 0,
       ),
       body: addressesState.isLoading && addressesState.addresses.isEmpty
-          ? const Center(child: CircularProgressIndicator())
+          ? SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: List.generate(
+                    2,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SkeletonLine(
+                                height: 16,
+                                width: 120,
+                              ),
+                              const SizedBox(height: 12),
+                              SkeletonLine(
+                                height: 14,
+                                width: double.infinity,
+                              ),
+                              const SizedBox(height: 8),
+                              SkeletonLine(
+                                height: 12,
+                                width: 200,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           : addressesState.addresses.isEmpty
               ? Center(
                   child: Column(

@@ -15,30 +15,13 @@ final orderRepositoryProvider = Provider<OrderRepository>(
 
 /// Provider for real-time order stream for a specific user
 /// Automatically updates when new orders are created or status changes
-/// Returns an empty list if userId is null
 final realTimeOrdersForUserProvider =
-    StreamProvider.family<List<Order>, String?>((ref, userId) async* {
+    StreamProvider.family<List<Order>, String?>((ref, userId) {
   if (userId == null) {
-    yield [];
-    return;
+    return Stream.value([]);
   }
-
   final repository = ref.watch(orderRepositoryProvider);
-
-  try {
-    // Initial load - get current orders
-    final orders = await repository.fetchOrdersForUser(userId);
-    yield orders;
-
-    // TODO: Implement real-time Firestore stream for live updates
-    // Example when Firestore streaming is available:
-    // await for (final orders in repository.watchOrdersForUser(userId)) {
-    //   yield orders;
-    // }
-  } catch (e) {
-    debugPrint('[RealTimeOrders] Error fetching orders for user $userId: $e');
-    yield [];
-  }
+  return repository.watchOrdersForUser(userId);
 });
 
 class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
@@ -134,6 +117,7 @@ class OrderController extends StateNotifier<AsyncValue<List<Order>>> {
         restaurantId: restaurantId,
         items: orderItems,
         status: 'pending',
+        idempotencyKey: idempotencyKey,
         deliveryAddressId: deliveryAddressId,
         deliveryAddressLabel: deliveryAddressLabel,
         deliveryAddressLine: deliveryAddressLine,

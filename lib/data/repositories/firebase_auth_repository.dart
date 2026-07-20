@@ -10,14 +10,27 @@ class FirebaseAuthRepository implements AuthRepository {
 
   final FirebaseAuth _auth;
 
+  /// Reads the role field from Firestore, falling back to 'user' on any error.
+  Future<String> _fetchRole(String uid) async {
+    try {
+      final doc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .get(const GetOptions(source: Source.server));
+      return (doc.data()?['role'] as String?)?.trim().isNotEmpty == true
+          ? doc.data()!['role'] as String
+          : 'user';
+    } catch (_) {
+      return 'user';
+    }
+  }
+
   @override
   Future<AppUser?> getCurrentUser() async {
     final user = _auth.currentUser;
-    if (user == null) {
-      return null;
-    }
-
-    return AppUser.fromFirebaseUser(user);
+    if (user == null) return null;
+    final role = await _fetchRole(user.uid);
+    return AppUser.fromFirebaseUser(user, role: role);
   }
 
   @override
@@ -58,7 +71,8 @@ class FirebaseAuthRepository implements AuthRepository {
       );
     }
 
-    return AppUser.fromFirebaseUser(user);
+    final role = await _fetchRole(user.uid);
+    return AppUser.fromFirebaseUser(user, role: role);
   }
 
   @override
@@ -95,9 +109,10 @@ class FirebaseAuthRepository implements AuthRepository {
       await user.reload();
     }
 
+    const role = 'user';
     final appUser = AppUser.fromFirebaseUser(
       _auth.currentUser ?? user,
-      role: 'user',
+      role: role,
     );
 
     // Write user document with required uid and role fields for Firestore rules compliance
@@ -135,15 +150,12 @@ class FirebaseAuthRepository implements AuthRepository {
     }
 
     try {
-      // Reauthenticate with current password
       await user.reauthenticateWithCredential(
         EmailAuthProvider.credential(
           email: user.email!,
           password: currentPassword,
         ),
       );
-
-      // Update password
       await user.updatePassword(newPassword);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password') {

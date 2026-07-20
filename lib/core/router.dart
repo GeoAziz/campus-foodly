@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../entry_point.dart';
 import '../features/order_tracking/presentation/order_delivered_screen.dart';
@@ -12,7 +13,18 @@ import '../features/profile/presentation/profile_address_add_screen.dart';
 import '../features/profile/presentation/profile_payment_methods_screen.dart';
 import '../features/profile/presentation/profile_notifications_screen.dart';
 import '../features/profile/presentation/profile_social_screen.dart';
+import '../features/reviews/presentation/review_order_screen.dart';
+import '../features/restaurant/presentation/restaurant_owner_dashboard_screen.dart';
+import '../features/driver/presentation/driver_dashboard_screen.dart';
+import '../features/support/presentation/support_tickets_screen.dart';
+import '../features/support/presentation/new_support_ticket_screen.dart';
+import '../features/support/presentation/help_screen.dart';
+import '../features/orders/presentation/order_history_screen.dart';
+import '../features/payments/presentation/address_picker_screen.dart';
+import '../features/profile/presentation/profile_loyalty_screen.dart';
+import '../admin/screens/admin_dashboard_screen.dart';
 import '../screens/add_to_order/add_to_order_screen.dart';
+import '../data/models/menu_item.dart';
 import '../screens/auth/auth_error_screen.dart';
 import '../screens/auth/forgot_password_screen.dart';
 import '../screens/auth/reset_email_sent_screen.dart';
@@ -23,18 +35,27 @@ import '../screens/featured/featured_screen.dart';
 import '../screens/filter/filter_screen.dart';
 import '../screens/find_restaurants/find_restaurants_screen.dart';
 import '../screens/onboarding/onboarding_screen.dart';
+import '../screens/onboarding/campus_selector_screen.dart';
 import '../screens/order_details/order_details_screen.dart';
 import '../screens/phone_login/number_verify_screen.dart';
 import '../screens/phone_login/phone_login_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../data/models/restaurant.dart';
 import '../data/providers/auth_provider.dart';
+import '../data/providers/campus_provider.dart';
 import '../data/providers/role_based_access_provider.dart';
 import 'routes.dart';
+
+final _hasSeenOnboardingProvider = FutureProvider<bool>((ref) async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getBool('has_seen_onboarding') ?? false;
+});
 
 final routerProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authControllerProvider);
   final userRole = ref.watch(userRoleProvider);
+  final selectedCampusId = ref.watch(selectedCampusIdProvider);
+  final hasSeenOnboarding = ref.watch(_hasSeenOnboardingProvider).valueOrNull ?? false;
 
   const authRoutes = <String>{
     '/sign-in',
@@ -44,6 +65,7 @@ final routerProvider = Provider<GoRouter>((ref) {
     '/phone-login',
     '/number-verify',
     '/onboarding',
+    '/campus-selector',
   };
 
   const publicRoutes = <String>{
@@ -83,8 +105,27 @@ final routerProvider = Provider<GoRouter>((ref) {
         }
       }
 
-      if (user != null && isAuthRoute) {
+      // If user is logged in but on auth routes and campus is selected, go to app
+      if (user != null && isAuthRoute && selectedCampusId != null) {
         return '/app';
+      }
+
+      // If user is logged in, on auth routes, but no campus selected, go to campus selector
+      if (user != null && isAuthRoute && selectedCampusId == null) {
+        return '/campus-selector';
+      }
+
+      // If user is logged in and trying to access app without campus selected, redirect
+      if (user != null &&
+          location == '/app' &&
+          selectedCampusId == null &&
+          location != '/campus-selector') {
+        return '/campus-selector';
+      }
+
+      // Skip onboarding for returning users
+      if (location == '/onboarding' && hasSeenOnboarding) {
+        return '/sign-in';
       }
 
       if (user == null && !isPublicRoute) {
@@ -98,6 +139,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/onboarding',
         name: AppRoutes.onboarding,
         builder: (context, state) => const OnboardingScreen(),
+      ),
+      GoRoute(
+        path: '/campus-selector',
+        name: AppRoutes.campusSelector,
+        builder: (context, state) => const CampusSelectorScreen(),
       ),
       GoRoute(
         path: '/app',
@@ -172,7 +218,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/add-to-order',
         name: AppRoutes.addToOrder,
-        builder: (context, state) => const AddToOrderScreen(),
+        builder: (context, state) => AddToOrderScreen(
+          menuItem: state.extra is MenuItem ? state.extra as MenuItem : null,
+        ),
       ),
       GoRoute(
         path: '/order-details',
@@ -243,6 +291,68 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/profile-social',
         name: AppRoutes.profileSocial,
         builder: (context, state) => const ProfileSocialScreen(),
+      ),
+      GoRoute(
+        path: '/profile-loyalty',
+        name: AppRoutes.profileLoyalty,
+        builder: (context, state) => const LoyaltyScreen(),
+      ),
+      // New Feature Routes
+      GoRoute(
+        path: '/order-history',
+        name: AppRoutes.orderHistory,
+        builder: (context, state) => const OrderHistoryScreen(),
+      ),
+      GoRoute(
+        path: '/address-picker',
+        name: AppRoutes.addressPicker,
+        builder: (context, state) => AddressPickerScreen(
+          onAddressSelected: (address) {
+            // Handle address selection
+          },
+        ),
+      ),
+      GoRoute(
+        path: '/help',
+        name: AppRoutes.helpChat,
+        builder: (context, state) => const HelpScreen(),
+      ),
+      // Admin
+      GoRoute(
+        path: '/admin',
+        name: AppRoutes.adminDashboard,
+        builder: (context, state) => const AdminDashboardScreen(),
+      ),
+      // Restaurant Owner
+      GoRoute(
+        path: '/restaurant-dashboard',
+        name: AppRoutes.restaurantDashboard,
+        builder: (context, state) => const RestaurantOwnerDashboardScreen(),
+      ),
+      // Delivery Driver
+      GoRoute(
+        path: '/driver-dashboard',
+        name: AppRoutes.driverDashboard,
+        builder: (context, state) => const DriverDashboardScreen(),
+      ),
+      // Reviews
+      GoRoute(
+        path: '/review-order/:orderId',
+        name: AppRoutes.reviewOrder,
+        builder: (context, state) => ReviewOrderScreen(
+          orderId: state.pathParameters['orderId'] ?? '',
+        ),
+      ),
+      // Support Tickets
+      GoRoute(
+        path: '/support-tickets',
+        name: AppRoutes.supportTickets,
+        builder: (context, state) => const SupportTicketsScreen(),
+      ),
+      GoRoute(
+        path: '/support-ticket-new',
+        name: AppRoutes.supportTicketNew,
+        builder: (context, state) => const NewSupportTicketScreen(),
       ),
     ],
   );

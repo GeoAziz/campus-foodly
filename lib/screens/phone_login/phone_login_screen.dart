@@ -31,7 +31,7 @@ class _PhoneLoginScreenState extends ConsumerState<PhoneLoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const WelcomeText(
-                title: 'Get started with OrderEats',
+                title: 'Get started with Campus Foodly',
                 text:
                     'Enter your phone number to continue with secure sign in.',
               ),

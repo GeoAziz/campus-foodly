@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:uuid/uuid.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logger/logger.dart';
@@ -8,9 +9,12 @@ class IdempotencyService {
   static final IdempotencyService _instance = IdempotencyService._internal();
   static final Logger _logger = Logger();
   static const String _boxName = 'idempotency_keys';
+  static const int _maxStorageKeys = 1000;
+  static const Duration _cleanupInterval = Duration(hours: 1);
 
   late final Box<String> _idempotencyBox;
   bool _initialized = false;
+  Timer? _cleanupTimer;
 
   factory IdempotencyService() {
     return _instance;
@@ -29,10 +33,21 @@ class IdempotencyService {
 
       // Clean up old keys (older than 24 hours)
       await _cleanupOldKeys();
+
+      // Start periodic cleanup timer
+      _cleanupTimer = Timer.periodic(_cleanupInterval, (_) {
+        _cleanupOldKeys();
+      });
     } catch (e) {
       _logger.e('Failed to initialize IdempotencyService: $e');
       rethrow;
     }
+  }
+
+  /// Dispose and cancel cleanup timer
+  void dispose() {
+    _cleanupTimer?.cancel();
+    _logger.i('IdempotencyService disposed');
   }
 
   /// Generate a new idempotency key (UUID v4)
@@ -92,24 +107,52 @@ class IdempotencyService {
     try {
       final keysToRemove = <String>[];
       final now = DateTime.now();
+      final allEntries = _idempotencyBox.toMap().entries.toList();
 
-      for (var entry in _idempotencyBox.toMap().entries) {
+      // First pass: remove expired keys
+      for (var entry in allEntries) {
         try {
           final keyTime = DateTime.parse(entry.value);
           if (now.difference(keyTime) > maxAge) {
-            keysToRemove.add(entry.key);
+            keysToRemove.add(entry.key as String);
           }
         } catch (e) {
           _logger.w('Invalid key timestamp: ${entry.value}');
-          keysToRemove.add(entry.key);
+          keysToRemove.add(entry.key as String);
         }
       }
 
+      // Second pass: if still over limit, remove oldest keys
+      if (allEntries.length - keysToRemove.length > _maxStorageKeys) {
+        final sortedEntries = allEntries
+            .where((e) => !keysToRemove.contains(e.key))
+            .toList()
+          ..sort((a, b) {
+            try {
+              final timeA = DateTime.parse(a.value);
+              final timeB = DateTime.parse(b.value);
+              return timeA.compareTo(timeB);
+            } catch (_) {
+              return 0;
+            }
+          });
+
+        final excessCount = sortedEntries.length - _maxStorageKeys;
+        for (int i = 0; i < excessCount; i++) {
+          keysToRemove.add(sortedEntries[i].key as String);
+        }
+
+        _logger.w(
+          'Storage limit exceeded. Removed ${excessCount} oldest keys.',
+        );
+      }
+
+      // Delete all marked keys
       for (var key in keysToRemove) {
         await _idempotencyBox.delete(key);
       }
 
-      _logger.i('Cleaned up ${keysToRemove.length} old idempotency keys');
+      _logger.i('Cleaned up ${keysToRemove.length} idempotency keys');
     } catch (e) {
       _logger.e('Failed to cleanup old keys: $e');
     }

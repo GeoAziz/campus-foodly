@@ -1,6 +1,7 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const { onRequest } = require('firebase-functions/v2/https');
+const { onDocumentWritten } = require('firebase-functions/v2/firestore');
 
 admin.initializeApp();
 
@@ -230,3 +231,80 @@ app.post('/mpesa/callback', async (req, res) => {
 });
 
 exports.api = onRequest(app);
+
+// Order status change trigger — keeps order_tracking in sync and notifies user
+exports.onOrderStatusChanged = onDocumentWritten('orders/{orderId}', async (event) => {
+  const orderId = event.params.orderId;
+  const before = event.data?.before?.data();
+  const after = event.data?.after?.data();
+
+  if (!after) return; // Document deleted
+
+  const prevStatus = before?.status;
+  const newStatus = after.status;
+
+  if (prevStatus === newStatus) return; // Status unchanged
+
+  const timestamp = admin.firestore.FieldValue.serverTimestamp();
+  const db = admin.firestore();
+
+  // Update order_tracking document
+  const trackingRef = db.collection('order_tracking').doc(orderId);
+  await trackingRef.set(
+    {
+      orderId,
+      status: newStatus,
+      restaurantId: after.restaurantId || null,
+      userId: after.userId || null,
+      updatedAt: timestamp,
+      statusHistory: admin.firestore.FieldValue.arrayUnion({
+        status: newStatus,
+        changedAt: new Date().toISOString(),
+      }),
+    },
+    { merge: true },
+  );
+
+  // Notify the order owner via FCM
+  const userId = after.userId;
+  if (!userId) return;
+
+  try {
+    const tokensSnapshot = await db
+      .collection('users')
+      .doc(userId)
+      .collection('fcmTokens')
+      .get();
+
+    const tokens = tokensSnapshot.docs
+      .map((doc) => doc.id)
+      .filter((token) => typeof token === 'string' && token.length > 0);
+
+    if (tokens.length === 0) return;
+
+    const statusMessages = {
+      accepted: 'Your order has been accepted by the restaurant.',
+      preparing: 'The restaurant is now preparing your order.',
+      ready: 'Your order is ready for pickup!',
+      picked_up: 'Your order is on the way!',
+      delivered: 'Your order has been delivered. Enjoy!',
+      cancelled: 'Your order has been cancelled.',
+    };
+
+    const body = statusMessages[newStatus] || `Order status updated to ${newStatus}.`;
+
+    await admin.messaging().sendEachForMulticast({
+      tokens,
+      notification: {
+        title: 'Order Update',
+        body,
+      },
+      data: {
+        orderId,
+        status: newStatus,
+      },
+    });
+  } catch (error) {
+    console.error(`Error sending order status notification for ${orderId}:`, error);
+  }
+});

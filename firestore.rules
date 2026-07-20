@@ -91,7 +91,7 @@ service cloud.firestore {
         request.resource.data.amount is number &&
         request.resource.data.amount > 0 &&
         request.resource.data.amount <= 10000 &&
-        request.resource.data.provider in ['stripe', 'paypal', 'card'] &&
+        request.resource.data.provider in ['stripe', 'paypal', 'card', 'mpesa', 'mpesa_mock'] &&
         isValidPaymentStatus(request.resource.data.status);
     }
 
@@ -182,6 +182,11 @@ service cloud.firestore {
     }
 
     match /onboarding_slides/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /campuses/{campusId} {
       allow read: if true;
       allow write: if isAdmin();
     }

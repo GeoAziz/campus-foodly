@@ -125,7 +125,10 @@ class _ItemsState extends State<Items> {
                 foodType: resolvedFoodType,
                 price: item.price,
                 priceRange: resolvedPriceRange,
-                press: () => context.pushNamed(AppRoutes.addToOrder),
+                press: () => context.pushNamed(
+                  AppRoutes.addToOrder,
+                  extra: item,
+                ),
               ),
             );
           },
